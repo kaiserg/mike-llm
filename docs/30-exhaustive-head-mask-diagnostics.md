@@ -1,6 +1,6 @@
 # Exhaustive six-head mask combinations
 
-[Documentation index](README.md) · [Previous](29-joint-head-history-diagnostics.md)
+[Documentation index](README.md) · [Previous](29-joint-head-history-diagnostics.md) · [Next](31-stage-closure-and-test.md)
 
 Driver: [`scripts/analyze_all_head_masks.py`](../scripts/analyze_all_head_masks.py). Cached evaluator and exact interaction analysis: [`src/exhaustive_head_diagnostics.py`](../src/exhaustive_head_diagnostics.py). [Full report](results/all-head-mask-diagnostics.json), with all masks, rankings, control checks and coefficients.
 

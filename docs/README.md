@@ -2,6 +2,8 @@
 
 These chapters follow the existing educational code from characters to a complete small GPT-style forward architecture. Early chapters introduce randomly initialized components; later chapters document training, evaluation, generation, and controlled experiments on small models.
 
+The small-corpus experimental stage is closed. See [chapter 31](31-stage-closure-and-test.md) for the validation-selected operating configuration, final held-out test, consolidated conclusions and limits. The test book has now been evaluated for that frozen selection.
+
 ## Reading order
 
 1. [Tokenization](01-tokenization.md) — [`src/tokenizer.py`](../src/tokenizer.py)
@@ -40,6 +42,8 @@ These chapters follow the existing educational code from characters to a complet
 29. [Joint masks and head interactions](29-joint-head-history-diagnostics.md) — [`scripts/analyze_joint_head_history.py`](../scripts/analyze_joint_head_history.py)
 
 30. [Exhaustive six-head mask combinations](30-exhaustive-head-mask-diagnostics.md) — [`scripts/analyze_all_head_masks.py`](../scripts/analyze_all_head_masks.py)
+
+31. [Stage closure and held-out test](31-stage-closure-and-test.md) — [`scripts/finalize_stage.py`](../scripts/finalize_stage.py)
 
 ## Running the examples
 

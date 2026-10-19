@@ -1,10 +1,24 @@
 # Mike-LLM v0.1
 
-An educational project to build and train a small decoder-only Transformer from random weights, targeting Apple Silicon with PyTorch MPS.
+An educational project implementing and training a small character-level decoder-only Transformer from random weights. Recorded experiments use reproducible CPU execution on Apple Silicon.
+
+
+## Finalized small-corpus result
+
+Validation selected the learned-position checkpoint trained with capacity 64 for 40000 updates, seed 42, using **16-character inference windows with positions reset** and ordinary causal attention. This uses four times the training targets of the 10000-step comparisons. The frozen choice was recorded before evaluating the reserved test book.
+
+| Split | Character perplexity | Next-character accuracy |
+| --- | ---: | ---: |
+| Validation: Alice in Wonderland | 6.288657 | 44.85% |
+| Test: Pride and Prejudice | 5.750783 | 46.33% |
+
+The test has now been used for this final selection and is no longer untouched for future development. These single-book results do not establish conversational ability, factual knowledge, broad generalization or absence of validation-selection bias. See [stage closure and model details](docs/31-stage-closure-and-test.md), the [frozen selection](docs/results/final-model-selection.json), and [test report](docs/results/final-test-evaluation.json).
+
+The local checkpoint is `runs/position-exposure-40000/seed-42/primary/checkpoint.pt`. It retains capacity 64; explicitly use inference context 16 to match the selected policy. Checkpoint and corpus files remain local ignored artifacts. The final manifest does not automatically change the existing generation CLI's default window.
 
 ## Current progress
 
-The repository currently contains standalone learning demonstrations and reusable attention, feed-forward, and pre-normalized causal Transformer block modules. These components are randomly initialized; the GPT forward architecture is implemented, with a reproducible CPU training demonstration; checkpoint-based text generation is also implemented.
+The repository contains the complete small GPT pipeline: reusable model components, reproducible training on normalized novels, checkpoint generation, evaluation, and controlled context/position/attention experiments. The small-corpus experimental stage is closed; the model predicts characters and is not a conversational or instruction-following assistant.
 
 - Character-level tokenizer with reversible encoding for known characters.
 - Token embeddings with learned absolute positions by default and optional fixed sinusoidal positions.
