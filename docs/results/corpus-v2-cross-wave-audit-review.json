@@ -1,0 +1,35 @@
+{
+  "reviewed_on": "2026-10-19",
+  "report_sha256": "2da3e6f70d33faaf386cb5f69985f044e0e2a51982ef7554414d92445a5b15a2",
+  "review_scope": "all accepted corpus-v2 development documents across the cleaned pilot and four expansion waves",
+  "method": [
+    "Verified every local text against the hash and character count in its immutable stage report.",
+    "Normalized contributor, work, split-group and publisher identities for comparison without changing saved provenance.",
+    "Compared all 1,384 document pairs that cross stage boundaries with case-folded five-word-shingle Jaccard.",
+    "Indexed 9,778 paragraphs of at least 30 words and reviewed every cross-stage match reaching the 0.80 threshold.",
+    "Measured stage, domain, publisher, host and individual-document character concentration."
+  ],
+  "findings": {
+    "documents": 59,
+    "characters": 7726819,
+    "split_groups": 45,
+    "publishers": 11,
+    "source_hosts": 8,
+    "domains": 35,
+    "historical_pilot_character_share": 0.8268331379316637,
+    "largest_ten_document_share": 0.7750255312050146,
+    "exact_content_duplicate_groups": 0,
+    "cross_stage_work_family_collisions": 0,
+    "cross_stage_split_group_collisions": 0,
+    "cross_stage_author_collisions": 0,
+    "cross_stage_document_near_duplicates": 0,
+    "cross_stage_paragraph_near_duplicates": 0,
+    "highest_cross_stage_document_jaccard": 0.0008083140877598152
+  },
+  "decision": "Do not freeze splits. Acquire modern independent long-form prose against the measured era, genre, publisher and volume gaps, then rerun the audit before reserving a new test.",
+  "new_test_created": false,
+  "new_test_read": false,
+  "legacy_test_read": false,
+  "model_loaded": false,
+  "training_performed": false
+}

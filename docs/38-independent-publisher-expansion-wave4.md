@@ -1,6 +1,6 @@
 # Independent hosts and mixed practical prose: wave 4
 
-[Documentation index](README.md) · [Previous](37-open-textbook-expansion-wave3.md)
+[Documentation index](README.md) · [Previous](37-open-textbook-expansion-wave3.md) · [Next](39-cross-wave-corpus-audit.md)
 
 The fourth expansion wave reduces the previous dependence on one Pressbooks host. It adds ten CC BY 4.0 works served by four independent Manifold installations and attributed to six publisher identities. The selected prose covers open pedagogy, community recipes, equity research, marketing analytics, electronics instrumentation, education-program reporting, history, international business and relational databases.
 
@@ -67,4 +67,4 @@ PYTHONPATH=src python -m unittest discover -s tests -q
 
 An existing ignored snapshot is verified and reused offline. Changes to the registry, source records, rendered text, attribution or inventory fail closed.
 
-[Documentation index](README.md) · [Previous](37-open-textbook-expansion-wave3.md)
+[Documentation index](README.md) · [Previous](37-open-textbook-expansion-wave3.md) · [Next](39-cross-wave-corpus-audit.md)

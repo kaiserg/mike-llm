@@ -72,6 +72,12 @@ PYTHONPATH=src python scripts/ingest_corpus_independent.py
 
 These are acquisition counts, not frozen training splits. The historical books dominate character volume, institutional education remains overrepresented, and all inspected sources are ineligible for the future untouched test. The next gate is a cross-wave identity, overlap and balance audit before acquiring against the measured gaps and freezing splits.
 
+The [cross-wave audit](docs/39-cross-wave-corpus-audit.md) verifies all 59 local texts and finds no exact duplicates, identity collisions or close lexical duplicates across stages. It also shows why splits must wait: the 12 historical pilot books contribute **82.68%** of all characters, and the ten largest documents contribute **77.50%**. The next acquisition target is modern independent long-form prose outside institutional education and research guidance.
+
+```bash
+PYTHONPATH=src python scripts/audit_corpus_v2.py
+```
+
 ## Current progress
 
 The repository contains the complete small GPT pipeline: reusable model components, reproducible training on normalized novels, checkpoint generation, evaluation, and controlled context/position/attention experiments. The small-corpus experimental stage is closed; the model predicts characters and is not a conversational or instruction-following assistant.
@@ -170,6 +176,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 36. [Modern science and research practice: wave 2](docs/36-modern-science-expansion-wave2.md)
 37. [Open textbooks and practical nonfiction: wave 3](docs/37-open-textbook-expansion-wave3.md)
 38. [Independent hosts and mixed practical prose: wave 4](docs/38-independent-publisher-expansion-wave4.md)
+39. [Cross-wave identity, balance, and overlap audit](docs/39-cross-wave-corpus-audit.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 

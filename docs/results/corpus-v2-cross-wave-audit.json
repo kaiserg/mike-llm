@@ -1,0 +1,659 @@
+{
+  "schema_version": 1,
+  "scope": "development-only corpus-v2 acquisition audit; no split assignment or test access",
+  "inputs": [
+    {
+      "id": "pilot-cleaned",
+      "report_path": "docs/results/corpus-v2-cleaning-and-dedup.json",
+      "report_sha256": "42bf97320f43ee2a083481a4f481843144d5c7d2f09dea9afe80adf230f23e65",
+      "document_count": 12,
+      "characters": 6388790
+    },
+    {
+      "id": "wave1-education",
+      "report_path": "docs/results/corpus-v2-expansion-wave1.json",
+      "report_sha256": "423bf096f644485d20d8a248e936975b6d9aea63de37c4aa6aef17aba7b50c40",
+      "document_count": 15,
+      "characters": 241149
+    },
+    {
+      "id": "wave2-science",
+      "report_path": "docs/results/corpus-v2-science-wave2.json",
+      "report_sha256": "84308d4a012efe228ea95665b32740e2a55d7bbfef6ff9b308733b9f55c1ea2a",
+      "document_count": 12,
+      "characters": 305147
+    },
+    {
+      "id": "wave3-textbooks",
+      "report_path": "docs/results/corpus-v2-open-textbooks-wave3.json",
+      "report_sha256": "3cefcac5eaf98aa89edd38f58070cd20ee6dc1e4d641250994b78a3bc58ee403",
+      "document_count": 10,
+      "characters": 500533
+    },
+    {
+      "id": "wave4-independent",
+      "report_path": "docs/results/corpus-v2-independent-publishers-wave4.json",
+      "report_sha256": "e4e8ba42a1a7f7742dc04bad89d8cd5e75b6f9aa42a548d393332a65b17ba748",
+      "document_count": 10,
+      "characters": 291200
+    }
+  ],
+  "totals": {
+    "documents": 59,
+    "characters": 7726819,
+    "stages": 5,
+    "normalized_authors_or_organizations": 152,
+    "work_families": 49,
+    "split_groups": 45,
+    "publishers": 11,
+    "source_hosts": 8,
+    "domains": 35
+  },
+  "era_balance": {
+    "historical_pilot_characters": 6388790,
+    "modern_expansion_characters": 1338029,
+    "historical_pilot_share": 0.8268331379316637,
+    "modern_expansion_share": 0.17316686206833626
+  },
+  "stage_distribution": [
+    {
+      "stage": "pilot-cleaned",
+      "documents": 12,
+      "characters": 6388790,
+      "character_share": 0.8268331379316637
+    },
+    {
+      "stage": "wave3-textbooks",
+      "documents": 10,
+      "characters": 500533,
+      "character_share": 0.06477866247416951
+    },
+    {
+      "stage": "wave2-science",
+      "documents": 12,
+      "characters": 305147,
+      "character_share": 0.039491930637950756
+    },
+    {
+      "stage": "wave4-independent",
+      "documents": 10,
+      "characters": 291200,
+      "character_share": 0.03768691876954799
+    },
+    {
+      "stage": "wave1-education",
+      "documents": 15,
+      "characters": 241149,
+      "character_share": 0.031209350186668018
+    }
+  ],
+  "domain_distribution": [
+    {
+      "domain": "fiction",
+      "documents": 5,
+      "characters": 2714421,
+      "character_share": 0.35129863919421433
+    },
+    {
+      "domain": "nonfiction",
+      "documents": 5,
+      "characters": 2521526,
+      "character_share": 0.32633429099348643
+    },
+    {
+      "domain": "science-history",
+      "documents": 2,
+      "characters": 1152843,
+      "character_share": 0.14920020774396295
+    },
+    {
+      "domain": "education-technology",
+      "documents": 1,
+      "characters": 185299,
+      "character_share": 0.023981278712494752
+    },
+    {
+      "domain": "software-engineering",
+      "documents": 4,
+      "characters": 77448,
+      "character_share": 0.010023270895824013
+    },
+    {
+      "domain": "data-management",
+      "documents": 4,
+      "characters": 63350,
+      "character_share": 0.008198716703471377
+    },
+    {
+      "domain": "research-ethics",
+      "documents": 2,
+      "characters": 62725,
+      "character_share": 0.008117829601029868
+    },
+    {
+      "domain": "computing-systems",
+      "documents": 3,
+      "characters": 62067,
+      "character_share": 0.008032671659579447
+    },
+    {
+      "domain": "scientific-computing",
+      "documents": 3,
+      "characters": 61705,
+      "character_share": 0.007985821849845325
+    },
+    {
+      "domain": "biology",
+      "documents": 1,
+      "characters": 61193,
+      "character_share": 0.00791955913552524
+    },
+    {
+      "domain": "open-education",
+      "documents": 2,
+      "characters": 60297,
+      "character_share": 0.007803599385465093
+    },
+    {
+      "domain": "media-studies",
+      "documents": 1,
+      "characters": 57169,
+      "character_share": 0.007398775615165827
+    },
+    {
+      "domain": "business-analytics",
+      "documents": 1,
+      "characters": 53772,
+      "character_share": 0.0069591380359757355
+    },
+    {
+      "domain": "history",
+      "documents": 1,
+      "characters": 50838,
+      "character_share": 0.006579421622274315
+    },
+    {
+      "domain": "computer-science",
+      "documents": 2,
+      "characters": 48159,
+      "character_share": 0.006232707146369029
+    },
+    {
+      "domain": "communication",
+      "documents": 1,
+      "characters": 43606,
+      "character_share": 0.005643460782503123
+    },
+    {
+      "domain": "religion-and-education",
+      "documents": 1,
+      "characters": 35345,
+      "character_share": 0.004574327417272231
+    },
+    {
+      "domain": "data-science",
+      "documents": 1,
+      "characters": 34771,
+      "character_share": 0.004500040702389949
+    },
+    {
+      "domain": "education-research",
+      "documents": 1,
+      "characters": 33456,
+      "character_share": 0.004329854238853013
+    },
+    {
+      "domain": "digital-health",
+      "documents": 1,
+      "characters": 32130,
+      "character_share": 0.004158244162313107
+    },
+    {
+      "domain": "data-literacy",
+      "documents": 3,
+      "characters": 29808,
+      "character_share": 0.003857732399322412
+    },
+    {
+      "domain": "public-policy",
+      "documents": 1,
+      "characters": 27226,
+      "character_share": 0.003523571601716049
+    },
+    {
+      "domain": "environmental-science",
+      "documents": 1,
+      "characters": 26145,
+      "character_share": 0.0033836692693332148
+    },
+    {
+      "domain": "civic-communication",
+      "documents": 1,
+      "characters": 24471,
+      "character_share": 0.0031670212541538762
+    },
+    {
+      "domain": "biomedical-informatics",
+      "documents": 1,
+      "characters": 24163,
+      "character_share": 0.0031271600900707004
+    },
+    {
+      "domain": "education",
+      "documents": 1,
+      "characters": 23074,
+      "character_share": 0.0029862224027766148
+    },
+    {
+      "domain": "program-evaluation",
+      "documents": 1,
+      "characters": 22374,
+      "character_share": 0.0028956288480421243
+    },
+    {
+      "domain": "genomics",
+      "documents": 1,
+      "characters": 21363,
+      "character_share": 0.002764785871132739
+    },
+    {
+      "domain": "medical-physics",
+      "documents": 1,
+      "characters": 19991,
+      "character_share": 0.002587222503853138
+    },
+    {
+      "domain": "engineering",
+      "documents": 1,
+      "characters": 19495,
+      "character_share": 0.0025230304993555564
+    },
+    {
+      "domain": "research-methods",
+      "documents": 1,
+      "characters": 18937,
+      "character_share": 0.002450814494295777
+    },
+    {
+      "domain": "research-culture",
+      "documents": 1,
+      "characters": 16847,
+      "character_share": 0.0021803280237313698
+    },
+    {
+      "domain": "drug-discovery",
+      "documents": 1,
+      "characters": 14837,
+      "character_share": 0.001920195102279476
+    },
+    {
+      "domain": "practical-reference",
+      "documents": 1,
+      "characters": 13768,
+      "character_share": 0.0017818458022635189
+    },
+    {
+      "domain": "international-business",
+      "documents": 1,
+      "characters": 12200,
+      "character_share": 0.0015789162396582603
+    }
+  ],
+  "publisher_distribution": [
+    {
+      "publisher": "Project Gutenberg",
+      "documents": 12,
+      "characters": 6388790,
+      "character_share": 0.8268331379316637
+    },
+    {
+      "publisher": "PLOS Computational Biology",
+      "documents": 12,
+      "characters": 305147,
+      "character_share": 0.039491930637950756
+    },
+    {
+      "publisher": "PALNI Open Press",
+      "documents": 8,
+      "characters": 292911,
+      "character_share": 0.03790835530119186
+    },
+    {
+      "publisher": "The Carpentries and repository contributors",
+      "documents": 15,
+      "characters": 241149,
+      "character_share": 0.031209350186668018
+    },
+    {
+      "publisher": "Rod Library, University of Northern Iowa",
+      "documents": 1,
+      "characters": 185299,
+      "character_share": 0.023981278712494752
+    },
+    {
+      "publisher": "University System of Georgia",
+      "documents": 5,
+      "characters": 129156,
+      "character_share": 0.016715287364696907
+    },
+    {
+      "publisher": "Dr. Jose Mendoza",
+      "documents": 1,
+      "characters": 53772,
+      "character_share": 0.0069591380359757355
+    },
+    {
+      "publisher": "UHCC OER Group",
+      "documents": 1,
+      "characters": 37974,
+      "character_share": 0.004914570924982195
+    },
+    {
+      "publisher": "Open Education Network",
+      "documents": 2,
+      "characters": 36091,
+      "character_share": 0.004670874262746416
+    },
+    {
+      "publisher": "Emerald Publishing Limited",
+      "documents": 1,
+      "characters": 33456,
+      "character_share": 0.004329854238853013
+    },
+    {
+      "publisher": "The Rebus Community for Open Textbook Creation",
+      "documents": 1,
+      "characters": 23074,
+      "character_share": 0.0029862224027766148
+    }
+  ],
+  "source_host_distribution": [
+    {
+      "source_host": "www.gutenberg.org",
+      "documents": 12,
+      "characters": 6388790,
+      "character_share": 0.8268331379316637
+    },
+    {
+      "source_host": "journals.plos.org",
+      "documents": 12,
+      "characters": 305147,
+      "character_share": 0.039491930637950756
+    },
+    {
+      "source_host": "pressbooks.palni.org",
+      "documents": 8,
+      "characters": 292911,
+      "character_share": 0.03790835530119186
+    },
+    {
+      "source_host": "manifold.open.umn.edu",
+      "documents": 4,
+      "characters": 259364,
+      "character_share": 0.03356672390022337
+    },
+    {
+      "source_host": "github.com",
+      "documents": 15,
+      "characters": 241149,
+      "character_share": 0.031209350186668018
+    },
+    {
+      "source_host": "alg.manifoldapp.org",
+      "documents": 5,
+      "characters": 129156,
+      "character_share": 0.016715287364696907
+    },
+    {
+      "source_host": "cuny.manifoldapp.org",
+      "documents": 2,
+      "characters": 56530,
+      "character_share": 0.007316076641629628
+    },
+    {
+      "source_host": "nyu.manifoldapp.org",
+      "documents": 1,
+      "characters": 53772,
+      "character_share": 0.0069591380359757355
+    }
+  ],
+  "concentration": {
+    "publisher_character_hhi": 0.6886002849064479,
+    "domain_character_hhi": 0.25363715002895393,
+    "largest_document_share": 0.1576043129779538,
+    "largest_ten_document_share": 0.7750255312050146,
+    "top_documents": [
+      {
+        "id": "pilot-cleaned:pg2701",
+        "title": "Moby Dick; Or, The Whale",
+        "domain": "fiction",
+        "publisher": "Project Gutenberg",
+        "characters": 1217780
+      },
+      {
+        "id": "pilot-cleaned:pg1228",
+        "title": "On the Origin of Species By Means of Natural Selection Or, the Preservation of Favoured Races in the Struggle for Life",
+        "domain": "science-history",
+        "publisher": "Project Gutenberg",
+        "characters": 932114
+      },
+      {
+        "id": "pilot-cleaned:pg833",
+        "title": "The Theory of the Leisure Class",
+        "domain": "nonfiction",
+        "publisher": "Project Gutenberg",
+        "characters": 642428
+      },
+      {
+        "id": "pilot-cleaned:pg205",
+        "title": "Walden, and On The Duty Of Civil Disobedience",
+        "domain": "nonfiction",
+        "publisher": "Project Gutenberg",
+        "characters": 632651
+      },
+      {
+        "id": "pilot-cleaned:pg1661",
+        "title": "The Adventures of Sherlock Holmes",
+        "domain": "fiction",
+        "publisher": "Project Gutenberg",
+        "characters": 561758
+      },
+      {
+        "id": "pilot-cleaned:pg16643",
+        "title": "Essays by Ralph Waldo Emerson",
+        "domain": "nonfiction",
+        "publisher": "Project Gutenberg",
+        "characters": 535734
+      },
+      {
+        "id": "pilot-cleaned:pg20203",
+        "title": "Autobiography of Benjamin Franklin",
+        "domain": "nonfiction",
+        "publisher": "Project Gutenberg",
+        "characters": 428437
+      },
+      {
+        "id": "pilot-cleaned:pg74",
+        "title": "The Adventures of Tom Sawyer, Complete",
+        "domain": "fiction",
+        "publisher": "Project Gutenberg",
+        "characters": 392360
+      },
+      {
+        "id": "pilot-cleaned:pg120",
+        "title": "Treasure Island",
+        "domain": "fiction",
+        "publisher": "Project Gutenberg",
+        "characters": 362944
+      },
+      {
+        "id": "pilot-cleaned:pg1232",
+        "title": "The Prince",
+        "domain": "nonfiction",
+        "publisher": "Project Gutenberg",
+        "characters": 282276
+      }
+    ]
+  },
+  "identity_audit": {
+    "exact_content_duplicate_groups": [],
+    "cross_stage_work_family_collisions": [],
+    "cross_stage_split_group_collisions": [],
+    "cross_stage_author_collisions": []
+  },
+  "cross_stage_lexical_screen": {
+    "comparison_tokenization": "Unicode word tokens, casefolded; punctuation and whitespace ignored for comparison only",
+    "document_shingle_words": 5,
+    "document_pairs_screened": 1384,
+    "document_near_duplicate_threshold": 0.8,
+    "document_near_duplicates": [],
+    "top_document_pairs": [
+      {
+        "left": "wave1-education:carp-sheet-mistakes",
+        "right": "wave4-independent:oer-adaptation",
+        "jaccard": 0.0008083140877598152
+      },
+      {
+        "left": "wave3-textbooks:data-visualization",
+        "right": "wave4-independent:marketing-analytics",
+        "jaccard": 0.0004797806716929404
+      },
+      {
+        "left": "wave3-textbooks:state-government",
+        "right": "wave4-independent:marketing-analytics",
+        "jaccard": 0.00042122999157540015
+      },
+      {
+        "left": "wave1-education:carp-sql-joins",
+        "right": "wave4-independent:engineering-electronics",
+        "jaccard": 0.0003763643206624012
+      },
+      {
+        "left": "wave1-education:carp-sheet-mistakes",
+        "right": "wave4-independent:engineering-electronics",
+        "jaccard": 0.00035217467864060575
+      },
+      {
+        "left": "wave3-textbooks:ultrasound",
+        "right": "wave4-independent:oer-program-report",
+        "jaccard": 0.0003174099349309633
+      },
+      {
+        "left": "wave2-science:plos-teaching-data-science",
+        "right": "wave3-textbooks:data-structures",
+        "jaccard": 0.0003054678749618165
+      },
+      {
+        "left": "wave2-science:plos-indigenous-partnerships",
+        "right": "wave3-textbooks:data-structures",
+        "jaccard": 0.0003023888720895071
+      },
+      {
+        "left": "wave2-science:plos-indigenous-partnerships",
+        "right": "wave3-textbooks:state-government",
+        "jaccard": 0.00030152268958239106
+      },
+      {
+        "left": "wave1-education:carp-sheet-mistakes",
+        "right": "wave4-independent:marketing-analytics",
+        "jaccard": 0.00029907287409032003
+      },
+      {
+        "left": "wave1-education:carp-git-github",
+        "right": "wave4-independent:student-open-textbooks",
+        "jaccard": 0.0002907822041291073
+      },
+      {
+        "left": "wave1-education:carp-sql-queries",
+        "right": "wave2-science:plos-teaching-data-science",
+        "jaccard": 0.0002814126917123962
+      },
+      {
+        "left": "wave1-education:carp-git-changes",
+        "right": "wave3-textbooks:data-structures",
+        "jaccard": 0.000281135788585887
+      },
+      {
+        "left": "wave1-education:carp-shell-filedir",
+        "right": "wave3-textbooks:open-textbook-guide",
+        "jaccard": 0.00026326181387389757
+      },
+      {
+        "left": "wave1-education:carp-git-changes",
+        "right": "wave2-science:plos-research-data-management",
+        "jaccard": 0.0002620545073375262
+      },
+      {
+        "left": "wave1-education:carp-python-defensive",
+        "right": "wave2-science:plos-teaching-data-science",
+        "jaccard": 0.0002508780732563974
+      },
+      {
+        "left": "wave2-science:plos-generative-ai-code",
+        "right": "wave3-textbooks:state-government",
+        "jaccard": 0.00024752475247524753
+      },
+      {
+        "left": "wave3-textbooks:state-government",
+        "right": "wave4-independent:early-republic-history",
+        "jaccard": 0.00024242424242424242
+      },
+      {
+        "left": "wave1-education:carp-git-changes",
+        "right": "wave2-science:plos-teaching-data-science",
+        "jaccard": 0.00023353573096683791
+      },
+      {
+        "left": "wave2-science:plos-neurodiverse-mentoring",
+        "right": "wave4-independent:oer-adaptation",
+        "jaccard": 0.00022823234052265205
+      },
+      {
+        "left": "wave3-textbooks:ultrasound",
+        "right": "wave4-independent:oer-adaptation",
+        "jaccard": 0.00021220159151193635
+      },
+      {
+        "left": "wave1-education:carp-git-github",
+        "right": "wave4-independent:oer-adaptation",
+        "jaccard": 0.00021103724807428512
+      },
+      {
+        "left": "wave3-textbooks:ultrasound",
+        "right": "wave4-independent:global-demographics",
+        "jaccard": 0.0002002803925495694
+      },
+      {
+        "left": "wave1-education:carp-python-defensive",
+        "right": "wave2-science:plos-reporting-appraisal",
+        "jaccard": 0.00019619383951343929
+      },
+      {
+        "left": "wave1-education:carp-sql-joins",
+        "right": "wave4-independent:oer-program-report",
+        "jaccard": 0.00019316206297083252
+      }
+    ],
+    "paragraphs_screened_all_stages": 9778,
+    "paragraph_min_words": 30,
+    "paragraph_near_duplicate_threshold": 0.8,
+    "cross_stage_paragraph_near_duplicates": []
+  },
+  "gaps": [
+    "Historical public-domain books still dominate character volume.",
+    "English-language material dominates every accepted stage.",
+    "Modern institutional education and research-guidance prose is overrepresented.",
+    "Current counts do not yet establish balanced train, validation, or test splits."
+  ],
+  "decision": "Do not freeze splits. Acquire against measured era, genre, publisher, and language gaps, then rerun this audit before reserving a new test.",
+  "new_test_created": false,
+  "new_test_read": false,
+  "legacy_test_read": false,
+  "model_loaded": false,
+  "training_performed": false,
+  "implementation_sha256": {
+    "scripts/audit_corpus_v2.py": "4b6fee45de6e1bbb66cf9921850983b005a56e483ca09fc4aa4c4cde0a939e81",
+    "src/corpus_audit.py": "71913f0e65295ad042d9803907d53df877c5b5fb9ebfc4cd9a116ff3fa301511",
+    "src/corpus_cleaning.py": "2ac6635aedbf5124161af6dc39e4aa60ea68643c8f30df8055067563bef95b83"
+  }
+}

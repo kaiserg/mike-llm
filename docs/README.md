@@ -59,6 +59,8 @@ The small-corpus experimental stage is closed. See [chapter 31](31-stage-closure
 
 38. [Independent hosts and mixed practical prose: wave 4](38-independent-publisher-expansion-wave4.md) — [`scripts/ingest_corpus_independent.py`](../scripts/ingest_corpus_independent.py)
 
+39. [Cross-wave identity, balance, and overlap audit](39-cross-wave-corpus-audit.md) — [`scripts/audit_corpus_v2.py`](../scripts/audit_corpus_v2.py)
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:
