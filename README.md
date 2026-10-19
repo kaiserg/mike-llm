@@ -85,6 +85,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 21. [Loss by position and available context](docs/21-position-loss-diagnostics.md)
 22. [Match examples per absolute position](docs/22-position-exposure-training.md)
 23. [Sinusoidal positional encoding experiment](docs/23-sinusoidal-positions.md)
+24. [Learned versus sinusoidal position diagnostics](docs/24-sinusoidal-position-diagnostics.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -216,3 +217,11 @@ python scripts/run_sinusoidal_experiment.py
 ```
 
 At the common 1280000-target budget and four seeds, mean sinusoidal perplexity is 6.84 for context 16 and 7.00 for context 64. Learned references score 6.63 and 7.12 respectively. The replacement does not improve both contexts uniformly. See [chapter 23](docs/23-sinusoidal-positions.md) for implementation, checkpoint compatibility, all samples, and limitations.
+
+## Compare positional loss profiles
+
+```bash
+python scripts/compare_position_diagnostics.py
+```
+
+Sinusoidal context 64 scores better than the learned counterpart at many intermediate lengths, but extending its own history from 16 to 64 still worsens mean loss (1.9159 to 1.9483) on identical diagnostic targets. See [chapter 24](docs/24-sinusoidal-position-diagnostics.md) for per-seed, shifted-ID, and complete-window comparisons.

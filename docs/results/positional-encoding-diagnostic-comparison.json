@@ -1,0 +1,183 @@
+{
+  "inputs": {
+    "learned": {
+      "prefix": {
+        "path": "runs/sinusoidal-position-diagnostics/learned-report.json",
+        "sha256": "eca96ea9d53ca574d6157032ac2c062885c5b93b0a9ba26506cee359281bb7f7"
+      },
+      "windows": {
+        "path": "runs/sinusoidal-position-diagnostics/learned-windows.json",
+        "sha256": "3a6d28158baef8ad2b3e7fc3c872338aee43db362f1bb8b56741398f98d5d060"
+      }
+    },
+    "sinusoidal": {
+      "prefix": {
+        "path": "runs/sinusoidal-position-diagnostics/report.json",
+        "sha256": "66a19c9580661f77947023f1db66aee25fcc4eb456195ccdd67eda6a5b8a333f"
+      },
+      "windows": {
+        "path": "runs/sinusoidal-position-diagnostics/windows.json",
+        "sha256": "8ce0024de9c1022737abcbca044e7ad4e00e3478a18f8fb99def5f41a1c4963f"
+      }
+    }
+  },
+  "source_sha256": "02e24752b1dcf5da6c29f6bc57b289fe0021b58172417bdec6aabb0a7ed0f229",
+  "validation_sha256": "959b3dc1ce7a5ac955f918c4622e6dd40884adb51ca809ee9fe4cd41e941d720",
+  "target_count": 2117,
+  "targets_sha256": "70f0e9ad295ac3405a757b787672152defc5e2a79787c55fe872fa1cd4317047",
+  "rows": [
+    {
+      "seed": 42,
+      "encodings": {
+        "learned": {
+          "short16": 1.9342736547373702,
+          "long16": 1.94619721145567,
+          "long64": 1.9669424299462184,
+          "extra_history_delta": 0.020745218490548334,
+          "common16_model_gap": 0.01192355671829981,
+          "native_model_gap": 0.032668775208848144,
+          "shift48_delta": 0.021954029168409273
+        },
+        "sinusoidal": {
+          "short16": 1.9475607862586346,
+          "long16": 1.8874565619725128,
+          "long64": 1.8995866803265191,
+          "extra_history_delta": 0.012130118354006347,
+          "common16_model_gap": -0.06010422428612183,
+          "native_model_gap": -0.047974105932115485,
+          "shift48_delta": 0.03185323177370525
+        }
+      }
+    },
+    {
+      "seed": 7,
+      "encodings": {
+        "learned": {
+          "short16": 1.9044302670337592,
+          "long16": 1.9380989123813908,
+          "long64": 1.9698035887036562,
+          "extra_history_delta": 0.03170467632226548,
+          "common16_model_gap": 0.03366864534763159,
+          "native_model_gap": 0.06537332166989707,
+          "shift48_delta": 0.3530785798261713
+        },
+        "sinusoidal": {
+          "short16": 1.9094189509456103,
+          "long16": 1.9321181074536724,
+          "long64": 1.9289380890385095,
+          "extra_history_delta": -0.0031800184151629107,
+          "common16_model_gap": 0.02269915650806209,
+          "native_model_gap": 0.01951913809289918,
+          "shift48_delta": 0.033933027781295255
+        }
+      }
+    },
+    {
+      "seed": 123,
+      "encodings": {
+        "learned": {
+          "short16": 1.8829878155451156,
+          "long16": 1.962265423552613,
+          "long64": 1.975138339456333,
+          "extra_history_delta": 0.012872915903720195,
+          "common16_model_gap": 0.07927760800749728,
+          "native_model_gap": 0.09215052391121747,
+          "shift48_delta": 0.027229468163810555
+        },
+        "sinusoidal": {
+          "short16": 1.9236737437707692,
+          "long16": 1.9341612583317354,
+          "long64": 2.0141077247811983,
+          "extra_history_delta": 0.0799464664494629,
+          "common16_model_gap": 0.010487514560966193,
+          "native_model_gap": 0.0904339810104291,
+          "shift48_delta": 0.16836667729838894
+        }
+      }
+    },
+    {
+      "seed": 2026,
+      "encodings": {
+        "learned": {
+          "short16": 1.9032188399788215,
+          "long16": 1.9319684003674453,
+          "long64": 1.962211330627078,
+          "extra_history_delta": 0.03024293025963276,
+          "common16_model_gap": 0.028749560388623863,
+          "native_model_gap": 0.058992490648256624,
+          "shift48_delta": 0.03073688138144104
+        },
+        "sinusoidal": {
+          "short16": 1.926444474356775,
+          "long16": 1.9097526566216354,
+          "long64": 1.9504673097509075,
+          "extra_history_delta": 0.04071465312927214,
+          "common16_model_gap": -0.016691817735139614,
+          "native_model_gap": 0.024022835394132525,
+          "shift48_delta": 0.04787160451233419
+        }
+      }
+    }
+  ],
+  "summary": {
+    "learned": {
+      "extra_history_delta": {
+        "mean": 0.023891435244041692,
+        "sample_sd": 0.008807093228236033,
+        "positive": 4,
+        "negative": 0
+      },
+      "common16_model_gap": {
+        "mean": 0.038404842615513135,
+        "sample_sd": 0.02879523972811767,
+        "positive": 4,
+        "negative": 0
+      },
+      "native_model_gap": {
+        "mean": 0.06229627785955483,
+        "sample_sd": 0.024422995510919275,
+        "positive": 4,
+        "negative": 0
+      },
+      "shift48_delta": {
+        "mean": 0.10824973963495804,
+        "sample_sd": 0.1632591377924365,
+        "positive": 4,
+        "negative": 0
+      }
+    },
+    "sinusoidal": {
+      "extra_history_delta": {
+        "mean": 0.03240280487939462,
+        "sample_sd": 0.03654497552964267,
+        "positive": 3,
+        "negative": 1
+      },
+      "common16_model_gap": {
+        "mean": -0.01090234273805829,
+        "sample_sd": 0.03670118034192345,
+        "positive": 2,
+        "negative": 2
+      },
+      "native_model_gap": {
+        "mean": 0.02150046214133633,
+        "sample_sd": 0.05653563373212685,
+        "positive": 3,
+        "negative": 1
+      },
+      "shift48_delta": {
+        "mean": 0.07050613534143091,
+        "sample_sd": 0.0656268410758485,
+        "positive": 4,
+        "negative": 0
+      }
+    }
+  },
+  "learned_archived_prefix_identical": true,
+  "learned_archived_windows_identical": true,
+  "learned_archives": {
+    "docs/results/position-diagnostics.json": "81d5e1fbb002d988675d9ecf9e89d262a2ab55e70ae3a6990ee43a3511adbe36",
+    "docs/results/window-position-diagnostics.json": "b05c49a2141bdd7f51ea6325fa0ee7516e0244a55637ad73f8f28c34702a143b"
+  },
+  "test_used": false
+}

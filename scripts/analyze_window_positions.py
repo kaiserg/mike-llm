@@ -28,10 +28,11 @@ def main():
     torch.use_deterministic_algorithms(True)
     rows=[]
     for source in study['rows']:
-        row=dict(seed=source['seed'],contexts={})
+        row=dict(seed=source['seed'],contexts={},checkpoints={})
         for ctx in ('16','64'):
             item=source['models'][ctx]
             if file_sha256(item['checkpoint'])!=item['checkpoint_sha256']:raise ValueError('checkpoint differs')
+            row['checkpoints'][ctx]=dict(path=item['checkpoint'],sha256=item['checkpoint_sha256'])
             model,tokenizer=load_checkpoint(item['checkpoint'])
             ids=torch.tensor(tokenizer.encode(text),dtype=torch.long)
             row['contexts'][ctx]=score_window_grid(model,ids,starts)
@@ -41,7 +42,7 @@ def main():
         summary[ctx]=dict(mean_nll=statistics.mean(row['contexts'][ctx]['mean_nll'] for row in rows),
             positions=[dict(block_column=i,position_id=i%int(ctx),mean_nll=statistics.mean(row['contexts'][ctx]['positions'][i]['mean_nll'] for row in rows)) for i in range(64)])
     report=dict(study_sha256=file_sha256(args.study),validation_sha256=study['validation_sha256'],
-        source_sha256={name:file_sha256(name) for name in ('scripts/analyze_window_positions.py','src/window_diagnostics.py')},
+        source_sha256={name:file_sha256(name) for name in ('scripts/analyze_window_positions.py','src/window_diagnostics.py','src/gpt.py','src/sinusoidal_positions.py')},
         block_starts=starts,scored_targets=len(starts)*64,
         protocol='nonoverlapping 64-input blocks; context16 resets every 16 inputs; same targets in both configurations',
         rows=rows,summary=summary,test_used=False)

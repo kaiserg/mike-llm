@@ -27,6 +27,7 @@ These chapters follow the existing educational code from characters to a complet
 21. [Loss by position and available context](21-position-loss-diagnostics.md) — [`scripts/analyze_positions.py`](../scripts/analyze_positions.py)
 22. [Match examples per absolute position](22-position-exposure-training.md) — [`scripts/run_position_exposure_experiment.py`](../scripts/run_position_exposure_experiment.py)
 23. [Sinusoidal positional encoding experiment](23-sinusoidal-positions.md) — [`scripts/run_sinusoidal_experiment.py`](../scripts/run_sinusoidal_experiment.py)
+24. [Learned versus sinusoidal position diagnostics](24-sinusoidal-position-diagnostics.md) — [`scripts/compare_position_diagnostics.py`](../scripts/compare_position_diagnostics.py)
 
 ## Running the examples
 

@@ -1,6 +1,6 @@
 # Sinusoidal positions at matched token budgets
 
-[Documentation index](README.md) · [Previous](22-position-exposure-training.md)
+[Documentation index](README.md) · [Previous](22-position-exposure-training.md) · [Next](24-sinusoidal-position-diagnostics.md)
 
 Implementation: [`src/sinusoidal_positions.py`](../src/sinusoidal_positions.py), optional configuration in [`src/gpt.py`](../src/gpt.py) and [`src/train.py`](../src/train.py). Driver: [`scripts/run_sinusoidal_experiment.py`](../scripts/run_sinusoidal_experiment.py). Tests: [`tests/test_sinusoidal.py`](../tests/test_sinusoidal.py). Complete [metrics, histories, and new/reference generation grids](results/sinusoidal-context-experiment.json).
 
@@ -236,3 +236,5 @@ The recorded base commit is `dee1a6f`; new feature and driver sources are identi
 This straightforward sinusoidal replacement is not a uniform improvement for our small character model. It helps context 64 on average at this budget while hurting context 16, and it does not reliably create a benefit from using a longer native history. Keep the learned context-16 configuration as the stronger mean native-validation reference among the four equal-budget options tested here; do not replace the default solely because fixed positions remove trainable rows.
 
 The result is specific to the normalization, small corpus, architecture, scale of the added positional signal, fixed learning rate, and training budget. It does not prove sinusoidal positions are generally inferior, nor identify a single cause of the earlier learned-context gap. A follow-up could inspect position/history curves for the new checkpoints or vary the positional signal scale under a fixed protocol, keeping the test reserved and reporting all seeds.
+
+The subsequent learned/sinusoidal position-loss comparison is documented in [chapter 24](24-sinusoidal-position-diagnostics.md).

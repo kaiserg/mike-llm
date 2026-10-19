@@ -67,7 +67,7 @@ def main():
         shifted_protocol='same 16-token prefixes; shift every position ID by 0,16,32,48',
         code_commit=subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip(),
         source_sha256={name:file_sha256(name) for name in ('scripts/analyze_positions.py','src/position_diagnostics.py',
-            'src/gpt.py','src/transformer_block.py','src/multi_head_attention.py','src/feed_forward.py','src/generate.py')},
+            'src/gpt.py','src/sinusoidal_positions.py','src/transformer_block.py','src/multi_head_attention.py','src/feed_forward.py','src/generate.py')},
         python_version=platform.python_version(), torch_version=str(torch.__version__),
         device='cpu', threads=1, rows=rows, summary=summary, test_used=False,
         training_position_examples_per_run={'context16':80000,'context64':20000})

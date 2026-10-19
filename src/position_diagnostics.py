@@ -9,7 +9,7 @@ import torch.nn.functional as F
 def score_positions(model, token_ids, targets, lengths, batch_size=128, position_offset=0):
     """Return last-position loss by prefix length, using the same target indices.
 
-    A nonzero offset shifts all learned position IDs in a prefix without changing
+    A nonzero offset shifts all absolute position IDs in a prefix without changing
     token history. It is a diagnostic intervention, not the native GPT forward.
     """
     if token_ids.ndim != 1 or token_ids.dtype != torch.long:
