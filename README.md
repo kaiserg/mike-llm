@@ -16,6 +16,11 @@ The test has now been used for this final selection and is no longer untouched f
 
 The local checkpoint is `runs/position-exposure-40000/seed-42/primary/checkpoint.pt`. It retains capacity 64; explicitly use inference context 16 to match the selected policy. Checkpoint and corpus files remain local ignored artifacts. The final manifest does not automatically change the existing generation CLI's default window.
 
+
+## Next-stage plan
+
+The [next-stage plan](docs/32-next-stage-plan.md) prioritizes a versioned licensed corpus with fiction, nonfiction and educational prose; new group-isolated development/test splits; a Unicode-preserving byte baseline; and controlled capacity/context improvements before source-grounded QA training. English remains the proposed initial language. Source rights must be verified per edition, and the new test is **planned, not yet assembled or frozen**. Begin with a small reviewed ingestion pilot and measured compute budgets.
+
 ## Current progress
 
 The repository contains the complete small GPT pipeline: reusable model components, reproducible training on normalized novels, checkpoint generation, evaluation, and controlled context/position/attention experiments. The small-corpus experimental stage is closed; the model predicts characters and is not a conversational or instruction-following assistant.

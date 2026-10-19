@@ -1,6 +1,6 @@
 # Stage closure: validation selection and held-out test
 
-[Documentation index](README.md) · [Previous](30-exhaustive-head-mask-diagnostics.md)
+[Documentation index](README.md) · [Previous](30-exhaustive-head-mask-diagnostics.md) · [Next](32-next-stage-plan.md)
 
 Reproducible two-phase driver: [`scripts/finalize_stage.py`](../scripts/finalize_stage.py). [Frozen validation-only selection](results/final-model-selection.json). [Final held-out test result](results/final-test-evaluation.json).
 

@@ -45,6 +45,8 @@ The small-corpus experimental stage is closed. See [chapter 31](31-stage-closure
 
 31. [Stage closure and held-out test](31-stage-closure-and-test.md) — [`scripts/finalize_stage.py`](../scripts/finalize_stage.py)
 
+32. [Next-stage corpus and base-model plan](32-next-stage-plan.md) — planned work; no new corpus or test is frozen yet
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:
