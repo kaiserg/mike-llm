@@ -50,6 +50,12 @@ The [second expansion wave](docs/36-modern-science-expansion-wave2.md) adds 12 r
 PYTHONPATH=src python scripts/ingest_corpus_science.py
 ```
 
+The [third expansion wave](docs/37-open-textbook-expansion-wave3.md) adds 10 CC BY 4.0 open-textbook works spanning public policy, civic communication, humanities, science, computing and education. Separately pinned content and license records produce 500,533 rendered characters from 24 authors in 10 independent work/author groups. Media with possible third-party terms and trailing references are excluded. No close document or paragraph duplicates were detected, and every inspected work remains outside the future test.
+
+```bash
+PYTHONPATH=src python scripts/ingest_corpus_open_textbooks.py
+```
+
 ## Current progress
 
 The repository contains the complete small GPT pipeline: reusable model components, reproducible training on normalized novels, checkpoint generation, evaluation, and controlled context/position/attention experiments. The small-corpus experimental stage is closed; the model predicts characters and is not a conversational or instruction-following assistant.
@@ -134,9 +140,19 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 22. [Match examples per absolute position](docs/22-position-exposure-training.md)
 23. [Sinusoidal positional encoding experiment](docs/23-sinusoidal-positions.md)
 24. [Learned versus sinusoidal position diagnostics](docs/24-sinusoidal-position-diagnostics.md)
+25. [Distant-history ablation with fixed position IDs](docs/25-fixed-position-history-ablation.md)
+26. [History-length curve with fixed position IDs](docs/26-fixed-position-history-curve.md)
+27. [Diagnosing non-monotonic history curves](docs/27-nonmonotonic-history-diagnostics.md)
+28. [Per-head diagnosis of added-history penalties](docs/28-head-history-diagnostics.md)
+29. [Joint masks and head interactions](docs/29-joint-head-history-diagnostics.md)
+30. [Exhaustive six-head mask combinations](docs/30-exhaustive-head-mask-diagnostics.md)
+31. [Stage closure and held-out test](docs/31-stage-closure-and-test.md)
+32. [Next-stage corpus and base-model plan](docs/32-next-stage-plan.md)
+33. [Licensed-source registry and ingestion pilot](docs/33-corpus-ingestion-pilot.md)
 34. [Editorial cleaning and near-duplicate screening](docs/34-editorial-cleaning-and-near-duplicates.md)
 35. [Modern educational corpus expansion: wave 1](docs/35-modern-educational-expansion-wave1.md)
 36. [Modern science and research practice: wave 2](docs/36-modern-science-expansion-wave2.md)
+37. [Open textbooks and practical nonfiction: wave 3](docs/37-open-textbook-expansion-wave3.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 

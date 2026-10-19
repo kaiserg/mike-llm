@@ -55,6 +55,8 @@ The small-corpus experimental stage is closed. See [chapter 31](31-stage-closure
 
 36. [Modern science and research practice: wave 2](36-modern-science-expansion-wave2.md) — [`scripts/ingest_corpus_science.py`](../scripts/ingest_corpus_science.py)
 
+37. [Open textbooks and practical nonfiction: wave 3](37-open-textbook-expansion-wave3.md) — [`scripts/ingest_corpus_open_textbooks.py`](../scripts/ingest_corpus_open_textbooks.py)
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:

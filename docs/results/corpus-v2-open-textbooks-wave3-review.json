@@ -1,0 +1,40 @@
+{
+  "reviewed_on": "2026-10-19",
+  "report_sha256": "d3d94520d9af04552a8db71314e3ee0e7fe1334088000bc9377497b2a348fa0c",
+  "registry_sha256": "759874643b0310e56ffec3a530ca8cfd05188f7cc8c49cb001929cae06178c28",
+  "review_scope": "development-only open-textbook expansion; no train/validation/test assignment and no model use",
+  "method": [
+    "Verified title, named authors, publisher, revision and document URL against all 10 pinned API content records.",
+    "Verified CC BY 4.0 against a separately pinned edition or project metadata record for every work.",
+    "Reviewed rendered openings, endings, structure and recorded exclusions for all 10 documents.",
+    "Searched every rendered file for HTML markup and Unicode replacement characters, then reviewed all 45 document comparisons and all threshold matches among 766 screened cross-document paragraphs."
+  ],
+  "findings": {
+    "documents_reviewed": 10,
+    "unique_authors": 24,
+    "independent_author_work_groups": 10,
+    "provider_count": 2,
+    "publisher_count": 3,
+    "rendered_characters": 500533,
+    "renderer_blocking_artifacts": 0,
+    "document_near_duplicates": 0,
+    "paragraph_near_duplicates": 0,
+    "highest_document_jaccard": 0.00035938903863432165,
+    "editorial_notes": [
+      "Headings, prose, lists, code and tables are retained as NFC plain text.",
+      "Figures with captions, standalone images, media embeds, Pressbooks footnotes and recognized trailing reference sections are excluded.",
+      "Raw content and license JSON records remain available in the immutable local snapshot, each pinned by SHA-256."
+    ],
+    "source_limitations": [
+      "Eight of ten records come from one Pressbooks host, and institutional open textbooks dominate the wave.",
+      "Only three publisher identities and English-language works are represented.",
+      "Document length is imbalanced, and the lexical duplicate screen cannot establish absence of paraphrased or semantic overlap."
+    ]
+  },
+  "decision": "Accept as a development-only third expansion wave. Preserve 10 separate work/author groups, exclude every inspected work from the future untouched test, and continue acquisition across unrelated publishers and genres before freezing splits.",
+  "new_test_created": false,
+  "new_test_read": false,
+  "legacy_test_read": false,
+  "model_loaded": false,
+  "training_performed": false
+}

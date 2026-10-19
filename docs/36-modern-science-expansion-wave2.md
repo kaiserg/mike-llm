@@ -1,6 +1,6 @@
 # Modern science and research practice: wave 2
 
-[Documentation index](README.md) · [Previous](35-modern-educational-expansion-wave1.md)
+[Documentation index](README.md) · [Previous](35-modern-educational-expansion-wave1.md) · [Next](37-open-textbook-expansion-wave3.md)
 
 The second expansion wave adds recent scientific and professional guidance from independently authored articles in the PLOS Computational Biology *Ten Simple Rules* collection. It remains development-only: no train, validation or test split was assigned, no new or legacy test was read, and no model was loaded or trained.
 
@@ -76,4 +76,4 @@ PYTHONPATH=src python -m unittest discover -s tests -q
 
 When the ignored local snapshot already exists, the first command verifies and reuses it without network access. Registry, XML, renderer, attribution and inventory changes fail closed instead of silently changing the measured result.
 
-[Documentation index](README.md) · [Previous](35-modern-educational-expansion-wave1.md)
+[Documentation index](README.md) · [Previous](35-modern-educational-expansion-wave1.md) · [Next](37-open-textbook-expansion-wave3.md)
