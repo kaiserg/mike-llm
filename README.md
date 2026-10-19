@@ -76,6 +76,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 12. [Text generation and temperature](docs/12-text-generation.md)
 13. [Checkpoint evaluation and perplexity](docs/13-evaluation.md)
 14. [Real corpus preparation and held-out splits](docs/14-real-corpus.md)
+15. [First training experiment on real books](docs/15-real-books-training.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -134,3 +135,11 @@ python src/prepare_corpus.py --profile ascii-letters
 ```
 
 Downloads three reviewed Gutenberg editions, preserves the raw notices, verifies source hashes, and separates whole books into train, validation, and test. See [chapter 14](docs/14-real-corpus.md) for the territorial rights statements, normalization tradeoffs, and custom local manifests. Corpus files are ignored by Git.
+
+## Real-book training result
+
+```bash
+python scripts/run_real_experiment.py
+```
+
+Trains twice for 2000 updates on Frankenstein and evaluates all 135522 next-token targets in Alice validation. Measured perplexity improved from 32.57 to 8.06; both runs produced identical weights on the recorded CPU runtime. The reserved test was not evaluated. See [chapter 15](docs/15-real-books-training.md) and the saved result reports. The experiment requires a fresh output directory.

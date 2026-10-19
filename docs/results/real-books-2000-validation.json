@@ -1,0 +1,22 @@
+{
+  "checkpoint": "runs/real-books-2000/primary/checkpoint.pt",
+  "checkpoint_sha256": "5c13cbcac5fcc2b6dbd3fd8e0f26daa299e92a6c3254d803f7b5ddf2edbcba09",
+  "validation_source": "data/prepared/gutenberg/validation.txt",
+  "validation_sha256": "959b3dc1ce7a5ac955f918c4622e6dd40884adb51ca809ee9fe4cd41e941d720",
+  "validation_characters": 135523,
+  "vocabulary_size": 28,
+  "context_length": 16,
+  "batch_size": 128,
+  "protocol": "each target once; up to context_length prior characters; positions reset per window",
+  "first_character_scored": false,
+  "device": "cpu",
+  "threads": 1,
+  "torch_version": "2.14.1",
+  "scored_tokens": 135522,
+  "mean_nll": 2.086953366689575,
+  "perplexity": 8.060320876365596,
+  "perplexity_overflow": false,
+  "bits_per_character": 3.0108372726895762,
+  "next_token_accuracy": 0.3744779445403698,
+  "total_nll": 282828.0941605046
+}

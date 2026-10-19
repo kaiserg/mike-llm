@@ -1,6 +1,6 @@
 # Prepare a real corpus: provenance, normalization, and held-out documents
 
-[Documentation index](README.md) · [Previous](13-evaluation.md)
+[Documentation index](README.md) · [Previous](13-evaluation.md) · [Next](15-real-books-training.md)
 
 Implementation: [`src/prepare_corpus.py`](../src/prepare_corpus.py), [`scripts/download_corpus.py`](../scripts/download_corpus.py). Sources and reviewed byte hashes: [`configs/corpus_sources.json`](../configs/corpus_sources.json). Tests: [`tests/test_corpus.py`](../tests/test_corpus.py).
 
@@ -123,3 +123,5 @@ Tests verify identical repeated outputs, disjoint document assignments, 8/1/1 gr
 The pipeline loads documents into memory and performs exact whole-document hashing. Large corpora need streaming, near-duplicate analysis, more detailed quality filters, and a document-aware training loader. The next useful experiment is training on a larger reviewed collection while keeping its validation and test assignments fixed.
 
 Repeating the preparation command with identical inputs and settings verifies and reuses all seven existing output files without rewriting them. Changed configuration, modified files, or incomplete output causes an error; select a new `--output-dir` for a different experiment.
+
+The first complete real-book experiment and measured validation results are recorded in [chapter 15](15-real-books-training.md).
