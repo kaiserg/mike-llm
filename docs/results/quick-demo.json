@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "purpose": "clean-clone learning demonstration; synthetic data only",
+  "steps": 150,
+  "seed": 42,
+  "environment": {
+    "python": "3.13.15",
+    "pytorch": "2.14.1",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "device": "cpu"
+  },
+  "model_parameters": 15360,
+  "model_config": {
+    "context_length": 16,
+    "embedding_dim": 24,
+    "num_heads": 3,
+    "num_layers": 2,
+    "expansion_factor": 4,
+    "vocab_size": 13
+  },
+  "train_characters": 3520,
+  "validation_characters": 704,
+  "initial_validation_loss": 2.745436131954193,
+  "final_validation_loss": 0.3195739798247814,
+  "validation_loss_reduction_percent": 88.35981008243999,
+  "initial_validation_perplexity": 15.571403638171324,
+  "final_validation_perplexity": 1.376541205076407,
+  "elapsed_seconds": 0.2531888749799691,
+  "prompt": "red ",
+  "before_training": "red uulnl lnw\n\nr\n\n\n\n\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr\nr",
+  "after_training": "red blue green yellow red blue green yellow red blue green yellow re",
+  "history": [
+    {
+      "step": 0,
+      "train_loss": 2.7621889114379883,
+      "validation_loss": 2.745436131954193
+    },
+    {
+      "step": 25,
+      "train_loss": 1.3377884775400162,
+      "validation_loss": 1.3262073248624802
+    },
+    {
+      "step": 50,
+      "train_loss": 0.8607871010899544,
+      "validation_loss": 0.8616041913628578
+    },
+    {
+      "step": 75,
+      "train_loss": 0.5863581150770187,
+      "validation_loss": 0.5913854241371155
+    },
+    {
+      "step": 100,
+      "train_loss": 0.39427968487143517,
+      "validation_loss": 0.39353883266448975
+    },
+    {
+      "step": 125,
+      "train_loss": 0.31942975148558617,
+      "validation_loss": 0.3465011529624462
+    },
+    {
+      "step": 150,
+      "train_loss": 0.26308382488787174,
+      "validation_loss": 0.3195739798247814
+    }
+  ],
+  "data": {
+    "kind": "original synthetic cyclic color language embedded in scripts/quick_demo.py",
+    "train_sha256": "68fcc1adf1174d3d31b0d43d0e47b5e8834ddc8dccae491587ff362f098ba81b",
+    "validation_sha256": "8116a39fef10ffc8a553a7e10f93f2b73a017619d2e81ce41e31e41463f8a851"
+  },
+  "source_sha256": {
+    "scripts/quick_demo.py": "8db1da902e93355786785528707d0b37a5de8af5cc478f04e557b868a2c908e8",
+    "src/train.py": "8cb1e50f883571e37463e875959c513918cd6a35a7af2ab9ca16d0f76b0c3fc7",
+    "src/generate.py": "87665e2643bfcdaa1f69f8bec864f3035a869baa265804fd47b77a08bdbea528",
+    "src/gpt.py": "9e6bc2f559fb76e2ebd3ccca9aafc03d98309209434e60292dd1c8d8c94338ed"
+  },
+  "limitations": [
+    "The task is intentionally repetitive and tests pattern learning, not language understanding.",
+    "Training and validation use the same synthetic grammar with different sequence order.",
+    "Greedy output is a qualitative illustration; validation loss is the measured learning signal."
+  ]
+}

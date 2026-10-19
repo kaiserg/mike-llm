@@ -1,0 +1,396 @@
+> **Archived technical guide.** This file preserves the detailed v0.1 project guide that previously lived at the repository root. For the concise overview, see the [root README](../README.md). To build the model step by step, use [Getting Started](GETTING_STARTED.md).
+
+# Mike-LLM v0.1
+
+An educational project implementing and training a small character-level decoder-only Transformer from random weights. Recorded experiments use reproducible CPU execution on Apple Silicon.
+
+
+## Finalized small-corpus result
+
+Validation selected the learned-position checkpoint trained with capacity 64 for 40000 updates, seed 42, using **16-character inference windows with positions reset** and ordinary causal attention. This uses four times the training targets of the 10000-step comparisons. The frozen choice was recorded before evaluating the reserved test book.
+
+| Split | Character perplexity | Next-character accuracy |
+| --- | ---: | ---: |
+| Validation: Alice in Wonderland | 6.288657 | 44.85% |
+| Test: Pride and Prejudice | 5.750783 | 46.33% |
+
+The test has now been used for this final selection and is no longer untouched for future development. These single-book results do not establish conversational ability, factual knowledge, broad generalization or absence of validation-selection bias. See [stage closure and model details](31-stage-closure-and-test.md), the [frozen selection](results/final-model-selection.json), and [test report](results/final-test-evaluation.json).
+
+The local checkpoint is `runs/position-exposure-40000/seed-42/primary/checkpoint.pt`. It retains capacity 64; explicitly use inference context 16 to match the selected policy. Checkpoint and corpus files remain local ignored artifacts. The final manifest does not automatically change the existing generation CLI's default window.
+
+Try the finalized checkpoint from the repository root with the convenience command, which verifies its hash and applies the selected 16-character context automatically:
+
+```bash
+source .venv/bin/activate
+python scripts/try_final_model.py
+```
+
+Customize the prompt and sampling:
+
+```bash
+python scripts/try_final_model.py \
+  --prompt "i felt " \
+  --max-new-tokens 200 \
+  --temperature 0.7 \
+  --seed 123
+```
+
+The prompt must use the checkpoint vocabulary: lowercase English letters, spaces and newlines. Temperature `0` is deterministic and often repetitive; values around `0.5` to `0.8` usually give a more varied demonstration. This model continues text one character at a time. It is not trained to follow instructions or answer questions reliably. See the [hands-on guide](41-trying-the-final-model.md) for examples and the lower-level command.
+
+
+## Next-stage plan
+
+The [next-stage plan](32-next-stage-plan.md) prioritizes a versioned licensed corpus with fiction, nonfiction and educational prose; new group-isolated development/test splits; a Unicode-preserving byte baseline; and controlled capacity/context improvements before source-grounded QA training. English remains the proposed initial language. Source rights must be verified per edition, and the new test is **planned, not yet assembled or frozen**. Begin with a small reviewed ingestion pilot and measured compute budgets.
+
+
+## Corpus-v2 ingestion pilot
+
+The [first pilot](33-corpus-ingestion-pilot.md) ingests **14 development-only documents** with edition/revision metadata, rights evidence, attribution and raw/output hashes. Twelve books provide 6.39 million Unicode-preserving characters; two Open Logic LaTeX sections are quarantined pending conversion. Source rights statements are scoped per edition, including Gutenberg's US-only public-domain assertion. No training or new test evaluation occurred; inspected pilot families cannot become the future untouched test.
+
+```bash
+python scripts/ingest_corpus_pilot.py
+```
+
+Existing snapshots verify and reuse offline. See the [source registry](../configs/corpus_v2_sources.json) and [measured report](results/corpus-v2-ingestion-pilot.json). Near-duplicate review, source balance and final split freezing remain next-stage work.
+
+The [editorial cleaning and near-duplicate screen](34-editorial-cleaning-and-near-duplicates.md) then applies document-specific, reversible rules to the twelve extracted books. It removes 5,773 characters (about 0.0903%) of edition-selection text, digitization credits and image placeholders while retaining attribution and source hashes. No pair among 12 documents or 7,621 screened cross-document paragraphs reaches the predeclared 0.80 five-word-shingle Jaccard threshold. This is a lexical pilot check, not a general contamination guarantee. No new test or model result was used.
+
+```bash
+PYTHONPATH=src python scripts/clean_corpus_pilot.py
+```
+
+The [first modern educational expansion wave](35-modern-educational-expansion-wave1.md) adds 15 pinned CC BY 4.0 Carpentries chapters about shell tools, Git, Python, SQL and spreadsheet quality. It contributes 241,149 rendered characters with source history, license evidence, attribution and transformation hashes. Three repeated example/output paragraphs are reported; all chapters share one conservative source-family group and remain outside the future test.
+
+```bash
+PYTHONPATH=src python scripts/ingest_corpus_expansion.py
+```
+
+The [second expansion wave](36-modern-science-expansion-wave2.md) adds 12 recent CC BY 4.0 PLOS Computational Biology guidance articles about research methods, ethics, laboratories, data, software and teaching. Article-specific XML records preserve the DOI, complete authorship, date, copyright holder and license evidence. The wave contributes 305,147 characters from 92 unique authors in 12 non-overlapping author/work groups; no close document or paragraph duplicates were detected. All inspected articles remain outside the future test.
+
+```bash
+PYTHONPATH=src python scripts/ingest_corpus_science.py
+```
+
+The [third expansion wave](37-open-textbook-expansion-wave3.md) adds 10 CC BY 4.0 open-textbook works spanning public policy, civic communication, humanities, science, computing and education. Separately pinned content and license records produce 500,533 rendered characters from 24 authors in 10 independent work/author groups. Media with possible third-party terms and trailing references are excluded. No close document or paragraph duplicates were detected, and every inspected work remains outside the future test.
+
+```bash
+PYTHONPATH=src python scripts/ingest_corpus_open_textbooks.py
+```
+
+The [fourth expansion wave](38-independent-publisher-expansion-wave4.md) adds 10 CC BY 4.0 documents from four Manifold hosts and six publisher identities. Its 291,200 characters cover practical reference, history, business, engineering, computing and education. Contradictory license records were rejected, no close lexical duplicates were detected, and all inspected works remain outside the future test.
+
+```bash
+PYTHONPATH=src python scripts/ingest_corpus_independent.py
+```
+
+### Corpus-v2 status
+
+| Development material | Documents | Characters | Conservative groups |
+| --- | ---: | ---: | ---: |
+| Cleaned historical pilot | 12 | 6,388,790 | 12 |
+| Five modern expansion waves | 57 | 1,633,668 | 39 |
+| Current total | **69** | **8,022,458** | **51** |
+
+These are acquisition counts, not frozen training splits. The historical books dominate character volume, practical and institutional guidance remains overrepresented, and all inspected sources are ineligible for the future untouched test. Acquisition continues against the measured gaps before another cross-wave audit and eventual split freezing.
+
+The [cross-wave audit](39-cross-wave-corpus-audit.md) verifies all 59 local texts and finds no exact duplicates, identity collisions or close lexical duplicates across stages. It also shows why splits must wait: the 12 historical pilot books contribute **82.68%** of all characters, and the ten largest documents contribute **77.50%**. The next acquisition target is modern independent long-form prose outside institutional education and research guidance.
+
+```bash
+PYTHONPATH=src python scripts/audit_corpus_v2.py
+```
+
+The [fifth expansion wave](40-modern-longform-expansion-wave5.md) adds ten practical long-form collections from six independently governed repositories under licenses pinned to the same revisions as the source text. Its 295,639 characters cover research ethics, open culture, public communication, open-source governance, accessibility and community leadership. A repeated cross-wave audit finds no close duplicates or identity collisions, but the historical share remains **79.64%**, so corpus splits are still not frozen.
+
+```bash
+PYTHONPATH=src python scripts/ingest_corpus_longform.py
+PYTHONPATH=src python scripts/audit_corpus_v2_wave5.py
+```
+
+## Current progress
+
+The repository contains the complete small GPT pipeline: reusable model components, reproducible training on normalized novels, checkpoint generation, evaluation, and controlled context/position/attention experiments. The small-corpus experimental stage is closed; the model predicts characters and is not a conversational or instruction-following assistant.
+
+- Character-level tokenizer with reversible encoding for known characters.
+- Token embeddings with learned absolute positions by default and optional fixed sinusoidal positions.
+- Dot-product attention and causal masking.
+- Learned Query, Key, and Value projections with scaled dot-product attention.
+- Multi-head attention with independent heads, feature concatenation, and an output projection.
+- Position-wise feed-forward network with configurable expansion and GELU.
+- Pre-normalized Transformer block with two LayerNorm modules and residual connections.
+- Configurable GPT model with learned embeddings, independent blocks, final LayerNorm, and vocabulary logits.
+- Reproducible CPU training with shifted targets, AdamW, fixed validation batches, metrics, and a checkpoint.
+- Autoregressive generation with temperature sampling, greedy selection, and a sliding context window.
+- Full-stream validation evaluation with per-token loss, perplexity, bits per character, and next-token accuracy.
+
+## Setup on macOS
+
+```bash
+git clone https://github.com/kaiserg/mike-llm.git
+cd mike-llm
+uv venv --python 3.13
+source .venv/bin/activate
+uv pip install -r requirements.txt
+python scripts/check_device.py
+```
+
+The device check reports local backend availability. The current educational examples use CPU tensors by default.
+
+## Run the demonstrations
+
+From the repository root with the environment activated:
+
+```bash
+python src/tokenizer.py
+python src/embeddings.py
+python src/positional_embeddings.py
+python src/attention.py
+python src/causal_self_attention.py
+python src/multi_head_attention.py
+python src/feed_forward.py
+python src/transformer_block.py
+python src/gpt.py
+```
+
+The multi-head attention demonstration produces:
+
+```text
+Input shape: torch.Size([2, 5, 12])
+Output shape: torch.Size([2, 5, 12])
+Number of heads: 3
+Trainable parameters: 588
+```
+
+This confirms dimensions and parameter count, not trained model quality. Batch size is two independent sequences; three attention heads process each sequence with their own QKV projections.
+
+## Documentation
+
+Start with the [English learning guide and notation](README.md). Each chapter includes explanations, equations, runnable examples, Mermaid diagrams, and links to the existing implementation.
+
+1. [Tokenization](01-tokenization.md)
+2. [Token embeddings](02-token-embeddings.md)
+3. [Positional embeddings](03-positional-embeddings.md)
+4. [Dot-product attention](04-dot-product-attention.md)
+5. [Causal masking](05-causal-masking.md)
+6. [Query, Key, Value](06-query-key-value.md)
+7. [Multi-head attention](07-multi-head-attention.md)
+8. [Feed-forward network](08-feed-forward.md)
+9. [Transformer block: LayerNorm and residual connections](09-transformer-block.md)
+10. [GPT language model](10-gpt-model.md)
+11. [First reproducible training run](11-training.md)
+12. [Text generation and temperature](12-text-generation.md)
+13. [Checkpoint evaluation and perplexity](13-evaluation.md)
+14. [Real corpus preparation and held-out splits](14-real-corpus.md)
+15. [First training experiment on real books](15-real-books-training.md)
+16. [Real-book generation and temperature comparison](16-real-books-generation.md)
+17. [Context-length experiment: 16 versus 64](17-context-length-experiment.md)
+18. [Longer training for context 64](18-longer-context-training.md)
+19. [Matched-budget context comparison](19-matched-budget-contexts.md)
+20. [Context comparison across training seeds](20-multiseed-contexts.md)
+21. [Loss by position and available context](21-position-loss-diagnostics.md)
+22. [Match examples per absolute position](22-position-exposure-training.md)
+23. [Sinusoidal positional encoding experiment](23-sinusoidal-positions.md)
+24. [Learned versus sinusoidal position diagnostics](24-sinusoidal-position-diagnostics.md)
+25. [Distant-history ablation with fixed position IDs](25-fixed-position-history-ablation.md)
+26. [History-length curve with fixed position IDs](26-fixed-position-history-curve.md)
+27. [Diagnosing non-monotonic history curves](27-nonmonotonic-history-diagnostics.md)
+28. [Per-head diagnosis of added-history penalties](28-head-history-diagnostics.md)
+29. [Joint masks and head interactions](29-joint-head-history-diagnostics.md)
+30. [Exhaustive six-head mask combinations](30-exhaustive-head-mask-diagnostics.md)
+31. [Stage closure and held-out test](31-stage-closure-and-test.md)
+32. [Next-stage corpus and base-model plan](32-next-stage-plan.md)
+33. [Licensed-source registry and ingestion pilot](33-corpus-ingestion-pilot.md)
+34. [Editorial cleaning and near-duplicate screening](34-editorial-cleaning-and-near-duplicates.md)
+35. [Modern educational corpus expansion: wave 1](35-modern-educational-expansion-wave1.md)
+36. [Modern science and research practice: wave 2](36-modern-science-expansion-wave2.md)
+37. [Open textbooks and practical nonfiction: wave 3](37-open-textbook-expansion-wave3.md)
+38. [Independent hosts and mixed practical prose: wave 4](38-independent-publisher-expansion-wave4.md)
+39. [Cross-wave identity, balance, and overlap audit](39-cross-wave-corpus-audit.md)
+40. [Modern practical long-form prose: wave 5](40-modern-longform-expansion-wave5.md)
+41. [Trying the finalized small model](41-trying-the-final-model.md)
+
+![Multi-head attention: three causal heads, concatenation, and output projection](images/multi-head-attention.svg)
+
+## Repository layout
+
+```text
+src/        Educational scripts and reusable GPT model components
+scripts/    Device availability check
+configs/    Reviewed corpus sources and expected download hashes
+data/       Local corpus storage (contents ignored by Git)
+docs/       Learning chapters and diagrams
+```
+
+## Roadmap
+
+1. Continue expanding independent licensed source families before freezing new group-isolated train, validation and test splits.
+2. Decide whether to extend the current character tokenizer or train a subword tokenizer.
+3. Select context length, depth, and width for a training configuration.
+4. Scale the implemented GPT architecture; approximately 10–15M parameters is a target, not the 4008-parameter toy demonstration.
+5. Extend the initial training workflow with resumable runs and representative validation.
+6. Evaluate generation quality, perplexity, and speed on representative data.
+
+Use appropriately licensed data and keep private data out of the corpus. Training from scratch requires suitable data and compute; the initial synthetic training results are documented in [chapter 11](11-training.md).
+
+## First training run
+
+```bash
+python src/train.py
+```
+
+Uses included synthetic text and runs 100 deterministic CPU updates. Metrics and a reloadable checkpoint are saved under `runs/first-training/` (ignored by Git). See [the training chapter](11-training.md) for data preparation, measured losses, and custom corpus options.
+
+## Generate text
+
+After training:
+
+```bash
+python src/generate.py --prompt "a model" --temperature 0.8 --max-new-tokens 80 --seed 42
+```
+
+See [the generation chapter](12-text-generation.md) for temperature, context handling, and limitations.
+
+## Evaluate a checkpoint
+
+```bash
+python src/evaluate.py
+```
+
+Evaluates the default checkpoint on the built-in synthetic validation text and saves `runs/first-training/evaluation.json`. See [the evaluation chapter](13-evaluation.md) for custom validation files, the scoring protocol, and interpretation of perplexity.
+
+## Prepare a real corpus
+
+```bash
+python scripts/download_corpus.py
+python src/prepare_corpus.py --profile ascii-letters
+```
+
+Downloads three reviewed Gutenberg editions, preserves the raw notices, verifies source hashes, and separates whole books into train, validation, and test. See [chapter 14](14-real-corpus.md) for the territorial rights statements, normalization tradeoffs, and custom local manifests. Corpus files are ignored by Git.
+
+## Real-book training result
+
+```bash
+python scripts/run_real_experiment.py
+```
+
+Trains twice for 2000 updates on Frankenstein and evaluates all 135522 next-token targets in Alice validation. Measured perplexity improved from 32.57 to 8.06; both runs produced identical weights on the recorded CPU runtime. The reserved test was not evaluated. See [chapter 15](15-real-books-training.md) and the saved result reports. The experiment requires a fresh output directory.
+
+## Compare trained-model samples
+
+```bash
+python scripts/compare_temperatures.py
+```
+
+Generates a fixed grid of 20 continuations across two prompts, five temperatures, and two seeds. See [chapter 16](16-real-books-generation.md) for the unfiltered outputs, descriptive repetition measurements, and limitations.
+
+## Context-length experiment
+
+```bash
+python scripts/run_context_experiment.py
+```
+
+Context 64 was trained twice at the same 256000-target budget as context 16. Validation perplexity was worse (11.10 versus 8.06), with no clear coherence gain in generated samples. See [chapter 17](17-context-length-experiment.md) for common-context evaluation, full results, and limitations.
+
+## Longer context-64 training
+
+```bash
+python scripts/run_long_context_experiment.py
+```
+
+Extends the verified context-64 trajectory to 10000 updates, twice. Full-validation perplexity improved from 11.10 to 6.95, while generated text still contains malformed words and loops. See [chapter 18](18-longer-context-training.md) for all results and the unequal-budget comparison with context 16. A fresh output directory is required.
+
+## Matched-budget context comparison
+
+```bash
+python scripts/run_matched_budget_experiment.py
+```
+
+Both contexts now have 10000 updates and 1280000 training targets. Full-validation perplexity favors context 16 (6.71 versus 6.95); generated samples remain incoherent. See [chapter 19](19-matched-budget-contexts.md) for reproducibility, common-cap evaluation, all samples, and limitations.
+
+## Context comparison across seeds
+
+```bash
+python scripts/run_multiseed_experiment.py
+```
+
+Context 16 has lower validation loss in all four training seeds tested at the matched 1280000-target budget. Mean perplexity is 6.63 ± 0.06 versus 7.12 ± 0.17 (sample SD across seeds). See [chapter 20](20-multiseed-contexts.md) for paired results, 160 complete generated samples, and limitations. The test remains reserved.
+
+## Diagnose loss by position
+
+```bash
+python scripts/analyze_positions.py
+python scripts/analyze_window_positions.py
+```
+
+Across all four seed pairs, context 64 already has higher loss on short identical histories; late windows do not show a simple loss collapse. See [chapter 21](21-position-loss-diagnostics.md) for matched-target curves, controlled position-ID shifts, all-position window losses, and causal limitations.
+
+## Match examples per position
+
+```bash
+python scripts/run_position_exposure_experiment.py
+```
+
+Context 64 at 40000 updates matches context 16 at 10000 in examples per absolute position, using four times more training tokens. It wins 3/4 native-context pairs (mean PPL 6.56 versus 6.63), but every new checkpoint improves further when evaluation is capped at 16 characters. See [chapter 22](22-position-exposure-training.md) for the full comparison and limitations.
+
+## Sinusoidal positional encoding
+
+```bash
+python scripts/run_sinusoidal_experiment.py
+```
+
+At the common 1280000-target budget and four seeds, mean sinusoidal perplexity is 6.84 for context 16 and 7.00 for context 64. Learned references score 6.63 and 7.12 respectively. The replacement does not improve both contexts uniformly. See [chapter 23](23-sinusoidal-positions.md) for implementation, checkpoint compatibility, all samples, and limitations.
+
+## Compare positional loss profiles
+
+```bash
+python scripts/compare_position_diagnostics.py
+```
+
+Sinusoidal context 64 scores better than the learned counterpart at many intermediate lengths, but extending its own history from 16 to 64 still worsens mean loss (1.9159 to 1.9483) on identical diagnostic targets. See [chapter 24](24-sinusoidal-position-diagnostics.md) for per-seed, shifted-ID, and complete-window comparisons.
+
+## Mask distant history while keeping position IDs
+
+```bash
+python scripts/analyze_history_ablation.py
+```
+
+Across four seeds for each positional encoding, isolating the last 16 characters while retaining IDs 48–63 worsens validation log loss in all eight context-64 checkpoints. The distant history contributes under this controlled intervention, despite earlier improvements from cropping and resetting positions. The learned mean effect is dominated by one seed. See [chapter 25](25-fixed-position-history-ablation.md) for complete-validation metrics, the mask definition, and limitations.
+
+## How much fixed-position history helps
+
+```bash
+python scripts/analyze_history_curve.py
+```
+
+Keeping 8, 16, 32, 48, or all 64 characters with unchanged position IDs reveals non-monotonic curves. Both 16→32 and 32→48 improve validation NLL in all four seeds for both encodings; 48→64 improves 3/4 learned and 2/4 sinusoidal seeds. See [chapter 26](26-fixed-position-history-curve.md) for per-seed curves, marginal gains, provenance, and limitations.
+
+## Diagnose non-monotonic history curves
+
+```bash
+python scripts/analyze_nonmonotonic_history.py
+```
+
+The large 8→16 penalties in learned seed 7 and sinusoidal seed 123 affect more than half of validation targets and persist after excluding the worst 1%. Layer-specific interventions locate different dominant effects: block 1 in the learned outlier and block 2 in the sinusoidal outlier. The small sinusoidal seed-2026 reversal is tail-sensitive. See [chapter 27](27-nonmonotonic-history-diagnostics.md) for the factorial mask experiment, attention observations, added-content order control, and causal limitations.
+
+## Isolate added-history effects by attention head
+
+```bash
+python scripts/analyze_head_history.py
+```
+
+Masking the added eight characters one head at a time identifies block-1 head 1 as the largest individual contributor to the learned seed-7 penalty (+0.027647 NLL improvement when masked). In sinusoidal seed 123, all three block-2 heads contribute similarly (+0.020–0.021 each). Some heads benefit from the added history, and individual effects do not add independently. See [chapter 28](28-head-history-diagnostics.md) for all six interventions per checkpoint and joint controls.
+
+## Joint masks and interactions among selected heads
+
+```bash
+python scripts/analyze_joint_head_history.py
+```
+
+Jointly masking the previously detrimental heads reduces PPL from 9.668 to 9.285 for learned seed 7 and from 8.153 to 7.514 for sinusoidal seed 123. The learned gain is smaller than the sum of individual gains; the sinusoidal gain is larger. All selected heads still help conditionally, but masking all six heads scores slightly better in both checkpoints, illustrating why individual rankings do not define an optimal joint mask. See [chapter 29](29-joint-head-history-diagnostics.md) for leave-one-out effects, cumulative paths, and limitations.
+
+## Exhaustive six-head mask search
+
+```bash
+python scripts/analyze_all_head_masks.py
+```
+
+All 64 access-mask combinations per checkpoint select the all-eight mask as the lowest-validation-NLL condition: PPL 9.253523 for learned seed 7 and 7.491846 for sinusoidal seed 123. Conditional effects show sign changes for some heads; exact Shapley and interaction expansions quantify contributions beyond individual masks. See [chapter 30](30-exhaustive-head-mask-diagnostics.md) for all 128 measured conditions, best alternatives, efficient computation, and validation-selection limitations.

@@ -1,5 +1,14 @@
 # Mike-LLM learning notes
 
+Mike-LLM v0.1 is complete. Choose the path that matches what you want from the project:
+
+| Path | Start here | What you will see |
+|---|---|---|
+| **Explore the project** | [Project overview](../README.md) · [Results and lessons](RESULTS_AND_LESSONS.md) | A five-minute training demo, the architecture, verified results, and honest limitations. |
+| **Build your first GPT** | [Getting started tutorial](GETTING_STARTED.md) | A progressive route through the executable components and the 41 research chapters. |
+
+The original detailed root guide is preserved as the [technical README archive](TECHNICAL_README.md). The chapters below preserve the full development record, including failed hypotheses and negative results.
+
 These chapters follow the existing educational code from characters to a complete small GPT-style forward architecture. Early chapters introduce randomly initialized components; later chapters document training, evaluation, generation, and controlled experiments on small models.
 
 The small-corpus experimental stage is closed. See [chapter 31](31-stage-closure-and-test.md) for the validation-selected operating configuration, final held-out test, consolidated conclusions and limits. The test book has now been evaluated for that frozen selection.
