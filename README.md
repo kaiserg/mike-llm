@@ -83,6 +83,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 19. [Matched-budget context comparison](docs/19-matched-budget-contexts.md)
 20. [Context comparison across training seeds](docs/20-multiseed-contexts.md)
 21. [Loss by position and available context](docs/21-position-loss-diagnostics.md)
+22. [Match examples per absolute position](docs/22-position-exposure-training.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -198,3 +199,11 @@ python scripts/analyze_window_positions.py
 ```
 
 Across all four seed pairs, context 64 already has higher loss on short identical histories; late windows do not show a simple loss collapse. See [chapter 21](docs/21-position-loss-diagnostics.md) for matched-target curves, controlled position-ID shifts, all-position window losses, and causal limitations.
+
+## Match examples per position
+
+```bash
+python scripts/run_position_exposure_experiment.py
+```
+
+Context 64 at 40000 updates matches context 16 at 10000 in examples per absolute position, using four times more training tokens. It wins 3/4 native-context pairs (mean PPL 6.56 versus 6.63), but every new checkpoint improves further when evaluation is capped at 16 characters. See [chapter 22](docs/22-position-exposure-training.md) for the full comparison and limitations.

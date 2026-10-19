@@ -1,6 +1,6 @@
 # Diagnose context length: loss by position and available history
 
-[Documentation index](README.md) · [Previous](20-multiseed-contexts.md)
+[Documentation index](README.md) · [Previous](20-multiseed-contexts.md) · [Next](22-position-exposure-training.md)
 
 Drivers: [`scripts/analyze_positions.py`](../scripts/analyze_positions.py) and [`scripts/analyze_window_positions.py`](../scripts/analyze_window_positions.py). Helpers: [`src/position_diagnostics.py`](../src/position_diagnostics.py) and [`src/window_diagnostics.py`](../src/window_diagnostics.py). Full [controlled-prefix results](results/position-diagnostics.json) and [window-position results](results/window-position-diagnostics.json).
 
@@ -154,3 +154,5 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 All 25 tests pass. New tests compare prefix losses against individual manual forwards, compare shifted lookup with a direct embedding/block computation, check complete-window columns against manually reset prefixes, and verify invalid inputs and hook/mode cleanup. No gradients or permanent parameter changes are introduced.
 
 The archived reports retain every position for every seed, complete target indices/block starts, validation and checkpoint hashes, source hashes, and aggregate values. Cross-report last-column agreement, identical targets, source/checkpoint integrity, documentation examples, and links were also checked.
+
+The subsequent exposure-matched longer-training study is recorded in [chapter 22](22-position-exposure-training.md).
