@@ -1,6 +1,6 @@
 # Transformer block: LayerNorm and residual connections
 
-[Documentation index](README.md) · [Previous](08-feed-forward.md)
+[Documentation index](README.md) · [Previous](08-feed-forward.md) · [Next](10-gpt-model.md)
 
 Implementation: [`src/transformer_block.py`](../src/transformer_block.py), class `TransformerBlock`.
 
@@ -145,4 +145,4 @@ with torch.no_grad():
 
 ## What remains
 
-The block reuses the existing causal attention and FFN without modifying their implementations. It has no dropout, padding mask, KV cache, embeddings, final normalization, vocabulary logits, loss, or generation loop. A future language model can stack these blocks, then apply a final normalization and a vocabulary projection. Training and evaluation remain separate future steps.
+The block reuses the existing causal attention and FFN without modifying their implementations. It has no dropout, padding mask, KV cache, embeddings, final normalization, vocabulary logits, loss, or generation loop. The [GPT model](10-gpt-model.md) now stacks these blocks, then applies a final normalization and vocabulary projection. Training and evaluation remain future steps.
