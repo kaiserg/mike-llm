@@ -19,6 +19,7 @@ These chapters follow the existing educational code from characters to a complet
 13. [Checkpoint evaluation and perplexity](13-evaluation.md) — [`src/evaluate.py`](../src/evaluate.py)
 14. [Real corpus preparation and held-out splits](14-real-corpus.md) — [`src/prepare_corpus.py`](../src/prepare_corpus.py)
 15. [First training experiment on real books](15-real-books-training.md) — [`scripts/run_real_experiment.py`](../scripts/run_real_experiment.py)
+16. [Real-book generation and temperature comparison](16-real-books-generation.md) — [`scripts/compare_temperatures.py`](../scripts/compare_temperatures.py)
 
 ## Running the examples
 

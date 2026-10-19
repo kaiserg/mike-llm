@@ -77,6 +77,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 13. [Checkpoint evaluation and perplexity](docs/13-evaluation.md)
 14. [Real corpus preparation and held-out splits](docs/14-real-corpus.md)
 15. [First training experiment on real books](docs/15-real-books-training.md)
+16. [Real-book generation and temperature comparison](docs/16-real-books-generation.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -143,3 +144,11 @@ python scripts/run_real_experiment.py
 ```
 
 Trains twice for 2000 updates on Frankenstein and evaluates all 135522 next-token targets in Alice validation. Measured perplexity improved from 32.57 to 8.06; both runs produced identical weights on the recorded CPU runtime. The reserved test was not evaluated. See [chapter 15](docs/15-real-books-training.md) and the saved result reports. The experiment requires a fresh output directory.
+
+## Compare trained-model samples
+
+```bash
+python scripts/compare_temperatures.py
+```
+
+Generates a fixed grid of 20 continuations across two prompts, five temperatures, and two seeds. See [chapter 16](docs/16-real-books-generation.md) for the unfiltered outputs, descriptive repetition measurements, and limitations.

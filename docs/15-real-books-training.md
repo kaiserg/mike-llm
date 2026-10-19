@@ -1,6 +1,6 @@
 # First training experiment on real books
 
-[Documentation index](README.md) · [Previous](14-real-corpus.md)
+[Documentation index](README.md) · [Previous](14-real-corpus.md) · [Next](16-real-books-generation.md)
 
 Experiment driver: [`scripts/run_real_experiment.py`](../scripts/run_real_experiment.py). Recorded [experiment metadata and history](results/real-books-2000.json) and [standalone validation report](results/real-books-2000-validation.json).
 
