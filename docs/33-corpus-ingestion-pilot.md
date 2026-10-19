@@ -1,6 +1,6 @@
 # Licensed-source registry and development ingestion pilot
 
-[Documentation index](README.md) · [Previous](32-next-stage-plan.md)
+[Documentation index](README.md) · [Previous](32-next-stage-plan.md) · [Next](34-editorial-cleaning-and-near-duplicates.md)
 
 Registry: [`configs/corpus_v2_sources.json`](../configs/corpus_v2_sources.json). Driver: [`scripts/ingest_corpus_pilot.py`](../scripts/ingest_corpus_pilot.py). Implementation: [`src/corpus_pilot.py`](../src/corpus_pilot.py). [Measured report](results/corpus-v2-ingestion-pilot.json) and [inspection notes](results/corpus-v2-pilot-review.json). Tests: [`tests/test_corpus_pilot.py`](../tests/test_corpus_pilot.py).
 

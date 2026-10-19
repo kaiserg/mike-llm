@@ -130,3 +130,5 @@ No instruction examples, fine-tuning or assistant claims are introduced in this 
 ## Pilot implementation update
 
 The [first ingestion pilot](33-corpus-ingestion-pilot.md) now registers and ingests fourteen development-only documents. Twelve books have extracted Unicode text; two LaTeX sections are quarantined. The new test is still not assembled, and inspected pilot families are ineligible for it. The remaining stages above are planned work.
+
+The [editorial cleaning and near-duplicate screen](34-editorial-cleaning-and-near-duplicates.md) now provides a second immutable development snapshot. Explicit rules changed four books and removed 5,773 characters while preserving attribution; eight books remain byte-for-byte identical. No document pair or screened cross-document paragraph reached the frozen 0.80 Jaccard threshold. This completes the pilot cleaning screen, but broader source acquisition, source-family balance, split grouping and a future frozen test are still pending.

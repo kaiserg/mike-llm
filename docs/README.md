@@ -49,6 +49,8 @@ The small-corpus experimental stage is closed. See [chapter 31](31-stage-closure
 
 33. [Licensed-source registry and ingestion pilot](33-corpus-ingestion-pilot.md) — [`scripts/ingest_corpus_pilot.py`](../scripts/ingest_corpus_pilot.py)
 
+34. [Editorial cleaning and near-duplicate screening](34-editorial-cleaning-and-near-duplicates.md) — [`scripts/clean_corpus_pilot.py`](../scripts/clean_corpus_pilot.py)
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:

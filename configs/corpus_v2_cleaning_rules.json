@@ -1,0 +1,63 @@
+{
+  "rules_id": "corpus-v2-editorial-cleaning-v1",
+  "purpose": "Development-only editorial cleanup and near-duplicate screening for the reviewed ingestion pilot.",
+  "input_corpus_id": "corpus-v2-ingestion-pilot-2026-10-19",
+  "input_content_fingerprint": "0f7e9b52aed940d4735c21ce63ceb81fafe94783fa975a459536ec75600b031a",
+  "scope": "pilot-development-only; no train/validation/test assignment",
+  "default_policy": {
+    "preserve": [
+      "title pages",
+      "tables of contents",
+      "prefaces and introductions",
+      "footnotes and endnotes",
+      "case, punctuation, paragraph boundaries and Unicode"
+    ],
+    "remove": []
+  },
+  "document_actions": {
+    "pg1228": [
+      {
+        "action": "drop_leading_paragraphs",
+        "count": 3,
+        "reason": "Project Gutenberg edition chooser, not part of the selected 1859 book text."
+      }
+    ],
+    "pg20203": [
+      {
+        "action": "drop_leading_production_credit",
+        "reason": "Digitization credit is retained in source provenance and attribution, not repeated as training prose."
+      },
+      {
+        "action": "drop_bracketed_illustration_blocks",
+        "reason": "The text snapshot contains captions/placeholders but no corresponding images."
+      }
+    ],
+    "pg833": [
+      {
+        "action": "drop_leading_production_credit",
+        "reason": "Digitization credit is retained in source provenance and attribution, not repeated as training prose."
+      }
+    ],
+    "pg14474": [
+      {
+        "action": "drop_bracketed_illustration_blocks",
+        "reason": "The text snapshot contains captions/placeholders but no corresponding images."
+      }
+    ]
+  },
+  "deduplication": {
+    "tokenization": "Unicode word tokens, casefolded; punctuation and whitespace ignored for comparison only",
+    "document_shingle_words": 5,
+    "document_near_duplicate_jaccard": 0.8,
+    "paragraph_min_words": 30,
+    "paragraph_shingle_words": 5,
+    "paragraph_near_duplicate_jaccard": 0.8,
+    "report_top_document_pairs": 10
+  },
+  "test_policy": {
+    "new_test_created": false,
+    "new_test_read": false,
+    "legacy_test_read": false,
+    "pilot_families_eligible_for_future_test": false
+  }
+}

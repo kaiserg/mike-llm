@@ -1,0 +1,599 @@
+{
+  "corpus_id": "corpus-v2-ingestion-pilot-2026-10-19-cleaned-v1",
+  "created_at_utc": "2026-10-19T20:09:27.210455+00:00",
+  "scope": "pilot-development-only; no train/validation/test assignment",
+  "input_manifest_sha256": "877a525465d5a36241f564ea14a26013d9524198b7a5b1133969c61e723982f5",
+  "input_content_fingerprint": "0f7e9b52aed940d4735c21ce63ceb81fafe94783fa975a459536ec75600b031a",
+  "rules_id": "corpus-v2-editorial-cleaning-v1",
+  "rules_sha256": "36f4ef8ac3bd4d8f80df4102c6adec7056f8114e4fdc45994b1ea6867729f494",
+  "document_count": 12,
+  "input_characters": 6394563,
+  "output_characters": 6388790,
+  "characters_removed": 5773,
+  "documents_changed": 4,
+  "documents_unchanged": 8,
+  "documents": [
+    {
+      "id": "pg35",
+      "title": "The Time Machine",
+      "authors": [
+        "Wells, H. G. (Herbert George), 1866-1946"
+      ],
+      "contributors": {},
+      "domain": "fiction",
+      "topic": "science-fiction",
+      "source_family": "project-gutenberg",
+      "work_family": "gutenberg-work-35",
+      "author_family": "author:Wells, H. G. (Herbert George), 1866-1946",
+      "split_group": "author:Wells, H. G. (Herbert George), 1866-1946",
+      "source_url": "https://www.gutenberg.org/ebooks/35",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/35",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "The Time Machine \u2014 Wells, H. G. (Herbert George), 1866-1946; Project Gutenberg ebook 35; source page and complete notices retained.",
+      "input_text_path": "text/pg35.txt",
+      "input_sha256": "68c4c5969b1ecb9f119f281ed77840b1e7ec99f19bf4afb5b6f77d8263f57a77",
+      "input_characters": 179579,
+      "output_text_path": "text/pg35.txt",
+      "output_sha256": "68c4c5969b1ecb9f119f281ed77840b1e7ec99f19bf4afb5b6f77d8263f57a77",
+      "output_characters": 179579,
+      "characters_removed": 0,
+      "actions": [],
+      "partition": "pilot-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "pg1661",
+      "title": "The Adventures of Sherlock Holmes",
+      "authors": [
+        "Doyle, Arthur Conan, 1859-1930"
+      ],
+      "contributors": {},
+      "domain": "fiction",
+      "topic": "detective-fiction",
+      "source_family": "project-gutenberg",
+      "work_family": "gutenberg-work-1661",
+      "author_family": "author:Doyle, Arthur Conan, 1859-1930",
+      "split_group": "author:Doyle, Arthur Conan, 1859-1930",
+      "source_url": "https://www.gutenberg.org/ebooks/1661",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/1661",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "The Adventures of Sherlock Holmes \u2014 Doyle, Arthur Conan, 1859-1930; Project Gutenberg ebook 1661; source page and complete notices retained.",
+      "input_text_path": "text/pg1661.txt",
+      "input_sha256": "df00d8a86ca910a057509974fefcbbff24f16afbf8aabb360621ba2ac5e656dd",
+      "input_characters": 561758,
+      "output_text_path": "text/pg1661.txt",
+      "output_sha256": "df00d8a86ca910a057509974fefcbbff24f16afbf8aabb360621ba2ac5e656dd",
+      "output_characters": 561758,
+      "characters_removed": 0,
+      "actions": [],
+      "partition": "pilot-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "pg74",
+      "title": "The Adventures of Tom Sawyer, Complete",
+      "authors": [
+        "Twain, Mark, 1835-1910"
+      ],
+      "contributors": {},
+      "domain": "fiction",
+      "topic": "coming-of-age",
+      "source_family": "project-gutenberg",
+      "work_family": "gutenberg-work-74",
+      "author_family": "author:Twain, Mark, 1835-1910",
+      "split_group": "author:Twain, Mark, 1835-1910",
+      "source_url": "https://www.gutenberg.org/ebooks/74",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/74",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "The Adventures of Tom Sawyer, Complete \u2014 Twain, Mark, 1835-1910; Project Gutenberg ebook 74; source page and complete notices retained.",
+      "input_text_path": "text/pg74.txt",
+      "input_sha256": "b70e93b559b7d00b395034bd7296f76bebd01a8e8e9806721779497bbc595d08",
+      "input_characters": 392360,
+      "output_text_path": "text/pg74.txt",
+      "output_sha256": "b70e93b559b7d00b395034bd7296f76bebd01a8e8e9806721779497bbc595d08",
+      "output_characters": 392360,
+      "characters_removed": 0,
+      "actions": [],
+      "partition": "pilot-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "pg120",
+      "title": "Treasure Island",
+      "authors": [
+        "Stevenson, Robert Louis, 1850-1894"
+      ],
+      "contributors": {
+        "Illustrator": [
+          "Rhead, Louis, 1857-1926"
+        ]
+      },
+      "domain": "fiction",
+      "topic": "adventure",
+      "source_family": "project-gutenberg",
+      "work_family": "gutenberg-work-120",
+      "author_family": "author:Stevenson, Robert Louis, 1850-1894",
+      "split_group": "author:Stevenson, Robert Louis, 1850-1894",
+      "source_url": "https://www.gutenberg.org/ebooks/120",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/120",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "Treasure Island \u2014 Stevenson, Robert Louis, 1850-1894; Project Gutenberg ebook 120; source page and complete notices retained.",
+      "input_text_path": "text/pg120.txt",
+      "input_sha256": "ce66fd934be442c00994d34b50d64cbeacdc78f11c3ede73ce1c3276b7f8f82d",
+      "input_characters": 362944,
+      "output_text_path": "text/pg120.txt",
+      "output_sha256": "ce66fd934be442c00994d34b50d64cbeacdc78f11c3ede73ce1c3276b7f8f82d",
+      "output_characters": 362944,
+      "characters_removed": 0,
+      "actions": [],
+      "partition": "pilot-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "pg2701",
+      "title": "Moby Dick; Or, The Whale",
+      "authors": [
+        "Melville, Herman, 1819-1891"
+      ],
+      "contributors": {},
+      "domain": "fiction",
+      "topic": "literary-fiction",
+      "source_family": "project-gutenberg",
+      "work_family": "gutenberg-work-2701",
+      "author_family": "author:Melville, Herman, 1819-1891",
+      "split_group": "author:Melville, Herman, 1819-1891",
+      "source_url": "https://www.gutenberg.org/ebooks/2701",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/2701",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "Moby Dick; Or, The Whale \u2014 Melville, Herman, 1819-1891; Project Gutenberg ebook 2701; source page and complete notices retained.",
+      "input_text_path": "text/pg2701.txt",
+      "input_sha256": "7236f53fecdfcd0d1054b9b1241299acd23c5462c9376c22ebae06ea3975c4fd",
+      "input_characters": 1217780,
+      "output_text_path": "text/pg2701.txt",
+      "output_sha256": "7236f53fecdfcd0d1054b9b1241299acd23c5462c9376c22ebae06ea3975c4fd",
+      "output_characters": 1217780,
+      "characters_removed": 0,
+      "actions": [],
+      "partition": "pilot-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "pg205",
+      "title": "Walden, and On The Duty Of Civil Disobedience",
+      "authors": [
+        "Thoreau, Henry David, 1817-1862"
+      ],
+      "contributors": {},
+      "domain": "nonfiction",
+      "topic": "nature-essays",
+      "source_family": "project-gutenberg",
+      "work_family": "gutenberg-work-205",
+      "author_family": "author:Thoreau, Henry David, 1817-1862",
+      "split_group": "author:Thoreau, Henry David, 1817-1862",
+      "source_url": "https://www.gutenberg.org/ebooks/205",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/205",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "Walden, and On The Duty Of Civil Disobedience \u2014 Thoreau, Henry David, 1817-1862; Project Gutenberg ebook 205; source page and complete notices retained.",
+      "input_text_path": "text/pg205.txt",
+      "input_sha256": "5cd817df9b9cda55fb3892ededa66b2e1f2a9f86004acd16af6b5c0e26fbf936",
+      "input_characters": 632651,
+      "output_text_path": "text/pg205.txt",
+      "output_sha256": "5cd817df9b9cda55fb3892ededa66b2e1f2a9f86004acd16af6b5c0e26fbf936",
+      "output_characters": 632651,
+      "characters_removed": 0,
+      "actions": [],
+      "partition": "pilot-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "pg20203",
+      "title": "Autobiography of Benjamin Franklin",
+      "authors": [
+        "Franklin, Benjamin, 1706-1790"
+      ],
+      "contributors": {
+        "Editor": [
+          "Pine, Frank Woodworth, 1869-"
+        ],
+        "Illustrator": [
+          "Smith, E. Boyd (Elmer Boyd), 1860-1943"
+        ]
+      },
+      "domain": "nonfiction",
+      "topic": "autobiography",
+      "source_family": "project-gutenberg",
+      "work_family": "gutenberg-work-20203",
+      "author_family": "author:Franklin, Benjamin, 1706-1790",
+      "split_group": "author:Franklin, Benjamin, 1706-1790",
+      "source_url": "https://www.gutenberg.org/ebooks/20203",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/20203",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "Autobiography of Benjamin Franklin \u2014 Franklin, Benjamin, 1706-1790; Project Gutenberg ebook 20203; source page and complete notices retained.",
+      "input_text_path": "text/pg20203.txt",
+      "input_sha256": "bf1aee72479ecf59c29716161af268f19e143ae7ba02c3961478c30f14eabb2c",
+      "input_characters": 432867,
+      "output_text_path": "text/pg20203.txt",
+      "output_sha256": "bb659c8846b44b31cd526a758974d80961bb6a25384204ebfb2b64dcbf88c4b3",
+      "output_characters": 428437,
+      "characters_removed": 4430,
+      "actions": [
+        {
+          "action": "drop_leading_production_credit",
+          "reason": "Digitization credit is retained in source provenance and attribution, not repeated as training prose.",
+          "matches_removed": 1,
+          "characters_removed": 108
+        },
+        {
+          "action": "drop_bracketed_illustration_blocks",
+          "reason": "The text snapshot contains captions/placeholders but no corresponding images.",
+          "matches_removed": 39,
+          "characters_removed": 4322
+        }
+      ],
+      "partition": "pilot-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "pg1232",
+      "title": "The Prince",
+      "authors": [
+        "Machiavelli, Niccol\u00f2, 1469-1527"
+      ],
+      "contributors": {
+        "Translator": [
+          "Marriott, W. K. (William Kenaz), -1927"
+        ]
+      },
+      "domain": "nonfiction",
+      "topic": "political-history",
+      "source_family": "project-gutenberg",
+      "work_family": "gutenberg-work-1232",
+      "author_family": "author:Machiavelli, Niccol\u00f2, 1469-1527",
+      "split_group": "author:Machiavelli, Niccol\u00f2, 1469-1527",
+      "source_url": "https://www.gutenberg.org/ebooks/1232",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/1232",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "The Prince \u2014 Machiavelli, Niccol\u00f2, 1469-1527; Project Gutenberg ebook 1232; source page and complete notices retained.",
+      "input_text_path": "text/pg1232.txt",
+      "input_sha256": "2d91dcf6d97f4704d74ecbf6036476241283bcd5c48912c8f3298f5b335ddbe4",
+      "input_characters": 282276,
+      "output_text_path": "text/pg1232.txt",
+      "output_sha256": "2d91dcf6d97f4704d74ecbf6036476241283bcd5c48912c8f3298f5b335ddbe4",
+      "output_characters": 282276,
+      "characters_removed": 0,
+      "actions": [],
+      "partition": "pilot-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "pg16643",
+      "title": "Essays by Ralph Waldo Emerson",
+      "authors": [
+        "Emerson, Ralph Waldo, 1803-1882"
+      ],
+      "contributors": {
+        "Editor": [
+          "Turpin, Edna Henry Lee, 1867-1952"
+        ]
+      },
+      "domain": "nonfiction",
+      "topic": "philosophical-essays",
+      "source_family": "project-gutenberg",
+      "work_family": "gutenberg-work-16643",
+      "author_family": "author:Emerson, Ralph Waldo, 1803-1882",
+      "split_group": "author:Emerson, Ralph Waldo, 1803-1882",
+      "source_url": "https://www.gutenberg.org/ebooks/16643",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/16643",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "Essays by Ralph Waldo Emerson \u2014 Emerson, Ralph Waldo, 1803-1882; Project Gutenberg ebook 16643; source page and complete notices retained.",
+      "input_text_path": "text/pg16643.txt",
+      "input_sha256": "4c8ee11d3a4ff1b923c5d971ffa00441a1c597490c856f86cd9eff87769dc158",
+      "input_characters": 535734,
+      "output_text_path": "text/pg16643.txt",
+      "output_sha256": "4c8ee11d3a4ff1b923c5d971ffa00441a1c597490c856f86cd9eff87769dc158",
+      "output_characters": 535734,
+      "characters_removed": 0,
+      "actions": [],
+      "partition": "pilot-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "pg833",
+      "title": "The Theory of the Leisure Class",
+      "authors": [
+        "Veblen, Thorstein, 1857-1929"
+      ],
+      "contributors": {},
+      "domain": "nonfiction",
+      "topic": "economic-social-theory",
+      "source_family": "project-gutenberg",
+      "work_family": "gutenberg-work-833",
+      "author_family": "author:Veblen, Thorstein, 1857-1929",
+      "split_group": "author:Veblen, Thorstein, 1857-1929",
+      "source_url": "https://www.gutenberg.org/ebooks/833",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/833",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "The Theory of the Leisure Class \u2014 Veblen, Thorstein, 1857-1929; Project Gutenberg ebook 833; source page and complete notices retained.",
+      "input_text_path": "text/pg833.txt",
+      "input_sha256": "3b638afe6ac378bdc8e6e9ca01d724095dff8f37a43f64a2fcf541cee1d27ab4",
+      "input_characters": 642451,
+      "output_text_path": "text/pg833.txt",
+      "output_sha256": "dd4f9458ed8ad5bd305d214841f2f6a249805f61cfe933b20ceccf70f7291002",
+      "output_characters": 642428,
+      "characters_removed": 23,
+      "actions": [
+        {
+          "action": "drop_leading_production_credit",
+          "reason": "Digitization credit is retained in source provenance and attribution, not repeated as training prose.",
+          "matches_removed": 1,
+          "characters_removed": 23
+        }
+      ],
+      "partition": "pilot-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "pg14474",
+      "title": "The Chemical History of a Candle",
+      "authors": [
+        "Faraday, Michael, 1791-1867"
+      ],
+      "contributors": {
+        "Editor": [
+          "Crookes, William, 1832-1919"
+        ]
+      },
+      "domain": "science-history",
+      "topic": "chemistry",
+      "source_family": "project-gutenberg",
+      "work_family": "gutenberg-work-14474",
+      "author_family": "author:Faraday, Michael, 1791-1867",
+      "split_group": "author:Faraday, Michael, 1791-1867",
+      "source_url": "https://www.gutenberg.org/ebooks/14474",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/14474",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "The Chemical History of a Candle \u2014 Faraday, Michael, 1791-1867; Project Gutenberg ebook 14474; source page and complete notices retained.",
+      "input_text_path": "text/pg14474.txt",
+      "input_sha256": "aeef8f7053758fa79298f9b6c1ad81bd8291c10d05cb1a19b046df5e076c2874",
+      "input_characters": 221701,
+      "output_text_path": "text/pg14474.txt",
+      "output_sha256": "d6f55f2164a8e30285d78e47b9a83b2665b468d6bf60c6f98f51e307bb3b747e",
+      "output_characters": 220729,
+      "characters_removed": 972,
+      "actions": [
+        {
+          "action": "drop_bracketed_illustration_blocks",
+          "reason": "The text snapshot contains captions/placeholders but no corresponding images.",
+          "matches_removed": 38,
+          "characters_removed": 972
+        }
+      ],
+      "partition": "pilot-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "pg1228",
+      "title": "On the Origin of Species By Means of Natural Selection Or, the Preservation of Favoured Races in the Struggle for Life",
+      "authors": [
+        "Darwin, Charles, 1809-1882"
+      ],
+      "contributors": {},
+      "domain": "science-history",
+      "topic": "natural-history",
+      "source_family": "project-gutenberg",
+      "work_family": "gutenberg-work-1228",
+      "author_family": "author:Darwin, Charles, 1809-1882",
+      "split_group": "author:Darwin, Charles, 1809-1882",
+      "source_url": "https://www.gutenberg.org/ebooks/1228",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/1228",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "On the Origin of Species By Means of Natural Selection Or, the Preservation of Favoured Races in the Struggle for Life \u2014 Darwin, Charles, 1809-1882; Project Gutenberg ebook 1228; source page and complete notices retained.",
+      "input_text_path": "text/pg1228.txt",
+      "input_sha256": "3b530b0a4459b82a6b91709f494276398ecba1f20173f4e7039ad47d54bc9d06",
+      "input_characters": 932462,
+      "output_text_path": "text/pg1228.txt",
+      "output_sha256": "c212ea38e4ad7c3a5e26601b86345b8011d6e252f25d7fcd3bb8830b3d594936",
+      "output_characters": 932114,
+      "characters_removed": 348,
+      "actions": [
+        {
+          "action": "drop_leading_paragraphs",
+          "reason": "Project Gutenberg edition chooser, not part of the selected 1859 book text.",
+          "matches_removed": 3,
+          "characters_removed": 348
+        }
+      ],
+      "partition": "pilot-development-only",
+      "eligible_for_future_test": false
+    }
+  ],
+  "deduplication": {
+    "comparison_tokenization": "Unicode word tokens, casefolded; punctuation and whitespace ignored for comparison only",
+    "document_shingle_words": 5,
+    "document_pair_count": 66,
+    "document_near_duplicate_threshold": 0.8,
+    "document_near_duplicates": [],
+    "top_document_pairs": [
+      {
+        "left": "pg1661",
+        "right": "pg205",
+        "jaccard": 0.0007510802434223922
+      },
+      {
+        "left": "pg120",
+        "right": "pg1661",
+        "jaccard": 0.0007165973185390661
+      },
+      {
+        "left": "pg1228",
+        "right": "pg833",
+        "jaccard": 0.0006482052571410613
+      },
+      {
+        "left": "pg1661",
+        "right": "pg2701",
+        "jaccard": 0.0005464242000349711
+      },
+      {
+        "left": "pg1661",
+        "right": "pg35",
+        "jaccard": 0.0005178399509875427
+      },
+      {
+        "left": "pg14474",
+        "right": "pg1661",
+        "jaccard": 0.0005068423720223011
+      },
+      {
+        "left": "pg205",
+        "right": "pg2701",
+        "jaccard": 0.00046340318484370673
+      },
+      {
+        "left": "pg1661",
+        "right": "pg74",
+        "jaccard": 0.00045910559428668596
+      },
+      {
+        "left": "pg120",
+        "right": "pg2701",
+        "jaccard": 0.0004361022308035887
+      },
+      {
+        "left": "pg120",
+        "right": "pg35",
+        "jaccard": 0.00043496742687110137
+      }
+    ],
+    "paragraphs_screened": 7621,
+    "paragraph_min_words": 30,
+    "paragraph_candidate_method": "exhaustive shared-shingle inverted index with a necessary length-ratio bound",
+    "paragraph_near_duplicate_threshold": 0.8,
+    "cross_document_paragraph_near_duplicates": [],
+    "limitations": [
+      "This is a deterministic lexical screen, not proof that semantic duplicates or contamination are absent.",
+      "Every cross-document paragraph pair that shares a shingle and can satisfy the threshold by length is checked with exact hashed-shingle Jaccard.",
+      "Only cross-document paragraphs with the configured minimum word count are screened."
+    ]
+  },
+  "attribution_path": "ATTRIBUTION.json",
+  "attribution_sha256": "df9df8460c834cf93530292b7f1ec79177b1e86f2659a6b318570f20f59bdec9",
+  "quarantined_sources_carried_forward": [
+    {
+      "id": "olp-set-basics",
+      "status": "quarantined-source-format",
+      "raw_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865"
+    },
+    {
+      "id": "olp-recursion-intro",
+      "status": "quarantined-source-format",
+      "raw_sha256": "5c4a5e794bb772c06d8e3fe7463f696763ab8f2c9f5a377afe229d7e7b05ea83"
+    }
+  ],
+  "split_status": "No train/validation/test assignments. Pilot families remain ineligible for the future untouched test.",
+  "new_test_created": false,
+  "new_test_read": false,
+  "legacy_test_read": false,
+  "model_loaded": false,
+  "training_performed": false,
+  "implementation_sha256": {
+    "scripts/clean_corpus_pilot.py": "1ddc2e16715bf7b75e6c435beb374bea275157451df4f51573621b8ccb93364f",
+    "src/corpus_cleaning.py": "2ac6635aedbf5124161af6dc39e4aa60ea68643c8f30df8055067563bef95b83"
+  }
+}

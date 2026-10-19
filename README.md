@@ -32,6 +32,12 @@ python scripts/ingest_corpus_pilot.py
 
 Existing snapshots verify and reuse offline. See the [source registry](configs/corpus_v2_sources.json) and [measured report](docs/results/corpus-v2-ingestion-pilot.json). Near-duplicate review, source balance and final split freezing remain next-stage work.
 
+The [editorial cleaning and near-duplicate screen](docs/34-editorial-cleaning-and-near-duplicates.md) then applies document-specific, reversible rules to the twelve extracted books. It removes 5,773 characters (about 0.0903%) of edition-selection text, digitization credits and image placeholders while retaining attribution and source hashes. No pair among 12 documents or 7,621 screened cross-document paragraphs reaches the predeclared 0.80 five-word-shingle Jaccard threshold. This is a lexical pilot check, not a general contamination guarantee. No new test or model result was used.
+
+```bash
+PYTHONPATH=src python scripts/clean_corpus_pilot.py
+```
+
 ## Current progress
 
 The repository contains the complete small GPT pipeline: reusable model components, reproducible training on normalized novels, checkpoint generation, evaluation, and controlled context/position/attention experiments. The small-corpus experimental stage is closed; the model predicts characters and is not a conversational or instruction-following assistant.
@@ -116,6 +122,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 22. [Match examples per absolute position](docs/22-position-exposure-training.md)
 23. [Sinusoidal positional encoding experiment](docs/23-sinusoidal-positions.md)
 24. [Learned versus sinusoidal position diagnostics](docs/24-sinusoidal-position-diagnostics.md)
+34. [Editorial cleaning and near-duplicate screening](docs/34-editorial-cleaning-and-near-duplicates.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
