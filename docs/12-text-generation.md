@@ -1,6 +1,6 @@
 # Autoregressive text generation and temperature
 
-[Documentation index](README.md) · [Previous](11-training.md)
+[Documentation index](README.md) · [Previous](11-training.md) · [Next](13-evaluation.md)
 
 Implementation: [`src/generate.py`](../src/generate.py). Tests: [`tests/test_generation.py`](../tests/test_generation.py).
 

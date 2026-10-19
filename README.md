@@ -16,6 +16,7 @@ The repository currently contains standalone learning demonstrations and reusabl
 - Configurable GPT model with learned embeddings, independent blocks, final LayerNorm, and vocabulary logits.
 - Reproducible CPU training with shifted targets, AdamW, fixed validation batches, metrics, and a checkpoint.
 - Autoregressive generation with temperature sampling, greedy selection, and a sliding context window.
+- Full-stream validation evaluation with per-token loss, perplexity, bits per character, and next-token accuracy.
 
 ## Setup on macOS
 
@@ -73,6 +74,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 10. [GPT language model](docs/10-gpt-model.md)
 11. [First reproducible training run](docs/11-training.md)
 12. [Text generation and temperature](docs/12-text-generation.md)
+13. [Checkpoint evaluation and perplexity](docs/13-evaluation.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -114,3 +116,11 @@ python src/generate.py --prompt "a model" --temperature 0.8 --max-new-tokens 80 
 ```
 
 See [the generation chapter](docs/12-text-generation.md) for temperature, context handling, and limitations.
+
+## Evaluate a checkpoint
+
+```bash
+python src/evaluate.py
+```
+
+Evaluates the default checkpoint on the built-in synthetic validation text and saves `runs/first-training/evaluation.json`. See [the evaluation chapter](docs/13-evaluation.md) for custom validation files, the scoring protocol, and interpretation of perplexity.

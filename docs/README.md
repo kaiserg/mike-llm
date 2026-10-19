@@ -16,6 +16,7 @@ These chapters follow the existing educational code from characters to a complet
 10. [GPT language model](10-gpt-model.md) — [`src/gpt.py`](../src/gpt.py)
 11. [First reproducible training run](11-training.md) — [`src/train.py`](../src/train.py)
 12. [Text generation and temperature](12-text-generation.md) — [`src/generate.py`](../src/generate.py)
+13. [Checkpoint evaluation and perplexity](13-evaluation.md) — [`src/evaluate.py`](../src/evaluate.py)
 
 ## Running the examples
 
