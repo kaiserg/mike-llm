@@ -1,0 +1,37 @@
+{
+  "reviewed_on": "2026-10-19",
+  "report_sha256": "84308d4a012efe228ea95665b32740e2a55d7bbfef6ff9b308733b9f55c1ea2a",
+  "registry_sha256": "408ad24c0e18d5dae1582228ce765349e681b74235e7d522075153543187ea23",
+  "review_scope": "development-only science expansion; no train/validation/test assignment and no model use",
+  "method": [
+    "Verified DOI, title, complete author list, electronic publication date, copyright holder and article-specific CC BY 4.0 permissions in all 12 pinned JATS XML files.",
+    "Reviewed the opening and closing rendered blocks and section structure of all 12 articles.",
+    "Searched every rendered file for XML markup, replacement characters and content declared as excluded by the renderer.",
+    "Reviewed all 66 document comparisons and all threshold matches among 416 screened cross-document paragraphs."
+  ],
+  "findings": {
+    "documents_reviewed": 12,
+    "unique_authors": 92,
+    "independent_author_work_groups": 12,
+    "renderer_blocking_artifacts": 0,
+    "document_near_duplicates": 0,
+    "paragraph_near_duplicates": 0,
+    "highest_document_jaccard": 0.0006382978723404255,
+    "editorial_notes": [
+      "Title, available abstract, section headings, paragraphs and lists are retained.",
+      "Figures, tables, supplementary content, bibliography and administrative front matter are excluded.",
+      "Two retained article-body declarations disclose generative-AI assistance; those declarations are part of the source text and are not hidden."
+    ],
+    "source_limitations": [
+      "All articles come from one English-language journal and one recurring editorial series.",
+      "The wave contains scientific and professional guidance rather than a representative sample of primary research or general nonfiction.",
+      "The lexical duplicate screen cannot establish absence of paraphrased or semantic overlap."
+    ]
+  },
+  "decision": "Accept as a development-only second expansion wave. Preserve 12 separate author/work groups, exclude every inspected article from the future untouched test, and continue acquisition across unrelated publishers and domains before freezing splits.",
+  "new_test_created": false,
+  "new_test_read": false,
+  "legacy_test_read": false,
+  "model_loaded": false,
+  "training_performed": false
+}

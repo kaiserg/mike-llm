@@ -1,6 +1,6 @@
 # Modern educational corpus expansion: wave 1
 
-[Documentation index](README.md) · [Previous](34-editorial-cleaning-and-near-duplicates.md)
+[Documentation index](README.md) · [Previous](34-editorial-cleaning-and-near-duplicates.md) · [Next](36-modern-science-expansion-wave2.md)
 
 The original corpus-v2 pilot is dominated by historical books. This first expansion wave adds recent instructional prose about computing and data practice. It is a development-only source acquisition and rendering exercise: no model was loaded, no split was assigned and no new or legacy test was created or read.
 
@@ -73,4 +73,4 @@ The first command downloads only pinned HTTPS files when the local ignored snaps
 
 This wave improves topical and chronological variety, but it is only one rights holder/source family and adds about 0.24 million characters. It does not satisfy the target of at least 100 documents and roughly 60 independent groups. The next acquisition wave needs unrelated authors and publishers in modern science, humanities, public policy and practical reference material with edition-specific reusable licenses. Only after those groups are cleaned and screened should a split manifest and new untouched test be frozen.
 
-[Documentation index](README.md) · [Previous](34-editorial-cleaning-and-near-duplicates.md)
+[Documentation index](README.md) · [Previous](34-editorial-cleaning-and-near-duplicates.md) · [Next](36-modern-science-expansion-wave2.md)

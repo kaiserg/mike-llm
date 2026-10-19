@@ -44,6 +44,12 @@ The [first modern educational expansion wave](docs/35-modern-educational-expansi
 PYTHONPATH=src python scripts/ingest_corpus_expansion.py
 ```
 
+The [second expansion wave](docs/36-modern-science-expansion-wave2.md) adds 12 recent CC BY 4.0 PLOS Computational Biology guidance articles about research methods, ethics, laboratories, data, software and teaching. Article-specific XML records preserve the DOI, complete authorship, date, copyright holder and license evidence. The wave contributes 305,147 characters from 92 unique authors in 12 non-overlapping author/work groups; no close document or paragraph duplicates were detected. All inspected articles remain outside the future test.
+
+```bash
+PYTHONPATH=src python scripts/ingest_corpus_science.py
+```
+
 ## Current progress
 
 The repository contains the complete small GPT pipeline: reusable model components, reproducible training on normalized novels, checkpoint generation, evaluation, and controlled context/position/attention experiments. The small-corpus experimental stage is closed; the model predicts characters and is not a conversational or instruction-following assistant.
@@ -130,6 +136,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 24. [Learned versus sinusoidal position diagnostics](docs/24-sinusoidal-position-diagnostics.md)
 34. [Editorial cleaning and near-duplicate screening](docs/34-editorial-cleaning-and-near-duplicates.md)
 35. [Modern educational corpus expansion: wave 1](docs/35-modern-educational-expansion-wave1.md)
+36. [Modern science and research practice: wave 2](docs/36-modern-science-expansion-wave2.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -145,7 +152,7 @@ docs/       Learning chapters and diagrams
 
 ## Roadmap
 
-1. Expand the initial reviewed corpus while keeping document-level train/validation/test splits fixed.
+1. Continue expanding independent licensed source families before freezing new group-isolated train, validation and test splits.
 2. Decide whether to extend the current character tokenizer or train a subword tokenizer.
 3. Select context length, depth, and width for a training configuration.
 4. Scale the implemented GPT architecture; approximately 10–15M parameters is a target, not the 4008-parameter toy demonstration.
