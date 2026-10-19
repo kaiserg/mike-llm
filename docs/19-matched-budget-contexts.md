@@ -1,6 +1,6 @@
 # Context 16 versus 64 with matched long-training budgets
 
-[Documentation index](README.md) · [Previous](18-longer-context-training.md)
+[Documentation index](README.md) · [Previous](18-longer-context-training.md) · [Next](20-multiseed-contexts.md)
 
 Driver: [`scripts/run_matched_budget_experiment.py`](../scripts/run_matched_budget_experiment.py). Full [matched-budget evaluation and history](results/matched-budget-context-experiment.json), [context-16 generation grid](results/context-16-long-temperature-comparison.json), and [context-64 generation grid](results/context-64-long-temperature-comparison.json).
 
@@ -183,3 +183,5 @@ The 21-test suite passes. Additional experiment checks verified identical repeat
 Keep the context-16 10000-update checkpoint as the better **validation-loss baseline from this single-seed comparison**. More context was not a demonstrated benefit at this budget and scale, and neither model yet generates coherent prose. This is a model-development result, not a final held-out test score.
 
 A useful next study would repeat both configurations with independent training seeds, or investigate position-wise validation behavior before increasing model size. Keep corpus assignments and the generation grid frozen, and preserve the untouched test for final model decisions.
+
+The subsequent multi-seed study is documented in [chapter 20](20-multiseed-contexts.md).

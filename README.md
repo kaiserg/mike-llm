@@ -81,6 +81,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 17. [Context-length experiment: 16 versus 64](docs/17-context-length-experiment.md)
 18. [Longer training for context 64](docs/18-longer-context-training.md)
 19. [Matched-budget context comparison](docs/19-matched-budget-contexts.md)
+20. [Context comparison across training seeds](docs/20-multiseed-contexts.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -179,3 +180,11 @@ python scripts/run_matched_budget_experiment.py
 ```
 
 Both contexts now have 10000 updates and 1280000 training targets. Full-validation perplexity favors context 16 (6.71 versus 6.95); generated samples remain incoherent. See [chapter 19](docs/19-matched-budget-contexts.md) for reproducibility, common-cap evaluation, all samples, and limitations.
+
+## Context comparison across seeds
+
+```bash
+python scripts/run_multiseed_experiment.py
+```
+
+Context 16 has lower validation loss in all four training seeds tested at the matched 1280000-target budget. Mean perplexity is 6.63 ± 0.06 versus 7.12 ± 0.17 (sample SD across seeds). See [chapter 20](docs/20-multiseed-contexts.md) for paired results, 160 complete generated samples, and limitations. The test remains reserved.
