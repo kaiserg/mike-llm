@@ -1,0 +1,236 @@
+{
+  "protocol": "Every validation target once; native window up to 64; isolate last 16 tokens in every layer; preserve all position IDs; score last query only",
+  "validation_sha256": "959b3dc1ce7a5ac955f918c4622e6dd40884adb51ca809ee9fe4cd41e941d720",
+  "validation_characters": 135523,
+  "test_used": false,
+  "training_steps": 10000,
+  "device": "cpu",
+  "threads": 1,
+  "deterministic_algorithms": true,
+  "batch_size": 128,
+  "python_version": "3.13.15",
+  "torch_version": "2.14.1",
+  "code_commit": "87a1b1a40558106be5b2d1ccf5648c87d2f478b2",
+  "source_sha256": {
+    "scripts/analyze_history_ablation.py": "fa21f9870652a145dee44d9b968a23bbc86b3f5fa736220d65c826c0bdd50958",
+    "src/history_ablation.py": "46e694caed9eeaaf00805cae25f0a830278bc8e8a1dd1915a1956cde35a2d254",
+    "src/gpt.py": "9e6bc2f559fb76e2ebd3ccca9aafc03d98309209434e60292dd1c8d8c94338ed",
+    "src/multi_head_attention.py": "6c7994e7e83ff6e98722a0c62ff3c90f2b0384909cf59f2628b4d7c3f0510893",
+    "src/transformer_block.py": "3ec5775d21d8a1bc5dc010bff96c50e6b610fa86e488f7cb03374faf87a21d06",
+    "src/sinusoidal_positions.py": "2fade08ea4c37ea2124dc3582608a71b7be1d3f9e877ecee727d01f7405077b1",
+    "src/feed_forward.py": "0d41a4762f88455d0223fc0926bf985ce1eb45e68a6e572f185d7e7c413b4779",
+    "src/generate.py": "66fea17caae7426518f24cf4fa3cd49739684aeab08f9f1e38112860a96f1938"
+  },
+  "study_sha256": {
+    "docs/results/multiseed-context-experiment.json": "075a51ec7f8b924810a1f769b08e9c4c89abb5fb45ccee447a5ed3fb078696f5",
+    "docs/results/sinusoidal-context-experiment.json": "bbdebf44bc16fa7b01b7502e4d6659b32142ff189942fa775e2508d036934dea"
+  },
+  "rows": [
+    {
+      "encoding": "learned",
+      "seed": 42,
+      "checkpoint": "runs/context-64-10000/primary/checkpoint.pt",
+      "checkpoint_sha256": "031358d1e0e2aa70142e97ee63e786cecfd163e8d7ecc80bce4661297b7222de",
+      "native_reference_nll": 1.9385409578709631,
+      "full": {
+        "scored_tokens": 135522,
+        "mean_nll": 1.9385409578709618,
+        "perplexity": 6.9486052631128326,
+        "accuracy": 0.4143238736146161
+      },
+      "masked": {
+        "scored_tokens": 135522,
+        "mean_nll": 1.939694774107138,
+        "perplexity": 6.956627303774599,
+        "accuracy": 0.4136819114239754
+      },
+      "masked_minus_full_nll": 0.001153816236176164
+    },
+    {
+      "encoding": "learned",
+      "seed": 7,
+      "checkpoint": "runs/multiseed-context-10000/seed-7/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "bb1db7edfd65b1b08a214ad03e35f82aa8830a96aaa5fc02240712e2cd743b30",
+      "native_reference_nll": 1.9564203905932465,
+      "full": {
+        "scored_tokens": 135522,
+        "mean_nll": 1.956420390593246,
+        "perplexity": 7.073959676970562,
+        "accuracy": 0.40728442614483257
+      },
+      "masked": {
+        "scored_tokens": 135522,
+        "mean_nll": 2.2688597590252333,
+        "perplexity": 9.668370254596503,
+        "accuracy": 0.31612579507386257
+      },
+      "masked_minus_full_nll": 0.3124393684319873
+    },
+    {
+      "encoding": "learned",
+      "seed": 123,
+      "checkpoint": "runs/multiseed-context-10000/seed-123/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "3676476e6cf05a0ee63ef8863376ad2c013c5fa58fc9d3c6c29a34ec007a21ad",
+      "native_reference_nll": 1.9960658920644065,
+      "full": {
+        "scored_tokens": 135522,
+        "mean_nll": 1.9960658920644074,
+        "perplexity": 7.360043860752552,
+        "accuracy": 0.3993890290875282
+      },
+      "masked": {
+        "scored_tokens": 135522,
+        "mean_nll": 2.0115975542028854,
+        "perplexity": 7.475249930251038,
+        "accuracy": 0.395500361564912
+      },
+      "masked_minus_full_nll": 0.015531662138478008
+    },
+    {
+      "encoding": "learned",
+      "seed": 2026,
+      "checkpoint": "runs/multiseed-context-10000/seed-2026/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "6618cdebe2007154b2c176a6fbd5c47e6d1fdd0d1c72fb45d1735deaa09ba1e8",
+      "native_reference_nll": 1.9596286905713176,
+      "full": {
+        "scored_tokens": 135522,
+        "mean_nll": 1.9596286905713176,
+        "perplexity": 7.09669150741404,
+        "accuracy": 0.40465754637623413
+      },
+      "masked": {
+        "scored_tokens": 135522,
+        "mean_nll": 1.9606360437093462,
+        "perplexity": 7.103843983803585,
+        "accuracy": 0.40492318590339577
+      },
+      "masked_minus_full_nll": 0.0010073531380285772
+    },
+    {
+      "encoding": "sinusoidal",
+      "seed": 42,
+      "checkpoint": "runs/sinusoidal-context-10000/seed-42/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "c7106d9445194b7e16b099efa0adbbfc682f88c8cbba390846872ce41456af3b",
+      "native_reference_nll": 1.9184487278061084,
+      "full": {
+        "scored_tokens": 135522,
+        "mean_nll": 1.9184487278061089,
+        "perplexity": 6.810385508971599,
+        "accuracy": 0.41836011865232214
+      },
+      "masked": {
+        "scored_tokens": 135522,
+        "mean_nll": 1.9302848515407927,
+        "perplexity": 6.891473008724265,
+        "accuracy": 0.4198654093062381
+      },
+      "masked_minus_full_nll": 0.01183612373468379
+    },
+    {
+      "encoding": "sinusoidal",
+      "seed": 7,
+      "checkpoint": "runs/sinusoidal-context-10000/seed-7/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "12defb603fe485c1e8f4f9dfb658a1bbb65a130057ea503731ae9f7bb3c0f063",
+      "native_reference_nll": 1.9105680600472146,
+      "full": {
+        "scored_tokens": 135522,
+        "mean_nll": 1.9105680600472177,
+        "perplexity": 6.75692604826399,
+        "accuracy": 0.4285134516905004
+      },
+      "masked": {
+        "scored_tokens": 135522,
+        "mean_nll": 1.9383012403239774,
+        "perplexity": 6.946939760137315,
+        "accuracy": 0.41917179498531604
+      },
+      "masked_minus_full_nll": 0.02773318027675975
+    },
+    {
+      "encoding": "sinusoidal",
+      "seed": 123,
+      "checkpoint": "runs/sinusoidal-context-10000/seed-123/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "599b9da196f787ae5df8b15efe339a4eca6ba956dbd6ae74dbcc4123589a989a",
+      "native_reference_nll": 2.0045734897548826,
+      "full": {
+        "scored_tokens": 135522,
+        "mean_nll": 2.004573489754883,
+        "perplexity": 7.422927266977682,
+        "accuracy": 0.3905786514366671
+      },
+      "masked": {
+        "scored_tokens": 135522,
+        "mean_nll": 2.0984238531615116,
+        "perplexity": 8.153308967708659,
+        "accuracy": 0.36861911719130475
+      },
+      "masked_minus_full_nll": 0.09385036340662856
+    },
+    {
+      "encoding": "sinusoidal",
+      "seed": 2026,
+      "checkpoint": "runs/sinusoidal-context-10000/seed-2026/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "9e0910592e58dc0d5b08bb4e9973989edcf86ebb070f744a7d2e217caa5766cb",
+      "native_reference_nll": 1.9467319853040685,
+      "full": {
+        "scored_tokens": 135522,
+        "mean_nll": 1.9467319853040697,
+        "perplexity": 7.005755218340891,
+        "accuracy": 0.414036097460191
+      },
+      "masked": {
+        "scored_tokens": 135522,
+        "mean_nll": 1.9483687644173227,
+        "perplexity": 7.017231481646753,
+        "accuracy": 0.41559304024438837
+      },
+      "masked_minus_full_nll": 0.0016367791132529952
+    }
+  ],
+  "summary": {
+    "learned": {
+      "full_nll": {
+        "mean": 1.9626639827749832,
+        "sample_sd": 0.02412331732848562
+      },
+      "masked_nll": {
+        "mean": 2.0451970327611506,
+        "sample_sd": 0.1521350579033718
+      },
+      "full_perplexity": {
+        "mean": 7.1198250770624965,
+        "sample_sd": 0.17287768864793826
+      },
+      "masked_perplexity": {
+        "mean": 7.801022868106431,
+        "sample_sd": 1.263879811618609
+      },
+      "masked_minus_full_nll": {
+        "mean": 0.0825330499861675,
+        "sample_sd": 0.15342220631005754
+      }
+    },
+    "sinusoidal": {
+      "full_nll": {
+        "mean": 1.9450805657280699,
+        "sample_sd": 0.042593047301754984
+      },
+      "masked_nll": {
+        "mean": 1.9788446773609012,
+        "sample_sd": 0.08006203329365745
+      },
+      "full_perplexity": {
+        "mean": 6.998998510638541,
+        "sample_sd": 0.3021783055240278
+      },
+      "masked_perplexity": {
+        "mean": 7.252238304554249,
+        "sample_sd": 0.6029138541862061
+      },
+      "masked_minus_full_nll": {
+        "mean": 0.03376411163283127,
+        "sample_sd": 0.04147180541577076
+      }
+    }
+  }
+}

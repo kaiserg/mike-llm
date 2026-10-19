@@ -1,6 +1,6 @@
 # Positional loss diagnostics: learned versus sinusoidal
 
-[Documentation index](README.md) · [Previous](23-sinusoidal-positions.md)
+[Documentation index](README.md) · [Previous](23-sinusoidal-positions.md) · [Next](25-fixed-position-history-ablation.md)
 
 Reproduction driver: [`scripts/compare_position_diagnostics.py`](../scripts/compare_position_diagnostics.py). Full [sinusoidal prefix/shift results](results/sinusoidal-position-diagnostics.json), [sinusoidal complete-window results](results/sinusoidal-window-position-diagnostics.json), and [paired encoding comparison](results/positional-encoding-diagnostic-comparison.json). Learned reference arrays are in [chapter 21's prefix report](results/position-diagnostics.json) and [window report](results/window-position-diagnostics.json).
 
@@ -142,3 +142,5 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
 All 29 tests pass, including direct computation of sinusoidal position shifts and cleanup of temporary hooks. Both encoding studies use identical target indices, block starts, and validation hashes. Recomputed learned numerical results match their archives exactly. Source/checkpoint hashes, per-seed decompositions, prefix/window endpoint agreement, documentation examples, and links were checked. No training, new generation sampling, or test-text access was required.
+
+The fixed-ID masking follow-up is now measured in [chapter 25](25-fixed-position-history-ablation.md).

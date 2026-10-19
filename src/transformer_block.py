@@ -16,9 +16,9 @@ class TransformerBlock(nn.Module):
         self.norm2 = nn.LayerNorm(embedding_dim)
         self.feed_forward = FeedForward(embedding_dim, expansion_factor)
 
-    def forward(self, x):
+    def forward(self, x, attention_mask=None):
         # Each branch learns an update to the residual stream.
-        x = x + self.attention(self.norm1(x))
+        x = x + self.attention(self.norm1(x), attention_mask=attention_mask)
         x = x + self.feed_forward(self.norm2(x))
         return x
 

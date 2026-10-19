@@ -225,3 +225,11 @@ python scripts/compare_position_diagnostics.py
 ```
 
 Sinusoidal context 64 scores better than the learned counterpart at many intermediate lengths, but extending its own history from 16 to 64 still worsens mean loss (1.9159 to 1.9483) on identical diagnostic targets. See [chapter 24](docs/24-sinusoidal-position-diagnostics.md) for per-seed, shifted-ID, and complete-window comparisons.
+
+## Mask distant history while keeping position IDs
+
+```bash
+python scripts/analyze_history_ablation.py
+```
+
+Across four seeds for each positional encoding, isolating the last 16 characters while retaining IDs 48–63 worsens validation log loss in all eight context-64 checkpoints. The distant history contributes under this controlled intervention, despite earlier improvements from cropping and resetting positions. The learned mean effect is dominated by one seed. See [chapter 25](docs/25-fixed-position-history-ablation.md) for complete-validation metrics, the mask definition, and limitations.

@@ -13,7 +13,7 @@ class AttentionHead(nn.Module):
 
         self.value = nn.Linear(embedding_dim, head_dim, bias=False)
 
-    def forward(self, x):
+    def forward(self, x, attention_mask=None):
         # x shape: [batch, sequence, embedding_dim]
 
         Q = self.query(x)
@@ -34,6 +34,14 @@ class AttentionHead(nn.Module):
                 dtype=torch.bool,
             )
         )
+
+        if attention_mask is not None:
+            if (attention_mask.dtype != torch.bool or attention_mask.shape != (seq_len, seq_len)
+                    or attention_mask.device != x.device):
+                raise ValueError("attention_mask must be a boolean [sequence, sequence] tensor on the input device")
+            mask = mask & attention_mask
+            if not mask.any(dim=-1).all():
+                raise ValueError("attention_mask must leave a causal key for every query")
 
         scores = scores.masked_fill(~mask, float("-inf"))
 
@@ -56,8 +64,8 @@ class MultiHeadAttention(nn.Module):
 
         self.projection = nn.Linear(embedding_dim, embedding_dim)
 
-    def forward(self, x):
-        outputs = [head(x) for head in self.heads]
+    def forward(self, x, attention_mask=None):
+        outputs = [head(x, attention_mask=attention_mask) for head in self.heads]
 
         combined = torch.cat(outputs, dim=-1)
 

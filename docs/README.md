@@ -29,6 +29,8 @@ These chapters follow the existing educational code from characters to a complet
 23. [Sinusoidal positional encoding experiment](23-sinusoidal-positions.md) — [`scripts/run_sinusoidal_experiment.py`](../scripts/run_sinusoidal_experiment.py)
 24. [Learned versus sinusoidal position diagnostics](24-sinusoidal-position-diagnostics.md) — [`scripts/compare_position_diagnostics.py`](../scripts/compare_position_diagnostics.py)
 
+25. [Distant-history ablation with fixed position IDs](25-fixed-position-history-ablation.md) — [`scripts/analyze_history_ablation.py`](../scripts/analyze_history_ablation.py)
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:

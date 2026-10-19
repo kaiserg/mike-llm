@@ -51,7 +51,7 @@ class GPT(nn.Module):
         self.final_norm = nn.LayerNorm(embedding_dim)
         self.lm_head = nn.Linear(embedding_dim, vocab_size, bias=False)
 
-    def forward(self, token_ids):
+    def forward(self, token_ids, attention_mask=None):
         if token_ids.ndim != 2:
             raise ValueError("token_ids must have shape [batch, sequence]")
         if token_ids.dtype != torch.long:
@@ -63,7 +63,11 @@ class GPT(nn.Module):
         # Positions broadcast across the batch; input and model share a device.
         positions = torch.arange(sequence_length, device=token_ids.device)
         x = self.token_embedding(token_ids) + self.position_embedding(positions)
-        x = self.blocks(x)
+        if attention_mask is None:
+            x = self.blocks(x)
+        else:
+            for block in self.blocks:
+                x = block(x, attention_mask=attention_mask)
         return self.lm_head(self.final_norm(x))
 
 
