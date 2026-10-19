@@ -1,6 +1,6 @@
 # Cross-wave identity, balance, and overlap audit
 
-[Documentation index](README.md) · [Previous](38-independent-publisher-expansion-wave4.md)
+[Documentation index](README.md) · [Previous](38-independent-publisher-expansion-wave4.md) · [Next](40-modern-longform-expansion-wave5.md)
 
 The four acquisition waves were originally screened independently. This audit joins them with the cleaned pilot so that source identities, character balance and lexical overlap can be measured across the complete development collection before any split is frozen.
 
@@ -63,6 +63,8 @@ The corpus is **not ready for split freezing**. The next acquisition should targ
 
 After acquisition, rerun this audit. Only then should a stable group manifest assign train, validation and a new untouched test, with character budgets and domain coverage reported alongside document counts.
 
+The resulting acquisition and its post-wave audit are documented in [chapter 40](40-modern-longform-expansion-wave5.md).
+
 ## Reproduce
 
 ```bash
@@ -72,4 +74,4 @@ PYTHONPATH=src python -m unittest discover -s tests -q
 
 The command is offline and deterministic when the five verified snapshots are present. It does not create or inspect a test split.
 
-[Documentation index](README.md) · [Previous](38-independent-publisher-expansion-wave4.md)
+[Documentation index](README.md) · [Previous](38-independent-publisher-expansion-wave4.md) · [Next](40-modern-longform-expansion-wave5.md)

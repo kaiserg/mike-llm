@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-19",
+  "scope": "Editorial and license review of the development-only modern long-form wave; no split assignment or test access.",
+  "registry_sha256": "89705bc857bc25ae84ee380c87e68f128331bcc99f1daae0b52227e5dbd0777c",
+  "report_sha256": "22f7bd03051433a578d96332864a97cdfc3c467806997beea2d96b9ed8b923da",
+  "review_method": [
+    "Verified that each Markdown source and license record is pinned to the same repository commit.",
+    "Reviewed source-family license grants and recorded non-text exceptions.",
+    "Inspected rendered starts, markup audits, character counts, attribution, and duplicate screens.",
+    "Kept related files from one repository in the same conservative split group."
+  ],
+  "license_decisions": [
+    {
+      "repository": "the-turing-way/the-turing-way",
+      "decision": "accept",
+      "basis": "Pinned repository license assigns documentation and chapter materials to CC BY 4.0."
+    },
+    {
+      "repository": "cc-archive/cc-cert-core",
+      "decision": "accept",
+      "basis": "Pinned repository LICENSE is the CC BY 4.0 legal text."
+    },
+    {
+      "repository": "18F/content-guide",
+      "decision": "accept",
+      "basis": "Pinned license places the federal work in the U.S. public domain and applies CC0 1.0 worldwide."
+    },
+    {
+      "repository": "github/opensource.guide",
+      "decision": "accept",
+      "basis": "Pinned repository LICENSE is the CC BY 4.0 legal text."
+    },
+    {
+      "repository": "GSA/accessibility-for-teams",
+      "decision": "accept-text-only",
+      "basis": "Pinned license applies CC0 to the project except identified Picons assets; the ingested Markdown excludes those image files."
+    },
+    {
+      "repository": "mozilla/open-leadership-training-series",
+      "decision": "accept",
+      "basis": "Pinned MIT license covers the repository software and associated documentation."
+    }
+  ],
+  "documents": [
+    {
+      "id": "ethical-research",
+      "decision": "accept-development-only",
+      "rendered_characters": 67050,
+      "rendered_sha256": "7a58f475caddc7883abccae0bf47e00a665878e09e74973f510e84d512be5b91",
+      "source_files": 14,
+      "markup_review": "pass"
+    },
+    {
+      "id": "open-sociocultural",
+      "decision": "accept-development-only",
+      "rendered_characters": 46062,
+      "rendered_sha256": "4404e8f752d51c44112f3e00609c2803458195cc28ad4c73737ee86039cf2000",
+      "source_files": 6,
+      "markup_review": "pass"
+    },
+    {
+      "id": "government-voice",
+      "decision": "accept-development-only",
+      "rendered_characters": 12740,
+      "rendered_sha256": "267823798d5e6b21c606f2448a2ac911775ea6f1fa1ef517c85f72a1cd6d0bab",
+      "source_files": 2,
+      "markup_review": "pass"
+    },
+    {
+      "id": "government-content",
+      "decision": "accept-development-only",
+      "rendered_characters": 14123,
+      "rendered_sha256": "436e524ed967446b3d1b3ab22b2b3e8830754ca69f4701fa7efa969528bc20d7",
+      "source_files": 4,
+      "markup_review": "pass"
+    },
+    {
+      "id": "open-source-practice",
+      "decision": "accept-development-only",
+      "rendered_characters": 47280,
+      "rendered_sha256": "f989342bd2baf6d9b30489e2b84fc6c5294bafc88ab2f62e8f3ddb11e7035eb3",
+      "source_files": 3,
+      "markup_review": "pass"
+    },
+    {
+      "id": "open-source-community",
+      "decision": "accept-development-only",
+      "rendered_characters": 41993,
+      "rendered_sha256": "e3e39922f4f7c8c2144c9aae32ca0ef35e21b4ef6d21baf2154bef90893c72a7",
+      "source_files": 3,
+      "markup_review": "pass"
+    },
+    {
+      "id": "accessible-products",
+      "decision": "accept-development-only",
+      "rendered_characters": 6058,
+      "rendered_sha256": "1b31b6fe01aac3da83728cf039ec3468bbb23e354199e3fc63d4fd30bc31634b",
+      "source_files": 7,
+      "markup_review": "pass"
+    },
+    {
+      "id": "accessible-ux",
+      "decision": "accept-development-only",
+      "rendered_characters": 8712,
+      "rendered_sha256": "c2d726230946aca4b8f4bd5f8d556773251a38f68aaa2a96257352be72c9c25a",
+      "source_files": 10,
+      "markup_review": "pass"
+    },
+    {
+      "id": "open-project-strategy",
+      "decision": "accept-development-only",
+      "rendered_characters": 17569,
+      "rendered_sha256": "8f312a7e2f4c9c655f022f9325ec1dea865ae90df94ce9006d532a8051f2366d",
+      "source_files": 3,
+      "markup_review": "pass"
+    },
+    {
+      "id": "open-community-events",
+      "decision": "accept-development-only",
+      "rendered_characters": 34052,
+      "rendered_sha256": "9555e07b8ae31e5693c36a32e92212f2453c1225b7d69bc3ad50578d601e17e6",
+      "source_files": 4,
+      "markup_review": "pass"
+    }
+  ],
+  "duplicate_review": {
+    "document_pairs_screened": 45,
+    "document_near_duplicates": 0,
+    "paragraphs_screened": 624,
+    "cross_document_paragraph_near_duplicates": 0,
+    "highest_document_jaccard": 0.021315192743764172,
+    "decision": "No duplicate exclusion required at the frozen thresholds."
+  },
+  "limitations": [
+    "The wave is English-only and concentrates on practical guidance rather than contemporary narrative nonfiction or reporting.",
+    "Repository-level licenses do not eliminate the need to honor third-party notices; non-text assets were not ingested.",
+    "Lexical screening does not detect paraphrase, translated duplication, or semantic contamination."
+  ],
+  "test_policy": {
+    "new_test_created": false,
+    "new_test_read": false,
+    "legacy_test_read": false,
+    "sources_eligible_for_future_test": false
+  },
+  "model_loaded": false,
+  "training_performed": false,
+  "decision": "Accept all ten collections into the development-only acquisition pool. Do not freeze splits; rerun the cross-wave audit and continue acquiring modern long-form prose against remaining genre and geographic gaps."
+}

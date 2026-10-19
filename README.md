@@ -67,15 +67,22 @@ PYTHONPATH=src python scripts/ingest_corpus_independent.py
 | Development material | Documents | Characters | Conservative groups |
 | --- | ---: | ---: | ---: |
 | Cleaned historical pilot | 12 | 6,388,790 | 12 |
-| Four modern expansion waves | 47 | 1,338,029 | 33 |
-| Current total | **59** | **7,726,819** | **45** |
+| Five modern expansion waves | 57 | 1,633,668 | 39 |
+| Current total | **69** | **8,022,458** | **51** |
 
-These are acquisition counts, not frozen training splits. The historical books dominate character volume, institutional education remains overrepresented, and all inspected sources are ineligible for the future untouched test. The next gate is a cross-wave identity, overlap and balance audit before acquiring against the measured gaps and freezing splits.
+These are acquisition counts, not frozen training splits. The historical books dominate character volume, practical and institutional guidance remains overrepresented, and all inspected sources are ineligible for the future untouched test. Acquisition continues against the measured gaps before another cross-wave audit and eventual split freezing.
 
 The [cross-wave audit](docs/39-cross-wave-corpus-audit.md) verifies all 59 local texts and finds no exact duplicates, identity collisions or close lexical duplicates across stages. It also shows why splits must wait: the 12 historical pilot books contribute **82.68%** of all characters, and the ten largest documents contribute **77.50%**. The next acquisition target is modern independent long-form prose outside institutional education and research guidance.
 
 ```bash
 PYTHONPATH=src python scripts/audit_corpus_v2.py
+```
+
+The [fifth expansion wave](docs/40-modern-longform-expansion-wave5.md) adds ten practical long-form collections from six independently governed repositories under licenses pinned to the same revisions as the source text. Its 295,639 characters cover research ethics, open culture, public communication, open-source governance, accessibility and community leadership. A repeated cross-wave audit finds no close duplicates or identity collisions, but the historical share remains **79.64%**, so corpus splits are still not frozen.
+
+```bash
+PYTHONPATH=src python scripts/ingest_corpus_longform.py
+PYTHONPATH=src python scripts/audit_corpus_v2_wave5.py
 ```
 
 ## Current progress
@@ -177,6 +184,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 37. [Open textbooks and practical nonfiction: wave 3](docs/37-open-textbook-expansion-wave3.md)
 38. [Independent hosts and mixed practical prose: wave 4](docs/38-independent-publisher-expansion-wave4.md)
 39. [Cross-wave identity, balance, and overlap audit](docs/39-cross-wave-corpus-audit.md)
+40. [Modern practical long-form prose: wave 5](docs/40-modern-longform-expansion-wave5.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 

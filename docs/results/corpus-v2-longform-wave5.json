@@ -1,0 +1,1054 @@
+{
+  "corpus_id": "corpus-v2-modern-longform-wave5-2026-10-19",
+  "created_at_utc": "2026-10-19T22:12:52.461298+00:00",
+  "registry_sha256": "89705bc857bc25ae84ee380c87e68f128331bcc99f1daae0b52227e5dbd0777c",
+  "document_count": 10,
+  "repository_count": 6,
+  "publisher_count": 6,
+  "independent_split_groups": 6,
+  "domains": {
+    "research-ethics": 1,
+    "open-culture": 1,
+    "public-communication": 2,
+    "open-source": 1,
+    "community-governance": 1,
+    "accessibility": 2,
+    "open-leadership": 1,
+    "community-practice": 1
+  },
+  "topics": {
+    "data-power-hazards-and-reflection": 1,
+    "sociocultural-practice": 1,
+    "voice-tone-and-inclusion": 1,
+    "plain-language-and-content-design": 1,
+    "project-practice-and-maintainer-health": 1,
+    "community-leadership-and-conduct": 1,
+    "accessible-product-development": 1,
+    "inclusive-user-experience": 1,
+    "project-strategy-and-roadmaps": 1,
+    "inclusive-event-design": 1
+  },
+  "rendered_characters": 295639,
+  "rendered_utf8_bytes": 296598,
+  "rendered_exact_duplicates": 0,
+  "deduplication": {
+    "comparison_tokenization": "Unicode word tokens, casefolded; punctuation and whitespace ignored for comparison only",
+    "document_shingle_words": 5,
+    "document_pair_count": 45,
+    "document_near_duplicate_threshold": 0.8,
+    "document_near_duplicates": [],
+    "top_document_pairs": [
+      {
+        "left": "accessible-products",
+        "right": "accessible-ux",
+        "jaccard": 0.021315192743764172
+      },
+      {
+        "left": "accessible-products",
+        "right": "government-voice",
+        "jaccard": 0.005956552207428171
+      },
+      {
+        "left": "open-source-community",
+        "right": "open-source-practice",
+        "jaccard": 0.005738781718868838
+      },
+      {
+        "left": "accessible-ux",
+        "right": "government-content",
+        "jaccard": 0.0008340283569641367
+      },
+      {
+        "left": "open-project-strategy",
+        "right": "open-source-practice",
+        "jaccard": 0.0003734129947722181
+      },
+      {
+        "left": "open-community-events",
+        "right": "open-source-community",
+        "jaccard": 0.00032245062474808546
+      },
+      {
+        "left": "open-community-events",
+        "right": "open-source-practice",
+        "jaccard": 0.0002991548874429736
+      },
+      {
+        "left": "accessible-ux",
+        "right": "open-sociocultural",
+        "jaccard": 0.00023380874444704232
+      },
+      {
+        "left": "open-sociocultural",
+        "right": "open-source-community",
+        "jaccard": 0.00020590960568310512
+      },
+      {
+        "left": "government-content",
+        "right": "open-sociocultural",
+        "jaccard": 0.00019338619222587506
+      }
+    ],
+    "paragraphs_screened": 624,
+    "paragraph_min_words": 30,
+    "paragraph_candidate_method": "exhaustive shared-shingle inverted index with a necessary length-ratio bound",
+    "paragraph_near_duplicate_threshold": 0.8,
+    "cross_document_paragraph_near_duplicates": [],
+    "limitations": [
+      "This is a deterministic lexical screen, not proof that semantic duplicates or contamination are absent.",
+      "Every cross-document paragraph pair that shares a shingle and can satisfy the threshold by length is checked with exact hashed-shingle Jaccard.",
+      "Only cross-document paragraphs with the configured minimum word count are screened."
+    ]
+  },
+  "evidence": [
+    {
+      "id": "turing-license",
+      "repository": "the-turing-way/the-turing-way",
+      "commit": "c25d0befe9ce3a21ac46fa47b685db82ad169909",
+      "url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/LICENSE.md",
+      "cache_name": "turing-license.md",
+      "expected_sha256": "652c90a648afc5c6a9be4c4ce2d1fb81cd12c5046b38c18f603dc12b76b73643",
+      "license_identifier": "CC-BY-4.0",
+      "path": "evidence/turing-license.md",
+      "sha256": "652c90a648afc5c6a9be4c4ce2d1fb81cd12c5046b38c18f603dc12b76b73643"
+    },
+    {
+      "id": "cc-license",
+      "repository": "cc-archive/cc-cert-core",
+      "commit": "972433eea44cfc9b8df25dc1b57039fc01f9727f",
+      "url": "https://raw.githubusercontent.com/cc-archive/cc-cert-core/972433eea44cfc9b8df25dc1b57039fc01f9727f/LICENSE",
+      "cache_name": "cc-license",
+      "expected_sha256": "8ae9438818c26e4873b91d8c6ad620526c011e27e125677f13031eda903f007c",
+      "license_identifier": "CC-BY-4.0",
+      "path": "evidence/cc-license",
+      "sha256": "8ae9438818c26e4873b91d8c6ad620526c011e27e125677f13031eda903f007c"
+    },
+    {
+      "id": "18f-license",
+      "repository": "18F/content-guide",
+      "commit": "1b1723d3d5b8f91d92c16487c88b56265dc0ec3a",
+      "url": "https://raw.githubusercontent.com/18F/content-guide/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a/LICENSE.md",
+      "cache_name": "18f-license.md",
+      "expected_sha256": "0a8739dbbae23c1a8a6baeb3be6bcb2155d9841acc89229c282ff68db6e25d86",
+      "license_identifier": "CC0-1.0",
+      "path": "evidence/18f-license.md",
+      "sha256": "0a8739dbbae23c1a8a6baeb3be6bcb2155d9841acc89229c282ff68db6e25d86"
+    },
+    {
+      "id": "github-license",
+      "repository": "github/opensource.guide",
+      "commit": "e7ac98e94600c5eea834f9a026c000d26b28df24",
+      "url": "https://raw.githubusercontent.com/github/opensource.guide/e7ac98e94600c5eea834f9a026c000d26b28df24/LICENSE",
+      "cache_name": "github-license",
+      "expected_sha256": "83cc663721b1bbf538756b65cffb215226e8c6be0fcf4a19a5a29dbb12f0cd5c",
+      "license_identifier": "CC-BY-4.0",
+      "path": "evidence/github-license",
+      "sha256": "83cc663721b1bbf538756b65cffb215226e8c6be0fcf4a19a5a29dbb12f0cd5c"
+    },
+    {
+      "id": "gsa-license",
+      "repository": "GSA/accessibility-for-teams",
+      "commit": "3ba7decc320251962c3f5e577c9b836a8f3812fb",
+      "url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/LICENSE.md",
+      "cache_name": "gsa-license.md",
+      "expected_sha256": "154cf320841b1d6a1348e1e5b89c7c4fda097f587c0168f84fd9d226eee229d3",
+      "license_identifier": "CC0-1.0",
+      "path": "evidence/gsa-license.md",
+      "sha256": "154cf320841b1d6a1348e1e5b89c7c4fda097f587c0168f84fd9d226eee229d3"
+    },
+    {
+      "id": "mozilla-license",
+      "repository": "mozilla/open-leadership-training-series",
+      "commit": "c056e8abca7db86510d9c61a6fa2cc2991d5974d",
+      "url": "https://raw.githubusercontent.com/mozilla/open-leadership-training-series/c056e8abca7db86510d9c61a6fa2cc2991d5974d/LICENSE",
+      "cache_name": "mozilla-license",
+      "expected_sha256": "a80023b401fa39f73c776e5c169dbcd46b40d1c299b9a4cf9746dbf700de1432",
+      "license_identifier": "MIT",
+      "path": "evidence/mozilla-license",
+      "sha256": "a80023b401fa39f73c776e5c169dbcd46b40d1c299b9a4cf9746dbf700de1432"
+    }
+  ],
+  "documents": [
+    {
+      "id": "ethical-research",
+      "title": "Ethical Research and Data Practice",
+      "authors": [
+        "The Turing Way Community"
+      ],
+      "publisher": "The Turing Way Community",
+      "language": "en",
+      "domain": "research-ethics",
+      "topic": "data-power-hazards-and-reflection",
+      "repository": "the-turing-way/the-turing-way",
+      "source_url": "https://github.com/the-turing-way/the-turing-way/tree/c25d0befe9ce3a21ac46fa47b685db82ad169909",
+      "commit": "c25d0befe9ce3a21ac46fa47b685db82ad169909",
+      "commit_date": "2026-10-16T09:43:56+01:00",
+      "work_family": "repository:the-turing-way/the-turing-way",
+      "author_family": "organization:turing",
+      "split_group": "source-family:the-turing-way/the-turing-way",
+      "license_evidence_id": "turing-license",
+      "license": {
+        "identifier": "CC-BY-4.0",
+        "terms_url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://github.com/the-turing-way/the-turing-way/blob/c25d0befe9ce3a21ac46fa47b685db82ad169909/LICENSE.md",
+        "verified_on": "2026-10-19"
+      },
+      "attribution": "Ethical Research and Data Practice, by The Turing Way Community, published by The Turing Way Community, CC-BY-4.0. Repository Markdown converted to plain text; links and visual assets excluded or reduced to alt text; modifications recorded.",
+      "usage": "development-only; not assigned to train/validation/test",
+      "sources": [
+        {
+          "path": "book/website/ethical-research/ethical-research.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/ethical-research.md",
+          "expected_sha256": "bf495f1e2af38a69edfbd4ae6662dd060ce9ef3e6ae86ab1a7c2a6169f284e0a",
+          "raw_path": "raw/ethical-research-00.md",
+          "raw_bytes": 1279
+        },
+        {
+          "path": "book/website/ethical-research/ethics-intro.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/ethics-intro.md",
+          "expected_sha256": "c4be27c25af06414a16fc799559bfe4daa9f75b017127ab06ad48d5c1a3d373d",
+          "raw_path": "raw/ethical-research-01.md",
+          "raw_bytes": 13633
+        },
+        {
+          "path": "book/website/ethical-research/data-feminism.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/data-feminism.md",
+          "expected_sha256": "508ba1bf7c7e245df5d80f5424d314e5a23b69ee036d62e4e11b3293482a2716",
+          "raw_path": "raw/ethical-research-02.md",
+          "raw_bytes": 4090
+        },
+        {
+          "path": "book/website/ethical-research/data-feminism/data-feminism-power.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/data-feminism/data-feminism-power.md",
+          "expected_sha256": "5e8228ee68f81671f6049628dfdd0e66a1eccf837e97c5e83b3554c66b7c353d",
+          "raw_path": "raw/ethical-research-03.md",
+          "raw_bytes": 4662
+        },
+        {
+          "path": "book/website/ethical-research/data-hazards.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/data-hazards.md",
+          "expected_sha256": "0df5e60b151ff5a09798f532b845875a5ef171091f21b51b002f899e33adfaf6",
+          "raw_path": "raw/ethical-research-04.md",
+          "raw_bytes": 1925
+        },
+        {
+          "path": "book/website/ethical-research/data-hazards/dh-intro.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/data-hazards/dh-intro.md",
+          "expected_sha256": "92c3353c4b1ab2871df3f5d730b25eaad69a8455a8ca15cfa7ca7957de6cc2a3",
+          "raw_path": "raw/ethical-research-05.md",
+          "raw_bytes": 7384
+        },
+        {
+          "path": "book/website/ethical-research/data-hazards/dh-how-to-use.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/data-hazards/dh-how-to-use.md",
+          "expected_sha256": "7ae0aa151d37df8193fc5915c4b824adde5a1fa289fa4e5179f45e7fe220aeef",
+          "raw_path": "raw/ethical-research-06.md",
+          "raw_bytes": 9330
+        },
+        {
+          "path": "book/website/ethical-research/law-policy.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/law-policy.md",
+          "expected_sha256": "ad57495895bc710ee67066bfcfe26e14517bfdc23ae6f355b8b67570c1b9c931",
+          "raw_path": "raw/ethical-research-07.md",
+          "raw_bytes": 2026
+        },
+        {
+          "path": "book/website/ethical-research/law-policy/law-policy-ethics.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/law-policy/law-policy-ethics.md",
+          "expected_sha256": "a66fd465c34d981de1483eb217f4febd8ea76f1c5831481df1a36d0e17b5c5f4",
+          "raw_path": "raw/ethical-research-08.md",
+          "raw_bytes": 9655
+        },
+        {
+          "path": "book/website/ethical-research/law-policy/law-policy-rights.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/law-policy/law-policy-rights.md",
+          "expected_sha256": "9c629fb59fdaf93f5f7a06b37ba68b08bf0447214e03f305a5e706ffb1315399",
+          "raw_path": "raw/ethical-research-09.md",
+          "raw_bytes": 7219
+        },
+        {
+          "path": "book/website/ethical-research/self-reflection.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/self-reflection.md",
+          "expected_sha256": "472f9f417be2922aa4b5e1de38ac3d369f1218218df3806583ae17511d608429",
+          "raw_path": "raw/ethical-research-10.md",
+          "raw_bytes": 3421
+        },
+        {
+          "path": "book/website/ethical-research/self-reflection/sr-positionality.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/self-reflection/sr-positionality.md",
+          "expected_sha256": "e1f6a0b3031d478d68849eda0825f465c276f5236a0c06fdb5fb518d3860c4f4",
+          "raw_path": "raw/ethical-research-11.md",
+          "raw_bytes": 3618
+        },
+        {
+          "path": "book/website/ethical-research/self-reflection/sr-power.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/self-reflection/sr-power.md",
+          "expected_sha256": "2a25de6a49a067f62071ce5c01b5180bb493baffbf2cef5bf2c4c300a617b21a",
+          "raw_path": "raw/ethical-research-12.md",
+          "raw_bytes": 3443
+        },
+        {
+          "path": "book/website/ethical-research/self-reflection/sr-prompts.md",
+          "download_url": "https://raw.githubusercontent.com/the-turing-way/the-turing-way/c25d0befe9ce3a21ac46fa47b685db82ad169909/book/website/ethical-research/self-reflection/sr-prompts.md",
+          "expected_sha256": "0e6806d7bb915310b655bb63b3087b0d3461d593ee6ce41e2a2120eeabcd45be",
+          "raw_path": "raw/ethical-research-13.md",
+          "raw_bytes": 2740
+        }
+      ],
+      "ingested_at_utc": "2026-10-19T22:12:43.662013+00:00",
+      "text_path": "text/ethical-research.txt",
+      "rendered_sha256": "7a58f475caddc7883abccae0bf47e00a665878e09e74973f510e84d512be5b91",
+      "rendered_characters": 67050,
+      "rendered_utf8_bytes": 67116,
+      "transformation": "Repository Markdown collection v1: front matter, template syntax, fence markers, HTML and links normalized; prose and code retained; NFC/LF",
+      "transformation_audit": {
+        "front_matter_blocks_removed": 0,
+        "html_comments_removed": 7,
+        "template_expressions_removed": 0,
+        "document_directives_removed": 43,
+        "code_fence_lines_removed_code_retained": 14,
+        "images_replaced_by_alt_text": 0,
+        "source_files": 14,
+        "directive_delimiters_removed": 1,
+        "replacement_characters": 0,
+        "remaining_html_tags": 0,
+        "remaining_template_markers": 0
+      },
+      "partition": "expansion-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "open-sociocultural",
+      "title": "Opening Knowledge and Building Communities",
+      "authors": [
+        "Creative Commons contributors"
+      ],
+      "publisher": "Creative Commons",
+      "language": "en",
+      "domain": "open-culture",
+      "topic": "sociocultural-practice",
+      "repository": "cc-archive/cc-cert-core",
+      "source_url": "https://github.com/cc-archive/cc-cert-core/tree/972433eea44cfc9b8df25dc1b57039fc01f9727f",
+      "commit": "972433eea44cfc9b8df25dc1b57039fc01f9727f",
+      "commit_date": "2019-06-21T16:34:21-04:00",
+      "work_family": "repository:cc-archive/cc-cert-core",
+      "author_family": "organization:cc",
+      "split_group": "source-family:cc-archive/cc-cert-core",
+      "license_evidence_id": "cc-license",
+      "license": {
+        "identifier": "CC-BY-4.0",
+        "terms_url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://github.com/cc-archive/cc-cert-core/blob/972433eea44cfc9b8df25dc1b57039fc01f9727f/LICENSE",
+        "verified_on": "2026-10-19"
+      },
+      "attribution": "Opening Knowledge and Building Communities, by Creative Commons contributors, published by Creative Commons, CC-BY-4.0. Repository Markdown converted to plain text; links and visual assets excluded or reduced to alt text; modifications recorded.",
+      "usage": "development-only; not assigned to train/validation/test",
+      "sources": [
+        {
+          "path": "contents/sociocultural/index.md",
+          "download_url": "https://raw.githubusercontent.com/cc-archive/cc-cert-core/972433eea44cfc9b8df25dc1b57039fc01f9727f/contents/sociocultural/index.md",
+          "expected_sha256": "44262bc3e534612311146a8cff49d87e32153d151f0f7d8428dfdbd82cc56f1b",
+          "raw_path": "raw/open-sociocultural-00.md",
+          "raw_bytes": 2748
+        },
+        {
+          "path": "contents/sociocultural/community-development.md",
+          "download_url": "https://raw.githubusercontent.com/cc-archive/cc-cert-core/972433eea44cfc9b8df25dc1b57039fc01f9727f/contents/sociocultural/community-development.md",
+          "expected_sha256": "b56c2e6642b8d650ff2eabfed6e527b6f0e09ccd2a25f1956e67eae01ec5801d",
+          "raw_path": "raw/open-sociocultural-01.md",
+          "raw_bytes": 9766
+        },
+        {
+          "path": "contents/sociocultural/gratitude.md",
+          "download_url": "https://raw.githubusercontent.com/cc-archive/cc-cert-core/972433eea44cfc9b8df25dc1b57039fc01f9727f/contents/sociocultural/gratitude.md",
+          "expected_sha256": "91bf9bdb654f0799da5d14e0c165a9d34a392daefb978613f69c0b4c90855296",
+          "raw_path": "raw/open-sociocultural-02.md",
+          "raw_bytes": 11855
+        },
+        {
+          "path": "contents/sociocultural/open-better.md",
+          "download_url": "https://raw.githubusercontent.com/cc-archive/cc-cert-core/972433eea44cfc9b8df25dc1b57039fc01f9727f/contents/sociocultural/open-better.md",
+          "expected_sha256": "f20ed9db33e47fa95425f40b7384f01b012f75179abed5463bdb5e904e5e0c83",
+          "raw_path": "raw/open-sociocultural-03.md",
+          "raw_bytes": 9600
+        },
+        {
+          "path": "contents/sociocultural/promoting-open.md",
+          "download_url": "https://raw.githubusercontent.com/cc-archive/cc-cert-core/972433eea44cfc9b8df25dc1b57039fc01f9727f/contents/sociocultural/promoting-open.md",
+          "expected_sha256": "280d3c32ad8cd1c0137493214473d54e4ba1d516bbb5c7771aa0c32f24802231",
+          "raw_path": "raw/open-sociocultural-04.md",
+          "raw_bytes": 9750
+        },
+        {
+          "path": "contents/sociocultural/shift-open.md",
+          "download_url": "https://raw.githubusercontent.com/cc-archive/cc-cert-core/972433eea44cfc9b8df25dc1b57039fc01f9727f/contents/sociocultural/shift-open.md",
+          "expected_sha256": "a3b9761d0bec4dd5cb733d324313b182bf9be140b28eb86c7a024125715492fc",
+          "raw_path": "raw/open-sociocultural-05.md",
+          "raw_bytes": 9748
+        }
+      ],
+      "ingested_at_utc": "2026-10-19T22:12:44.880405+00:00",
+      "text_path": "text/open-sociocultural.txt",
+      "rendered_sha256": "4404e8f752d51c44112f3e00609c2803458195cc28ad4c73737ee86039cf2000",
+      "rendered_characters": 46062,
+      "rendered_utf8_bytes": 46104,
+      "transformation": "Repository Markdown collection v1: front matter, template syntax, fence markers, HTML and links normalized; prose and code retained; NFC/LF",
+      "transformation_audit": {
+        "front_matter_blocks_removed": 0,
+        "html_comments_removed": 0,
+        "template_expressions_removed": 0,
+        "images_replaced_by_alt_text": 13,
+        "source_files": 6,
+        "replacement_characters": 0,
+        "remaining_html_tags": 0,
+        "remaining_template_markers": 0
+      },
+      "partition": "expansion-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "government-voice",
+      "title": "Voice, Tone, and Inclusive Language",
+      "authors": [
+        "18F contributors"
+      ],
+      "publisher": "18F",
+      "language": "en",
+      "domain": "public-communication",
+      "topic": "voice-tone-and-inclusion",
+      "repository": "18F/content-guide",
+      "source_url": "https://github.com/18F/content-guide/tree/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a",
+      "commit": "1b1723d3d5b8f91d92c16487c88b56265dc0ec3a",
+      "commit_date": "2023-12-14T15:02:02-06:00",
+      "work_family": "repository:18F/content-guide",
+      "author_family": "organization:18f",
+      "split_group": "source-family:18F/content-guide",
+      "license_evidence_id": "18f-license",
+      "license": {
+        "identifier": "CC0-1.0",
+        "terms_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_url": "https://github.com/18F/content-guide/blob/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a/LICENSE.md",
+        "verified_on": "2026-10-19"
+      },
+      "attribution": "Voice, Tone, and Inclusive Language, by 18F contributors, published by 18F, CC0-1.0. Repository Markdown converted to plain text; links and visual assets excluded or reduced to alt text; modifications recorded.",
+      "usage": "development-only; not assigned to train/validation/test",
+      "sources": [
+        {
+          "path": "_pages/our-style/voice-and-tone.md",
+          "download_url": "https://raw.githubusercontent.com/18F/content-guide/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a/_pages/our-style/voice-and-tone.md",
+          "expected_sha256": "f7d1a16d4e5e9d4b2d008bcc042d1253ea679d6e86dd7c499fe4ecdd0aa5efb0",
+          "raw_path": "raw/government-voice-00.md",
+          "raw_bytes": 8212
+        },
+        {
+          "path": "_pages/our-style/inclusive-language.md",
+          "download_url": "https://raw.githubusercontent.com/18F/content-guide/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a/_pages/our-style/inclusive-language.md",
+          "expected_sha256": "314f97b74317ab8424acb0f2c9be34478fa156b90c1f8d4265faa4f2455c1740",
+          "raw_path": "raw/government-voice-01.md",
+          "raw_bytes": 6865
+        }
+      ],
+      "ingested_at_utc": "2026-10-19T22:12:45.285493+00:00",
+      "text_path": "text/government-voice.txt",
+      "rendered_sha256": "267823798d5e6b21c606f2448a2ac911775ea6f1fa1ef517c85f72a1cd6d0bab",
+      "rendered_characters": 12740,
+      "rendered_utf8_bytes": 12870,
+      "transformation": "Repository Markdown collection v1: front matter, template syntax, fence markers, HTML and links normalized; prose and code retained; NFC/LF",
+      "transformation_audit": {
+        "front_matter_blocks_removed": 2,
+        "html_comments_removed": 0,
+        "template_expressions_removed": 0,
+        "images_replaced_by_alt_text": 0,
+        "source_files": 2,
+        "replacement_characters": 0,
+        "remaining_html_tags": 0,
+        "remaining_template_markers": 0
+      },
+      "partition": "expansion-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "government-content",
+      "title": "Plain Language and Structured Web Content",
+      "authors": [
+        "18F contributors"
+      ],
+      "publisher": "18F",
+      "language": "en",
+      "domain": "public-communication",
+      "topic": "plain-language-and-content-design",
+      "repository": "18F/content-guide",
+      "source_url": "https://github.com/18F/content-guide/tree/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a",
+      "commit": "1b1723d3d5b8f91d92c16487c88b56265dc0ec3a",
+      "commit_date": "2023-12-14T15:02:02-06:00",
+      "work_family": "repository:18F/content-guide",
+      "author_family": "organization:18f",
+      "split_group": "source-family:18F/content-guide",
+      "license_evidence_id": "18f-license",
+      "license": {
+        "identifier": "CC0-1.0",
+        "terms_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_url": "https://github.com/18F/content-guide/blob/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a/LICENSE.md",
+        "verified_on": "2026-10-19"
+      },
+      "attribution": "Plain Language and Structured Web Content, by 18F contributors, published by 18F, CC0-1.0. Repository Markdown converted to plain text; links and visual assets excluded or reduced to alt text; modifications recorded.",
+      "usage": "development-only; not assigned to train/validation/test",
+      "sources": [
+        {
+          "path": "_pages/our-approach/plain-language.md",
+          "download_url": "https://raw.githubusercontent.com/18F/content-guide/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a/_pages/our-approach/plain-language.md",
+          "expected_sha256": "2388895f77cd73e5fbb8b2965d779b2cad6d9f15e8ed42069e2e8b506be71079",
+          "raw_path": "raw/government-content-00.md",
+          "raw_bytes": 5133
+        },
+        {
+          "path": "_pages/our-approach/structure-the-content.md",
+          "download_url": "https://raw.githubusercontent.com/18F/content-guide/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a/_pages/our-approach/structure-the-content.md",
+          "expected_sha256": "d1cef50d0136572bf0f62dae6be257b27a141e43e1e3d44595b414e402796173",
+          "raw_path": "raw/government-content-01.md",
+          "raw_bytes": 6261
+        },
+        {
+          "path": "_pages/our-approach/make-content-web-friendly.md",
+          "download_url": "https://raw.githubusercontent.com/18F/content-guide/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a/_pages/our-approach/make-content-web-friendly.md",
+          "expected_sha256": "5f22672b179ea3eff3426b9551357a5ef59929e953d38269bdbde476c184318b",
+          "raw_path": "raw/government-content-02.md",
+          "raw_bytes": 3198
+        },
+        {
+          "path": "_pages/our-approach/be-concise.md",
+          "download_url": "https://raw.githubusercontent.com/18F/content-guide/1b1723d3d5b8f91d92c16487c88b56265dc0ec3a/_pages/our-approach/be-concise.md",
+          "expected_sha256": "7634768ee972c4807a8277c5447cad020368544b43234215ddb899d5f6f66699",
+          "raw_path": "raw/government-content-03.md",
+          "raw_bytes": 2484
+        }
+      ],
+      "ingested_at_utc": "2026-10-19T22:12:46.105292+00:00",
+      "text_path": "text/government-content.txt",
+      "rendered_sha256": "436e524ed967446b3d1b3ab22b2b3e8830754ca69f4701fa7efa969528bc20d7",
+      "rendered_characters": 14123,
+      "rendered_utf8_bytes": 14251,
+      "transformation": "Repository Markdown collection v1: front matter, template syntax, fence markers, HTML and links normalized; prose and code retained; NFC/LF",
+      "transformation_audit": {
+        "front_matter_blocks_removed": 4,
+        "html_comments_removed": 0,
+        "template_expressions_removed": 1,
+        "images_replaced_by_alt_text": 0,
+        "source_files": 4,
+        "replacement_characters": 0,
+        "remaining_html_tags": 0,
+        "remaining_template_markers": 0
+      },
+      "partition": "expansion-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "open-source-practice",
+      "title": "Starting and Sustaining an Open Source Project",
+      "authors": [
+        "Open Source Guides contributors"
+      ],
+      "publisher": "GitHub",
+      "language": "en",
+      "domain": "open-source",
+      "topic": "project-practice-and-maintainer-health",
+      "repository": "github/opensource.guide",
+      "source_url": "https://github.com/github/opensource.guide/tree/e7ac98e94600c5eea834f9a026c000d26b28df24",
+      "commit": "e7ac98e94600c5eea834f9a026c000d26b28df24",
+      "commit_date": "2026-09-30T17:15:44Z",
+      "work_family": "repository:github/opensource.guide",
+      "author_family": "organization:github",
+      "split_group": "source-family:github/opensource.guide",
+      "license_evidence_id": "github-license",
+      "license": {
+        "identifier": "CC-BY-4.0",
+        "terms_url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://github.com/github/opensource.guide/blob/e7ac98e94600c5eea834f9a026c000d26b28df24/LICENSE",
+        "verified_on": "2026-10-19"
+      },
+      "attribution": "Starting and Sustaining an Open Source Project, by Open Source Guides contributors, published by GitHub, CC-BY-4.0. Repository Markdown converted to plain text; links and visual assets excluded or reduced to alt text; modifications recorded.",
+      "usage": "development-only; not assigned to train/validation/test",
+      "sources": [
+        {
+          "path": "_articles/starting-a-project.md",
+          "download_url": "https://raw.githubusercontent.com/github/opensource.guide/e7ac98e94600c5eea834f9a026c000d26b28df24/_articles/starting-a-project.md",
+          "expected_sha256": "cd790e70862b79269592414ab077bb68c01cd27f3ad75039564faa803e38c32d",
+          "raw_path": "raw/open-source-practice-00.md",
+          "raw_bytes": 24989
+        },
+        {
+          "path": "_articles/best-practices.md",
+          "download_url": "https://raw.githubusercontent.com/github/opensource.guide/e7ac98e94600c5eea834f9a026c000d26b28df24/_articles/best-practices.md",
+          "expected_sha256": "2b54f9063f13b0616b6451cb31de0cbec6c44c80816fb8f92c7f512f7e8d9670",
+          "raw_path": "raw/open-source-practice-01.md",
+          "raw_bytes": 23460
+        },
+        {
+          "path": "_articles/maintaining-balance-for-open-source-maintainers.md",
+          "download_url": "https://raw.githubusercontent.com/github/opensource.guide/e7ac98e94600c5eea834f9a026c000d26b28df24/_articles/maintaining-balance-for-open-source-maintainers.md",
+          "expected_sha256": "6e0f5b32133d60b9e735548db7ab1e20b1f8fccb0f8b52acef66f4526d3cacb2",
+          "raw_path": "raw/open-source-practice-02.md",
+          "raw_bytes": 15166
+        }
+      ],
+      "ingested_at_utc": "2026-10-19T22:12:46.768082+00:00",
+      "text_path": "text/open-source-practice.txt",
+      "rendered_sha256": "f989342bd2baf6d9b30489e2b84fc6c5294bafc88ab2f62e8f3ddb11e7035eb3",
+      "rendered_characters": 47280,
+      "rendered_utf8_bytes": 47358,
+      "transformation": "Repository Markdown collection v1: front matter, template syntax, fence markers, HTML and links normalized; prose and code retained; NFC/LF",
+      "transformation_audit": {
+        "front_matter_blocks_removed": 3,
+        "html_comments_removed": 0,
+        "template_expressions_removed": 0,
+        "images_replaced_by_alt_text": 3,
+        "source_files": 3,
+        "replacement_characters": 0,
+        "remaining_html_tags": 0,
+        "remaining_template_markers": 0
+      },
+      "partition": "expansion-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "open-source-community",
+      "title": "Open Source Community and Governance",
+      "authors": [
+        "Open Source Guides contributors"
+      ],
+      "publisher": "GitHub",
+      "language": "en",
+      "domain": "community-governance",
+      "topic": "community-leadership-and-conduct",
+      "repository": "github/opensource.guide",
+      "source_url": "https://github.com/github/opensource.guide/tree/e7ac98e94600c5eea834f9a026c000d26b28df24",
+      "commit": "e7ac98e94600c5eea834f9a026c000d26b28df24",
+      "commit_date": "2026-09-30T17:15:44Z",
+      "work_family": "repository:github/opensource.guide",
+      "author_family": "organization:github",
+      "split_group": "source-family:github/opensource.guide",
+      "license_evidence_id": "github-license",
+      "license": {
+        "identifier": "CC-BY-4.0",
+        "terms_url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://github.com/github/opensource.guide/blob/e7ac98e94600c5eea834f9a026c000d26b28df24/LICENSE",
+        "verified_on": "2026-10-19"
+      },
+      "attribution": "Open Source Community and Governance, by Open Source Guides contributors, published by GitHub, CC-BY-4.0. Repository Markdown converted to plain text; links and visual assets excluded or reduced to alt text; modifications recorded.",
+      "usage": "development-only; not assigned to train/validation/test",
+      "sources": [
+        {
+          "path": "_articles/building-community.md",
+          "download_url": "https://raw.githubusercontent.com/github/opensource.guide/e7ac98e94600c5eea834f9a026c000d26b28df24/_articles/building-community.md",
+          "expected_sha256": "bb88b12716d60a50f932b9ea7eba07da858859fbb6c76bec74d177a5c2a29ec4",
+          "raw_path": "raw/open-source-community-00.md",
+          "raw_bytes": 25273
+        },
+        {
+          "path": "_articles/leadership-and-governance.md",
+          "download_url": "https://raw.githubusercontent.com/github/opensource.guide/e7ac98e94600c5eea834f9a026c000d26b28df24/_articles/leadership-and-governance.md",
+          "expected_sha256": "56b86d87a2057bfb01e359223d9661909348abb7ee3e44190f8eb63296fefc28",
+          "raw_path": "raw/open-source-community-01.md",
+          "raw_bytes": 15271
+        },
+        {
+          "path": "_articles/code-of-conduct.md",
+          "download_url": "https://raw.githubusercontent.com/github/opensource.guide/e7ac98e94600c5eea834f9a026c000d26b28df24/_articles/code-of-conduct.md",
+          "expected_sha256": "770f4f55c3c30ba9d7219608c1ca63c04b3c69156873a4da0d53ed2cce121907",
+          "raw_path": "raw/open-source-community-02.md",
+          "raw_bytes": 10037
+        }
+      ],
+      "ingested_at_utc": "2026-10-19T22:12:47.405777+00:00",
+      "text_path": "text/open-source-community.txt",
+      "rendered_sha256": "e3e39922f4f7c8c2144c9aae32ca0ef35e21b4ef6d21baf2154bef90893c72a7",
+      "rendered_characters": 41993,
+      "rendered_utf8_bytes": 42054,
+      "transformation": "Repository Markdown collection v1: front matter, template syntax, fence markers, HTML and links normalized; prose and code retained; NFC/LF",
+      "transformation_audit": {
+        "front_matter_blocks_removed": 3,
+        "html_comments_removed": 0,
+        "template_expressions_removed": 0,
+        "images_replaced_by_alt_text": 4,
+        "source_files": 3,
+        "replacement_characters": 0,
+        "remaining_html_tags": 0,
+        "remaining_template_markers": 0
+      },
+      "partition": "expansion-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "accessible-products",
+      "title": "Accessibility for Product Teams",
+      "authors": [
+        "Accessibility for Teams contributors"
+      ],
+      "publisher": "U.S. General Services Administration",
+      "language": "en",
+      "domain": "accessibility",
+      "topic": "accessible-product-development",
+      "repository": "GSA/accessibility-for-teams",
+      "source_url": "https://github.com/GSA/accessibility-for-teams/tree/3ba7decc320251962c3f5e577c9b836a8f3812fb",
+      "commit": "3ba7decc320251962c3f5e577c9b836a8f3812fb",
+      "commit_date": "2024-02-29T14:51:07-05:00",
+      "work_family": "repository:GSA/accessibility-for-teams",
+      "author_family": "organization:gsa",
+      "split_group": "source-family:GSA/accessibility-for-teams",
+      "license_evidence_id": "gsa-license",
+      "license": {
+        "identifier": "CC0-1.0",
+        "terms_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_url": "https://github.com/GSA/accessibility-for-teams/blob/3ba7decc320251962c3f5e577c9b836a8f3812fb/LICENSE.md",
+        "verified_on": "2026-10-19"
+      },
+      "attribution": "Accessibility for Product Teams, by Accessibility for Teams contributors, published by U.S. General Services Administration, CC0-1.0. Repository Markdown converted to plain text; links and visual assets excluded or reduced to alt text; modifications recorded.",
+      "usage": "development-only; not assigned to train/validation/test",
+      "sources": [
+        {
+          "path": "pages/product/accessibility-basics.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/product/accessibility-basics.md",
+          "expected_sha256": "36ce7d61456ac145cc79c3e952cd7bfd8307ef46cb1f87ad1f07cb77d5094511",
+          "raw_path": "raw/accessible-products-00.md",
+          "raw_bytes": 2031
+        },
+        {
+          "path": "pages/product/getting-started.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/product/getting-started.md",
+          "expected_sha256": "10c1bcf443b32624cc26d1564266fc09e4bd1bc5b5fedafef1fe052d79dad019",
+          "raw_path": "raw/accessible-products-01.md",
+          "raw_bytes": 1221
+        },
+        {
+          "path": "pages/product/project-workflow.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/product/project-workflow.md",
+          "expected_sha256": "56e92473f2692ab102579e1349d86a394613924bee969db3ffad447556ee595d",
+          "raw_path": "raw/accessible-products-02.md",
+          "raw_bytes": 1810
+        },
+        {
+          "path": "pages/product/diverse-users.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/product/diverse-users.md",
+          "expected_sha256": "82e556640645d8f06e2071cd01aa8a9f6e960650398d3af114ad8910bb56bddf",
+          "raw_path": "raw/accessible-products-03.md",
+          "raw_bytes": 1239
+        },
+        {
+          "path": "pages/product/final-review.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/product/final-review.md",
+          "expected_sha256": "7343ab52fdf7f2f83b9d95a72696fccc1c58dff7c2784a0979848cd3bec05347",
+          "raw_path": "raw/accessible-products-04.md",
+          "raw_bytes": 644
+        },
+        {
+          "path": "pages/content/getting-started.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/content/getting-started.md",
+          "expected_sha256": "33c476a784b5449779027e3bc71659abca257578a1a0fa885c2773424f55212c",
+          "raw_path": "raw/accessible-products-05.md",
+          "raw_bytes": 733
+        },
+        {
+          "path": "pages/content/plain-language.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/content/plain-language.md",
+          "expected_sha256": "9ec445ea22c8a0773c0e2e9eb51637ea88d08218260d7cce83806208c0a3453e",
+          "raw_path": "raw/accessible-products-06.md",
+          "raw_bytes": 1961
+        }
+      ],
+      "ingested_at_utc": "2026-10-19T22:12:48.870944+00:00",
+      "text_path": "text/accessible-products.txt",
+      "rendered_sha256": "1b31b6fe01aac3da83728cf039ec3468bbb23e354199e3fc63d4fd30bc31634b",
+      "rendered_characters": 6058,
+      "rendered_utf8_bytes": 6084,
+      "transformation": "Repository Markdown collection v1: front matter, template syntax, fence markers, HTML and links normalized; prose and code retained; NFC/LF",
+      "transformation_audit": {
+        "front_matter_blocks_removed": 7,
+        "html_comments_removed": 0,
+        "template_expressions_removed": 16,
+        "images_replaced_by_alt_text": 0,
+        "source_files": 7,
+        "replacement_characters": 0,
+        "remaining_html_tags": 0,
+        "remaining_template_markers": 0
+      },
+      "partition": "expansion-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "accessible-ux",
+      "title": "Accessibility for User Experience Teams",
+      "authors": [
+        "Accessibility for Teams contributors"
+      ],
+      "publisher": "U.S. General Services Administration",
+      "language": "en",
+      "domain": "accessibility",
+      "topic": "inclusive-user-experience",
+      "repository": "GSA/accessibility-for-teams",
+      "source_url": "https://github.com/GSA/accessibility-for-teams/tree/3ba7decc320251962c3f5e577c9b836a8f3812fb",
+      "commit": "3ba7decc320251962c3f5e577c9b836a8f3812fb",
+      "commit_date": "2024-02-29T14:51:07-05:00",
+      "work_family": "repository:GSA/accessibility-for-teams",
+      "author_family": "organization:gsa",
+      "split_group": "source-family:GSA/accessibility-for-teams",
+      "license_evidence_id": "gsa-license",
+      "license": {
+        "identifier": "CC0-1.0",
+        "terms_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "evidence_url": "https://github.com/GSA/accessibility-for-teams/blob/3ba7decc320251962c3f5e577c9b836a8f3812fb/LICENSE.md",
+        "verified_on": "2026-10-19"
+      },
+      "attribution": "Accessibility for User Experience Teams, by Accessibility for Teams contributors, published by U.S. General Services Administration, CC0-1.0. Repository Markdown converted to plain text; links and visual assets excluded or reduced to alt text; modifications recorded.",
+      "usage": "development-only; not assigned to train/validation/test",
+      "sources": [
+        {
+          "path": "pages/ux/images.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/ux/images.md",
+          "expected_sha256": "e00fe18acbc4fe8cab325b1f11f31979a9bfc0c8286651ec1fe9cf911fbec947",
+          "raw_path": "raw/accessible-ux-00.md",
+          "raw_bytes": 1466
+        },
+        {
+          "path": "pages/ux/forms.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/ux/forms.md",
+          "expected_sha256": "a5a884046a00f7843df56b589ae64e21594c480dfc7906ea9e96238ead9f4941",
+          "raw_path": "raw/accessible-ux-01.md",
+          "raw_bytes": 2066
+        },
+        {
+          "path": "pages/ux/inclusive-design.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/ux/inclusive-design.md",
+          "expected_sha256": "efaefd54a50473f5cf2cf2e1634a2774f609b3766a28958a8f77969d3cdecdf6",
+          "raw_path": "raw/accessible-ux-02.md",
+          "raw_bytes": 2551
+        },
+        {
+          "path": "pages/ux/humanize-accessibility.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/ux/humanize-accessibility.md",
+          "expected_sha256": "51d35ecda5606549d85b42fa698daac0ce9180e39612d2215d16697d6f13a48f",
+          "raw_path": "raw/accessible-ux-03.md",
+          "raw_bytes": 1956
+        },
+        {
+          "path": "pages/ux/focus.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/ux/focus.md",
+          "expected_sha256": "e227c0eb540c1e9a5f952de8948e0ba26414c2d718d41692dcf6c1ec0d672fae",
+          "raw_path": "raw/accessible-ux-04.md",
+          "raw_bytes": 1218
+        },
+        {
+          "path": "pages/ux/tab-order.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/ux/tab-order.md",
+          "expected_sha256": "e1df954cc7e8e11052970738a8418fed2c3be31737331b2645ab5ed51f4addcc",
+          "raw_path": "raw/accessible-ux-05.md",
+          "raw_bytes": 1720
+        },
+        {
+          "path": "pages/ux/getting-started.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/ux/getting-started.md",
+          "expected_sha256": "f008993417fd35972e90134768b0550758a3db092385fada136834248d1879f3",
+          "raw_path": "raw/accessible-ux-06.md",
+          "raw_bytes": 596
+        },
+        {
+          "path": "pages/ux/assistive-technology.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/ux/assistive-technology.md",
+          "expected_sha256": "c82264304de06a7d42ce6de4d05ee218493b886907d023cf0aeccc823ae47ae9",
+          "raw_path": "raw/accessible-ux-07.md",
+          "raw_bytes": 1956
+        },
+        {
+          "path": "pages/ux/navigation-shortcuts.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/ux/navigation-shortcuts.md",
+          "expected_sha256": "a01dfa3b9c2c64518fa4d0a02c24ac18da2c0e35eaf573ad0434abe566ce87f6",
+          "raw_path": "raw/accessible-ux-08.md",
+          "raw_bytes": 1873
+        },
+        {
+          "path": "pages/ux/touch-targets.md",
+          "download_url": "https://raw.githubusercontent.com/GSA/accessibility-for-teams/3ba7decc320251962c3f5e577c9b836a8f3812fb/pages/ux/touch-targets.md",
+          "expected_sha256": "8f69012a61feb483fb5a6e3d3ff86e924b8719ca32d49a32acf33b004b3cd9d2",
+          "raw_path": "raw/accessible-ux-09.md",
+          "raw_bytes": 1628
+        }
+      ],
+      "ingested_at_utc": "2026-10-19T22:12:50.944223+00:00",
+      "text_path": "text/accessible-ux.txt",
+      "rendered_sha256": "c2d726230946aca4b8f4bd5f8d556773251a38f68aaa2a96257352be72c9c25a",
+      "rendered_characters": 8712,
+      "rendered_utf8_bytes": 8756,
+      "transformation": "Repository Markdown collection v1: front matter, template syntax, fence markers, HTML and links normalized; prose and code retained; NFC/LF",
+      "transformation_audit": {
+        "front_matter_blocks_removed": 10,
+        "html_comments_removed": 0,
+        "template_expressions_removed": 11,
+        "images_replaced_by_alt_text": 0,
+        "source_files": 10,
+        "replacement_characters": 0,
+        "remaining_html_tags": 0,
+        "remaining_template_markers": 0
+      },
+      "partition": "expansion-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "open-project-strategy",
+      "title": "Open Project Strategy and Roadmaps",
+      "authors": [
+        "Mozilla Open Leadership contributors"
+      ],
+      "publisher": "Mozilla Foundation",
+      "language": "en",
+      "domain": "open-leadership",
+      "topic": "project-strategy-and-roadmaps",
+      "repository": "mozilla/open-leadership-training-series",
+      "source_url": "https://github.com/mozilla/open-leadership-training-series/tree/c056e8abca7db86510d9c61a6fa2cc2991d5974d",
+      "commit": "c056e8abca7db86510d9c61a6fa2cc2991d5974d",
+      "commit_date": "2019-08-07T13:35:20-04:00",
+      "work_family": "repository:mozilla/open-leadership-training-series",
+      "author_family": "organization:mozilla",
+      "split_group": "source-family:mozilla/open-leadership-training-series",
+      "license_evidence_id": "mozilla-license",
+      "license": {
+        "identifier": "MIT",
+        "terms_url": "https://opensource.org/license/mit",
+        "evidence_url": "https://github.com/mozilla/open-leadership-training-series/blob/c056e8abca7db86510d9c61a6fa2cc2991d5974d/LICENSE",
+        "verified_on": "2026-10-19"
+      },
+      "attribution": "Open Project Strategy and Roadmaps, by Mozilla Open Leadership contributors, published by Mozilla Foundation, MIT. Repository Markdown converted to plain text; links and visual assets excluded or reduced to alt text; modifications recorded.",
+      "usage": "development-only; not assigned to train/validation/test",
+      "sources": [
+        {
+          "path": "_articles/opening-your-project/develop-an-open-project-strategy-with-open-canvas.md",
+          "download_url": "https://raw.githubusercontent.com/mozilla/open-leadership-training-series/c056e8abca7db86510d9c61a6fa2cc2991d5974d/_articles/opening-your-project/develop-an-open-project-strategy-with-open-canvas.md",
+          "expected_sha256": "7c94556021cf1765f023bf12faec30052aafdcdd52a83cf97b3100a1852b8151",
+          "raw_path": "raw/open-project-strategy-00.md",
+          "raw_bytes": 5469
+        },
+        {
+          "path": "_articles/opening-your-project/start-your-project-roadmap.md",
+          "download_url": "https://raw.githubusercontent.com/mozilla/open-leadership-training-series/c056e8abca7db86510d9c61a6fa2cc2991d5974d/_articles/opening-your-project/start-your-project-roadmap.md",
+          "expected_sha256": "0b33f7db5ef5713bb4d868bff952d8d1a5925a8a25013c19cfb238ed8fd65579",
+          "raw_path": "raw/open-project-strategy-01.md",
+          "raw_bytes": 9853
+        },
+        {
+          "path": "_articles/opening-your-project/write-a-great-project-readme.md",
+          "download_url": "https://raw.githubusercontent.com/mozilla/open-leadership-training-series/c056e8abca7db86510d9c61a6fa2cc2991d5974d/_articles/opening-your-project/write-a-great-project-readme.md",
+          "expected_sha256": "b45193bec63af37d4538d5c5fb7dfbe55552a5777fb0f6b744fc7feb072159a3",
+          "raw_path": "raw/open-project-strategy-02.md",
+          "raw_bytes": 5878
+        }
+      ],
+      "ingested_at_utc": "2026-10-19T22:12:51.546404+00:00",
+      "text_path": "text/open-project-strategy.txt",
+      "rendered_sha256": "8f312a7e2f4c9c655f022f9325ec1dea865ae90df94ce9006d532a8051f2366d",
+      "rendered_characters": 17569,
+      "rendered_utf8_bytes": 17773,
+      "transformation": "Repository Markdown collection v1: front matter, template syntax, fence markers, HTML and links normalized; prose and code retained; NFC/LF",
+      "transformation_audit": {
+        "front_matter_blocks_removed": 3,
+        "html_comments_removed": 1,
+        "template_expressions_removed": 4,
+        "document_directives_removed": 3,
+        "images_replaced_by_alt_text": 3,
+        "source_files": 3,
+        "replacement_characters": 0,
+        "remaining_html_tags": 0,
+        "remaining_template_markers": 0
+      },
+      "partition": "expansion-development-only",
+      "eligible_for_future_test": false
+    },
+    {
+      "id": "open-community-events",
+      "title": "Designing and Running Open Community Events",
+      "authors": [
+        "Mozilla Open Leadership contributors"
+      ],
+      "publisher": "Mozilla Foundation",
+      "language": "en",
+      "domain": "community-practice",
+      "topic": "inclusive-event-design",
+      "repository": "mozilla/open-leadership-training-series",
+      "source_url": "https://github.com/mozilla/open-leadership-training-series/tree/c056e8abca7db86510d9c61a6fa2cc2991d5974d",
+      "commit": "c056e8abca7db86510d9c61a6fa2cc2991d5974d",
+      "commit_date": "2019-08-07T13:35:20-04:00",
+      "work_family": "repository:mozilla/open-leadership-training-series",
+      "author_family": "organization:mozilla",
+      "split_group": "source-family:mozilla/open-leadership-training-series",
+      "license_evidence_id": "mozilla-license",
+      "license": {
+        "identifier": "MIT",
+        "terms_url": "https://opensource.org/license/mit",
+        "evidence_url": "https://github.com/mozilla/open-leadership-training-series/blob/c056e8abca7db86510d9c61a6fa2cc2991d5974d/LICENSE",
+        "verified_on": "2026-10-19"
+      },
+      "attribution": "Designing and Running Open Community Events, by Mozilla Open Leadership contributors, published by Mozilla Foundation, MIT. Repository Markdown converted to plain text; links and visual assets excluded or reduced to alt text; modifications recorded.",
+      "usage": "development-only; not assigned to train/validation/test",
+      "sources": [
+        {
+          "path": "_articles/running-awesome-community-events/documenting-and-reporting.md",
+          "download_url": "https://raw.githubusercontent.com/mozilla/open-leadership-training-series/c056e8abca7db86510d9c61a6fa2cc2991d5974d/_articles/running-awesome-community-events/documenting-and-reporting.md",
+          "expected_sha256": "780b9302c99a083e7addd77f87a93f000384034f71562cf22a2277eca4655907",
+          "raw_path": "raw/open-community-events-00.md",
+          "raw_bytes": 9219
+        },
+        {
+          "path": "_articles/running-awesome-community-events/event-follow-up.md",
+          "download_url": "https://raw.githubusercontent.com/mozilla/open-leadership-training-series/c056e8abca7db86510d9c61a6fa2cc2991d5974d/_articles/running-awesome-community-events/event-follow-up.md",
+          "expected_sha256": "f6be61d478f395403c335dcc8152d4d1ace2638d3250c294616eed9e5938cc89",
+          "raw_path": "raw/open-community-events-01.md",
+          "raw_bytes": 7725
+        },
+        {
+          "path": "_articles/running-awesome-community-events/event-planning-and-facilitation.md",
+          "download_url": "https://raw.githubusercontent.com/mozilla/open-leadership-training-series/c056e8abca7db86510d9c61a6fa2cc2991d5974d/_articles/running-awesome-community-events/event-planning-and-facilitation.md",
+          "expected_sha256": "5f32520d85b63df5db23386e5545c5a4089fa8cdc7eb63afd873f58bcc60df13",
+          "raw_path": "raw/open-community-events-02.md",
+          "raw_bytes": 11958
+        },
+        {
+          "path": "_articles/running-awesome-community-events/designing-an-open-event.md",
+          "download_url": "https://raw.githubusercontent.com/mozilla/open-leadership-training-series/c056e8abca7db86510d9c61a6fa2cc2991d5974d/_articles/running-awesome-community-events/designing-an-open-event.md",
+          "expected_sha256": "dfd2b3cb1579aacafd9f0cb47bc440464c33f78d3d7e723e496a30e0ea0ac47c",
+          "raw_path": "raw/open-community-events-03.md",
+          "raw_bytes": 11401
+        }
+      ],
+      "ingested_at_utc": "2026-10-19T22:12:52.376839+00:00",
+      "text_path": "text/open-community-events.txt",
+      "rendered_sha256": "9555e07b8ae31e5693c36a32e92212f2453c1225b7d69bc3ad50578d601e17e6",
+      "rendered_characters": 34052,
+      "rendered_utf8_bytes": 34232,
+      "transformation": "Repository Markdown collection v1: front matter, template syntax, fence markers, HTML and links normalized; prose and code retained; NFC/LF",
+      "transformation_audit": {
+        "front_matter_blocks_removed": 4,
+        "html_comments_removed": 1,
+        "template_expressions_removed": 13,
+        "document_directives_removed": 4,
+        "images_replaced_by_alt_text": 7,
+        "source_files": 4,
+        "replacement_characters": 0,
+        "remaining_html_tags": 0,
+        "remaining_template_markers": 0
+      },
+      "partition": "expansion-development-only",
+      "eligible_for_future_test": false
+    }
+  ],
+  "attribution_path": "ATTRIBUTION.json",
+  "attribution_sha256": "38dfbccaf12dbbe09425200d1fa7f28bf281d5b6696e74d06dbb0a2894e66ccd",
+  "scope_limit": "Modern repository-hosted long-form wave only; source families remain grouped and splits are not frozen.",
+  "split_status": "No train/validation/test assignments. Every inspected source family is excluded from the future untouched test.",
+  "new_test_created": false,
+  "new_test_read": false,
+  "legacy_test_read": false,
+  "model_loaded": false,
+  "training_performed": false,
+  "implementation_sha256": {
+    "scripts/ingest_corpus_longform.py": "74bab94e026a999144f0a0484fc7e2a35b3aaf2968877e7fb116d43c7d161376",
+    "src/corpus_longform.py": "3aba16731a5341245260ee4fb45dafbb6359aff10c293661fac5eac75a67e072",
+    "src/corpus_cleaning.py": "2ac6635aedbf5124161af6dc39e4aa60ea68643c8f30df8055067563bef95b83"
+  }
+}

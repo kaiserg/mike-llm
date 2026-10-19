@@ -61,6 +61,8 @@ The small-corpus experimental stage is closed. See [chapter 31](31-stage-closure
 
 39. [Cross-wave identity, balance, and overlap audit](39-cross-wave-corpus-audit.md) — [`scripts/audit_corpus_v2.py`](../scripts/audit_corpus_v2.py)
 
+40. [Modern practical long-form prose: wave 5](40-modern-longform-expansion-wave5.md) — [`scripts/ingest_corpus_longform.py`](../scripts/ingest_corpus_longform.py), [`scripts/audit_corpus_v2_wave5.py`](../scripts/audit_corpus_v2_wave5.py)
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:
