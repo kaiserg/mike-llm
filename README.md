@@ -257,3 +257,11 @@ python scripts/analyze_head_history.py
 ```
 
 Masking the added eight characters one head at a time identifies block-1 head 1 as the largest individual contributor to the learned seed-7 penalty (+0.027647 NLL improvement when masked). In sinusoidal seed 123, all three block-2 heads contribute similarly (+0.020–0.021 each). Some heads benefit from the added history, and individual effects do not add independently. See [chapter 28](docs/28-head-history-diagnostics.md) for all six interventions per checkpoint and joint controls.
+
+## Joint masks and interactions among selected heads
+
+```bash
+python scripts/analyze_joint_head_history.py
+```
+
+Jointly masking the previously detrimental heads reduces PPL from 9.668 to 9.285 for learned seed 7 and from 8.153 to 7.514 for sinusoidal seed 123. The learned gain is smaller than the sum of individual gains; the sinusoidal gain is larger. All selected heads still help conditionally, but masking all six heads scores slightly better in both checkpoints, illustrating why individual rankings do not define an optimal joint mask. See [chapter 29](docs/29-joint-head-history-diagnostics.md) for leave-one-out effects, cumulative paths, and limitations.

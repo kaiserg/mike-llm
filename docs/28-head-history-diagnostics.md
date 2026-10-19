@@ -1,6 +1,6 @@
 # Which attention heads contribute to the 8-to-16 penalty?
 
-[Documentation index](README.md) · [Previous](27-nonmonotonic-history-diagnostics.md)
+[Documentation index](README.md) · [Previous](27-nonmonotonic-history-diagnostics.md) · [Next](29-joint-head-history-diagnostics.md)
 
 Driver: [`scripts/analyze_head_history.py`](../scripts/analyze_head_history.py). Intervention: [`src/head_diagnostics.py`](../src/head_diagnostics.py). [Full measured results](results/head-history-diagnostics.json).
 

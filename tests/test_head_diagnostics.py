@@ -43,3 +43,30 @@ class HeadDiagnosticTests(unittest.TestCase):
             ids=torch.randint(0,9,(2,length))
             self.assertTrue(torch.equal(forward_head_masks(model,ids),forward_head_masks(model,ids,[(0,0)])))
         with self.assertRaises(ValueError):forward_head_masks(model,ids,[(2,0)])
+
+    def test_joint_masks_against_native_path(self):
+        torch.set_num_threads(1)
+        # Exactly the previously selected sets and each leave-one-out variant.
+        selected_sets=(((0,0),(1,0),(1,1),(1,2)),
+                       ((1,0),(1,2),(1,1),(0,2),(0,0)))
+        for encoding,selected in zip(('learned','sinusoidal'),selected_sets):
+            torch.manual_seed(17)
+            model=GPT(9,64,positional_encoding=encoding).eval()
+            ids=torch.randint(0,9,(2,64))
+            groups=[selected]+[tuple(p for p in selected if p!=removed) for removed in selected]
+            for blocked in groups:
+                handles=[]
+                def restrict(module,args,kwargs):
+                    return args,{**kwargs,'attention_mask':suffix_isolation_mask(64,16)&suffix_isolation_mask(64,8)}
+                try:
+                    for block,head in blocked:
+                        handles.append(model.blocks[block].attention.heads[head].register_forward_pre_hook(restrict,with_kwargs=True))
+                    with torch.no_grad():reference=model(ids,attention_mask=suffix_isolation_mask(64,16))[:,-1]
+                finally:
+                    for handle in handles:handle.remove()
+                actual=forward_head_masks(model,ids,blocked)
+                self.assertTrue(torch.equal(actual,reference))
+                perturbed=ids.clone();perturbed[:,:48]=(perturbed[:,:48]+1)%9
+                self.assertTrue(torch.equal(actual,forward_head_masks(model,perturbed,blocked)))
+                for block in model.blocks:
+                    for head in block.attention.heads:self.assertFalse(head._forward_pre_hooks)
