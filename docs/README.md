@@ -1,6 +1,6 @@
 # Mike-LLM learning notes
 
-These chapters follow the existing educational code from characters to causal multi-head attention and position-wise feed-forward networks. They describe randomly initialized building blocks, not a trained language model.
+These chapters follow the existing educational code from characters to a pre-normalized causal Transformer block. They describe randomly initialized building blocks, not a trained language model.
 
 ## Reading order
 
@@ -12,6 +12,7 @@ These chapters follow the existing educational code from characters to causal mu
 6. [Query, Key, Value](06-query-key-value.md) — [`src/causal_self_attention.py`](../src/causal_self_attention.py)
 7. [Multi-head attention](07-multi-head-attention.md) — [`src/multi_head_attention.py`](../src/multi_head_attention.py)
 8. [Feed-forward network](08-feed-forward.md) — [`src/feed_forward.py`](../src/feed_forward.py)
+9. [Transformer block: LayerNorm and residual connections](09-transformer-block.md) — [`src/transformer_block.py`](../src/transformer_block.py)
 
 ## Running the examples
 
@@ -26,6 +27,7 @@ python src/attention.py
 python src/causal_self_attention.py
 python src/multi_head_attention.py
 python src/feed_forward.py
+python src/transformer_block.py
 ```
 
 For the independent Python snippets in these chapters, start `PYTHONPATH=src python` from the repository root and paste a whole snippet, or save it and run `PYTHONPATH=src python path/to/example.py`. Install dependencies from the [requirements file](../requirements.txt) if the environment is not prepared.

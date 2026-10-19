@@ -69,4 +69,4 @@ with torch.no_grad():
     assert torch.allclose(layer(x)[:, :3], layer(changed)[:, :3])
 ```
 
-The module includes causal masking and an output projection. It does not yet include dropout, residual connections, normalization, feed-forward layers, padding masks, a KV cache, or a training loop. A standalone [feed-forward network](08-feed-forward.md) is now available; integrating it into a Transformer block remains a future step.
+The module includes causal masking and an output projection. It does not yet include dropout, residual connections, normalization, feed-forward layers, padding masks, a KV cache, or a training loop. A standalone [feed-forward network](08-feed-forward.md) is now available; both modules are now integrated in the [Transformer block](09-transformer-block.md).

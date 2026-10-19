@@ -1,6 +1,6 @@
 # Feed-forward network (FFN)
 
-[Documentation index](README.md) · [Previous](07-multi-head-attention.md)
+[Documentation index](README.md) · [Previous](07-multi-head-attention.md) · [Next](09-transformer-block.md)
 
 Implementation: [`src/feed_forward.py`](../src/feed_forward.py), class `FeedForward`.
 
@@ -132,9 +132,9 @@ assert sum(p.numel() for p in ffn.parameters()) == 612
 
 ## Next: assemble a Transformer block
 
-The FFN module implements only the two linear layers and GELU. Normalization, residual connections, and any dropout belong to the future block design. A possible pre-normalized block will compute:
+The FFN module implements only the two linear layers and GELU. The [Transformer block](09-transformer-block.md) now combines this module with normalization and residual connections. It computes:
 
 $$U=X+\operatorname{Attention}(\operatorname{LayerNorm}_1(X))$$
 $$Y=U+\operatorname{FFN}(\operatorname{LayerNorm}_2(U))$$
 
-These equations describe the next implementation step. The current FFN does not yet connect itself to attention or train a language model.
+The standalone FFN remains independent; `TransformerBlock` connects it to attention. Neither demonstration trains a language model.
