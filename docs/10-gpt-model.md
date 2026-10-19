@@ -1,6 +1,6 @@
 # Assemble a GPT language model
 
-[Documentation index](README.md) · [Previous](09-transformer-block.md)
+[Documentation index](README.md) · [Previous](09-transformer-block.md) · [Next](11-training.md)
 
 Implementation: [`src/gpt.py`](../src/gpt.py), class `GPT`.
 
@@ -145,3 +145,5 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
 They verify prefix causality, batch independence, gradient propagation through the full model, independent layer weights, input boundaries, and invalid configurations.
+
+The initial training workflow is now implemented separately in [`src/train.py`](../src/train.py); see [chapter 11](11-training.md). The GPT forward module itself remains independent of training and generation loops.

@@ -14,6 +14,7 @@ These chapters follow the existing educational code from characters to a complet
 8. [Feed-forward network](08-feed-forward.md) — [`src/feed_forward.py`](../src/feed_forward.py)
 9. [Transformer block: LayerNorm and residual connections](09-transformer-block.md) — [`src/transformer_block.py`](../src/transformer_block.py)
 10. [GPT language model](10-gpt-model.md) — [`src/gpt.py`](../src/gpt.py)
+11. [First reproducible training run](11-training.md) — [`src/train.py`](../src/train.py)
 
 ## Running the examples
 

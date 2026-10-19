@@ -4,7 +4,7 @@ An educational project to build and train a small decoder-only Transformer from 
 
 ## Current progress
 
-The repository currently contains standalone learning demonstrations and reusable attention, feed-forward, and pre-normalized causal Transformer block modules. These components are randomly initialized; the GPT forward architecture is implemented, while training and generation loops remain pending.
+The repository currently contains standalone learning demonstrations and reusable attention, feed-forward, and pre-normalized causal Transformer block modules. These components are randomly initialized; the GPT forward architecture is implemented, with a reproducible CPU training demonstration; generation remains pending.
 
 - Character-level tokenizer with reversible encoding for known characters.
 - Token embeddings and learned absolute positional embeddings.
@@ -14,6 +14,7 @@ The repository currently contains standalone learning demonstrations and reusabl
 - Position-wise feed-forward network with configurable expansion and GELU.
 - Pre-normalized Transformer block with two LayerNorm modules and residual connections.
 - Configurable GPT model with learned embeddings, independent blocks, final LayerNorm, and vocabulary logits.
+- Reproducible CPU training with shifted targets, AdamW, fixed validation batches, metrics, and a checkpoint.
 
 ## Setup on macOS
 
@@ -69,6 +70,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 8. [Feed-forward network](docs/08-feed-forward.md)
 9. [Transformer block: LayerNorm and residual connections](docs/09-transformer-block.md)
 10. [GPT language model](docs/10-gpt-model.md)
+11. [First reproducible training run](docs/11-training.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -88,7 +90,15 @@ docs/       Learning chapters and diagrams
 2. Decide whether to extend the current character tokenizer or train a subword tokenizer.
 3. Select context length, depth, and width for a training configuration.
 4. Scale the implemented GPT architecture; approximately 10–15M parameters is a target, not the 4008-parameter toy demonstration.
-5. Implement training, checkpointing, reproducible seeds, and validation metrics.
+5. Extend the initial training workflow with resumable runs and representative validation.
 6. Add autoregressive generation and evaluate loss, perplexity, samples, and speed.
 
-Use appropriately licensed data and keep private data out of the corpus. Training from scratch requires suitable data and compute; no training results are reported yet.
+Use appropriately licensed data and keep private data out of the corpus. Training from scratch requires suitable data and compute; the initial synthetic training results are documented in [chapter 11](docs/11-training.md).
+
+## First training run
+
+```bash
+python src/train.py
+```
+
+Uses included synthetic text and runs 100 deterministic CPU updates. Metrics and a reloadable checkpoint are saved under `runs/first-training/` (ignored by Git). See [the training chapter](docs/11-training.md) for data preparation, measured losses, and custom corpus options.
