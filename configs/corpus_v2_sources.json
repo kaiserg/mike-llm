@@ -1,0 +1,659 @@
+{
+  "schema_version": 1,
+  "corpus_id": "corpus-v2-ingestion-pilot-2026-10-19",
+  "status": "development-only pilot; no held-out split",
+  "language": "en",
+  "legacy_exclusion": {
+    "work_ids": [
+      "pg11",
+      "pg84",
+      "pg1342"
+    ],
+    "author_names": [
+      "Carroll, Lewis",
+      "Shelley, Mary Wollstonecraft",
+      "Austen, Jane"
+    ],
+    "related_editions_translations_adaptations": "must be excluded when expanding registry"
+  },
+  "license_policy": "Verify source-specific grants/statements; retain evidence and notices. US public-domain assertions are not worldwide clearance. No corpus redistribution or training approval is implied by ingestion.",
+  "documents": [
+    {
+      "id": "pg35",
+      "title": "The Time Machine",
+      "authors": [
+        "Wells, H. G. (Herbert George), 1866-1946"
+      ],
+      "contributors": {},
+      "language": "en",
+      "domain": "fiction",
+      "topic": "science-fiction",
+      "source_family": "project-gutenberg",
+      "source_url": "https://www.gutenberg.org/ebooks/35",
+      "download_url": "https://www.gutenberg.org/cache/epub/35/pg35.txt",
+      "format": "gutenberg-utf8",
+      "revision": {
+        "ebook_number": 35,
+        "release_date": [
+          "Oct 2, 2004"
+        ],
+        "last_update": [
+          "Jun 16, 2026"
+        ]
+      },
+      "work_family": "gutenberg-work-35",
+      "author_family": "author:Wells, H. G. (Herbert George), 1866-1946",
+      "split_group": "author:Wells, H. G. (Herbert George), 1866-1946",
+      "expected_sha256": "2892e919000e17c83e1dac51b30f4675db50536b644d7579fe8a89bb399a9bdc",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/35",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "The Time Machine \u2014 Wells, H. G. (Herbert George), 1866-1946; Project Gutenberg ebook 35; source page and complete notices retained.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:01.148874+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "pg1661",
+      "title": "The Adventures of Sherlock Holmes",
+      "authors": [
+        "Doyle, Arthur Conan, 1859-1930"
+      ],
+      "contributors": {},
+      "language": "en",
+      "domain": "fiction",
+      "topic": "detective-fiction",
+      "source_family": "project-gutenberg",
+      "source_url": "https://www.gutenberg.org/ebooks/1661",
+      "download_url": "https://www.gutenberg.org/cache/epub/1661/pg1661.txt",
+      "format": "gutenberg-utf8",
+      "revision": {
+        "ebook_number": 1661,
+        "release_date": [
+          "Mar 1, 1999"
+        ],
+        "last_update": [
+          "Oct 10, 2023"
+        ]
+      },
+      "work_family": "gutenberg-work-1661",
+      "author_family": "author:Doyle, Arthur Conan, 1859-1930",
+      "split_group": "author:Doyle, Arthur Conan, 1859-1930",
+      "expected_sha256": "922e2a12ccb43a4c9544c260b2166c6ad2097aeb5957faeee113f173bb857cd0",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/1661",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "The Adventures of Sherlock Holmes \u2014 Doyle, Arthur Conan, 1859-1930; Project Gutenberg ebook 1661; source page and complete notices retained.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:03.361985+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "pg74",
+      "title": "The Adventures of Tom Sawyer, Complete",
+      "authors": [
+        "Twain, Mark, 1835-1910"
+      ],
+      "contributors": {},
+      "language": "en",
+      "domain": "fiction",
+      "topic": "coming-of-age",
+      "source_family": "project-gutenberg",
+      "source_url": "https://www.gutenberg.org/ebooks/74",
+      "download_url": "https://www.gutenberg.org/cache/epub/74/pg74.txt",
+      "format": "gutenberg-utf8",
+      "revision": {
+        "ebook_number": 74,
+        "release_date": [
+          "Jul 1, 2004"
+        ],
+        "last_update": [
+          "May 10, 2025"
+        ]
+      },
+      "work_family": "gutenberg-work-74",
+      "author_family": "author:Twain, Mark, 1835-1910",
+      "split_group": "author:Twain, Mark, 1835-1910",
+      "expected_sha256": "74d77384b123a6360db9ab58463cff8b38df8525fbdc6000c81ee388e1f3cf10",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/74",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "The Adventures of Tom Sawyer, Complete \u2014 Twain, Mark, 1835-1910; Project Gutenberg ebook 74; source page and complete notices retained.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:05.475093+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "pg120",
+      "title": "Treasure Island",
+      "authors": [
+        "Stevenson, Robert Louis, 1850-1894"
+      ],
+      "contributors": {
+        "Illustrator": [
+          "Rhead, Louis, 1857-1926"
+        ]
+      },
+      "language": "en",
+      "domain": "fiction",
+      "topic": "adventure",
+      "source_family": "project-gutenberg",
+      "source_url": "https://www.gutenberg.org/ebooks/120",
+      "download_url": "https://www.gutenberg.org/cache/epub/120/pg120.txt",
+      "format": "gutenberg-utf8",
+      "revision": {
+        "ebook_number": 120,
+        "release_date": [
+          "Feb 26, 2006"
+        ],
+        "last_update": [
+          "Sep 4, 2026"
+        ]
+      },
+      "work_family": "gutenberg-work-120",
+      "author_family": "author:Stevenson, Robert Louis, 1850-1894",
+      "split_group": "author:Stevenson, Robert Louis, 1850-1894",
+      "expected_sha256": "5bc08275eacea8640b1aa185c645283bb8c564d7b23df6b03437d229b4fc6ebd",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/120",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "Treasure Island \u2014 Stevenson, Robert Louis, 1850-1894; Project Gutenberg ebook 120; source page and complete notices retained.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:07.622933+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "pg2701",
+      "title": "Moby Dick; Or, The Whale",
+      "authors": [
+        "Melville, Herman, 1819-1891"
+      ],
+      "contributors": {},
+      "language": "en",
+      "domain": "fiction",
+      "topic": "literary-fiction",
+      "source_family": "project-gutenberg",
+      "source_url": "https://www.gutenberg.org/ebooks/2701",
+      "download_url": "https://www.gutenberg.org/cache/epub/2701/pg2701.txt",
+      "format": "gutenberg-utf8",
+      "revision": {
+        "ebook_number": 2701,
+        "release_date": [
+          "Jul 1, 2001"
+        ],
+        "last_update": [
+          "Oct 11, 2026"
+        ]
+      },
+      "work_family": "gutenberg-work-2701",
+      "author_family": "author:Melville, Herman, 1819-1891",
+      "split_group": "author:Melville, Herman, 1819-1891",
+      "expected_sha256": "b5e88b71a1cda068e9ab1d94344c9d932338ba6da1a66def97a1aecd9cfcc87d",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/2701",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "Moby Dick; Or, The Whale \u2014 Melville, Herman, 1819-1891; Project Gutenberg ebook 2701; source page and complete notices retained.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:10.338202+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "pg205",
+      "title": "Walden, and On The Duty Of Civil Disobedience",
+      "authors": [
+        "Thoreau, Henry David, 1817-1862"
+      ],
+      "contributors": {},
+      "language": "en",
+      "domain": "nonfiction",
+      "topic": "nature-essays",
+      "source_family": "project-gutenberg",
+      "source_url": "https://www.gutenberg.org/ebooks/205",
+      "download_url": "https://www.gutenberg.org/cache/epub/205/pg205.txt",
+      "format": "gutenberg-utf8",
+      "revision": {
+        "ebook_number": 205,
+        "release_date": [
+          "Jan 1, 1995"
+        ],
+        "last_update": [
+          "Feb 20, 2026"
+        ]
+      },
+      "work_family": "gutenberg-work-205",
+      "author_family": "author:Thoreau, Henry David, 1817-1862",
+      "split_group": "author:Thoreau, Henry David, 1817-1862",
+      "expected_sha256": "2d9a76a2e3e8195c69430516ebd33c4d0757a53ad432ff6186b7b794e6fe99f9",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/205",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "Walden, and On The Duty Of Civil Disobedience \u2014 Thoreau, Henry David, 1817-1862; Project Gutenberg ebook 205; source page and complete notices retained.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:12.596016+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "pg20203",
+      "title": "Autobiography of Benjamin Franklin",
+      "authors": [
+        "Franklin, Benjamin, 1706-1790"
+      ],
+      "contributors": {
+        "Editor": [
+          "Pine, Frank Woodworth, 1869-"
+        ],
+        "Illustrator": [
+          "Smith, E. Boyd (Elmer Boyd), 1860-1943"
+        ]
+      },
+      "language": "en",
+      "domain": "nonfiction",
+      "topic": "autobiography",
+      "source_family": "project-gutenberg",
+      "source_url": "https://www.gutenberg.org/ebooks/20203",
+      "download_url": "https://www.gutenberg.org/cache/epub/20203/pg20203.txt",
+      "format": "gutenberg-utf8",
+      "revision": {
+        "ebook_number": 20203,
+        "release_date": [
+          "Dec 28, 2006"
+        ],
+        "last_update": [
+          "Oct 19, 2022"
+        ]
+      },
+      "work_family": "gutenberg-work-20203",
+      "author_family": "author:Franklin, Benjamin, 1706-1790",
+      "split_group": "author:Franklin, Benjamin, 1706-1790",
+      "expected_sha256": "c5be0e49f68f0876be480074b9dc0712a8fdbc7faa7def3acc6765afba9bd128",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/20203",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "Autobiography of Benjamin Franklin \u2014 Franklin, Benjamin, 1706-1790; Project Gutenberg ebook 20203; source page and complete notices retained.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:14.783343+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "pg1232",
+      "title": "The Prince",
+      "authors": [
+        "Machiavelli, Niccol\u00f2, 1469-1527"
+      ],
+      "contributors": {
+        "Translator": [
+          "Marriott, W. K. (William Kenaz), -1927"
+        ]
+      },
+      "language": "en",
+      "domain": "nonfiction",
+      "topic": "political-history",
+      "source_family": "project-gutenberg",
+      "source_url": "https://www.gutenberg.org/ebooks/1232",
+      "download_url": "https://www.gutenberg.org/cache/epub/1232/pg1232.txt",
+      "format": "gutenberg-utf8",
+      "revision": {
+        "ebook_number": 1232,
+        "release_date": [
+          "Feb 11, 2006"
+        ],
+        "last_update": [
+          "Jul 24, 2026"
+        ]
+      },
+      "work_family": "gutenberg-work-1232",
+      "author_family": "author:Machiavelli, Niccol\u00f2, 1469-1527",
+      "split_group": "author:Machiavelli, Niccol\u00f2, 1469-1527",
+      "expected_sha256": "33496a305f7a4b933784fb5aec95f920fbc3d4687794817e4cc444aa6578d2e4",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/1232",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "The Prince \u2014 Machiavelli, Niccol\u00f2, 1469-1527; Project Gutenberg ebook 1232; source page and complete notices retained.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:16.864470+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "pg16643",
+      "title": "Essays by Ralph Waldo Emerson",
+      "authors": [
+        "Emerson, Ralph Waldo, 1803-1882"
+      ],
+      "contributors": {
+        "Editor": [
+          "Turpin, Edna Henry Lee, 1867-1952"
+        ]
+      },
+      "language": "en",
+      "domain": "nonfiction",
+      "topic": "philosophical-essays",
+      "source_family": "project-gutenberg",
+      "source_url": "https://www.gutenberg.org/ebooks/16643",
+      "download_url": "https://www.gutenberg.org/cache/epub/16643/pg16643.txt",
+      "format": "gutenberg-utf8",
+      "revision": {
+        "ebook_number": 16643,
+        "release_date": [
+          "Sep 4, 2005"
+        ],
+        "last_update": [
+          "Apr 29, 2022"
+        ]
+      },
+      "work_family": "gutenberg-work-16643",
+      "author_family": "author:Emerson, Ralph Waldo, 1803-1882",
+      "split_group": "author:Emerson, Ralph Waldo, 1803-1882",
+      "expected_sha256": "bd1e8cd9feb2c331b560dbb254cde873cb3db4b5d5464996d98f6e43649ad1e1",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/16643",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "Essays by Ralph Waldo Emerson \u2014 Emerson, Ralph Waldo, 1803-1882; Project Gutenberg ebook 16643; source page and complete notices retained.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:44.793566+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "pg833",
+      "title": "The Theory of the Leisure Class",
+      "authors": [
+        "Veblen, Thorstein, 1857-1929"
+      ],
+      "contributors": {},
+      "language": "en",
+      "domain": "nonfiction",
+      "topic": "economic-social-theory",
+      "source_family": "project-gutenberg",
+      "source_url": "https://www.gutenberg.org/ebooks/833",
+      "download_url": "https://www.gutenberg.org/cache/epub/833/pg833.txt",
+      "format": "gutenberg-utf8",
+      "revision": {
+        "ebook_number": 833,
+        "release_date": [
+          "Mar 1, 1997"
+        ],
+        "last_update": [
+          "Jul 19, 2014"
+        ]
+      },
+      "work_family": "gutenberg-work-833",
+      "author_family": "author:Veblen, Thorstein, 1857-1929",
+      "split_group": "author:Veblen, Thorstein, 1857-1929",
+      "expected_sha256": "84ee65366e377e9c087171c2286d28d74e6c860b83c01175ad5f863f09666bca",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/833",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "The Theory of the Leisure Class \u2014 Veblen, Thorstein, 1857-1929; Project Gutenberg ebook 833; source page and complete notices retained.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:21.420967+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "pg14474",
+      "title": "The Chemical History of a Candle",
+      "authors": [
+        "Faraday, Michael, 1791-1867"
+      ],
+      "contributors": {
+        "Editor": [
+          "Crookes, William, 1832-1919"
+        ]
+      },
+      "language": "en",
+      "domain": "science-history",
+      "topic": "chemistry",
+      "source_family": "project-gutenberg",
+      "source_url": "https://www.gutenberg.org/ebooks/14474",
+      "download_url": "https://www.gutenberg.org/cache/epub/14474/pg14474.txt",
+      "format": "gutenberg-utf8",
+      "revision": {
+        "ebook_number": 14474,
+        "release_date": [
+          "Dec 26, 2004"
+        ],
+        "last_update": [
+          "Oct 28, 2024"
+        ]
+      },
+      "work_family": "gutenberg-work-14474",
+      "author_family": "author:Faraday, Michael, 1791-1867",
+      "split_group": "author:Faraday, Michael, 1791-1867",
+      "expected_sha256": "c053ca4ae7880585a15001cd3ffdaf5f09cd08c3329b828ffd8c90ce335482b9",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/14474",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "The Chemical History of a Candle \u2014 Faraday, Michael, 1791-1867; Project Gutenberg ebook 14474; source page and complete notices retained.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:23.570496+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "pg1228",
+      "title": "On the Origin of Species By Means of Natural Selection Or, the Preservation of Favoured Races in the Struggle for Life",
+      "authors": [
+        "Darwin, Charles, 1809-1882"
+      ],
+      "contributors": {},
+      "language": "en",
+      "domain": "science-history",
+      "topic": "natural-history",
+      "source_family": "project-gutenberg",
+      "source_url": "https://www.gutenberg.org/ebooks/1228",
+      "download_url": "https://www.gutenberg.org/cache/epub/1228/pg1228.txt",
+      "format": "gutenberg-utf8",
+      "revision": {
+        "ebook_number": 1228,
+        "release_date": [
+          "Mar 1, 1998"
+        ],
+        "last_update": [
+          "Oct 6, 2026"
+        ]
+      },
+      "work_family": "gutenberg-work-1228",
+      "author_family": "author:Darwin, Charles, 1809-1882",
+      "split_group": "author:Darwin, Charles, 1809-1882",
+      "expected_sha256": "362142cb7c6f90850477520cfe2a62fe423ae92ea8eb6d9cd8b30ddb39de60b9",
+      "license": {
+        "identifier": "LicenseRef-PG-PD-US",
+        "statement": "Public domain in the USA.",
+        "scope": "Underlying text: public domain in USA as stated by this edition; Project Gutenberg license/trademark material retained in raw copy",
+        "territory": "USA; other territories not determined",
+        "evidence_url": "https://www.gutenberg.org/ebooks/1228",
+        "terms_url": "https://www.gutenberg.org/policy/license",
+        "verified_on": "2026-10-19",
+        "verification": "edition rights statement verified; not worldwide legal clearance"
+      },
+      "attribution": "On the Origin of Species By Means of Natural Selection Or, the Preservation of Favoured Races in the Struggle for Life \u2014 Darwin, Charles, 1809-1882; Project Gutenberg ebook 1228; source page and complete notices retained.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:25.897382+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "olp-set-basics",
+      "title": "Sets: basics",
+      "authors": [
+        "Open Logic Project contributors"
+      ],
+      "contributors": {
+        "attribution_history": "https://github.com/OpenLogicProject/OpenLogic/commits/1e960beff9ed7835bf3e3f1335e21af3439cd107/content/sets-functions-relations/sets/basics.tex"
+      },
+      "language": "en",
+      "domain": "formal-methods",
+      "topic": "set-theory",
+      "source_family": "open-logic-project",
+      "source_url": "https://github.com/OpenLogicProject/OpenLogic/blob/1e960beff9ed7835bf3e3f1335e21af3439cd107/content/sets-functions-relations/sets/basics.tex",
+      "download_url": "https://raw.githubusercontent.com/OpenLogicProject/OpenLogic/1e960beff9ed7835bf3e3f1335e21af3439cd107/content/sets-functions-relations/sets/basics.tex",
+      "format": "latex-source",
+      "revision": {
+        "commit": "1e960beff9ed7835bf3e3f1335e21af3439cd107",
+        "path": "content/sets-functions-relations/sets/basics.tex"
+      },
+      "work_family": "open-logic-text",
+      "author_family": "open-logic-contributors",
+      "split_group": "open-logic-text-contributors",
+      "expected_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+      "license": {
+        "identifier": "CC-BY-4.0",
+        "statement": "The Open Logic Text is licensed under a Creative Commons Attribution 4.0 International License.",
+        "scope": "Text source; exceptions and figures must be reviewed separately",
+        "territory": "International license",
+        "evidence_url": "https://raw.githubusercontent.com/OpenLogicProject/OpenLogic/1e960beff9ed7835bf3e3f1335e21af3439cd107/LICENSE.md",
+        "terms_url": "https://openlogicproject.org/olp-license/",
+        "verified_on": "2026-10-19",
+        "verification": "pinned repository license and project statement verified"
+      },
+      "attribution": "Sets: basics, Open Logic Project contributors, Open Logic Text, commit 1e960beff9ed7835bf3e3f1335e21af3439cd107, content/sets-functions-relations/sets/basics.tex; CC BY 4.0; no semantic conversion in this pilot.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:27.768345+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    },
+    {
+      "id": "olp-recursion-intro",
+      "title": "Recursive functions: introduction",
+      "authors": [
+        "Open Logic Project contributors"
+      ],
+      "contributors": {
+        "attribution_history": "https://github.com/OpenLogicProject/OpenLogic/commits/1e960beff9ed7835bf3e3f1335e21af3439cd107/content/computability/recursive-functions/introduction.tex"
+      },
+      "language": "en",
+      "domain": "formal-methods",
+      "topic": "computability",
+      "source_family": "open-logic-project",
+      "source_url": "https://github.com/OpenLogicProject/OpenLogic/blob/1e960beff9ed7835bf3e3f1335e21af3439cd107/content/computability/recursive-functions/introduction.tex",
+      "download_url": "https://raw.githubusercontent.com/OpenLogicProject/OpenLogic/1e960beff9ed7835bf3e3f1335e21af3439cd107/content/computability/recursive-functions/introduction.tex",
+      "format": "latex-source",
+      "revision": {
+        "commit": "1e960beff9ed7835bf3e3f1335e21af3439cd107",
+        "path": "content/computability/recursive-functions/introduction.tex"
+      },
+      "work_family": "open-logic-text",
+      "author_family": "open-logic-contributors",
+      "split_group": "open-logic-text-contributors",
+      "expected_sha256": "5c4a5e794bb772c06d8e3fe7463f696763ab8f2c9f5a377afe229d7e7b05ea83",
+      "license": {
+        "identifier": "CC-BY-4.0",
+        "statement": "The Open Logic Text is licensed under a Creative Commons Attribution 4.0 International License.",
+        "scope": "Text source; exceptions and figures must be reviewed separately",
+        "territory": "International license",
+        "evidence_url": "https://raw.githubusercontent.com/OpenLogicProject/OpenLogic/1e960beff9ed7835bf3e3f1335e21af3439cd107/LICENSE.md",
+        "terms_url": "https://openlogicproject.org/olp-license/",
+        "verified_on": "2026-10-19",
+        "verification": "pinned repository license and project statement verified"
+      },
+      "attribution": "Recursive functions: introduction, Open Logic Project contributors, Open Logic Text, commit 1e960beff9ed7835bf3e3f1335e21af3439cd107, content/computability/recursive-functions/introduction.tex; CC BY 4.0; no semantic conversion in this pilot.",
+      "usage": "development-ingestion-pilot-only; not assigned to train/validation/test",
+      "reviewed_snapshot_acquired_at_utc": "2026-10-19T19:27:28.670306+00:00",
+      "acquisition_timestamp_basis": "initial HTTPS downloader file-write completion; ingestion may reuse this reviewed local cache"
+    }
+  ],
+  "test_policy": "All pilot documents and their related work/author/source-lineage groups are ineligible for the future untouched test because this pilot is inspected for development.",
+  "rejected_candidates": [
+    {
+      "id": "pg219",
+      "actual_title": "Heart of Darkness",
+      "reason": "Discovery candidate did not match intended Emerson essays; replaced by verified edition pg16643 before final pilot ingestion. Not a model-based rejection."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "gutenberg-license",
+      "url": "https://www.gutenberg.org/policy/license",
+      "cache_name": "gutenberg-license.html"
+    },
+    {
+      "id": "openlogic-license-page",
+      "url": "https://openlogicproject.org/olp-license/",
+      "cache_name": "openlogic-license.html"
+    },
+    {
+      "id": "openlogic-license-text",
+      "url": "https://raw.githubusercontent.com/OpenLogicProject/OpenLogic/1e960beff9ed7835bf3e3f1335e21af3439cd107/LICENSE.md",
+      "cache_name": "openlogic-license.md",
+      "expected_sha256": "bb5e0179a1e9bdb55634a4303784cf73c297a1dcee27b92cd546bf398075531c"
+    },
+    {
+      "id": "openlogic-repository-grant",
+      "url": "https://raw.githubusercontent.com/OpenLogicProject/OpenLogic/1e960beff9ed7835bf3e3f1335e21af3439cd107/README.md",
+      "cache_name": "openlogic-readme.md",
+      "expected_sha256": "5caf9c104fd864181be05951028041799aaaa9f3dd52321b678b944d1be60176"
+    }
+  ]
+}

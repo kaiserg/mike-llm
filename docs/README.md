@@ -47,6 +47,8 @@ The small-corpus experimental stage is closed. See [chapter 31](31-stage-closure
 
 32. [Next-stage corpus and base-model plan](32-next-stage-plan.md) — planned work; no new corpus or test is frozen yet
 
+33. [Licensed-source registry and ingestion pilot](33-corpus-ingestion-pilot.md) — [`scripts/ingest_corpus_pilot.py`](../scripts/ingest_corpus_pilot.py)
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:

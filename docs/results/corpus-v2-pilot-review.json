@@ -1,0 +1,90 @@
+{
+  "report_sha256": "ccc5a5d4dfe3a842e3a03e01d11fc7de5a1c7899d3619e59c15e503e3fe8849d",
+  "review_date": "2026-10-19",
+  "scope": "Metadata/title/author/contributor verification for every accepted document; source rights evidence retained; text snippets inspected at fixed 10% and 50% offsets for every extracted document; flagged front matter inspected. No model feedback.",
+  "domain_character_fractions": {
+    "fiction": 0.424488897833988,
+    "nonfiction": 0.39501980041482115,
+    "science-history": 0.18049130175119082
+  },
+  "inspected_documents": [
+    {
+      "id": "pg35",
+      "status": "unicode-text-extracted-pilot-only",
+      "notes": "Sampled prose is readable; case and punctuation retained. Limited sampling is not full-document content review."
+    },
+    {
+      "id": "pg1661",
+      "status": "unicode-text-extracted-pilot-only",
+      "notes": "Sampled prose is readable; case and punctuation retained. Limited sampling is not full-document content review."
+    },
+    {
+      "id": "pg74",
+      "status": "unicode-text-extracted-pilot-only",
+      "notes": "Sampled prose is readable; case and punctuation retained. Limited sampling is not full-document content review."
+    },
+    {
+      "id": "pg120",
+      "status": "unicode-text-extracted-pilot-only",
+      "notes": "Sampled prose is readable; case and punctuation retained. Limited sampling is not full-document content review."
+    },
+    {
+      "id": "pg2701",
+      "status": "unicode-text-extracted-pilot-only",
+      "notes": "An in-body transcriber note refers to the combination of older etexts; the book is about 19% of extracted pilot characters. Preserve attribution and review editorial-note handling before training."
+    },
+    {
+      "id": "pg205",
+      "status": "unicode-text-extracted-pilot-only",
+      "notes": "Sampled prose is readable; case and punctuation retained. Limited sampling is not full-document content review."
+    },
+    {
+      "id": "pg20203",
+      "status": "unicode-text-extracted-pilot-only",
+      "notes": "Illustration placeholders remain (39 markers); an editor and illustrator are recorded in the registry."
+    },
+    {
+      "id": "pg1232",
+      "status": "unicode-text-extracted-pilot-only",
+      "notes": "Translation contributor is retained in metadata and attribution; no assumption that author dates alone clear every edition."
+    },
+    {
+      "id": "pg16643",
+      "status": "unicode-text-extracted-pilot-only",
+      "notes": "Edition editor is recorded; essays are explanatory/philosophical nonfiction, not fiction."
+    },
+    {
+      "id": "pg833",
+      "status": "unicode-text-extracted-pilot-only",
+      "notes": "Sampled prose is readable; case and punctuation retained. Limited sampling is not full-document content review."
+    },
+    {
+      "id": "pg14474",
+      "status": "unicode-text-extracted-pilot-only",
+      "notes": "Illustration placeholders remain (38 markers); source is historical lecture text and has an editor recorded."
+    },
+    {
+      "id": "pg1228",
+      "status": "unicode-text-extracted-pilot-only",
+      "notes": "An in-body edition-selection preface precedes the book title. It was flagged, not silently removed; historical science is not labeled contemporary factual instruction."
+    },
+    {
+      "id": "olp-set-basics",
+      "status": "quarantined-source-format",
+      "notes": "Raw source contains mathematical notation and Open Logic macros; quarantined for reviewed rendering, no TeX execution."
+    },
+    {
+      "id": "olp-recursion-intro",
+      "status": "quarantined-source-format",
+      "notes": "Raw source contains mathematical notation and custom macros; quarantined for reviewed rendering, no TeX execution."
+    }
+  ],
+  "limits": [
+    "Exact raw/normalized hashes are unique, but near-duplicate/related-family review is incomplete.",
+    "No actual train/development/test split is created.",
+    "Pilot families are development-exposed and must not populate the new untouched test.",
+    "The volume mixture does not meet the planned balanced modern educational corpus; LaTeX items contribute zero prepared prose.",
+    "The source US-public-domain statement is verified, not converted into worldwide clearance.",
+    "Historical ideas, biases, scientific claims and editorial text remain; this is not a contemporary factual or QA corpus."
+  ]
+}

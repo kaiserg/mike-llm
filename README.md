@@ -21,6 +21,17 @@ The local checkpoint is `runs/position-exposure-40000/seed-42/primary/checkpoint
 
 The [next-stage plan](docs/32-next-stage-plan.md) prioritizes a versioned licensed corpus with fiction, nonfiction and educational prose; new group-isolated development/test splits; a Unicode-preserving byte baseline; and controlled capacity/context improvements before source-grounded QA training. English remains the proposed initial language. Source rights must be verified per edition, and the new test is **planned, not yet assembled or frozen**. Begin with a small reviewed ingestion pilot and measured compute budgets.
 
+
+## Corpus-v2 ingestion pilot
+
+The [first pilot](docs/33-corpus-ingestion-pilot.md) ingests **14 development-only documents** with edition/revision metadata, rights evidence, attribution and raw/output hashes. Twelve books provide 6.39 million Unicode-preserving characters; two Open Logic LaTeX sections are quarantined pending conversion. Source rights statements are scoped per edition, including Gutenberg's US-only public-domain assertion. No training or new test evaluation occurred; inspected pilot families cannot become the future untouched test.
+
+```bash
+python scripts/ingest_corpus_pilot.py
+```
+
+Existing snapshots verify and reuse offline. See the [source registry](configs/corpus_v2_sources.json) and [measured report](docs/results/corpus-v2-ingestion-pilot.json). Near-duplicate review, source balance and final split freezing remain next-stage work.
+
 ## Current progress
 
 The repository contains the complete small GPT pipeline: reusable model components, reproducible training on normalized novels, checkpoint generation, evaluation, and controlled context/position/attention experiments. The small-corpus experimental stage is closed; the model predicts characters and is not a conversational or instruction-following assistant.

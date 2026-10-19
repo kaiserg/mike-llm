@@ -1,6 +1,6 @@
 # Next stage: a broader licensed corpus and a stronger base model
 
-[Documentation index](README.md) · [Previous](31-stage-closure-and-test.md)
+[Documentation index](README.md) · [Previous](31-stage-closure-and-test.md) · [Next](33-corpus-ingestion-pilot.md)
 
 **Status: proposed implementation plan, not a completed corpus or training experiment.** The prior stage is closed; its selected model and consumed test remain historical references. This plan does not download documents, assign actual new test items, train models or evaluate any new test. Targets below are starting design choices, not measured results or runtime promises.
 
@@ -126,3 +126,7 @@ No instruction examples, fine-tuning or assistant claims are introduced in this 
 | Later | Source-grounded QA | Base-model gate passed and a separate licensed QA/evaluation protocol frozen |
 
 **First actionable milestone:** create the versioned source registry and ingest a small rights-reviewed, multi-domain pilot; implement group IDs and a stable split manifest before selecting or reading a model test score. Do not extend the old three-URL downloader into an uncontrolled crawler. No new data is acquired by merely saving this plan.
+
+## Pilot implementation update
+
+The [first ingestion pilot](33-corpus-ingestion-pilot.md) now registers and ingests fourteen development-only documents. Twelve books have extracted Unicode text; two LaTeX sections are quarantined. The new test is still not assembled, and inspected pilot families are ineligible for it. The remaining stages above are planned work.
