@@ -1,6 +1,6 @@
 # Checkpoint evaluation and perplexity
 
-[Documentation index](README.md) · [Previous](12-text-generation.md)
+[Documentation index](README.md) · [Previous](12-text-generation.md) · [Next](14-real-corpus.md)
 
 Implementation: [`src/evaluate.py`](../src/evaluate.py). Tests: [`tests/test_evaluation.py`](../tests/test_evaluation.py).
 
@@ -136,3 +136,5 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 Evaluation tests compare batched scoring with a manual sliding-window reference, check uniform-model perplexity and accuracy, and cover short inputs, unknown characters, mode restoration, and unchanged weights/gradients. Batch-size changes can introduce tiny floating-point differences; tests compare numerical values with tolerance.
 
 The next useful step is a representative licensed corpus with separate train, validation, and final test documents, followed by consistent comparisons of checkpoints, generated samples, and runtime performance.
+
+The initial real-corpus preparation workflow is implemented in [chapter 14](14-real-corpus.md).

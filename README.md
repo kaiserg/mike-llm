@@ -75,6 +75,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 11. [First reproducible training run](docs/11-training.md)
 12. [Text generation and temperature](docs/12-text-generation.md)
 13. [Checkpoint evaluation and perplexity](docs/13-evaluation.md)
+14. [Real corpus preparation and held-out splits](docs/14-real-corpus.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -83,14 +84,14 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 ```text
 src/        Educational scripts and reusable GPT model components
 scripts/    Device availability check
-configs/    Reserved for future configuration files
+configs/    Reviewed corpus sources and expected download hashes
 data/       Local corpus storage (contents ignored by Git)
 docs/       Learning chapters and diagrams
 ```
 
 ## Roadmap
 
-1. Assemble an appropriately licensed corpus and split training and validation data.
+1. Expand the initial reviewed corpus while keeping document-level train/validation/test splits fixed.
 2. Decide whether to extend the current character tokenizer or train a subword tokenizer.
 3. Select context length, depth, and width for a training configuration.
 4. Scale the implemented GPT architecture; approximately 10–15M parameters is a target, not the 4008-parameter toy demonstration.
@@ -124,3 +125,12 @@ python src/evaluate.py
 ```
 
 Evaluates the default checkpoint on the built-in synthetic validation text and saves `runs/first-training/evaluation.json`. See [the evaluation chapter](docs/13-evaluation.md) for custom validation files, the scoring protocol, and interpretation of perplexity.
+
+## Prepare a real corpus
+
+```bash
+python scripts/download_corpus.py
+python src/prepare_corpus.py --profile ascii-letters
+```
+
+Downloads three reviewed Gutenberg editions, preserves the raw notices, verifies source hashes, and separates whole books into train, validation, and test. See [chapter 14](docs/14-real-corpus.md) for the territorial rights statements, normalization tradeoffs, and custom local manifests. Corpus files are ignored by Git.

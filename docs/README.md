@@ -17,6 +17,7 @@ These chapters follow the existing educational code from characters to a complet
 11. [First reproducible training run](11-training.md) — [`src/train.py`](../src/train.py)
 12. [Text generation and temperature](12-text-generation.md) — [`src/generate.py`](../src/generate.py)
 13. [Checkpoint evaluation and perplexity](13-evaluation.md) — [`src/evaluate.py`](../src/evaluate.py)
+14. [Real corpus preparation and held-out splits](14-real-corpus.md) — [`src/prepare_corpus.py`](../src/prepare_corpus.py)
 
 ## Running the examples
 
@@ -37,7 +38,7 @@ python src/gpt.py
 
 For the independent Python snippets in these chapters, start `PYTHONPATH=src python` from the repository root and paste a whole snippet, or save it and run `PYTHONPATH=src python path/to/example.py`. Install dependencies from the [requirements file](../requirements.txt) if the environment is not prepared.
 
-Examples use CPU tensors and set a seed where randomness matters. Exact floating-point values can vary with PyTorch version and device; assertions focus on shapes, identities, and causality. The original embedding demonstration has no fixed seed. Current source demonstrations and chapter snippets were checked with Python 3.13 and PyTorch 2.14.1; no training metrics are claimed.
+Examples use CPU tensors and set a seed where randomness matters. Exact floating-point values can vary with PyTorch version and device; assertions focus on shapes, identities, and causality. The original embedding demonstration has no fixed seed. Current source demonstrations and chapter snippets were checked with Python 3.13 and PyTorch 2.14.1; later chapters report measured synthetic training results and a real-corpus preparation check.
 
 ## Notation
 
