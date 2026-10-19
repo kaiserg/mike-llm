@@ -31,6 +31,8 @@ These chapters follow the existing educational code from characters to a complet
 
 25. [Distant-history ablation with fixed position IDs](25-fixed-position-history-ablation.md) — [`scripts/analyze_history_ablation.py`](../scripts/analyze_history_ablation.py)
 
+26. [History-length curve with fixed position IDs](26-fixed-position-history-curve.md) — [`scripts/analyze_history_curve.py`](../scripts/analyze_history_curve.py)
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:

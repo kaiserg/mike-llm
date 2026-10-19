@@ -1,6 +1,6 @@
 # Does distant history help when position IDs stay fixed?
 
-[Documentation index](README.md) · [Previous](24-sinusoidal-position-diagnostics.md)
+[Documentation index](README.md) · [Previous](24-sinusoidal-position-diagnostics.md) · [Next](26-fixed-position-history-curve.md)
 
 Driver: [`scripts/analyze_history_ablation.py`](../scripts/analyze_history_ablation.py). Evaluator: [`src/history_ablation.py`](../src/history_ablation.py). Full measured results and provenance: [JSON report](results/history-ablation.json).
 

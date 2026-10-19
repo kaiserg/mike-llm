@@ -233,3 +233,11 @@ python scripts/analyze_history_ablation.py
 ```
 
 Across four seeds for each positional encoding, isolating the last 16 characters while retaining IDs 48–63 worsens validation log loss in all eight context-64 checkpoints. The distant history contributes under this controlled intervention, despite earlier improvements from cropping and resetting positions. The learned mean effect is dominated by one seed. See [chapter 25](docs/25-fixed-position-history-ablation.md) for complete-validation metrics, the mask definition, and limitations.
+
+## How much fixed-position history helps
+
+```bash
+python scripts/analyze_history_curve.py
+```
+
+Keeping 8, 16, 32, 48, or all 64 characters with unchanged position IDs reveals non-monotonic curves. Both 16→32 and 32→48 improve validation NLL in all four seeds for both encodings; 48→64 improves 3/4 learned and 2/4 sinusoidal seeds. See [chapter 26](docs/26-fixed-position-history-curve.md) for per-seed curves, marginal gains, provenance, and limitations.

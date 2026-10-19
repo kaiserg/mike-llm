@@ -46,3 +46,34 @@ class HistoryAblationTests(unittest.TestCase):
         for keep in (0,-1,True):
             with self.assertRaises(ValueError):
                 suffix_isolation_mask(8,keep)
+
+    def test_curve_matches_independent_suffixes(self):
+        from history_ablation import score_history_curve
+        import math
+        import torch.nn.functional as F
+        torch.set_num_threads(1)
+        for encoding in ('learned','sinusoidal'):
+            torch.manual_seed(14)
+            model = GPT(9,64,num_layers=2,positional_encoding=encoding).train()
+            ids = torch.randint(0,9,(70,))
+            result = score_history_curve(model,ids,batch_size=17)
+            self.assertTrue(model.training)
+            for keep in (8,16,32,48):
+                losses = []
+                with torch.no_grad():
+                    for target in range(1,len(ids)):
+                        length = min(target,64)
+                        start = max(0,length-keep)
+                        suffix = ids[target-length+start:target].unsqueeze(0)
+                        positions = torch.arange(start,length)
+                        x = model.token_embedding(suffix)+model.position_embedding(positions)
+                        logits = model.lm_head(model.final_norm(model.blocks(x)))[:,-1]
+                        losses.append(F.cross_entropy(logits.double(),ids[target:target+1]).item())
+                self.assertAlmostEqual(result[str(keep)]['mean_nll'],math.fsum(losses)/len(losses),places=6)
+                self.assertEqual(result[str(keep)]['scored_tokens'],69)
+            # Legacy interface still yields the same 16-token condition.
+            legacy = score_history_ablation(model,ids,batch_size=17)
+            self.assertEqual(result['16'],legacy['masked'])
+            for keeps in ((),(8,8),(0,),(-1,)):
+                with self.assertRaises(ValueError):
+                    score_history_curve(model,ids,keeps=keeps)
