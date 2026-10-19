@@ -1,0 +1,40 @@
+{
+  "reviewed_on": "2026-10-19",
+  "report_sha256": "423bf096f644485d20d8a248e936975b6d9aea63de37c4aa6aef17aba7b50c40",
+  "registry_sha256": "7b3dfae7ee7f69b1fc5542777f82708fd8405fda5056c1dfba519aa0121ab9b9",
+  "review_scope": "development-only expansion; no train/validation/test assignment and no model use",
+  "method": [
+    "Reviewed the opening 45 and closing 20 rendered lines of all 15 chapters.",
+    "Searched every rendered file for YAML boundaries, Carpentries directive delimiters, code fences, Liquid expressions, Markdown link remnants and HTML tags.",
+    "Inspected all three paragraph matches reported at five-word-shingle Jaccard >= 0.80.",
+    "Compared retained attribution bytes, pinned repository/path/commit metadata and license evidence hashes against the registry and report."
+  ],
+  "findings": {
+    "documents_reviewed": 15,
+    "license_evidence_files_reviewed": 5,
+    "renderer_blocking_artifacts": 0,
+    "document_near_duplicates": 0,
+    "paragraph_near_duplicates": 3,
+    "paragraph_match_interpretation": [
+      "One exact 40-word CSV data example is shared by two shell chapters.",
+      "One exact 37-word NumPy output and one 36/37-word formatting variant appear across two Python chapters.",
+      "The matches are retained as legitimate instructional examples and isolated by the shared Carpentries split group."
+    ],
+    "editorial_notes": [
+      "Prose, exercises, solutions, command examples and code output are retained.",
+      "Image links are represented by available alternative text; image files are not ingested.",
+      "Markdown demonstration text inside lesson examples can intentionally remain because it is lesson content rather than unresolved source markup."
+    ],
+    "source_limitations": [
+      "All chapters belong to one organizational/source family despite coming from five repositories.",
+      "The wave is technical and English-only and contributes 241149 characters, so it does not satisfy the planned corpus size or independent-group diversity.",
+      "The renderer is reviewed for this Carpentries Markdown format only."
+    ]
+  },
+  "decision": "Accept as a development-only first expansion wave. Keep all documents in source-family:the-carpentries, exclude them from the future untouched test, and acquire unrelated licensed families before freezing splits.",
+  "new_test_created": false,
+  "new_test_read": false,
+  "legacy_test_read": false,
+  "model_loaded": false,
+  "training_performed": false
+}

@@ -1,6 +1,6 @@
 # Editorial cleaning and near-duplicate screening
 
-[Documentation index](README.md) · [Previous](33-corpus-ingestion-pilot.md)
+[Documentation index](README.md) · [Previous](33-corpus-ingestion-pilot.md) · [Next](35-modern-educational-expansion-wave1.md)
 
 The ingestion pilot deliberately preserved source text conservatively. This stage applies a small, reviewed set of editorial removals and measures lexical overlap before any train, validation or test split exists. It does not train a model, choose a configuration or open a new test set.
 

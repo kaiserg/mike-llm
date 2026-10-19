@@ -51,6 +51,8 @@ The small-corpus experimental stage is closed. See [chapter 31](31-stage-closure
 
 34. [Editorial cleaning and near-duplicate screening](34-editorial-cleaning-and-near-duplicates.md) — [`scripts/clean_corpus_pilot.py`](../scripts/clean_corpus_pilot.py)
 
+35. [Modern educational corpus expansion: wave 1](35-modern-educational-expansion-wave1.md) — [`scripts/ingest_corpus_expansion.py`](../scripts/ingest_corpus_expansion.py)
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:

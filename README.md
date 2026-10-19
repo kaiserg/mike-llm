@@ -38,6 +38,12 @@ The [editorial cleaning and near-duplicate screen](docs/34-editorial-cleaning-an
 PYTHONPATH=src python scripts/clean_corpus_pilot.py
 ```
 
+The [first modern educational expansion wave](docs/35-modern-educational-expansion-wave1.md) adds 15 pinned CC BY 4.0 Carpentries chapters about shell tools, Git, Python, SQL and spreadsheet quality. It contributes 241,149 rendered characters with source history, license evidence, attribution and transformation hashes. Three repeated example/output paragraphs are reported; all chapters share one conservative source-family group and remain outside the future test.
+
+```bash
+PYTHONPATH=src python scripts/ingest_corpus_expansion.py
+```
+
 ## Current progress
 
 The repository contains the complete small GPT pipeline: reusable model components, reproducible training on normalized novels, checkpoint generation, evaluation, and controlled context/position/attention experiments. The small-corpus experimental stage is closed; the model predicts characters and is not a conversational or instruction-following assistant.
@@ -123,6 +129,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 23. [Sinusoidal positional encoding experiment](docs/23-sinusoidal-positions.md)
 24. [Learned versus sinusoidal position diagnostics](docs/24-sinusoidal-position-diagnostics.md)
 34. [Editorial cleaning and near-duplicate screening](docs/34-editorial-cleaning-and-near-duplicates.md)
+35. [Modern educational corpus expansion: wave 1](docs/35-modern-educational-expansion-wave1.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
