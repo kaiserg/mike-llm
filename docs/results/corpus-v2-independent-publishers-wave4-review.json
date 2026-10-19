@@ -1,0 +1,36 @@
+{
+  "reviewed_on": "2026-10-19",
+  "report_sha256": "e4e8ba42a1a7f7742dc04bad89d8cd5e75b6f9aa42a548d393332a65b17ba748",
+  "registry_sha256": "f205d3ae130653eb2a5bcc34f95cb1085fd39cb885297410c20831220e8fa121",
+  "review_scope": "development-only independent-host expansion; no train/validation/test assignment and no model use",
+  "method": [
+    "Verified project title, publisher identity, revision and contributor evidence against all 10 pinned Manifold project records.",
+    "Required an unambiguous CC BY 4.0 statement in every separately pinned project record and rejected contradictory license metadata.",
+    "Reviewed rendered openings, endings, structure and recorded exclusions for all 10 selected sections.",
+    "Reviewed all 45 document comparisons and all threshold matches among 469 screened cross-document paragraphs."
+  ],
+  "findings": {
+    "documents_reviewed": 10,
+    "unique_contributors": 23,
+    "independent_contributor_work_groups": 10,
+    "host_count": 4,
+    "publisher_count": 6,
+    "rendered_characters": 291200,
+    "renderer_blocking_artifacts": 0,
+    "document_near_duplicates": 0,
+    "paragraph_near_duplicates": 0,
+    "highest_document_jaccard": 0.0004296455424274973,
+    "source_limitations": [
+      "Five documents are attributed to the University System of Georgia.",
+      "Institutional educational prose and English-language content remain overrepresented.",
+      "All content uses Manifold APIs, so delivery-format diversity did not increase in this wave.",
+      "The lexical duplicate screen cannot establish absence of paraphrased or semantic overlap."
+    ]
+  },
+  "decision": "Accept as a development-only fourth expansion wave. Preserve 10 work/contributor groups, exclude every inspected work from the future untouched test, and perform a cross-wave balance and identity audit before acquiring against the remaining gaps.",
+  "new_test_created": false,
+  "new_test_read": false,
+  "legacy_test_read": false,
+  "model_loaded": false,
+  "training_performed": false
+}

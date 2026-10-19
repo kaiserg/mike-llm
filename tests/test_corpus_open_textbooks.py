@@ -6,6 +6,7 @@ import tempfile
 import unittest
 
 from corpus_open_textbooks import (
+    _parse_row,
     ingest_open_textbooks,
     parse_manifold,
     render_reviewed_html,
@@ -107,7 +108,7 @@ class CorpusOpenTextbookTests(unittest.TestCase):
     def test_html_renderer_keeps_text_code_tables_and_inequalities(self):
         source = """
         <h1>Example</h1>
-        <p>Keep this explanation where 0 &lt; 1 and 2 &gt; 1.</p>
+        <p>Keep this explanation where 0 &lt; 1, 2 &gt; 1, and &lt;v 1, v 2&gt; is a tuple.</p>
         <pre>for item in values: print(item)</pre>
         <table><tr><th>Term</th><th>Meaning</th></tr><tr><td>Q</td><td>query</td></tr></table>
         <img src="standalone.png" alt="excluded">
@@ -117,7 +118,8 @@ class CorpusOpenTextbookTests(unittest.TestCase):
         <h2>Works Cited</h2><p>Excluded reference.</p>
         """
         rendered, audit = render_reviewed_html("Example", source)
-        self.assertIn("0 < 1 and 2 > 1", rendered)
+        self.assertIn("0 < 1, 2 > 1", rendered)
+        self.assertIn("<v 1, v 2>", rendered)
         self.assertIn("for item in values", rendered)
         self.assertIn("Term", rendered)
         self.assertIn("query", rendered)
@@ -147,9 +149,34 @@ class CorpusOpenTextbookTests(unittest.TestCase):
         parsed = parse_manifold(json.dumps(project).encode(), json.dumps(section).encode())
         self.assertEqual(parsed["work_title"], "Open work")
         self.assertEqual(parsed["publisher"], " Open Publisher ".strip())
+        self.assertEqual(parsed["creator_names"], "")
         self.assertIn("Useful prose", parsed["rendered"])
         self.assertNotIn("Excluded media", parsed["rendered"])
         self.assertEqual(parsed["audit"]["media_embeds_excluded"], 1)
+
+    def test_manifold_accepts_creator_or_content_author_evidence(self):
+        project = {"data": {"attributes": {
+            "titlePlaintext": "Open work",
+            "updatedAt": "2026-01-02T03:04:05Z",
+            "creatorNames": "Ada Author",
+            "metadata": {
+                "publisher": "Open Publisher",
+                "rightsHolder": "",
+                "rights": "Creative Commons Attribution 4.0 International License",
+            },
+        }}}
+        section = {"data": {"attributes": {
+            "name": "Open chapter",
+            "body": "<h1>Open chapter</h1><p>Written by Bea Researcher.</p>",
+        }}}
+        base = {
+            "id": "open-chapter", "provider": "manifold-v1", "work_title": "Open work",
+            "document_title": "Open chapter", "publisher": "Open Publisher",
+            "revision": "2026-01-02T03:04:05Z", "authors": ["Ada Author"],
+        }
+        _parse_row(base, json.dumps(project).encode(), json.dumps(section).encode())
+        content_author = dict(base, authors=["Bea Researcher"], author_evidence="content")
+        _parse_row(content_author, json.dumps(project).encode(), json.dumps(section).encode())
 
     def test_ingestion_is_pinned_attributed_idempotent_and_test_free(self):
         with tempfile.TemporaryDirectory() as directory:

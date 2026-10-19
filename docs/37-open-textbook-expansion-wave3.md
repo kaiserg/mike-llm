@@ -1,6 +1,6 @@
 # Open textbooks and practical nonfiction: wave 3
 
-[Documentation index](README.md) · [Previous](36-modern-science-expansion-wave2.md)
+[Documentation index](README.md) · [Previous](36-modern-science-expansion-wave2.md) · [Next](38-independent-publisher-expansion-wave4.md)
 
 The third expansion wave adds independently authored textbook prose in public policy, civic communication, religion and education, media studies, data communication, biology, computer science, medical physics, open education and education technology. It remains development-only: no train, validation or test split was assigned, no new or legacy test was read, and no model was loaded or trained.
 
@@ -74,4 +74,4 @@ PYTHONPATH=src python -m unittest discover -s tests -q
 
 When the ignored local snapshot already exists, the first command verifies and reuses it without network access. Registry, evidence, content, rendered text, attribution or inventory changes fail closed.
 
-[Documentation index](README.md) · [Previous](36-modern-science-expansion-wave2.md)
+[Documentation index](README.md) · [Previous](36-modern-science-expansion-wave2.md) · [Next](38-independent-publisher-expansion-wave4.md)

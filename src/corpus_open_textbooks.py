@@ -21,6 +21,11 @@ REFERENCE_HEADING_RE = re.compile(
     r"^(?:(?:chapter\s+)?\d+(?:\.\d+)?\s+)?(?:references|bibliography|works cited|sources|further readings?)$",
     re.IGNORECASE,
 )
+HTML_TAG_RE = re.compile(
+    r"</?(?:html|body|head|div|span|p|h[1-6]|a|img|figure|figcaption|table|tr|td|th|ul|ol|li|pre|code|"
+    r"section|article|iframe|video|audio|script|style)\b[^>\n]*>",
+    re.IGNORECASE,
+)
 
 
 class _PlainHTML(HTMLParser):
@@ -115,7 +120,7 @@ def render_reviewed_html(title, source_html):
         "figures_excluded_with_captions": parser.figures_excluded,
         "media_embeds_excluded": parser.embeds_excluded,
         "references_section_excluded": references_removed,
-        "html_tags_remaining": len(re.findall(r"</?[A-Za-z][^>\n]*>", rendered)),
+        "html_tags_remaining": len(HTML_TAG_RE.findall(rendered)),
         "replacement_characters": rendered.count("\ufffd"),
     }
     return rendered, audit
@@ -159,6 +164,7 @@ def parse_manifold(license_raw, content_raw):
         "publisher": re.sub(r"<[^>]+>", " ", metadata.get("publisher", "")).strip(),
         "rights_holder": re.sub(r"<[^>]+>", " ", metadata.get("rightsHolder", "")).strip(),
         "rights": re.sub(r"<[^>]+>", " ", metadata.get("rights", "")).strip(),
+        "creator_names": project.get("creatorNames", ""),
         "revision": project.get("updatedAt", ""),
         "rendered": rendered,
         "audit": audit,
@@ -225,10 +231,13 @@ def _parse_row(row, license_raw, content_raw):
         for key in ("work_title", "document_title", "publisher", "revision"):
             if parsed[key] != row[key]:
                 raise ValueError(f"Manifold {key} differs: {row['id']}")
-        if "CC BY 4.0" not in parsed["rights"]:
+        if not re.search(r"(?:CC\s*BY\s*4\.0|Creative Commons Attribution 4\.0|Attribution 4\.0)", parsed["rights"], re.IGNORECASE):
             raise ValueError(f"Manifold CC BY 4.0 evidence differs: {row['id']}")
+        author_evidence = parsed["rendered"] if row.get("author_evidence") == "content" else " ".join(
+            (parsed["rights"], parsed["rights_holder"], parsed["creator_names"])
+        )
         for author in row["authors"]:
-            if author.split()[-1].casefold() not in (parsed["rights"] + " " + parsed["rights_holder"]).casefold():
+            if author.split()[-1].casefold() not in author_evidence.casefold():
                 raise ValueError(f"Manifold rights holder differs: {row['id']}")
     return parsed
 
@@ -352,7 +361,10 @@ def ingest_open_textbooks(registry_path, output, fetch):
             "documents": records,
             "attribution_path": "ATTRIBUTION.json",
             "attribution_sha256": digest(attribution_raw),
-            "scope_limit": "Third source-expansion wave only; institutional open textbooks remain overrepresented.",
+            "scope_limit": registry.get(
+                "scope_limit",
+                "Third source-expansion wave only; institutional open textbooks remain overrepresented.",
+            ),
             "split_status": "No train/validation/test assignments. Every inspected work is excluded from the future untouched test.",
             "new_test_created": False,
             "new_test_read": False,

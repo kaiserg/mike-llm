@@ -682,7 +682,7 @@
   "training_performed": false,
   "implementation_sha256": {
     "scripts/ingest_corpus_open_textbooks.py": "689d29f34ff4c07712f3bc0f0ab2b8686487056b619bbf9e406c4706afc92940",
-    "src/corpus_open_textbooks.py": "392914ca9dbf752d738aa1730d95e42433a3602d7c9b083fbd9cb78d31f9f972",
+    "src/corpus_open_textbooks.py": "4db0314756f77148fbb6416a4d0261a9c980b8bdee23d4847f215f22fe3e134a",
     "src/corpus_cleaning.py": "2ac6635aedbf5124161af6dc39e4aa60ea68643c8f30df8055067563bef95b83"
   }
 }

@@ -1,6 +1,6 @@
 {
   "reviewed_on": "2026-10-19",
-  "report_sha256": "d3d94520d9af04552a8db71314e3ee0e7fe1334088000bc9377497b2a348fa0c",
+  "report_sha256": "3cefcac5eaf98aa89edd38f58070cd20ee6dc1e4d641250994b78a3bc58ee403",
   "registry_sha256": "759874643b0310e56ffec3a530ca8cfd05188f7cc8c49cb001929cae06178c28",
   "review_scope": "development-only open-textbook expansion; no train/validation/test assignment and no model use",
   "method": [

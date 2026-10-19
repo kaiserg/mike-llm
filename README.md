@@ -56,6 +56,22 @@ The [third expansion wave](docs/37-open-textbook-expansion-wave3.md) adds 10 CC 
 PYTHONPATH=src python scripts/ingest_corpus_open_textbooks.py
 ```
 
+The [fourth expansion wave](docs/38-independent-publisher-expansion-wave4.md) adds 10 CC BY 4.0 documents from four Manifold hosts and six publisher identities. Its 291,200 characters cover practical reference, history, business, engineering, computing and education. Contradictory license records were rejected, no close lexical duplicates were detected, and all inspected works remain outside the future test.
+
+```bash
+PYTHONPATH=src python scripts/ingest_corpus_independent.py
+```
+
+### Corpus-v2 status
+
+| Development material | Documents | Characters | Conservative groups |
+| --- | ---: | ---: | ---: |
+| Cleaned historical pilot | 12 | 6,388,790 | 12 |
+| Four modern expansion waves | 47 | 1,338,029 | 33 |
+| Current total | **59** | **7,726,819** | **45** |
+
+These are acquisition counts, not frozen training splits. The historical books dominate character volume, institutional education remains overrepresented, and all inspected sources are ineligible for the future untouched test. The next gate is a cross-wave identity, overlap and balance audit before acquiring against the measured gaps and freezing splits.
+
 ## Current progress
 
 The repository contains the complete small GPT pipeline: reusable model components, reproducible training on normalized novels, checkpoint generation, evaluation, and controlled context/position/attention experiments. The small-corpus experimental stage is closed; the model predicts characters and is not a conversational or instruction-following assistant.
@@ -153,6 +169,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 35. [Modern educational corpus expansion: wave 1](docs/35-modern-educational-expansion-wave1.md)
 36. [Modern science and research practice: wave 2](docs/36-modern-science-expansion-wave2.md)
 37. [Open textbooks and practical nonfiction: wave 3](docs/37-open-textbook-expansion-wave3.md)
+38. [Independent hosts and mixed practical prose: wave 4](docs/38-independent-publisher-expansion-wave4.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
