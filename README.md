@@ -249,3 +249,11 @@ python scripts/analyze_nonmonotonic_history.py
 ```
 
 The large 8→16 penalties in learned seed 7 and sinusoidal seed 123 affect more than half of validation targets and persist after excluding the worst 1%. Layer-specific interventions locate different dominant effects: block 1 in the learned outlier and block 2 in the sinusoidal outlier. The small sinusoidal seed-2026 reversal is tail-sensitive. See [chapter 27](docs/27-nonmonotonic-history-diagnostics.md) for the factorial mask experiment, attention observations, added-content order control, and causal limitations.
+
+## Isolate added-history effects by attention head
+
+```bash
+python scripts/analyze_head_history.py
+```
+
+Masking the added eight characters one head at a time identifies block-1 head 1 as the largest individual contributor to the learned seed-7 penalty (+0.027647 NLL improvement when masked). In sinusoidal seed 123, all three block-2 heads contribute similarly (+0.020–0.021 each). Some heads benefit from the added history, and individual effects do not add independently. See [chapter 28](docs/28-head-history-diagnostics.md) for all six interventions per checkpoint and joint controls.

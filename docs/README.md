@@ -35,6 +35,8 @@ These chapters follow the existing educational code from characters to a complet
 
 27. [Diagnosing non-monotonic history curves](27-nonmonotonic-history-diagnostics.md) — [`scripts/analyze_nonmonotonic_history.py`](../scripts/analyze_nonmonotonic_history.py)
 
+28. [Per-head diagnosis of added-history penalties](28-head-history-diagnostics.md) — [`scripts/analyze_head_history.py`](../scripts/analyze_head_history.py)
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:

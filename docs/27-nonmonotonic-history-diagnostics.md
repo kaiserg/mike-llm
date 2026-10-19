@@ -1,6 +1,6 @@
 # Diagnosing non-monotonic 8-to-16 history curves
 
-[Documentation index](README.md) · [Previous](26-fixed-position-history-curve.md)
+[Documentation index](README.md) · [Previous](26-fixed-position-history-curve.md) · [Next](28-head-history-diagnostics.md)
 
 Driver: [`scripts/analyze_nonmonotonic_history.py`](../scripts/analyze_nonmonotonic_history.py). Instrumentation: [`src/nonmonotonic_diagnostics.py`](../src/nonmonotonic_diagnostics.py). [Full report](results/nonmonotonic-history-diagnostics.json), including character decompositions, attention entropy and illustrative target contexts.
 
