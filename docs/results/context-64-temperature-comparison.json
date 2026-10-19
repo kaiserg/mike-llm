@@ -1,0 +1,672 @@
+{
+  "checkpoint": "runs/context-64-2000/primary/checkpoint.pt",
+  "checkpoint_sha256": "1a002d9e160fc633beffb2cf366162f4ce32caabca7a7e734169f909ac2c009f",
+  "code_commit": "fbc8f54033beb29eed0a0f4a72b64c2953c5181e",
+  "driver_sha256": "ddb49067fed1e9be39143d89dcdde48f34561ca55d9789545f7c2a2bd230e623",
+  "python_version": "3.13.15",
+  "torch_version": "2.14.1",
+  "device": "cpu",
+  "threads": 1,
+  "context_length": 64,
+  "max_new_tokens": 200,
+  "same_seed_repeats_identical": true,
+  "test_used": false,
+  "samples": [
+    {
+      "prompt": "the creature ",
+      "temperature": 0.0,
+      "seed": 42,
+      "continuation": "and the and and the and and the ande ande and and and the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the th",
+      "text": "the creature and the and and the and and the ande ande and and and the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the th",
+      "metrics": {
+        "word_count": 50,
+        "unique_word_count": 4,
+        "repeated_character_4gram_fraction": 0.9238578680203046,
+        "most_common_words": [
+          [
+            "the",
+            39
+          ],
+          [
+            "and",
+            8
+          ],
+          [
+            "ande",
+            2
+          ],
+          [
+            "th",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 0.0,
+      "seed": 123,
+      "continuation": "and the and and the and and the ande ande and and and the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the th",
+      "text": "the creature and the and and the and and the ande ande and and and the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the th",
+      "metrics": {
+        "word_count": 50,
+        "unique_word_count": 4,
+        "repeated_character_4gram_fraction": 0.9238578680203046,
+        "most_common_words": [
+          [
+            "the",
+            39
+          ],
+          [
+            "and",
+            8
+          ],
+          [
+            "ande",
+            2
+          ],
+          [
+            "th",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 0.5,
+      "seed": 42,
+      "continuation": "whed i nof and o cof o the thinthe and f he the tofe ofof he sthis the me mis the the s thinthese in the tonin myof she the ous me the ane ine cthour in we wofo ind my f t bure minen mere wan be wasis",
+      "text": "the creature whed i nof and o cof o the thinthe and f he the tofe ofof he sthis the me mis the the s thinthese in the tonin myof she the ous me the ane ine cthour in we wofo ind my f t bure minen mere wan be wasis",
+      "metrics": {
+        "word_count": 49,
+        "unique_word_count": 36,
+        "repeated_character_4gram_fraction": 0.2284263959390863,
+        "most_common_words": [
+          [
+            "the",
+            8
+          ],
+          [
+            "and",
+            2
+          ],
+          [
+            "o",
+            2
+          ],
+          [
+            "f",
+            2
+          ],
+          [
+            "he",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 0.5,
+      "seed": 123,
+      "continuation": "he mince anghen fon whime y d an whe thof thes in ire thoure rises hen\ning ste ture an of ofe indesthin my s tof ofe t oppe he ton the myof bere my soun orenge d he isthe ar whousoon ith and matof out",
+      "text": "the creature he mince anghen fon whime y d an whe thof thes in ire thoure rises hen\ning ste ture an of ofe indesthin my s tof ofe t oppe he ton the myof bere my soun orenge d he isthe ar whousoon ith and matof out",
+      "metrics": {
+        "word_count": 46,
+        "unique_word_count": 40,
+        "repeated_character_4gram_fraction": 0.10152284263959388,
+        "most_common_words": [
+          [
+            "he",
+            3
+          ],
+          [
+            "d",
+            2
+          ],
+          [
+            "an",
+            2
+          ],
+          [
+            "ofe",
+            2
+          ],
+          [
+            "my",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 0.8,
+      "seed": 42,
+      "continuation": "whechiger panoul clico the teisth the ave tould unde o tre misthar wavomond s th f nd scustof ve tin she yonin lto ashe ge tous ce the anofite esifut ing my d l inul heebe bured solis stoly i be n sis",
+      "text": "the creature whechiger panoul clico the teisth the ave tould unde o tre misthar wavomond s th f nd scustof ve tin she yonin lto ashe ge tous ce the anofite esifut ing my d l inul heebe bured solis stoly i be n sis",
+      "metrics": {
+        "word_count": 43,
+        "unique_word_count": 41,
+        "repeated_character_4gram_fraction": 0.055837563451776595,
+        "most_common_words": [
+          [
+            "the",
+            3
+          ],
+          [
+            "whechiger",
+            1
+          ],
+          [
+            "panoul",
+            1
+          ],
+          [
+            "clico",
+            1
+          ],
+          [
+            "teisth",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 0.8,
+      "seed": 123,
+      "continuation": "he mincers he yof my hime y dinore chthou thescor ire t hin wry as rthofomorind ure an of onen thesthin my s tof ofe y opp inecoun\n\nunghan cotof\nmy souloornthed this to n ar whousyon iis and matof d t",
+      "text": "the creature he mincers he yof my hime y dinore chthou thescor ire t hin wry as rthofomorind ure an of onen thesthin my s tof ofe y opp inecoun\n\nunghan cotof\nmy souloornthed this to n ar whousyon iis and matof d t",
+      "metrics": {
+        "word_count": 42,
+        "unique_word_count": 37,
+        "repeated_character_4gram_fraction": 0.045685279187817285,
+        "most_common_words": [
+          [
+            "my",
+            3
+          ],
+          [
+            "he",
+            2
+          ],
+          [
+            "y",
+            2
+          ],
+          [
+            "t",
+            2
+          ],
+          [
+            "mincers",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 1.0,
+      "seed": 42,
+      "continuation": "whec i nof anoul clico the beisti the ave touve undevont h mssth r wavomond hong f nd scustojovomy anghe y antilto asge ge tous ce the anofite esk he ing myo so idul grebe bured\nsolis stoly i betn sis",
+      "text": "the creature whec i nof anoul clico the beisti the ave touve undevont h mssth r wavomond hong f nd scustojovomy anghe y antilto asge ge tous ce the anofite esk he ing myo so idul grebe bured\nsolis stoly i betn sis",
+      "metrics": {
+        "word_count": 41,
+        "unique_word_count": 38,
+        "repeated_character_4gram_fraction": 0.045685279187817285,
+        "most_common_words": [
+          [
+            "the",
+            3
+          ],
+          [
+            "i",
+            2
+          ],
+          [
+            "whec",
+            1
+          ],
+          [
+            "nof",
+            1
+          ],
+          [
+            "anoul",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 1.0,
+      "seed": 123,
+      "continuation": "he mincers he yof my hime yedielepellthou t owang ire t hind ry asurth\ndomorinded ee l of oneant esthir my salof ofe y opp ind con\n\numimy t btofy mpinovoorntherd his to n artowousyoninis ay hesedd dut",
+      "text": "the creature he mincers he yof my hime yedielepellthou t owang ire t hind ry asurth\ndomorinded ee l of oneant esthir my salof ofe y opp ind con\n\numimy t btofy mpinovoorntherd his to n artowousyoninis ay hesedd dut",
+      "metrics": {
+        "word_count": 38,
+        "unique_word_count": 34,
+        "repeated_character_4gram_fraction": 0.015228426395939132,
+        "most_common_words": [
+          [
+            "t",
+            3
+          ],
+          [
+            "he",
+            2
+          ],
+          [
+            "my",
+            2
+          ],
+          [
+            "mincers",
+            1
+          ],
+          [
+            "yof",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 1.3,
+      "seed": 42,
+      "continuation": "whrchignk panouf clico e o beisth tie\naves whig undevocoff msstacrcenvomond\n\nong f nd scuptojovomy anghe y anan tolasgerge tous cesthe anofity esk utuing my d l idux grebe buredmiolis stoly i betn sis",
+      "text": "the creature whrchignk panouf clico e o beisth tie\naves whig undevocoff msstacrcenvomond\n\nong f nd scuptojovomy anghe y anan tolasgerge tous cesthe anofity esk utuing my d l idux grebe buredmiolis stoly i betn sis",
+      "metrics": {
+        "word_count": 34,
+        "unique_word_count": 34,
+        "repeated_character_4gram_fraction": 0.005076142131979711,
+        "most_common_words": [
+          [
+            "whrchignk",
+            1
+          ],
+          [
+            "panouf",
+            1
+          ],
+          [
+            "clico",
+            1
+          ],
+          [
+            "e",
+            1
+          ],
+          [
+            "o",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 1.3,
+      "seed": 123,
+      "continuation": "hempincers he y fovepliad yedielepellte amy owciriirert hich ry asurtn\ndomorit mureenl ovi weast estrir my salof ofe y\nopp ineccon\n\numimhe ctto y m souvoornthede his to n artowousyoninif ay\n\nmatof dut",
+      "text": "the creature hempincers he y fovepliad yedielepellte amy owciriirert hich ry asurtn\ndomorit mureenl ovi weast estrir my salof ofe y\nopp ineccon\n\numimhe ctto y m souvoornthede his to n artowousyoninif ay\n\nmatof dut",
+      "metrics": {
+        "word_count": 33,
+        "unique_word_count": 31,
+        "repeated_character_4gram_fraction": 0.0,
+        "most_common_words": [
+          [
+            "y",
+            3
+          ],
+          [
+            "hempincers",
+            1
+          ],
+          [
+            "he",
+            1
+          ],
+          [
+            "fovepliad",
+            1
+          ],
+          [
+            "yedielepellte",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 0.0,
+      "seed": 42,
+      "continuation": "and and and the the and the the and the and the the ande the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the",
+      "text": "i felt and and and the the and the the and the and the the ande the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the",
+      "metrics": {
+        "word_count": 50,
+        "unique_word_count": 3,
+        "repeated_character_4gram_fraction": 0.9238578680203046,
+        "most_common_words": [
+          [
+            "the",
+            43
+          ],
+          [
+            "and",
+            6
+          ],
+          [
+            "ande",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 0.0,
+      "seed": 123,
+      "continuation": "and and and the the and the the and the and the the ande the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the",
+      "text": "i felt and and and the the and the the and the and the the ande the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the",
+      "metrics": {
+        "word_count": 50,
+        "unique_word_count": 3,
+        "repeated_character_4gram_fraction": 0.9238578680203046,
+        "most_common_words": [
+          [
+            "the",
+            43
+          ],
+          [
+            "and",
+            6
+          ],
+          [
+            "ande",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 0.5,
+      "seed": 42,
+      "continuation": "whe pren fanor o ce co the thisthe and f he the tof tof f hessthare asome me we my nd scoutof ve tin the tonin myo as hind tous me the ane ind esi he ing myo so ind my f than thesonthasth wan be was m",
+      "text": "i felt whe pren fanor o ce co the thisthe and f he the tof tof f hessthare asome me we my nd scoutof ve tin the tonin myo as hind tous me the ane ind esi he ing myo so ind my f than thesonthasth wan be was m",
+      "metrics": {
+        "word_count": 48,
+        "unique_word_count": 37,
+        "repeated_character_4gram_fraction": 0.15736040609137059,
+        "most_common_words": [
+          [
+            "the",
+            4
+          ],
+          [
+            "f",
+            3
+          ],
+          [
+            "he",
+            2
+          ],
+          [
+            "tof",
+            2
+          ],
+          [
+            "me",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 0.5,
+      "seed": 123,
+      "continuation": "he min the he youthe hin ourd an whe t ous hescor ire t hin whises hen\nd mofof ture an of ofe indesthin my s tof ofe thopp in ancouthe my t thof my sounoor the d he is an are wousoo inis and matof out",
+      "text": "i felt he min the he youthe hin ourd an whe t ous hescor ire t hin whises hen\nd mofof ture an of ofe indesthin my s tof ofe thopp in ancouthe my t thof my sounoor the d he is an are wousoo inis and matof out",
+      "metrics": {
+        "word_count": 47,
+        "unique_word_count": 35,
+        "repeated_character_4gram_fraction": 0.14720812182741116,
+        "most_common_words": [
+          [
+            "he",
+            3
+          ],
+          [
+            "an",
+            3
+          ],
+          [
+            "t",
+            3
+          ],
+          [
+            "my",
+            3
+          ],
+          [
+            "the",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 0.8,
+      "seed": 42,
+      "continuation": "whechige fan oul clico the thisth the ave theve unde o t herssthar wavomond hong f nd scustouvese in she y antilto ashe ge tous ce the anofite esifut ing my d l inul heebe bured solis stoly i be n sis",
+      "text": "i felt whechige fan oul clico the thisth the ave theve unde o t herssthar wavomond hong f nd scustouvese in she y antilto ashe ge tous ce the anofite esifut ing my d l inul heebe bured solis stoly i be n sis",
+      "metrics": {
+        "word_count": 42,
+        "unique_word_count": 40,
+        "repeated_character_4gram_fraction": 0.045685279187817285,
+        "most_common_words": [
+          [
+            "the",
+            3
+          ],
+          [
+            "whechige",
+            1
+          ],
+          [
+            "fan",
+            1
+          ],
+          [
+            "oul",
+            1
+          ],
+          [
+            "clico",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 0.8,
+      "seed": 123,
+      "continuation": "he mince a he youthe hime y d eleprelt ou thescor ire t hind ry asurthofomorind ure al of onen t esthin my s tof ofe y opp inecoun\n\nunghan cotof\nmy souloornthed this to n ar whousyon iis and matof d t",
+      "text": "i felt he mince a he youthe hime y d eleprelt ou thescor ire t hind ry asurthofomorind ure al of onen t esthin my s tof ofe y opp inecoun\n\nunghan cotof\nmy souloornthed this to n ar whousyon iis and matof d t",
+      "metrics": {
+        "word_count": 43,
+        "unique_word_count": 37,
+        "repeated_character_4gram_fraction": 0.030456852791878153,
+        "most_common_words": [
+          [
+            "t",
+            3
+          ],
+          [
+            "he",
+            2
+          ],
+          [
+            "y",
+            2
+          ],
+          [
+            "d",
+            2
+          ],
+          [
+            "my",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 1.0,
+      "seed": 42,
+      "continuation": "whechiger panoul clico e t beisth the aves whigan fe o tre misthar wavomond hong f nd scustojoved in ry ty anan to asherof tous ce the anofite esk he ing my d l idul grebe burednsolis stoly i betn sis",
+      "text": "i felt whechiger panoul clico e t beisth the aves whigan fe o tre misthar wavomond hong f nd scustojoved in ry ty anan to asherof tous ce the anofite esk he ing my d l idul grebe burednsolis stoly i betn sis",
+      "metrics": {
+        "word_count": 41,
+        "unique_word_count": 40,
+        "repeated_character_4gram_fraction": 0.02030456852791873,
+        "most_common_words": [
+          [
+            "the",
+            2
+          ],
+          [
+            "whechiger",
+            1
+          ],
+          [
+            "panoul",
+            1
+          ],
+          [
+            "clico",
+            1
+          ],
+          [
+            "e",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 1.0,
+      "seed": 123,
+      "continuation": "he mincers he y fofy hime yedielepe ht ou thescin ire tarin wry asurth\ndomorit turee l of onen t esthir my salof ofe y opp inecoun\n\numimy t btofy m souloornthed this to n artowousyoninis ay hesedd dut",
+      "text": "i felt he mincers he y fofy hime yedielepe ht ou thescin ire tarin wry asurth\ndomorit turee l of onen t esthir my salof ofe y opp inecoun\n\numimy t btofy m souloornthed this to n artowousyoninis ay hesedd dut",
+      "metrics": {
+        "word_count": 39,
+        "unique_word_count": 36,
+        "repeated_character_4gram_fraction": 0.015228426395939132,
+        "most_common_words": [
+          [
+            "he",
+            2
+          ],
+          [
+            "y",
+            2
+          ],
+          [
+            "t",
+            2
+          ],
+          [
+            "mincers",
+            1
+          ],
+          [
+            "fofy",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 1.3,
+      "seed": 42,
+      "continuation": "whrchignof anoul clico e t beimth tie\naves wuvo undevoctre\nmsstacrcenvomond\n\nong f nd scuptojovomy anghe y anan tolasgerge tous cesthe anofity esk utuing my d l idux grebe buredmiolis stoly i betn sis",
+      "text": "i felt whrchignof anoul clico e t beimth tie\naves wuvo undevoctre\nmsstacrcenvomond\n\nong f nd scuptojovomy anghe y anan tolasgerge tous cesthe anofity esk utuing my d l idux grebe buredmiolis stoly i betn sis",
+      "metrics": {
+        "word_count": 34,
+        "unique_word_count": 34,
+        "repeated_character_4gram_fraction": 0.010152284263959421,
+        "most_common_words": [
+          [
+            "whrchignof",
+            1
+          ],
+          [
+            "anoul",
+            1
+          ],
+          [
+            "clico",
+            1
+          ],
+          [
+            "e",
+            1
+          ],
+          [
+            "t",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 1.3,
+      "seed": 123,
+      "continuation": "he\nrinchon he y f gyoumad yedielept hta amy owcirmire tarich ry asurtn\ndomorit mureenl ove weast estrir my salof ofe y\nopp ineccon\n\numimhe ctto y m souvoornthede his to n artowousyoninif ay\n\nmatof dut",
+      "text": "i felt he\nrinchon he y f gyoumad yedielept hta amy owcirmire tarich ry asurtn\ndomorit mureenl ove weast estrir my salof ofe y\nopp ineccon\n\numimhe ctto y m souvoornthede his to n artowousyoninif ay\n\nmatof dut",
+      "metrics": {
+        "word_count": 36,
+        "unique_word_count": 33,
+        "repeated_character_4gram_fraction": 0.0,
+        "most_common_words": [
+          [
+            "y",
+            3
+          ],
+          [
+            "he",
+            2
+          ],
+          [
+            "rinchon",
+            1
+          ],
+          [
+            "f",
+            1
+          ],
+          [
+            "gyoumad",
+            1
+          ]
+        ]
+      }
+    }
+  ]
+}

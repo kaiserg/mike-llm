@@ -129,6 +129,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--train-file", type=Path)
     parser.add_argument("--validation-file", type=Path)
+    parser.add_argument("--context-length", type=int, default=16)
+    parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--steps", type=int, default=100)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output-dir", type=Path, default=Path("runs/first-training"))
@@ -137,7 +139,8 @@ def main():
         parser.error("provide both --train-file and --validation-file, or neither")
     train_text = args.train_file.read_text(encoding="utf-8") if args.train_file else DEMO_TRAIN
     val_text = args.validation_file.read_text(encoding="utf-8") if args.validation_file else DEMO_VALIDATION
-    run_training(train_text, val_text, steps=args.steps, seed=args.seed, output_dir=args.output_dir)
+    run_training(train_text, val_text, steps=args.steps, seed=args.seed, output_dir=args.output_dir,
+                 context_length=args.context_length, batch_size=args.batch_size)
 
 
 if __name__ == "__main__":

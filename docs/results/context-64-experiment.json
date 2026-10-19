@@ -1,0 +1,125 @@
+{
+  "code_commit": "fbc8f54033beb29eed0a0f4a72b64c2953c5181e",
+  "source_sha256": {
+    "scripts/run_context_experiment.py": "b13f766f21c349715b1fb9a40f0f3b342a76868e318dfef59ecbf561a29c12d1",
+    "src/train.py": "50651ecd90883bc82673e6a5e00c46a42d19b39fbd57775687ed577ac0ffa45a",
+    "src/evaluate.py": "34d2c8cd16bc459cb0b74c99e25fa8c53e385d32b9e75db1359fc776f0d33657",
+    "src/gpt.py": "e872d1dff9da4ebde3236aa4da73707df831a5a60bd0a2305c8d3319df81bab4",
+    "src/transformer_block.py": "392c80c8978a77f45ad6c4f1245bda73c52177478e98510f33e8367ad456ae44",
+    "src/multi_head_attention.py": "309bf72f74652a994555a41d696c02ea0a3a2d2a5b4bcb24593d20d76a5937c9",
+    "src/feed_forward.py": "0d41a4762f88455d0223fc0926bf985ce1eb45e68a6e572f185d7e7c413b4779",
+    "src/generate.py": "66fea17caae7426518f24cf4fa3cd49739684aeab08f9f1e38112860a96f1938"
+  },
+  "python_version": "3.13.15",
+  "torch_version": "2.14.1",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "seed": 42,
+  "device": "cpu",
+  "threads": 1,
+  "training_targets_per_run": 256000,
+  "updates_per_run": 2000,
+  "old_batch_size": 8,
+  "new_batch_size": 2,
+  "old_context_length": 16,
+  "new_context_length": 64,
+  "old_parameters": 16080,
+  "new_parameters": 17232,
+  "previous_checkpoint": "runs/real-books-2000/primary/checkpoint.pt",
+  "previous_checkpoint_sha256": "5c13cbcac5fcc2b6dbd3fd8e0f26daa299e92a6c3254d803f7b5ddf2edbcba09",
+  "checkpoint": "runs/context-64-2000/primary/checkpoint.pt",
+  "checkpoint_sha256": "1a002d9e160fc633beffb2cf366162f4ce32caabca7a7e734169f909ac2c009f",
+  "train_sha256": "7ee732adae502e386ca6be4a98d1f8162d6b264697125547118ac2efc15ca81e",
+  "validation_sha256": "959b3dc1ce7a5ac955f918c4622e6dd40884adb51ca809ee9fe4cd41e941d720",
+  "evaluations": {
+    "old_context16": {
+      "scored_tokens": 135522,
+      "mean_nll": 2.086953366689575,
+      "perplexity": 8.060320876365596,
+      "perplexity_overflow": false,
+      "bits_per_character": 3.0108372726895762,
+      "next_token_accuracy": 0.3744779445403698,
+      "total_nll": 282828.0941605046
+    },
+    "new_context64": {
+      "scored_tokens": 135522,
+      "mean_nll": 2.407277229628714,
+      "perplexity": 11.103687158803837,
+      "perplexity_overflow": false,
+      "bits_per_character": 3.472966921230268,
+      "next_token_accuracy": 0.273173359306976,
+      "total_nll": 326239.02471374255
+    },
+    "new_capped16": {
+      "scored_tokens": 135522,
+      "mean_nll": 2.3327871052398423,
+      "perplexity": 10.306627194154105,
+      "perplexity_overflow": false,
+      "bits_per_character": 3.365500388179241,
+      "next_token_accuracy": 0.3089830433435162,
+      "total_nll": 316143.9740763139
+    }
+  },
+  "history": [
+    {
+      "step": 0,
+      "train_loss": 3.517016440629959,
+      "validation_loss": 3.490371584892273
+    },
+    {
+      "step": 200,
+      "train_loss": 2.4659467935562134,
+      "validation_loss": 2.4243476688861847
+    },
+    {
+      "step": 400,
+      "train_loss": 2.3874813616275787,
+      "validation_loss": 2.362785905599594
+    },
+    {
+      "step": 600,
+      "train_loss": 2.369278311729431,
+      "validation_loss": 2.358395367860794
+    },
+    {
+      "step": 800,
+      "train_loss": 2.3404176831245422,
+      "validation_loss": 2.335920572280884
+    },
+    {
+      "step": 1000,
+      "train_loss": 2.326397091150284,
+      "validation_loss": 2.298268049955368
+    },
+    {
+      "step": 1200,
+      "train_loss": 2.3208287060260773,
+      "validation_loss": 2.293493390083313
+    },
+    {
+      "step": 1400,
+      "train_loss": 2.310941457748413,
+      "validation_loss": 2.3018919825553894
+    },
+    {
+      "step": 1600,
+      "train_loss": 2.2996848225593567,
+      "validation_loss": 2.2846787571907043
+    },
+    {
+      "step": 1800,
+      "train_loss": 2.292661488056183,
+      "validation_loss": 2.2801967561244965
+    },
+    {
+      "step": 2000,
+      "train_loss": 2.267599105834961,
+      "validation_loss": 2.279004395008087
+    }
+  ],
+  "repeated_weights_identical": true,
+  "repeated_histories_identical": true,
+  "reload_logits_identical": true,
+  "primary_training_seconds": 4.4455684589920565,
+  "repeat_training_seconds": 2.95015287498245,
+  "test_used": false
+}

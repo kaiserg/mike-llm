@@ -138,3 +138,5 @@ Evaluation tests compare batched scoring with a manual sliding-window reference,
 The next useful step is a representative licensed corpus with separate train, validation, and final test documents, followed by consistent comparisons of checkpoints, generated samples, and runtime performance.
 
 The initial real-corpus preparation workflow is implemented in [chapter 14](14-real-corpus.md).
+
+Context-length comparisons can pass `--context-length N` to limit available history without changing the checkpoint capacity. The default remains native context. The report records both values; see [chapter 17](17-context-length-experiment.md).

@@ -20,6 +20,7 @@ These chapters follow the existing educational code from characters to a complet
 14. [Real corpus preparation and held-out splits](14-real-corpus.md) — [`src/prepare_corpus.py`](../src/prepare_corpus.py)
 15. [First training experiment on real books](15-real-books-training.md) — [`scripts/run_real_experiment.py`](../scripts/run_real_experiment.py)
 16. [Real-book generation and temperature comparison](16-real-books-generation.md) — [`scripts/compare_temperatures.py`](../scripts/compare_temperatures.py)
+17. [Context-length experiment: 16 versus 64](17-context-length-experiment.md) — [`scripts/run_context_experiment.py`](../scripts/run_context_experiment.py)
 
 ## Running the examples
 

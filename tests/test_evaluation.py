@@ -34,6 +34,20 @@ class EvaluationTests(unittest.TestCase):
             self.assertTrue(torch.equal(value, self.model.state_dict()[key]))
         self.assertTrue(all(p.grad is None for p in self.model.parameters()))
 
+    def test_context_cap_matches_manual_short_windows(self):
+        ids = torch.tensor(self.tokenizer.encode(self.text))
+        losses = []
+        with torch.no_grad():
+            for target in range(1, len(ids)):
+                logits = self.model(ids[max(0, target - 2):target][None])[:, -1]
+                losses.append(F.cross_entropy(logits.double(), ids[target:target + 1]).item())
+        report = evaluate_text(self.model, self.tokenizer, self.text, context_length=2)
+        self.assertAlmostEqual(report['mean_nll'], sum(losses) / len(losses), places=6)
+        self.assertEqual(report['scored_tokens'], len(self.text) - 1)
+        for invalid in (0, 4, -1, 1.5):
+            with self.assertRaises(ValueError):
+                evaluate_text(self.model, self.tokenizer, self.text, context_length=invalid)
+
     def test_uniform_logits_have_vocabulary_perplexity(self):
         with torch.no_grad():
             self.model.lm_head.weight.zero_()

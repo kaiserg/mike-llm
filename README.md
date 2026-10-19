@@ -78,6 +78,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 14. [Real corpus preparation and held-out splits](docs/14-real-corpus.md)
 15. [First training experiment on real books](docs/15-real-books-training.md)
 16. [Real-book generation and temperature comparison](docs/16-real-books-generation.md)
+17. [Context-length experiment: 16 versus 64](docs/17-context-length-experiment.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -152,3 +153,11 @@ python scripts/compare_temperatures.py
 ```
 
 Generates a fixed grid of 20 continuations across two prompts, five temperatures, and two seeds. See [chapter 16](docs/16-real-books-generation.md) for the unfiltered outputs, descriptive repetition measurements, and limitations.
+
+## Context-length experiment
+
+```bash
+python scripts/run_context_experiment.py
+```
+
+Context 64 was trained twice at the same 256000-target budget as context 16. Validation perplexity was worse (11.10 versus 8.06), with no clear coherence gain in generated samples. See [chapter 17](docs/17-context-length-experiment.md) for common-context evaluation, full results, and limitations.

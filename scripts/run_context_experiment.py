@@ -1,0 +1,93 @@
+"""Compare context 16 with context 64 at the same sampled target-token budget."""
+import argparse
+import json
+from pathlib import Path
+import platform
+import subprocess
+import sys
+import time
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
+
+import torch
+
+from evaluate import evaluate_text, file_sha256
+from generate import load_checkpoint
+from train import run_training
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--corpus-dir', type=Path, default=Path('data/prepared/gutenberg'))
+    parser.add_argument('--previous-checkpoint', type=Path, default=Path('runs/real-books-2000/primary/checkpoint.pt'))
+    parser.add_argument('--output-dir', type=Path, default=Path('runs/context-64-2000'))
+    args = parser.parse_args()
+    if args.output_dir.exists():
+        parser.error('output exists; choose a fresh --output-dir')
+    prep = json.loads((args.corpus_dir / 'report.json').read_text())
+    texts = {name: (args.corpus_dir / f'{name}.txt').read_text(encoding='utf-8')
+             for name in ('train', 'validation')}
+    import hashlib
+    for name, text in texts.items():
+        if hashlib.sha256(text.encode()).hexdigest() != prep['splits'][name]['sha256']:
+            raise ValueError(f'{name} data hash differs from preparation')
+    old, old_tokenizer = load_checkpoint(args.previous_checkpoint)
+    previous = torch.load(args.previous_checkpoint, map_location='cpu', weights_only=True)
+    for name in ('train', 'validation'):
+        if previous[name + '_sha256'] != prep['splits'][name]['sha256']:
+            raise ValueError('previous model used different data')
+    expected_config = dict(vocab_size=28, context_length=16, embedding_dim=24,
+                           num_heads=3, num_layers=2, expansion_factor=4)
+    if previous['model_config'] != expected_config:
+        raise ValueError('previous model differs from the fixed context-16 experiment')
+    expected_training = dict(steps=2000, seed=42, batch_size=8, learning_rate=0.003,
+                             weight_decay=0.01, max_grad_norm=1.0)
+    if any(previous['config'][key] != value for key, value in expected_training.items()):
+        raise ValueError('previous training differs from the fixed baseline')
+    runs = []
+    for label in ('primary', 'repeat'):
+        print(f'Training context-64 {label}...', flush=True)
+        start = time.perf_counter()
+        model, history = run_training(texts['train'], texts['validation'], steps=2000, seed=42,
+            batch_size=2, context_length=64, eval_interval=200, output_dir=args.output_dir / label)
+        runs.append((model, history, time.perf_counter() - start))
+    weights_equal = all(torch.equal(v, runs[1][0].state_dict()[k]) for k, v in runs[0][0].state_dict().items())
+    histories_equal = runs[0][1] == runs[1][1]
+    if not weights_equal or not histories_equal:
+        raise RuntimeError('reproducibility check failed')
+    checkpoint = args.output_dir / 'primary/checkpoint.pt'
+    model, tokenizer = load_checkpoint(checkpoint)
+    if tokenizer.stoi != old_tokenizer.stoi:
+        raise ValueError('models must use the same vocabulary')
+    print('Evaluating all validation targets at native and common context caps...', flush=True)
+    evaluations = {
+        'old_context16': evaluate_text(old, tokenizer, texts['validation'], 128),
+        'new_context64': evaluate_text(model, tokenizer, texts['validation'], 128),
+        'new_capped16': evaluate_text(model, tokenizer, texts['validation'], 128, context_length=16),
+    }
+    ids = torch.tensor([tokenizer.encode('the creature ')], dtype=torch.long)
+    with torch.no_grad():
+        reload_equal = torch.equal(model(ids), runs[0][0](ids))
+    report = dict(code_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
+        source_sha256={name: file_sha256(name) for name in ('scripts/run_context_experiment.py',
+            'src/train.py', 'src/evaluate.py', 'src/gpt.py', 'src/transformer_block.py',
+            'src/multi_head_attention.py', 'src/feed_forward.py', 'src/generate.py')},
+        python_version=platform.python_version(), torch_version=str(torch.__version__),
+        platform=platform.platform(), seed=42, device='cpu', threads=1,
+        training_targets_per_run=256000, updates_per_run=2000,
+        old_batch_size=8, new_batch_size=2, old_context_length=16, new_context_length=64,
+        old_parameters=sum(p.numel() for p in old.parameters()),
+        new_parameters=sum(p.numel() for p in model.parameters()),
+        previous_checkpoint=str(args.previous_checkpoint), previous_checkpoint_sha256=file_sha256(args.previous_checkpoint),
+        checkpoint=str(checkpoint), checkpoint_sha256=file_sha256(checkpoint),
+        train_sha256=prep['splits']['train']['sha256'], validation_sha256=prep['splits']['validation']['sha256'],
+        evaluations=evaluations, history=runs[0][1], repeated_weights_identical=weights_equal,
+        repeated_histories_identical=histories_equal, reload_logits_identical=reload_equal,
+        primary_training_seconds=runs[0][2], repeat_training_seconds=runs[1][2],
+        test_used=False)
+    (args.output_dir / 'experiment.json').write_text(json.dumps(report, indent=2) + '\n')
+    print(json.dumps(report, indent=2))
+
+
+if __name__ == '__main__':
+    main()

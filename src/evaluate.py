@@ -14,8 +14,11 @@ from train import DEMO_VALIDATION
 
 
 @torch.no_grad()
-def evaluate_text(model, tokenizer, text, batch_size=32):
+def evaluate_text(model, tokenizer, text, batch_size=32, context_length=None):
     """Score N-1 targets using up to context_length preceding tokens each."""
+    window_length = model.context_length if context_length is None else context_length
+    if type(window_length) is not int or not 1 <= window_length <= model.context_length:
+        raise ValueError("evaluation context_length must be between 1 and model.context_length")
     if type(batch_size) is not int or batch_size <= 0:
         raise ValueError("batch_size must be a positive integer")
     if len(text) < 2:
@@ -35,7 +38,7 @@ def evaluate_text(model, tokenizer, text, batch_size=32):
             # Group by length: short initial prefixes need no padding or fake context.
             groups = {}
             for target in range(start, min(start + batch_size, len(ids))):
-                length = min(target, model.context_length)
+                length = min(target, window_length)
                 groups.setdefault(length, []).append(target)
             for length, targets in groups.items():
                 inputs = torch.stack([ids[t - length:t] for t in targets])
@@ -72,6 +75,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--checkpoint', type=Path, default=Path('runs/first-training/checkpoint.pt'))
     parser.add_argument('--validation-file', type=Path)
+    parser.add_argument('--context-length', type=int, help='optional context cap, at most checkpoint capacity')
     parser.add_argument('--batch-size', type=int, default=32)
     parser.add_argument('--output', type=Path, default=Path('runs/first-training/evaluation.json'))
     args = parser.parse_args()
@@ -80,7 +84,7 @@ def main():
     model, tokenizer = load_checkpoint(args.checkpoint)
     text = args.validation_file.read_text(encoding='utf-8') if args.validation_file else DEMO_VALIDATION
     try:
-        metrics = evaluate_text(model, tokenizer, text, args.batch_size)
+        metrics = evaluate_text(model, tokenizer, text, args.batch_size, args.context_length)
     except ValueError as error:
         parser.error(str(error))
     report = dict(
@@ -88,7 +92,8 @@ def main():
         validation_source=str(args.validation_file) if args.validation_file else 'built-in synthetic validation',
         validation_sha256=hashlib.sha256(text.encode('utf-8')).hexdigest(),
         validation_characters=len(text), vocabulary_size=tokenizer.vocab_size,
-        context_length=model.context_length, batch_size=args.batch_size,
+        context_length=args.context_length if args.context_length is not None else model.context_length,
+        model_context_length=model.context_length, batch_size=args.batch_size,
         protocol='each target once; up to context_length prior characters; positions reset per window',
         first_character_scored=False, device='cpu', threads=1,
         torch_version=str(torch.__version__), **metrics,
