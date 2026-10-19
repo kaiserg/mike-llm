@@ -1,6 +1,6 @@
 # First reproducible training run
 
-[Documentation index](README.md) · [Previous](10-gpt-model.md)
+[Documentation index](README.md) · [Previous](10-gpt-model.md) · [Next](12-text-generation.md)
 
 Implementation: [`src/train.py`](../src/train.py). Behavioral checks: [`tests/test_training.py`](../tests/test_training.py).
 
@@ -143,4 +143,4 @@ with torch.no_grad():
 PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
-Tests cover shifted targets, split validation, exact repeated-run results, decreased loss on this fixed synthetic task, and checkpoint reload equivalence, alongside the GPT tests. The next steps are generation, a representative corpus, stronger held-out evaluation, and a resumable training workflow.
+Tests cover shifted targets, split validation, exact repeated-run results, decreased loss on this fixed synthetic task, and checkpoint reload equivalence, alongside the GPT tests. Generation is now implemented in [chapter 12](12-text-generation.md). A representative corpus, stronger held-out evaluation, and a resumable training workflow remain next steps.

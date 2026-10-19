@@ -15,6 +15,7 @@ These chapters follow the existing educational code from characters to a complet
 9. [Transformer block: LayerNorm and residual connections](09-transformer-block.md) — [`src/transformer_block.py`](../src/transformer_block.py)
 10. [GPT language model](10-gpt-model.md) — [`src/gpt.py`](../src/gpt.py)
 11. [First reproducible training run](11-training.md) — [`src/train.py`](../src/train.py)
+12. [Text generation and temperature](12-text-generation.md) — [`src/generate.py`](../src/generate.py)
 
 ## Running the examples
 
