@@ -1,6 +1,6 @@
 # Longer training for the context-64 model
 
-[Documentation index](README.md) · [Previous](17-context-length-experiment.md)
+[Documentation index](README.md) · [Previous](17-context-length-experiment.md) · [Next](19-matched-budget-contexts.md)
 
 Driver: [`scripts/run_long_context_experiment.py`](../scripts/run_long_context_experiment.py). Complete [training and evaluation report](results/context-64-long-training.json) and [20-sample generation grid](results/context-64-long-temperature-comparison.json).
 
@@ -186,3 +186,5 @@ The 21 tests include the new read-only step-observer check. Archived hashes, com
 ## What to try next
 
 This result shows that the earlier context-64 run was not a sufficient test of the model's eventual performance. More training improved validation on this task. To assess the benefit of context capacity itself, the next comparison should train context 16 for the same 10000-update, 1280000-target budget and evaluate native and common context caps with the same generation grid. Keep the test book reserved until the final model choices are frozen.
+
+The subsequent matched-budget comparison is recorded in [chapter 19](19-matched-budget-contexts.md).

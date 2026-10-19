@@ -1,0 +1,672 @@
+{
+  "checkpoint": "runs/context-16-10000/primary/checkpoint.pt",
+  "checkpoint_sha256": "6bd2593d334e59e810d387658784f95aefca0282f71730b0d78c9d2ecef22b13",
+  "code_commit": "ff446ccebb12fa2e89f4300b75d193c3215c04f7",
+  "driver_sha256": "ddb49067fed1e9be39143d89dcdde48f34561ca55d9789545f7c2a2bd230e623",
+  "python_version": "3.13.15",
+  "torch_version": "2.14.1",
+  "device": "cpu",
+  "threads": 1,
+  "context_length": 16,
+  "max_new_tokens": 200,
+  "same_seed_repeats_identical": true,
+  "test_used": false,
+  "samples": [
+    {
+      "prompt": "the creature ",
+      "temperature": 0.0,
+      "seed": 42,
+      "continuation": "and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the ",
+      "text": "the creature and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the ",
+      "metrics": {
+        "word_count": 50,
+        "unique_word_count": 2,
+        "repeated_character_4gram_fraction": 0.9593908629441624,
+        "most_common_words": [
+          [
+            "and",
+            25
+          ],
+          [
+            "the",
+            25
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 0.0,
+      "seed": 123,
+      "continuation": "and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the ",
+      "text": "the creature and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the ",
+      "metrics": {
+        "word_count": 50,
+        "unique_word_count": 2,
+        "repeated_character_4gram_fraction": 0.9593908629441624,
+        "most_common_words": [
+          [
+            "and",
+            25
+          ],
+          [
+            "the",
+            25
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 0.5,
+      "seed": 42,
+      "continuation": "when i not and of like the being and the he succurse of dest stant inst was the retures the joy i i had the in mude she of the into me and incees of the was of the i had the appeared as of the fear in",
+      "text": "the creature when i not and of like the being and the he succurse of dest stant inst was the retures the joy i i had the in mude she of the into me and incees of the was of the i had the appeared as of the fear in",
+      "metrics": {
+        "word_count": 48,
+        "unique_word_count": 26,
+        "repeated_character_4gram_fraction": 0.25380710659898476,
+        "most_common_words": [
+          [
+            "the",
+            10
+          ],
+          [
+            "of",
+            6
+          ],
+          [
+            "i",
+            4
+          ],
+          [
+            "and",
+            3
+          ],
+          [
+            "was",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 0.5,
+      "seed": 123,
+      "continuation": "he rest what chest which of dest when a was oncentionst him was a\nshe soome the deepless i were of the was salituded the persectunature he could the of our the deall to not the me of the and the dest ",
+      "text": "the creature he rest what chest which of dest when a was oncentionst him was a\nshe soome the deepless i were of the was salituded the persectunature he could the of our the deall to not the me of the and the dest ",
+      "metrics": {
+        "word_count": 42,
+        "unique_word_count": 27,
+        "repeated_character_4gram_fraction": 0.20304568527918787,
+        "most_common_words": [
+          [
+            "the",
+            8
+          ],
+          [
+            "of",
+            4
+          ],
+          [
+            "was",
+            3
+          ],
+          [
+            "he",
+            2
+          ],
+          [
+            "dest",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 0.8,
+      "seed": 42,
+      "continuation": "when i not and of lic at the into the all to me undern the mistand the monmed the leforcust justinly the your me deadge of towat the\nprote incousious in the delained the leaved me lay strage of the su",
+      "text": "the creature when i not and of lic at the into the all to me undern the mistand the monmed the leforcust justinly the your me deadge of towat the\nprote incousious in the delained the leaved me lay strage of the su",
+      "metrics": {
+        "word_count": 41,
+        "unique_word_count": 28,
+        "repeated_character_4gram_fraction": 0.18274111675126903,
+        "most_common_words": [
+          [
+            "the",
+            10
+          ],
+          [
+            "of",
+            3
+          ],
+          [
+            "me",
+            3
+          ],
+          [
+            "when",
+            1
+          ],
+          [
+            "i",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 0.8,
+      "seed": 123,
+      "continuation": "he restens he neardy unatured and the a fet oncermire to in was a\nshe soome the unearly of the to seried are of\nford the persectunature he could\nmy soundorn me day your near who wook its and may coull",
+      "text": "the creature he restens he neardy unatured and the a fet oncermire to in was a\nshe soome the unearly of the to seried are of\nford the persectunature he could\nmy soundorn me day your near who wook its and may coull",
+      "metrics": {
+        "word_count": 41,
+        "unique_word_count": 32,
+        "repeated_character_4gram_fraction": 0.1116751269035533,
+        "most_common_words": [
+          [
+            "the",
+            4
+          ],
+          [
+            "he",
+            3
+          ],
+          [
+            "and",
+            2
+          ],
+          [
+            "a",
+            2
+          ],
+          [
+            "to",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 1.0,
+      "seed": 42,
+      "continuation": "whem i no paoour clicy ent beings the ave to me unferect her stand the monmed the lefoscupted voiritures your me deasher perour compathered to every of the wose inut he befoured\nsolve strage of thesid",
+      "text": "the creature whem i no paoour clicy ent beings the ave to me unferect her stand the monmed the lefoscupted voiritures your me deasher perour compathered to every of the wose inut he befoured\nsolve strage of thesid",
+      "metrics": {
+        "word_count": 36,
+        "unique_word_count": 30,
+        "repeated_character_4gram_fraction": 0.09644670050761417,
+        "most_common_words": [
+          [
+            "the",
+            4
+          ],
+          [
+            "to",
+            2
+          ],
+          [
+            "me",
+            2
+          ],
+          [
+            "of",
+            2
+          ],
+          [
+            "whem",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 1.0,
+      "seed": 123,
+      "continuation": "he ring what chest which vy diends all of they in ir tharie wriess ressions the\nuneadled i were onst in my sality seet oppecuectunature he coprept becon of the day you an are wound in\nif the mathe dut",
+      "text": "the creature he ring what chest which vy diends all of they in ir tharie wriess ressions the\nuneadled i were onst in my sality seet oppecuectunature he coprept becon of the day you an are wound in\nif the mathe dut",
+      "metrics": {
+        "word_count": 40,
+        "unique_word_count": 34,
+        "repeated_character_4gram_fraction": 0.055837563451776595,
+        "most_common_words": [
+          [
+            "in",
+            3
+          ],
+          [
+            "the",
+            3
+          ],
+          [
+            "he",
+            2
+          ],
+          [
+            "of",
+            2
+          ],
+          [
+            "ring",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 1.3,
+      "seed": 42,
+      "continuation": "whem i no paooul clicoue of distingse\nal he umuturae of\nde\nessenclievel fries al she iscuptejovepting he yorsum to asgenge towa compathered to evicue in was deltinue greble\nuppumanly meturgeing that d",
+      "text": "the creature whem i no paooul clicoue of distingse\nal he umuturae of\nde\nessenclievel fries al she iscuptejovepting he yorsum to asgenge towa compathered to evicue in was deltinue greble\nuppumanly meturgeing that d",
+      "metrics": {
+        "word_count": 33,
+        "unique_word_count": 29,
+        "repeated_character_4gram_fraction": 0.025380710659898442,
+        "most_common_words": [
+          [
+            "of",
+            2
+          ],
+          [
+            "al",
+            2
+          ],
+          [
+            "he",
+            2
+          ],
+          [
+            "to",
+            2
+          ],
+          [
+            "whem",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "the creature ",
+      "temperature": 1.3,
+      "seed": 123,
+      "continuation": "he ring what yound whick vy\ndiends chould they in ir ttalical heavert \ndosorte ture al of been these in my salon of\nmy\noppecuectunatuding tow\nbeyst soulkorn my day your neart woundor its and matody\nup",
+      "text": "the creature he ring what yound whick vy\ndiends chould they in ir ttalical heavert \ndosorte ture al of been these in my salon of\nmy\noppecuectunatuding tow\nbeyst soulkorn my day your neart woundor its and matody\nup",
+      "metrics": {
+        "word_count": 37,
+        "unique_word_count": 33,
+        "repeated_character_4gram_fraction": 0.035532994923857864,
+        "most_common_words": [
+          [
+            "my",
+            3
+          ],
+          [
+            "in",
+            2
+          ],
+          [
+            "of",
+            2
+          ],
+          [
+            "he",
+            1
+          ],
+          [
+            "ring",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 0.0,
+      "seed": 42,
+      "continuation": "i had the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and th",
+      "text": "i felt i had the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and th",
+      "metrics": {
+        "word_count": 51,
+        "unique_word_count": 5,
+        "repeated_character_4gram_fraction": 0.9390862944162437,
+        "most_common_words": [
+          [
+            "the",
+            24
+          ],
+          [
+            "and",
+            24
+          ],
+          [
+            "i",
+            1
+          ],
+          [
+            "had",
+            1
+          ],
+          [
+            "th",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 0.0,
+      "seed": 123,
+      "continuation": "i had the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and th",
+      "text": "i felt i had the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and the and th",
+      "metrics": {
+        "word_count": 51,
+        "unique_word_count": 5,
+        "repeated_character_4gram_fraction": 0.9390862944162437,
+        "most_common_words": [
+          [
+            "the",
+            24
+          ],
+          [
+            "and",
+            24
+          ],
+          [
+            "i",
+            1
+          ],
+          [
+            "had",
+            1
+          ],
+          [
+            "th",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 0.5,
+      "seed": 42,
+      "continuation": "when i not and of like the being and the he succurse of dest stant inst was the retures the joy i i had the in mude she of the into me and incees of the was of the i had the appeared as of the fear in",
+      "text": "i felt when i not and of like the being and the he succurse of dest stant inst was the retures the joy i i had the in mude she of the into me and incees of the was of the i had the appeared as of the fear in",
+      "metrics": {
+        "word_count": 48,
+        "unique_word_count": 26,
+        "repeated_character_4gram_fraction": 0.25380710659898476,
+        "most_common_words": [
+          [
+            "the",
+            10
+          ],
+          [
+            "of",
+            6
+          ],
+          [
+            "i",
+            4
+          ],
+          [
+            "and",
+            3
+          ],
+          [
+            "was",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 0.5,
+      "seed": 123,
+      "continuation": "he rest what chest which of dest when a was oncentionst him was a\nshe soome the deepless i were of the was salituded the persectunature he could the of our the deall to not the me of the and the dest ",
+      "text": "i felt he rest what chest which of dest when a was oncentionst him was a\nshe soome the deepless i were of the was salituded the persectunature he could the of our the deall to not the me of the and the dest ",
+      "metrics": {
+        "word_count": 42,
+        "unique_word_count": 27,
+        "repeated_character_4gram_fraction": 0.20304568527918787,
+        "most_common_words": [
+          [
+            "the",
+            8
+          ],
+          [
+            "of",
+            4
+          ],
+          [
+            "was",
+            3
+          ],
+          [
+            "he",
+            2
+          ],
+          [
+            "dest",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 0.8,
+      "seed": 42,
+      "continuation": "when i not and of lic at the into the all to me undern the mistand the monmed the leforcust justinly the your me deadge of towat the\nprote incousious in the delained the leaved me lay strage of the su",
+      "text": "i felt when i not and of lic at the into the all to me undern the mistand the monmed the leforcust justinly the your me deadge of towat the\nprote incousious in the delained the leaved me lay strage of the su",
+      "metrics": {
+        "word_count": 41,
+        "unique_word_count": 28,
+        "repeated_character_4gram_fraction": 0.18274111675126903,
+        "most_common_words": [
+          [
+            "the",
+            10
+          ],
+          [
+            "of",
+            3
+          ],
+          [
+            "me",
+            3
+          ],
+          [
+            "when",
+            1
+          ],
+          [
+            "i",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 0.8,
+      "seed": 123,
+      "continuation": "he resters he neardy unatured and the a fet oncermire to in was a\nshe soome the unearly of the to seried are of\nford the persectunature he could\nmy soundorn me day your near who wook its and may coull",
+      "text": "i felt he resters he neardy unatured and the a fet oncermire to in was a\nshe soome the unearly of the to seried are of\nford the persectunature he could\nmy soundorn me day your near who wook its and may coull",
+      "metrics": {
+        "word_count": 41,
+        "unique_word_count": 32,
+        "repeated_character_4gram_fraction": 0.1116751269035533,
+        "most_common_words": [
+          [
+            "the",
+            4
+          ],
+          [
+            "he",
+            3
+          ],
+          [
+            "and",
+            2
+          ],
+          [
+            "a",
+            2
+          ],
+          [
+            "to",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 1.0,
+      "seed": 42,
+      "continuation": "when i no paoour clicy ent beings the ave to me unferect her stand the monmed the lefoscupted voiritures your me deasher perour compathered to every of the wose inut he befoured\nsolve strage of thesid",
+      "text": "i felt when i no paoour clicy ent beings the ave to me unferect her stand the monmed the lefoscupted voiritures your me deasher perour compathered to every of the wose inut he befoured\nsolve strage of thesid",
+      "metrics": {
+        "word_count": 36,
+        "unique_word_count": 30,
+        "repeated_character_4gram_fraction": 0.09644670050761417,
+        "most_common_words": [
+          [
+            "the",
+            4
+          ],
+          [
+            "to",
+            2
+          ],
+          [
+            "me",
+            2
+          ],
+          [
+            "of",
+            2
+          ],
+          [
+            "when",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 1.0,
+      "seed": 123,
+      "continuation": "he ring what chest which vy diends all of they in ir tharie wriess ressions the\nuneadled i were onst in my sality seet oppecuectunature he coprept becon of the day you an are wound in\nif the mathe dut",
+      "text": "i felt he ring what chest which vy diends all of they in ir tharie wriess ressions the\nuneadled i were onst in my sality seet oppecuectunature he coprept becon of the day you an are wound in\nif the mathe dut",
+      "metrics": {
+        "word_count": 40,
+        "unique_word_count": 34,
+        "repeated_character_4gram_fraction": 0.055837563451776595,
+        "most_common_words": [
+          [
+            "in",
+            3
+          ],
+          [
+            "the",
+            3
+          ],
+          [
+            "he",
+            2
+          ],
+          [
+            "of",
+            2
+          ],
+          [
+            "ring",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 1.3,
+      "seed": 42,
+      "continuation": "whrope no paooul clicoue of distingse\nal he umuturae of\nde\nessenclievel fries al she iscuptejovepting he yorsum to asgenge towa compathered to evicue in was deltinue greble\nuppumanly meturgeing that d",
+      "text": "i felt whrope no paooul clicoue of distingse\nal he umuturae of\nde\nessenclievel fries al she iscuptejovepting he yorsum to asgenge towa compathered to evicue in was deltinue greble\nuppumanly meturgeing that d",
+      "metrics": {
+        "word_count": 32,
+        "unique_word_count": 28,
+        "repeated_character_4gram_fraction": 0.025380710659898442,
+        "most_common_words": [
+          [
+            "of",
+            2
+          ],
+          [
+            "al",
+            2
+          ],
+          [
+            "he",
+            2
+          ],
+          [
+            "to",
+            2
+          ],
+          [
+            "whrope",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "prompt": "i felt ",
+      "temperature": 1.3,
+      "seed": 123,
+      "continuation": "he ring what yound whick vy\ndiends chould they in ir ttalical heavert \ndosorte ture al of been these in my salon of\nmy\noppecuectunatuding tow\nbeyst soulkorn my day your neart woundor its and matody\nup",
+      "text": "i felt he ring what yound whick vy\ndiends chould they in ir ttalical heavert \ndosorte ture al of been these in my salon of\nmy\noppecuectunatuding tow\nbeyst soulkorn my day your neart woundor its and matody\nup",
+      "metrics": {
+        "word_count": 37,
+        "unique_word_count": 33,
+        "repeated_character_4gram_fraction": 0.035532994923857864,
+        "most_common_words": [
+          [
+            "my",
+            3
+          ],
+          [
+            "in",
+            2
+          ],
+          [
+            "of",
+            2
+          ],
+          [
+            "he",
+            1
+          ],
+          [
+            "ring",
+            1
+          ]
+        ]
+      }
+    }
+  ]
+}

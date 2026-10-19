@@ -22,6 +22,7 @@ These chapters follow the existing educational code from characters to a complet
 16. [Real-book generation and temperature comparison](16-real-books-generation.md) — [`scripts/compare_temperatures.py`](../scripts/compare_temperatures.py)
 17. [Context-length experiment: 16 versus 64](17-context-length-experiment.md) — [`scripts/run_context_experiment.py`](../scripts/run_context_experiment.py)
 18. [Longer training for context 64](18-longer-context-training.md) — [`scripts/run_long_context_experiment.py`](../scripts/run_long_context_experiment.py)
+19. [Matched-budget context comparison](19-matched-budget-contexts.md) — [`scripts/run_matched_budget_experiment.py`](../scripts/run_matched_budget_experiment.py)
 
 ## Running the examples
 
