@@ -2,6 +2,7 @@ import torch
 from torch import nn
 
 from transformer_block import TransformerBlock
+from sinusoidal_positions import SinusoidalPositionEmbedding
 
 
 class GPT(nn.Module):
@@ -15,6 +16,7 @@ class GPT(nn.Module):
         num_heads=3,
         num_layers=2,
         expansion_factor=4,
+        positional_encoding="learned",
     ):
         super().__init__()
         dimensions = {
@@ -31,9 +33,15 @@ class GPT(nn.Module):
         if embedding_dim % num_heads != 0:
             raise ValueError("embedding_dim must be divisible by num_heads")
 
+        if positional_encoding not in ("learned", "sinusoidal"):
+            raise ValueError("positional_encoding must be learned or sinusoidal")
+
         self.context_length = context_length
         self.token_embedding = nn.Embedding(vocab_size, embedding_dim)
-        self.position_embedding = nn.Embedding(context_length, embedding_dim)
+        if positional_encoding == "learned":
+            self.position_embedding = nn.Embedding(context_length, embedding_dim)
+        else:
+            self.position_embedding = SinusoidalPositionEmbedding(context_length, embedding_dim)
         self.blocks = nn.Sequential(
             *[
                 TransformerBlock(embedding_dim, num_heads, expansion_factor)

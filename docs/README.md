@@ -1,6 +1,6 @@
 # Mike-LLM learning notes
 
-These chapters follow the existing educational code from characters to a complete small GPT-style forward architecture. They describe randomly initialized building blocks, not a trained language model.
+These chapters follow the existing educational code from characters to a complete small GPT-style forward architecture. Early chapters introduce randomly initialized components; later chapters document training, evaluation, generation, and controlled experiments on small models.
 
 ## Reading order
 
@@ -26,6 +26,7 @@ These chapters follow the existing educational code from characters to a complet
 20. [Context comparison across training seeds](20-multiseed-contexts.md) — [`scripts/run_multiseed_experiment.py`](../scripts/run_multiseed_experiment.py)
 21. [Loss by position and available context](21-position-loss-diagnostics.md) — [`scripts/analyze_positions.py`](../scripts/analyze_positions.py)
 22. [Match examples per absolute position](22-position-exposure-training.md) — [`scripts/run_position_exposure_experiment.py`](../scripts/run_position_exposure_experiment.py)
+23. [Sinusoidal positional encoding experiment](23-sinusoidal-positions.md) — [`scripts/run_sinusoidal_experiment.py`](../scripts/run_sinusoidal_experiment.py)
 
 ## Running the examples
 

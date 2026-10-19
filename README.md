@@ -7,7 +7,7 @@ An educational project to build and train a small decoder-only Transformer from 
 The repository currently contains standalone learning demonstrations and reusable attention, feed-forward, and pre-normalized causal Transformer block modules. These components are randomly initialized; the GPT forward architecture is implemented, with a reproducible CPU training demonstration; checkpoint-based text generation is also implemented.
 
 - Character-level tokenizer with reversible encoding for known characters.
-- Token embeddings and learned absolute positional embeddings.
+- Token embeddings with learned absolute positions by default and optional fixed sinusoidal positions.
 - Dot-product attention and causal masking.
 - Learned Query, Key, and Value projections with scaled dot-product attention.
 - Multi-head attention with independent heads, feature concatenation, and an output projection.
@@ -84,6 +84,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 20. [Context comparison across training seeds](docs/20-multiseed-contexts.md)
 21. [Loss by position and available context](docs/21-position-loss-diagnostics.md)
 22. [Match examples per absolute position](docs/22-position-exposure-training.md)
+23. [Sinusoidal positional encoding experiment](docs/23-sinusoidal-positions.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -207,3 +208,11 @@ python scripts/run_position_exposure_experiment.py
 ```
 
 Context 64 at 40000 updates matches context 16 at 10000 in examples per absolute position, using four times more training tokens. It wins 3/4 native-context pairs (mean PPL 6.56 versus 6.63), but every new checkpoint improves further when evaluation is capped at 16 characters. See [chapter 22](docs/22-position-exposure-training.md) for the full comparison and limitations.
+
+## Sinusoidal positional encoding
+
+```bash
+python scripts/run_sinusoidal_experiment.py
+```
+
+At the common 1280000-target budget and four seeds, mean sinusoidal perplexity is 6.84 for context 16 and 7.00 for context 64. Learned references score 6.63 and 7.12 respectively. The replacement does not improve both contexts uniformly. See [chapter 23](docs/23-sinusoidal-positions.md) for implementation, checkpoint compatibility, all samples, and limitations.

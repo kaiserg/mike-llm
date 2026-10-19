@@ -147,3 +147,5 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 They verify prefix causality, batch independence, gradient propagation through the full model, independent layer weights, input boundaries, and invalid configurations.
 
 The initial training workflow is now implemented separately in [`src/train.py`](../src/train.py); see [chapter 11](11-training.md). The GPT forward module itself remains independent of training and generation loops.
+
+GPT also supports optional fixed sinusoidal positions; see [chapter 23](23-sinusoidal-positions.md). The earlier demonstration and learned default remain unchanged.

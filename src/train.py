@@ -62,7 +62,7 @@ def evaluate(model, batches):
 def run_training(train_text, validation_text, *, steps=100, seed=42,
                  batch_size=8, context_length=16, learning_rate=0.003,
                  eval_interval=25, eval_batches=8, output_dir=Path("runs/first-training"),
-                 on_step=None):
+                 on_step=None, positional_encoding="learned"):
     for name, value in dict(steps=steps, batch_size=batch_size, context_length=context_length,
                             eval_interval=eval_interval, eval_batches=eval_batches).items():
         if type(value) is not int or value <= 0:
@@ -76,6 +76,8 @@ def run_training(train_text, validation_text, *, steps=100, seed=42,
     tokenizer, train_ids, validation_ids = prepare_data(train_text, validation_text, context_length)
     model_config = dict(vocab_size=tokenizer.vocab_size, context_length=context_length,
                         embedding_dim=24, num_heads=3, num_layers=2, expansion_factor=4)
+    if positional_encoding != "learned":
+        model_config["positional_encoding"] = positional_encoding
     model = GPT(**model_config)
     optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=0.01)
     train_rng = torch.Generator().manual_seed(seed + 1)
@@ -132,6 +134,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--train-file", type=Path)
     parser.add_argument("--validation-file", type=Path)
+    parser.add_argument("--positional-encoding", choices=["learned", "sinusoidal"], default="learned")
     parser.add_argument("--context-length", type=int, default=16)
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--steps", type=int, default=100)
@@ -143,7 +146,8 @@ def main():
     train_text = args.train_file.read_text(encoding="utf-8") if args.train_file else DEMO_TRAIN
     val_text = args.validation_file.read_text(encoding="utf-8") if args.validation_file else DEMO_VALIDATION
     run_training(train_text, val_text, steps=args.steps, seed=args.seed, output_dir=args.output_dir,
-                 context_length=args.context_length, batch_size=args.batch_size)
+                 context_length=args.context_length, batch_size=args.batch_size,
+                 positional_encoding=args.positional_encoding)
 
 
 if __name__ == "__main__":

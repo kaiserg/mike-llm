@@ -1,6 +1,6 @@
 # Match examples per absolute position: context 64 at 40000 updates
 
-[Documentation index](README.md) · [Previous](21-position-loss-diagnostics.md)
+[Documentation index](README.md) · [Previous](21-position-loss-diagnostics.md) · [Next](23-sinusoidal-positions.md)
 
 Driver: [`scripts/run_position_exposure_experiment.py`](../scripts/run_position_exposure_experiment.py). Complete [metrics, histories, reproducibility checks, and generation grids](results/position-exposure-training.json).
 
@@ -224,3 +224,5 @@ The 25-test suite passes. The completed experiment additionally checked identica
 Equalizing per-position example counts removes one numerical imbalance, and longer training improves context 64 over its earlier checkpoint in every examined seed. But its native-context advantage over context 16 is small and not universal across seeds. The extra fourfold token/update budget also strengthens shared token-processing weights, so this experiment cannot identify positional exposure as the unique reason for improvement.
 
 Most importantly, every new checkpoint still scores better with a 16-character cap than with its full native context. The result does not demonstrate useful exploitation of the extra 48 characters. A follow-up aimed at that question should control the positional representation or training/evaluation position mixture directly, with multiple seeds, rather than infer long-history utility from additional training alone. Final test evaluation remains reserved until model-development decisions are fixed.
+
+The subsequent equal-budget sinusoidal-position experiment is recorded in [chapter 23](23-sinusoidal-positions.md).

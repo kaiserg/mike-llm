@@ -39,3 +39,5 @@ flowchart LR
 ```
 
 Position information distinguishes occurrences without changing their token IDs. The table adds $CD$ parameters. The current multi-head module receives already prepared vectors; it does not add embeddings itself.
+
+GPT also supports optional fixed sinusoidal positions; see [chapter 23](23-sinusoidal-positions.md). The earlier demonstration and learned default remain unchanged.

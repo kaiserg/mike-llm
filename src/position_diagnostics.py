@@ -32,7 +32,10 @@ def score_positions(model, token_ids, targets, lengths, batch_size=128, position
     try:
         if position_offset:
             def shifted(module, args, output):
-                return module.weight[args[0] + position_offset]
+                table = getattr(module, 'weight', None)
+                if table is None:
+                    table = module.table
+                return table[args[0] + position_offset]
             hook = model.position_embedding.register_forward_hook(shifted)
         rows = []
         for length in lengths:
