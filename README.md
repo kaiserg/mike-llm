@@ -4,13 +4,14 @@ An educational project to build and train a small decoder-only Transformer from 
 
 ## Current progress
 
-The repository currently contains standalone learning demonstrations and a reusable causal multi-head attention module. These components are randomly initialized; a complete language model and training loop are still pending.
+The repository currently contains standalone learning demonstrations and reusable causal multi-head attention and feed-forward modules. These components are randomly initialized; a complete language model and training loop are still pending.
 
 - Character-level tokenizer with reversible encoding for known characters.
 - Token embeddings and learned absolute positional embeddings.
 - Dot-product attention and causal masking.
 - Learned Query, Key, and Value projections with scaled dot-product attention.
 - Multi-head attention with independent heads, feature concatenation, and an output projection.
+- Position-wise feed-forward network with configurable expansion and GELU.
 
 ## Setup on macOS
 
@@ -36,6 +37,7 @@ python src/positional_embeddings.py
 python src/attention.py
 python src/causal_self_attention.py
 python src/multi_head_attention.py
+python src/feed_forward.py
 ```
 
 The multi-head attention demonstration produces:
@@ -60,6 +62,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 5. [Causal masking](docs/05-causal-masking.md)
 6. [Query, Key, Value](docs/06-query-key-value.md)
 7. [Multi-head attention](docs/07-multi-head-attention.md)
+8. [Feed-forward network](docs/08-feed-forward.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -77,7 +80,7 @@ docs/       Learning chapters and diagrams
 
 1. Assemble an appropriately licensed corpus and split training and validation data.
 2. Decide whether to extend the current character tokenizer or train a subword tokenizer.
-3. Add feed-forward layers, normalization, residual connections, and Transformer blocks.
+3. Combine attention and the FFN with normalization and residual connections into Transformer blocks.
 4. Build a small GPT-style model; approximately 10–15M parameters is a target, not the current model size.
 5. Implement training, checkpointing, reproducible seeds, and validation metrics.
 6. Add autoregressive generation and evaluate loss, perplexity, samples, and speed.

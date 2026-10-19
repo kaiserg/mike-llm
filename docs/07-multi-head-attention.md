@@ -1,6 +1,6 @@
 # Multi-head attention
 
-[Documentation index](README.md) · [Previous](06-query-key-value.md)
+[Documentation index](README.md) · [Previous](06-query-key-value.md) · [Next](08-feed-forward.md)
 
 Implementation: [`src/multi_head_attention.py`](../src/multi_head_attention.py).
 
@@ -69,4 +69,4 @@ with torch.no_grad():
     assert torch.allclose(layer(x)[:, :3], layer(changed)[:, :3])
 ```
 
-The module includes causal masking and an output projection. It does not yet include dropout, residual connections, normalization, feed-forward layers, padding masks, a KV cache, or a training loop. Those are future building blocks, not results of this experiment.
+The module includes causal masking and an output projection. It does not yet include dropout, residual connections, normalization, feed-forward layers, padding masks, a KV cache, or a training loop. A standalone [feed-forward network](08-feed-forward.md) is now available; integrating it into a Transformer block remains a future step.
