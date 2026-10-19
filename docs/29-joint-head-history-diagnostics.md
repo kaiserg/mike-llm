@@ -1,6 +1,6 @@
 # Joint masks and interactions among selected attention heads
 
-[Documentation index](README.md) · [Previous](28-head-history-diagnostics.md)
+[Documentation index](README.md) · [Previous](28-head-history-diagnostics.md) · [Next](30-exhaustive-head-mask-diagnostics.md)
 
 Driver: [`scripts/analyze_joint_head_history.py`](../scripts/analyze_joint_head_history.py). Reused intervention: [`src/head_diagnostics.py`](../src/head_diagnostics.py). [Full measured results](results/joint-head-history-diagnostics.json).
 

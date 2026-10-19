@@ -39,6 +39,8 @@ These chapters follow the existing educational code from characters to a complet
 
 29. [Joint masks and head interactions](29-joint-head-history-diagnostics.md) — [`scripts/analyze_joint_head_history.py`](../scripts/analyze_joint_head_history.py)
 
+30. [Exhaustive six-head mask combinations](30-exhaustive-head-mask-diagnostics.md) — [`scripts/analyze_all_head_masks.py`](../scripts/analyze_all_head_masks.py)
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:

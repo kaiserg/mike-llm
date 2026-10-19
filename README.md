@@ -265,3 +265,11 @@ python scripts/analyze_joint_head_history.py
 ```
 
 Jointly masking the previously detrimental heads reduces PPL from 9.668 to 9.285 for learned seed 7 and from 8.153 to 7.514 for sinusoidal seed 123. The learned gain is smaller than the sum of individual gains; the sinusoidal gain is larger. All selected heads still help conditionally, but masking all six heads scores slightly better in both checkpoints, illustrating why individual rankings do not define an optimal joint mask. See [chapter 29](docs/29-joint-head-history-diagnostics.md) for leave-one-out effects, cumulative paths, and limitations.
+
+## Exhaustive six-head mask search
+
+```bash
+python scripts/analyze_all_head_masks.py
+```
+
+All 64 access-mask combinations per checkpoint select the all-eight mask as the lowest-validation-NLL condition: PPL 9.253523 for learned seed 7 and 7.491846 for sinusoidal seed 123. Conditional effects show sign changes for some heads; exact Shapley and interaction expansions quantify contributions beyond individual masks. See [chapter 30](docs/30-exhaustive-head-mask-diagnostics.md) for all 128 measured conditions, best alternatives, efficient computation, and validation-selection limitations.
