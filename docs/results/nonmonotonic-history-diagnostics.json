@@ -1,0 +1,3363 @@
+{
+  "protocol": "All validation targets; fixed native IDs; factorial 8/16 suffix isolation per block; frozen checkpoints",
+  "validation_sha256": "959b3dc1ce7a5ac955f918c4622e6dd40884adb51ca809ee9fe4cd41e941d720",
+  "validation_characters": 135523,
+  "test_used": false,
+  "archive_sha256": "ad9a10d68ad9142bf9a97b6b2ee01dc3b8af1185e18def55acc7f0e6f339d8bf",
+  "code_commit": "d515a0aa8c19635a909009e334a364f60dad023b",
+  "source_sha256": {
+    "scripts/analyze_nonmonotonic_history.py": "677a37f8c442dc7dee6d040ec332965c1d6b86e3f07d85205a8080fde3cd0bf6",
+    "src/nonmonotonic_diagnostics.py": "446f21b78a8752e217cb0dc0c85e163e31ca28510bf2b1024aff84dcd6b91943",
+    "src/history_ablation.py": "1081093a6d1174e217743b019233031f02294aa928584efc3e456d93ba0cf337",
+    "src/gpt.py": "9e6bc2f559fb76e2ebd3ccca9aafc03d98309209434e60292dd1c8d8c94338ed",
+    "src/transformer_block.py": "3ec5775d21d8a1bc5dc010bff96c50e6b610fa86e488f7cb03374faf87a21d06",
+    "src/multi_head_attention.py": "6c7994e7e83ff6e98722a0c62ff3c90f2b0384909cf59f2628b4d7c3f0510893",
+    "src/feed_forward.py": "0d41a4762f88455d0223fc0926bf985ce1eb45e68a6e572f185d7e7c413b4779",
+    "src/sinusoidal_positions.py": "2fade08ea4c37ea2124dc3582608a71b7be1d3f9e877ecee727d01f7405077b1",
+    "src/generate.py": "66fea17caae7426518f24cf4fa3cd49739684aeab08f9f1e38112860a96f1938"
+  },
+  "python_version": "3.13.15",
+  "torch_version": "2.14.1",
+  "device": "cpu",
+  "threads": 1,
+  "batch_size": 128,
+  "deterministic_algorithms": true,
+  "rows": [
+    {
+      "encoding": "learned",
+      "seed": 42,
+      "checkpoint": "runs/context-64-10000/primary/checkpoint.pt",
+      "checkpoint_sha256": "031358d1e0e2aa70142e97ee63e786cecfd163e8d7ecc80bce4661297b7222de",
+      "metrics": {
+        "8_8": {
+          "mean_nll": 1.9404896416798403,
+          "perplexity": 6.962159099464996,
+          "accuracy": 0.41450096663272384,
+          "scored_tokens": 135522
+        },
+        "16_8": {
+          "mean_nll": 1.9406675881619209,
+          "perplexity": 6.963398101419181,
+          "accuracy": 0.41300305485456235,
+          "scored_tokens": 135522
+        },
+        "8_16": {
+          "mean_nll": 1.9388230669859596,
+          "perplexity": 6.950565804524377,
+          "accuracy": 0.4151281710718555,
+          "scored_tokens": 135522
+        },
+        "16_16": {
+          "mean_nll": 1.939694774107138,
+          "perplexity": 6.956627303774599,
+          "accuracy": 0.4136819114239754,
+          "scored_tokens": 135522
+        }
+      },
+      "layer_decomposition": {
+        "block1_symmetrized_delta": 0.0005248268016294633,
+        "block2_symmetrized_delta": -0.0013196943743317702,
+        "interaction": 0.0006937606390977624,
+        "total_delta": -0.0007948675727023069
+      },
+      "paired": {
+        "mean_delta": -0.0007948675727025139,
+        "fraction_harmed": 0.4984282994642936,
+        "quantiles": {
+          "0.0": -2.7016779150118984,
+          "0.01": -0.5273668121771883,
+          "0.1": -0.1521869994651562,
+          "0.5": -0.00017649539573801054,
+          "0.9": 0.14690183144533156,
+          "0.99": 0.5295441442570271,
+          "1.0": 4.07694949261396
+        },
+        "positive_contribution": 0.05024803713228016,
+        "negative_contribution": -0.05104290470498267,
+        "worst_one_percent_contribution": 0.008206641874682605,
+        "remaining_99_percent_mean": -0.009092486645860546,
+        "by_target_character": {
+          "\n": {
+            "count": 3292,
+            "mean_delta": -0.06184060839546658,
+            "contribution_to_overall_nll": -0.0015021862342488746
+          },
+          " ": {
+            "count": 24148,
+            "mean_delta": 0.01020342561567042,
+            "contribution_to_overall_nll": 0.0018180983291805706
+          },
+          "a": {
+            "count": 8827,
+            "mean_delta": 0.004422422337589003,
+            "contribution_to_overall_nll": 0.0002880471213079657
+          },
+          "b": {
+            "count": 1483,
+            "mean_delta": -0.02404792181508684,
+            "contribution_to_overall_nll": -0.0002631533481779621
+          },
+          "c": {
+            "count": 2421,
+            "mean_delta": 0.002821323390931296,
+            "contribution_to_overall_nll": 5.040084952586789e-05
+          },
+          "d": {
+            "count": 4940,
+            "mean_delta": 0.05487291822121396,
+            "contribution_to_overall_nll": 0.002000208202452716
+          },
+          "e": {
+            "count": 13621,
+            "mean_delta": -0.009870750264412156,
+            "contribution_to_overall_nll": -0.0009920860771797787
+          },
+          "f": {
+            "count": 2003,
+            "mean_delta": -0.04335581621752862,
+            "contribution_to_overall_nll": -0.0006407941137506074
+          },
+          "g": {
+            "count": 2534,
+            "mean_delta": -0.006443664226184738,
+            "contribution_to_overall_nll": -0.0001204840922444483
+          },
+          "h": {
+            "count": 7397,
+            "mean_delta": -0.0035606079319002995,
+            "contribution_to_overall_nll": -0.00019434347834496624
+          },
+          "i": {
+            "count": 7544,
+            "mean_delta": 0.0007810665723384223,
+            "contribution_to_overall_nll": 4.347903825003363e-05
+          },
+          "j": {
+            "count": 146,
+            "mean_delta": -0.10006122419004194,
+            "contribution_to_overall_nll": -0.00010779754380651203
+          },
+          "k": {
+            "count": 1159,
+            "mean_delta": -0.004884291468100821,
+            "contribution_to_overall_nll": -4.1771032094632985e-05
+          },
+          "l": {
+            "count": 4735,
+            "mean_delta": 0.0015875418923635533,
+            "contribution_to_overall_nll": 5.54670891836117e-05
+          },
+          "m": {
+            "count": 2110,
+            "mean_delta": -0.040892729221799026,
+            "contribution_to_overall_nll": -0.0006366763968801814
+          },
+          "n": {
+            "count": 7029,
+            "mean_delta": 0.026142912321647248,
+            "contribution_to_overall_nll": 0.0013559313669283105
+          },
+          "o": {
+            "count": 8161,
+            "mean_delta": 0.013588819512655961,
+            "contribution_to_overall_nll": 0.0008183051906169131
+          },
+          "p": {
+            "count": 1543,
+            "mean_delta": -0.027196443646306207,
+            "contribution_to_overall_nll": -0.0003096479726262192
+          },
+          "q": {
+            "count": 212,
+            "mean_delta": -0.06022019869939605,
+            "contribution_to_overall_nll": -9.420376119207186e-05
+          },
+          "r": {
+            "count": 5469,
+            "mean_delta": -0.01811966803658183,
+            "contribution_to_overall_nll": -0.0007312204991961897
+          },
+          "s": {
+            "count": 6514,
+            "mean_delta": -0.00728131671753059,
+            "contribution_to_overall_nll": -0.00034998374505980037
+          },
+          "t": {
+            "count": 10730,
+            "mean_delta": -0.0022568860811360524,
+            "contribution_to_overall_nll": -0.00017868971569626955
+          },
+          "u": {
+            "count": 3478,
+            "mean_delta": -0.006264713131146298,
+            "contribution_to_overall_nll": -0.0001607759055365684
+          },
+          "v": {
+            "count": 853,
+            "mean_delta": -0.02841893314900118,
+            "contribution_to_overall_nll": -0.00017887390959473744
+          },
+          "w": {
+            "count": 2678,
+            "mean_delta": -0.02762302496490783,
+            "contribution_to_overall_nll": -0.0005458483556619823
+          },
+          "x": {
+            "count": 152,
+            "mean_delta": 0.003963010027052862,
+            "contribution_to_overall_nll": 4.4448689077200385e-06
+          },
+          "y": {
+            "count": 2265,
+            "mean_delta": -0.008788728721362656,
+            "contribution_to_overall_nll": -0.0001468873729275425
+          },
+          "z": {
+            "count": 78,
+            "mean_delta": -0.05877150402619597,
+            "contribution_to_overall_nll": -3.382607483687731e-05
+          }
+        },
+        "worst_examples": [
+          {
+            "target_index": 7199,
+            "history": "h\nhow i wish i could shut up like a telescope i think i could if",
+            "target": " ",
+            "nll8": 0.0783219860906469,
+            "nll16": 4.1552714787046074,
+            "delta": 4.07694949261396
+          },
+          {
+            "target_index": 84821,
+            "history": "he queen and alice joined the procession\nwondering very much wha",
+            "target": "t",
+            "nll8": 0.9925927681357879,
+            "nll16": 4.326758933105896,
+            "delta": 3.3341661649701084
+          },
+          {
+            "target_index": 97034,
+            "history": "queen stamping on the\nground as she spoke either you or your hea",
+            "target": "d",
+            "nll8": 2.7949389231540716,
+            "nll16": 6.060093798186788,
+            "delta": 3.2651548750327164
+          },
+          {
+            "target_index": 46291,
+            "history": " has become very white\nand yet you incessantly stand on your hea",
+            "target": "d",
+            "nll8": 2.7949389231540716,
+            "nll16": 6.058768771971507,
+            "delta": 3.2638298488174353
+          },
+          {
+            "target_index": 37105,
+            "history": "xt as for pulling me out of the window i only wish they\ncould im",
+            "target": " ",
+            "nll8": 2.6408128926551235,
+            "nll16": 5.708354995293446,
+            "delta": 3.0675421026383223
+          }
+        ],
+        "best_examples": [
+          {
+            "target_index": 74806,
+            "history": "d the march hare\n\nyes please do pleaded alice\n\nand be quick abou",
+            "target": "t",
+            "nll8": 3.3925210402400365,
+            "nll16": 1.259198271315177,
+            "delta": -2.1333227689248595
+          },
+          {
+            "target_index": 3423,
+            "history": "arnt\nseveral things of this sort in her lessons in the schoolroo",
+            "target": "m",
+            "nll8": 4.351234803805491,
+            "nll16": 2.202555355502762,
+            "delta": -2.148679448302729
+          },
+          {
+            "target_index": 134608,
+            "history": " in the\nwind and the pool rippling to the waving of the reedsthe",
+            "target": " ",
+            "nll8": 3.6198853444378183,
+            "nll16": 1.460031982350856,
+            "delta": -2.159853362086962
+          },
+          {
+            "target_index": 34758,
+            "history": " thatll be a comfort one waynever to be an old womanbut\nthenalwa",
+            "target": "y",
+            "nll8": 5.034553601906569,
+            "nll16": 2.399432441326878,
+            "delta": -2.6351211605796907
+          },
+          {
+            "target_index": 114963,
+            "history": "e seated on their throne when they\narrived with a great crowd as",
+            "target": "s",
+            "nll8": 4.1836717217779515,
+            "nll16": 1.481993806766053,
+            "delta": -2.7016779150118984
+          }
+        ]
+      },
+      "attention": {
+        "statistics": [
+          "mass_on_added_eight",
+          "entropy_nats"
+        ],
+        "protocol": "final-query attention averaged over every validation target; arrays [block][head][statistic]",
+        "means": {
+          "8_8": [
+            [
+              [
+                0.0,
+                1.2379750194956662
+              ],
+              [
+                0.0,
+                1.6506751626824525
+              ],
+              [
+                0.0,
+                0.22359538396302361
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.2480508770516197
+              ],
+              [
+                0.0,
+                1.118689326252448
+              ],
+              [
+                0.0,
+                1.151645526414978
+              ]
+            ]
+          ],
+          "16_8": [
+            [
+              [
+                0.10379661255859388,
+                1.5411804935884694
+              ],
+              [
+                0.16957657267667395,
+                2.0991718159348784
+              ],
+              [
+                0.003384972045044912,
+                0.24395769241395074
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.293325759549109
+              ],
+              [
+                0.0,
+                1.204284870089691
+              ],
+              [
+                0.0,
+                1.1930290066360194
+              ]
+            ]
+          ],
+          "8_16": [
+            [
+              [
+                0.0,
+                1.2379750194956662
+              ],
+              [
+                0.0,
+                1.6506751626824525
+              ],
+              [
+                0.0,
+                0.22359538396302361
+              ]
+            ],
+            [
+              [
+                0.14033415881011818,
+                1.547154839220789
+              ],
+              [
+                0.11426465095614621,
+                1.4050426195537515
+              ],
+              [
+                0.1009071427542009,
+                1.3872057715049673
+              ]
+            ]
+          ],
+          "16_16": [
+            [
+              [
+                0.10379661255859388,
+                1.5411804935884694
+              ],
+              [
+                0.16957657267667395,
+                2.0991718159348784
+              ],
+              [
+                0.003384972045044912,
+                0.24395769241395074
+              ]
+            ],
+            [
+              [
+                0.1419455427925096,
+                1.5912617276179386
+              ],
+              [
+                0.1184092573452724,
+                1.4877923969174445
+              ],
+              [
+                0.11187623499867845,
+                1.4372956167967177
+              ]
+            ]
+          ]
+        }
+      },
+      "reversal_control": {
+        "target_count": 2117,
+        "target_indices_sha256": "70f0e9ad295ac3405a757b787672152defc5e2a79787c55fe872fa1cd4317047",
+        "original_mean_nll": 1.9681512514512673,
+        "reversed_mean_nll": 1.9703838943805634,
+        "reversed_minus_original": 0.002232642929295966
+      }
+    },
+    {
+      "encoding": "learned",
+      "seed": 7,
+      "checkpoint": "runs/multiseed-context-10000/seed-7/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "bb1db7edfd65b1b08a214ad03e35f82aa8830a96aaa5fc02240712e2cd743b30",
+      "metrics": {
+        "8_8": {
+          "mean_nll": 2.225004325432393,
+          "perplexity": 9.253522829307723,
+          "accuracy": 0.3260208674606337,
+          "scored_tokens": 135522
+        },
+        "16_8": {
+          "mean_nll": 2.2524029271145944,
+          "perplexity": 9.51056158738074,
+          "accuracy": 0.31879694809698794,
+          "scored_tokens": 135522
+        },
+        "8_16": {
+          "mean_nll": 2.2381792442783426,
+          "perplexity": 9.376243886467904,
+          "accuracy": 0.32034651200543085,
+          "scored_tokens": 135522
+        },
+        "16_16": {
+          "mean_nll": 2.2688597590252333,
+          "perplexity": 9.668370254596503,
+          "accuracy": 0.31612579507386257,
+          "scored_tokens": 135522
+        }
+      },
+      "layer_decomposition": {
+        "block1_symmetrized_delta": 0.02903955821454618,
+        "block2_symmetrized_delta": 0.014815875378294319,
+        "interaction": 0.003281913064689057,
+        "total_delta": 0.0438554335928405
+      },
+      "paired": {
+        "mean_delta": 0.04385543359284052,
+        "fraction_harmed": 0.5620711028467703,
+        "quantiles": {
+          "0.0": -2.0493401124555373,
+          "0.01": -0.622669236049383,
+          "0.1": -0.20610849813558352,
+          "0.5": 0.019021850421805375,
+          "0.9": 0.3315214113222124,
+          "0.99": 0.8629106021308179,
+          "1.0": 3.446908540822422
+        },
+        "positive_contribution": 0.10830593483003634,
+        "negative_contribution": -0.06445050123719583,
+        "worst_one_percent_contribution": 0.010880359612347339,
+        "remaining_99_percent_mean": 0.033308349179258505,
+        "by_target_character": {
+          "\n": {
+            "count": 3292,
+            "mean_delta": -0.11369840764403066,
+            "contribution_to_overall_nll": -0.0027618774661246803
+          },
+          " ": {
+            "count": 24148,
+            "mean_delta": -0.03328887199213478,
+            "contribution_to_overall_nll": -0.0059315807091547545
+          },
+          "a": {
+            "count": 8827,
+            "mean_delta": 0.04909541439749893,
+            "contribution_to_overall_nll": 0.003197748135998015
+          },
+          "b": {
+            "count": 1483,
+            "mean_delta": -0.07640755515759894,
+            "contribution_to_overall_nll": -0.0008361181527627928
+          },
+          "c": {
+            "count": 2421,
+            "mean_delta": 0.07742726731280958,
+            "contribution_to_overall_nll": 0.0013831806951219137
+          },
+          "d": {
+            "count": 4940,
+            "mean_delta": 0.16138154707630847,
+            "contribution_to_overall_nll": 0.005882623061620724
+          },
+          "e": {
+            "count": 13621,
+            "mean_delta": 0.14270697157046153,
+            "contribution_to_overall_nll": 0.014343144727507388
+          },
+          "f": {
+            "count": 2003,
+            "mean_delta": -0.03383709222928852,
+            "contribution_to_overall_nll": -0.0005001084380046406
+          },
+          "g": {
+            "count": 2534,
+            "mean_delta": 0.035145246389887114,
+            "contribution_to_overall_nll": 0.0006571483179998373
+          },
+          "h": {
+            "count": 7397,
+            "mean_delta": 0.17719553664098803,
+            "contribution_to_overall_nll": 0.009671605971970518
+          },
+          "i": {
+            "count": 7544,
+            "mean_delta": 0.11958157039282859,
+            "contribution_to_overall_nll": 0.006656656240636199
+          },
+          "j": {
+            "count": 146,
+            "mean_delta": 0.0119086464501665,
+            "contribution_to_overall_nll": 1.282937369374942e-05
+          },
+          "k": {
+            "count": 1159,
+            "mean_delta": 0.09341311345759018,
+            "contribution_to_overall_nll": 0.0007988798755725788
+          },
+          "l": {
+            "count": 4735,
+            "mean_delta": 0.06985986023461604,
+            "contribution_to_overall_nll": 0.002440832028828581
+          },
+          "m": {
+            "count": 2110,
+            "mean_delta": -0.014073241563528075,
+            "contribution_to_overall_nll": -0.00021911231902601967
+          },
+          "n": {
+            "count": 7029,
+            "mean_delta": 0.11441241852423326,
+            "contribution_to_overall_nll": 0.005934127963037998
+          },
+          "o": {
+            "count": 8161,
+            "mean_delta": -0.07629963246335461,
+            "contribution_to_overall_nll": -0.0045946879512805084
+          },
+          "p": {
+            "count": 1543,
+            "mean_delta": -0.07748661166056932,
+            "contribution_to_overall_nll": -0.0008822319755630707
+          },
+          "q": {
+            "count": 212,
+            "mean_delta": -0.04150699128634637,
+            "contribution_to_overall_nll": -6.493028550866597e-05
+          },
+          "r": {
+            "count": 5469,
+            "mean_delta": 0.17723545618243322,
+            "contribution_to_overall_nll": 0.007152349506808689
+          },
+          "s": {
+            "count": 6514,
+            "mean_delta": 0.029031611076325237,
+            "contribution_to_overall_nll": 0.0013954333211669146
+          },
+          "t": {
+            "count": 10730,
+            "mean_delta": -0.05758659624421437,
+            "contribution_to_overall_nll": -0.004559438155431739
+          },
+          "u": {
+            "count": 3478,
+            "mean_delta": 0.18908954309926207,
+            "contribution_to_overall_nll": 0.004852742956119549
+          },
+          "v": {
+            "count": 853,
+            "mean_delta": 0.0018308193892398533,
+            "contribution_to_overall_nll": 1.152350864820173e-05
+          },
+          "w": {
+            "count": 2678,
+            "mean_delta": -0.06594893740830102,
+            "contribution_to_overall_nll": -0.0013031925029104508
+          },
+          "x": {
+            "count": 152,
+            "mean_delta": 0.23376734969484703,
+            "contribution_to_overall_nll": 0.0002621909147859148
+          },
+          "y": {
+            "count": 2265,
+            "mean_delta": 0.051537764087197235,
+            "contribution_to_overall_nll": 0.0008613585665611616
+          },
+          "z": {
+            "count": 78,
+            "mean_delta": -0.0098403175228556,
+            "contribution_to_overall_nll": -5.663617470098854e-06
+          }
+        },
+        "worst_examples": [
+          {
+            "target_index": 23445,
+            "history": " even\nstigand the patriotic archbishop of canterbury found it ad",
+            "target": "v",
+            "nll8": 5.641355456682323,
+            "nll16": 9.088263997504745,
+            "delta": 3.446908540822422
+          },
+          {
+            "target_index": 23772,
+            "history": "e did not notice this question but hurriedly went on found\nit ad",
+            "target": "v",
+            "nll8": 5.69849512615787,
+            "nll16": 8.652636570455714,
+            "delta": 2.9541414442978438
+          },
+          {
+            "target_index": 52624,
+            "history": "nt and theres\nno use denying it i suppose youll be telling me ne",
+            "target": "x",
+            "nll8": 6.025892635344729,
+            "nll16": 8.097212355664448,
+            "delta": 2.0713197203197193
+          },
+          {
+            "target_index": 23070,
+            "history": "ers and had been of late much\naccustomed to usurpation and conqu",
+            "target": "e",
+            "nll8": 2.5121689912272216,
+            "nll16": 4.568676077607617,
+            "delta": 2.0565070863803956
+          },
+          {
+            "target_index": 34010,
+            "history": " sort of chance of her ever getting out of the room\nagain no won",
+            "target": "d",
+            "nll8": 4.6218413790041835,
+            "nll16": 6.6246639525599536,
+            "delta": 2.00282257355577
+          }
+        ],
+        "best_examples": [
+          {
+            "target_index": 23643,
+            "history": "ll enough when i find a thing said the\nduck its generally a frog",
+            "target": " ",
+            "nll8": 3.232013524641956,
+            "nll16": 1.399646211052369,
+            "delta": -1.8323673135895868
+          },
+          {
+            "target_index": 71397,
+            "history": "t of meaning in it and yet it was certainly english i dont quite",
+            "target": "\n",
+            "nll8": 5.056139983147284,
+            "nll16": 3.0924578206116076,
+            "delta": -1.9636821625356768
+          },
+          {
+            "target_index": 59166,
+            "history": " dont know of any that do alice said very politely feeling quite",
+            "target": "\n",
+            "nll8": 4.974227237358653,
+            "nll16": 2.94742735794887,
+            "delta": -2.026799879409783
+          },
+          {
+            "target_index": 91055,
+            "history": "she got back to the cheshire cat she was surprised to find quite",
+            "target": "\n",
+            "nll8": 5.216989120694117,
+            "nll16": 3.1861602341196034,
+            "delta": -2.0308288865745134
+          },
+          {
+            "target_index": 20394,
+            "history": "rry to change the subject of\nconversation are youare you fondofo",
+            "target": "f",
+            "nll8": 8.6245670471763,
+            "nll16": 6.575226934720762,
+            "delta": -2.0493401124555373
+          }
+        ]
+      },
+      "attention": {
+        "statistics": [
+          "mass_on_added_eight",
+          "entropy_nats"
+        ],
+        "protocol": "final-query attention averaged over every validation target; arrays [block][head][statistic]",
+        "means": {
+          "8_8": [
+            [
+              [
+                0.0,
+                2.0781094669825992
+              ],
+              [
+                0.0,
+                0.605266840215467
+              ],
+              [
+                0.0,
+                0.2922587840193757
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.8088091403696516
+              ],
+              [
+                0.0,
+                1.8583277008599155
+              ],
+              [
+                0.0,
+                1.784979520009373
+              ]
+            ]
+          ],
+          "16_8": [
+            [
+              [
+                0.4959896831851962,
+                2.7711134345512356
+              ],
+              [
+                0.016130711068951812,
+                0.6842960421433787
+              ],
+              [
+                0.050094964522444926,
+                0.4791188065759213
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.8744751256886678
+              ],
+              [
+                0.0,
+                1.9222194989593548
+              ],
+              [
+                0.0,
+                1.8686815862634194
+              ]
+            ]
+          ],
+          "8_16": [
+            [
+              [
+                0.0,
+                2.0781094669825992
+              ],
+              [
+                0.0,
+                0.605266840215467
+              ],
+              [
+                0.0,
+                0.2922587840193757
+              ]
+            ],
+            [
+              [
+                0.22013421756810475,
+                2.310041992565682
+              ],
+              [
+                0.1322414680864834,
+                2.215519871115207
+              ],
+              [
+                0.1672833501218118,
+                2.1973437193534124
+              ]
+            ]
+          ],
+          "16_16": [
+            [
+              [
+                0.4959896831851962,
+                2.7711134345512356
+              ],
+              [
+                0.016130711068951812,
+                0.6842960421433787
+              ],
+              [
+                0.050094964522444926,
+                0.4791188065759213
+              ]
+            ],
+            [
+              [
+                0.22791191882099973,
+                2.374807967321909
+              ],
+              [
+                0.15454798947880605,
+                2.3110573869387956
+              ],
+              [
+                0.17747731262368224,
+                2.2867400041059094
+              ]
+            ]
+          ]
+        }
+      },
+      "reversal_control": {
+        "target_count": 2117,
+        "target_indices_sha256": "70f0e9ad295ac3405a757b787672152defc5e2a79787c55fe872fa1cd4317047",
+        "original_mean_nll": 2.291177501776261,
+        "reversed_mean_nll": 2.2955086273285805,
+        "reversed_minus_original": 0.00433112555231972
+      }
+    },
+    {
+      "encoding": "learned",
+      "seed": 123,
+      "checkpoint": "runs/multiseed-context-10000/seed-123/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "3676476e6cf05a0ee63ef8863376ad2c013c5fa58fc9d3c6c29a34ec007a21ad",
+      "metrics": {
+        "8_8": {
+          "mean_nll": 2.0176396319628367,
+          "perplexity": 7.520552695197826,
+          "accuracy": 0.3906745768214755,
+          "scored_tokens": 135522
+        },
+        "16_8": {
+          "mean_nll": 2.0108420102616464,
+          "perplexity": 7.469604183530425,
+          "accuracy": 0.3955667714467024,
+          "scored_tokens": 135522
+        },
+        "8_16": {
+          "mean_nll": 2.0177123966886836,
+          "perplexity": 7.5210999460629475,
+          "accuracy": 0.3904236950458228,
+          "scored_tokens": 135522
+        },
+        "16_16": {
+          "mean_nll": 2.0115975542028854,
+          "perplexity": 7.475249930251038,
+          "accuracy": 0.395500361564912,
+          "scored_tokens": 135522
+        }
+      },
+      "layer_decomposition": {
+        "block1_symmetrized_delta": -0.0064562320934942186,
+        "block2_symmetrized_delta": 0.00041415433354297093,
+        "interaction": 0.0006827792153920598,
+        "total_delta": -0.006042077759951248
+      },
+      "paired": {
+        "mean_delta": -0.006042077759951165,
+        "fraction_harmed": 0.4994244476911498,
+        "quantiles": {
+          "0.0": -4.020959367521255,
+          "0.01": -0.8210818692165761,
+          "0.1": -0.23717376119660136,
+          "0.5": -0.00013468838124264249,
+          "0.9": 0.2103933120218989,
+          "0.99": 0.808938954056808,
+          "1.0": 3.825245037876769
+        },
+        "positive_contribution": 0.07354659556596882,
+        "negative_contribution": -0.07958867332591996,
+        "worst_one_percent_contribution": 0.011839335444191322,
+        "remaining_99_percent_mean": -0.018062138546664566,
+        "by_target_character": {
+          "\n": {
+            "count": 3292,
+            "mean_delta": -0.07662975135956215,
+            "contribution_to_overall_nll": -0.0018614331361378861
+          },
+          " ": {
+            "count": 24148,
+            "mean_delta": 0.041035828469159326,
+            "contribution_to_overall_nll": 0.007311972859559771
+          },
+          "a": {
+            "count": 8827,
+            "mean_delta": -0.02286992721740913,
+            "contribution_to_overall_nll": -0.0014895946602623221
+          },
+          "b": {
+            "count": 1483,
+            "mean_delta": -0.024822818998511374,
+            "contribution_to_overall_nll": -0.0002716329494457901
+          },
+          "c": {
+            "count": 2421,
+            "mean_delta": 0.06464604741750409,
+            "contribution_to_overall_nll": 0.0011548536827804886
+          },
+          "d": {
+            "count": 4940,
+            "mean_delta": 0.046772284751621054,
+            "contribution_to_overall_nll": 0.001704926777003055
+          },
+          "e": {
+            "count": 13621,
+            "mean_delta": -0.02257415979655313,
+            "contribution_to_overall_nll": -0.002268876127778886
+          },
+          "f": {
+            "count": 2003,
+            "mean_delta": -0.08744721345298476,
+            "contribution_to_overall_nll": -0.0012924600326613277
+          },
+          "g": {
+            "count": 2534,
+            "mean_delta": -0.07052261842476246,
+            "contribution_to_overall_nll": -0.0013186369378281612
+          },
+          "h": {
+            "count": 7397,
+            "mean_delta": -0.039322524460524276,
+            "contribution_to_overall_nll": -0.002146284097301531
+          },
+          "i": {
+            "count": 7544,
+            "mean_delta": -0.037693137532942726,
+            "contribution_to_overall_nll": -0.002098235190954383
+          },
+          "j": {
+            "count": 146,
+            "mean_delta": 0.0445255084495881,
+            "contribution_to_overall_nll": 4.796803643423107e-05
+          },
+          "k": {
+            "count": 1159,
+            "mean_delta": 0.01060422923270051,
+            "contribution_to_overall_nll": 9.068860908708468e-05
+          },
+          "l": {
+            "count": 4735,
+            "mean_delta": 0.014548206735384882,
+            "contribution_to_overall_nll": 0.0005082994561181758
+          },
+          "m": {
+            "count": 2110,
+            "mean_delta": -0.03297467768121486,
+            "contribution_to_overall_nll": -0.0005133968647700253
+          },
+          "n": {
+            "count": 7029,
+            "mean_delta": -0.0062601217920099424,
+            "contribution_to_overall_nll": -0.0003246882135449439
+          },
+          "o": {
+            "count": 8161,
+            "mean_delta": -0.055012631868886726,
+            "contribution_to_overall_nll": -0.0033128059553576878
+          },
+          "p": {
+            "count": 1543,
+            "mean_delta": -0.03026599591316986,
+            "contribution_to_overall_nll": -0.00034459668315123075
+          },
+          "q": {
+            "count": 212,
+            "mean_delta": 0.0302149893408792,
+            "contribution_to_overall_nll": 4.726596228115281e-05
+          },
+          "r": {
+            "count": 5469,
+            "mean_delta": 0.010085430518719601,
+            "contribution_to_overall_nll": 0.00040699826970438377
+          },
+          "s": {
+            "count": 6514,
+            "mean_delta": 0.054188805905738456,
+            "contribution_to_overall_nll": 0.00260463896393191
+          },
+          "t": {
+            "count": 10730,
+            "mean_delta": -0.022225594726354853,
+            "contribution_to_overall_nll": -0.0017597189490546742
+          },
+          "u": {
+            "count": 3478,
+            "mean_delta": -0.008648085220424494,
+            "contribution_to_overall_nll": -0.00022194212302531241
+          },
+          "v": {
+            "count": 853,
+            "mean_delta": -0.0426430247085284,
+            "contribution_to_overall_nll": -0.0002684029166952578
+          },
+          "w": {
+            "count": 2678,
+            "mean_delta": -0.010684305496009057,
+            "contribution_to_overall_nll": -0.00021112859991966068
+          },
+          "x": {
+            "count": 152,
+            "mean_delta": -0.1249822921615815,
+            "contribution_to_overall_nll": -0.00014017877841649614
+          },
+          "y": {
+            "count": 2265,
+            "mean_delta": -0.013020591526567097,
+            "contribution_to_overall_nll": -0.00021761514593700266
+          },
+          "z": {
+            "count": 78,
+            "mean_delta": 0.24661005300231628,
+            "contribution_to_overall_nll": 0.00014193698539115914
+          }
+        },
+        "worst_examples": [
+          {
+            "target_index": 94926,
+            "history": "t feeling at all anxious\nto have the experiment tried\n\nvery true",
+            "target": " ",
+            "nll8": 1.172781406448353,
+            "nll16": 4.998026444325122,
+            "delta": 3.825245037876769
+          },
+          {
+            "target_index": 119086,
+            "history": "id the hatter\n\nstolen the king exclaimed turning to the jury who",
+            "target": " ",
+            "nll8": 1.9763079085873019,
+            "nll16": 5.786439092045085,
+            "delta": 3.8101311834577833
+          },
+          {
+            "target_index": 122832,
+            "history": "ish my tea said the hatter with an anxious look at\nthe queen who",
+            "target": " ",
+            "nll8": 0.8381715265042129,
+            "nll16": 4.188077420155457,
+            "delta": 3.3499058936512442
+          },
+          {
+            "target_index": 84052,
+            "history": "on one knee as he spoke we were trying\n\ni see said the queen who",
+            "target": " ",
+            "nll8": 0.8381715265042129,
+            "nll16": 4.0956721195135035,
+            "delta": 3.257500593009291
+          },
+          {
+            "target_index": 89632,
+            "history": "removed said the king very decidedly and he called\nthe queen who",
+            "target": " ",
+            "nll8": 0.8381715265042129,
+            "nll16": 4.058668256532854,
+            "delta": 3.220496730028641
+          }
+        ],
+        "best_examples": [
+          {
+            "target_index": 45612,
+            "history": "hing else to do\nand perhaps after all it might tell her somethin",
+            "target": "g",
+            "nll8": 4.199666721525512,
+            "nll16": 0.5531773995368281,
+            "delta": -3.6464893219886836
+          },
+          {
+            "target_index": 104223,
+            "history": "the gryphon interrupted in a very\ndecided tone tell her somethin",
+            "target": "g",
+            "nll8": 4.199666721525512,
+            "nll16": 0.5531773995368281,
+            "delta": -3.6464893219886836
+          },
+          {
+            "target_index": 40275,
+            "history": "dle being held up by two guinea pigs who were giving it\nsomethin",
+            "target": "g",
+            "nll8": 4.199666721525512,
+            "nll16": 0.5493014383185151,
+            "delta": -3.650365283206997
+          },
+          {
+            "target_index": 71915,
+            "history": "e march hare\n\nalice sighed wearily i think you might do somethin",
+            "target": "g",
+            "nll8": 4.199666721525512,
+            "nll16": 0.5318320159680532,
+            "delta": -3.6678347055574587
+          },
+          {
+            "target_index": 86545,
+            "history": " its head down and was\ngoing to begin again it was very provokin",
+            "target": "g",
+            "nll8": 4.97071165218015,
+            "nll16": 0.949752284658896,
+            "delta": -4.020959367521255
+          }
+        ]
+      },
+      "attention": {
+        "statistics": [
+          "mass_on_added_eight",
+          "entropy_nats"
+        ],
+        "protocol": "final-query attention averaged over every validation target; arrays [block][head][statistic]",
+        "means": {
+          "8_8": [
+            [
+              [
+                0.0,
+                1.8573213771206172
+              ],
+              [
+                0.0,
+                1.9276715673231266
+              ],
+              [
+                0.0,
+                1.835595607818263
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.0251682238661828
+              ],
+              [
+                0.0,
+                1.3266461362677877
+              ],
+              [
+                0.0,
+                1.2053655123942053
+              ]
+            ]
+          ],
+          "16_8": [
+            [
+              [
+                0.15408800842883105,
+                2.2786802498157552
+              ],
+              [
+                0.2964587126933452,
+                2.524578774768447
+              ],
+              [
+                0.14179301775966188,
+                2.2360055111432744
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.0549720672350973
+              ],
+              [
+                0.0,
+                1.3650306658355862
+              ],
+              [
+                0.0,
+                1.253510071836133
+              ]
+            ]
+          ],
+          "8_16": [
+            [
+              [
+                0.0,
+                1.8573213771206172
+              ],
+              [
+                0.0,
+                1.9276715673231266
+              ],
+              [
+                0.0,
+                1.835595607818263
+              ]
+            ],
+            [
+              [
+                0.022696208402050316,
+                1.1138283140117706
+              ],
+              [
+                0.13640314565760217,
+                1.5358415328449626
+              ],
+              [
+                0.034681919127983254,
+                1.3214611838523636
+              ]
+            ]
+          ],
+          "16_16": [
+            [
+              [
+                0.15408800842883105,
+                2.2786802498157552
+              ],
+              [
+                0.2964587126933452,
+                2.524578774768447
+              ],
+              [
+                0.14179301775966188,
+                2.2360055111432744
+              ]
+            ],
+            [
+              [
+                0.03261835069589324,
+                1.1719378715456923
+              ],
+              [
+                0.15342725875952945,
+                1.5905694245950337
+              ],
+              [
+                0.044174004035640764,
+                1.3914907997275416
+              ]
+            ]
+          ]
+        }
+      },
+      "reversal_control": {
+        "target_count": 2117,
+        "target_indices_sha256": "70f0e9ad295ac3405a757b787672152defc5e2a79787c55fe872fa1cd4317047",
+        "original_mean_nll": 1.9894948767692757,
+        "reversed_mean_nll": 1.9874749754791754,
+        "reversed_minus_original": -0.0020199012901001663
+      }
+    },
+    {
+      "encoding": "learned",
+      "seed": 2026,
+      "checkpoint": "runs/multiseed-context-10000/seed-2026/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "6618cdebe2007154b2c176a6fbd5c47e6d1fdd0d1c72fb45d1735deaa09ba1e8",
+      "metrics": {
+        "8_8": {
+          "mean_nll": 1.9621923388369693,
+          "perplexity": 7.114908268996349,
+          "accuracy": 0.4042148138309647,
+          "scored_tokens": 135522
+        },
+        "16_8": {
+          "mean_nll": 1.9603384610056485,
+          "perplexity": 7.101730317215145,
+          "accuracy": 0.4059931228877968,
+          "scored_tokens": 135522
+        },
+        "8_16": {
+          "mean_nll": 1.9626159495174011,
+          "perplexity": 7.117922858590484,
+          "accuracy": 0.4039565531795576,
+          "scored_tokens": 135522
+        },
+        "16_16": {
+          "mean_nll": 1.9606360437093462,
+          "perplexity": 7.103843983803585,
+          "accuracy": 0.40492318590339577,
+          "scored_tokens": 135522
+        }
+      },
+      "layer_decomposition": {
+        "block1_symmetrized_delta": -0.0019168918196879048,
+        "block2_symmetrized_delta": 0.0003605966920647852,
+        "interaction": -0.00012602797673411104,
+        "total_delta": -0.0015562951276231196
+      },
+      "paired": {
+        "mean_delta": -0.0015562951276232857,
+        "fraction_harmed": 0.511097829134753,
+        "quantiles": {
+          "0.0": -4.730011080872387,
+          "0.01": -0.5931528078441748,
+          "0.1": -0.14861717374729702,
+          "0.5": 0.0012715813121229047,
+          "0.9": 0.14417218543888424,
+          "0.99": 0.5439289946963998,
+          "1.0": 2.9747286907433077
+        },
+        "positive_contribution": 0.05039435442078285,
+        "negative_contribution": -0.051950649548406135,
+        "worst_one_percent_contribution": 0.008444891061043574,
+        "remaining_99_percent_mean": -0.01010226700252307,
+        "by_target_character": {
+          "\n": {
+            "count": 3292,
+            "mean_delta": -0.07586494108715938,
+            "contribution_to_overall_nll": -0.0018428549317374943
+          },
+          " ": {
+            "count": 24148,
+            "mean_delta": -0.0024861239307847724,
+            "contribution_to_overall_nll": -0.0004429902206327436
+          },
+          "a": {
+            "count": 8827,
+            "mean_delta": 0.001493122148697523,
+            "contribution_to_overall_nll": 9.72520270255238e-05
+          },
+          "b": {
+            "count": 1483,
+            "mean_delta": -0.032646638265506706,
+            "contribution_to_overall_nll": -0.0003572480080558614
+          },
+          "c": {
+            "count": 2421,
+            "mean_delta": 0.024047439620924982,
+            "contribution_to_overall_nll": 0.0004295896704760805
+          },
+          "d": {
+            "count": 4940,
+            "mean_delta": 0.004548621399600318,
+            "contribution_to_overall_nll": 0.00016580473807961492
+          },
+          "e": {
+            "count": 13621,
+            "mean_delta": 0.010953026052492099,
+            "contribution_to_overall_nll": 0.0011008630913135497
+          },
+          "f": {
+            "count": 2003,
+            "mean_delta": -0.003053475193803657,
+            "contribution_to_overall_nll": -4.5130021791212684e-05
+          },
+          "g": {
+            "count": 2534,
+            "mean_delta": -0.055938475834620104,
+            "contribution_to_overall_nll": -0.001045941601842707
+          },
+          "h": {
+            "count": 7397,
+            "mean_delta": 0.0013140980571819348,
+            "contribution_to_overall_nll": 7.172550087052119e-05
+          },
+          "i": {
+            "count": 7544,
+            "mean_delta": -0.0018708052969160967,
+            "contribution_to_overall_nll": -0.00010414069420415159
+          },
+          "j": {
+            "count": 146,
+            "mean_delta": -0.003986765594930527,
+            "contribution_to_overall_nll": -4.295005806141121e-06
+          },
+          "k": {
+            "count": 1159,
+            "mean_delta": -0.01181837568862713,
+            "contribution_to_overall_nll": -0.00010107213163264151
+          },
+          "l": {
+            "count": 4735,
+            "mean_delta": 0.005891159880378855,
+            "contribution_to_overall_nll": 0.0002058310977818648
+          },
+          "m": {
+            "count": 2110,
+            "mean_delta": 0.013275790742181444,
+            "contribution_to_overall_nll": 0.0002066964660055404
+          },
+          "n": {
+            "count": 7029,
+            "mean_delta": 0.01124294362878598,
+            "contribution_to_overall_nll": 0.0005831278373012252
+          },
+          "o": {
+            "count": 8161,
+            "mean_delta": 0.007469949864720567,
+            "contribution_to_overall_nll": 0.0004498329484953332
+          },
+          "p": {
+            "count": 1543,
+            "mean_delta": 0.04731305174591938,
+            "contribution_to_overall_nll": 0.0005386877322054987
+          },
+          "q": {
+            "count": 212,
+            "mean_delta": -0.003211009993344889,
+            "contribution_to_overall_nll": -5.023052482911383e-06
+          },
+          "r": {
+            "count": 5469,
+            "mean_delta": -0.004767839424055965,
+            "contribution_to_overall_nll": -0.00019240650086452436
+          },
+          "s": {
+            "count": 6514,
+            "mean_delta": -0.020623154067466856,
+            "contribution_to_overall_nll": -0.0009912724546234492
+          },
+          "t": {
+            "count": 10730,
+            "mean_delta": 0.008182221601763994,
+            "contribution_to_overall_nll": 0.0006478301514656488
+          },
+          "u": {
+            "count": 3478,
+            "mean_delta": -0.016009511693291945,
+            "contribution_to_overall_nll": -0.000410863783513152
+          },
+          "v": {
+            "count": 853,
+            "mean_delta": -0.017002423513598163,
+            "contribution_to_overall_nll": -0.00010701633134914798
+          },
+          "w": {
+            "count": 2678,
+            "mean_delta": -1.6277596329524826e-05,
+            "contribution_to_overall_nll": -3.216555464829879e-07
+          },
+          "x": {
+            "count": 152,
+            "mean_delta": -0.002250438515657457,
+            "contribution_to_overall_nll": -2.5240673424236173e-06
+          },
+          "y": {
+            "count": 2265,
+            "mean_delta": -0.017518102508702352,
+            "contribution_to_overall_nll": -0.00029278273772679583
+          },
+          "z": {
+            "count": 78,
+            "mean_delta": -0.1870432762347954,
+            "contribution_to_overall_nll": -0.00010765318949184666
+          }
+        },
+        "worst_examples": [
+          {
+            "target_index": 109306,
+            "history": "oice\nare done with a whiting now you know\n\nand what are they mad",
+            "target": "e",
+            "nll8": 1.5370442042420367,
+            "nll16": 4.511772894985344,
+            "delta": 2.9747286907433077
+          },
+          {
+            "target_index": 38521,
+            "history": " voice alongcatch him you by the hedge then\nsilence and then ano",
+            "target": "t",
+            "nll8": 0.5976692782941095,
+            "nll16": 3.461844323429969,
+            "delta": 2.86417504513586
+          },
+          {
+            "target_index": 97907,
+            "history": "no arches left and\nall the players except the king the queen and",
+            "target": " ",
+            "nll8": 0.21233158681323372,
+            "nll16": 3.0153318532549775,
+            "delta": 2.8030002664417437
+          },
+          {
+            "target_index": 135260,
+            "history": "e would gather about her other little children\nand make their ey",
+            "target": "e",
+            "nll8": 0.8378783890643643,
+            "nll16": 3.581226461301379,
+            "delta": 2.7433480722370147
+          },
+          {
+            "target_index": 98672,
+            "history": " gryphon is look at the picture up lazy\nthing said the queen and",
+            "target": " ",
+            "nll8": 0.21233158681323372,
+            "nll16": 2.936859915840291,
+            "delta": 2.724528329027057
+          }
+        ],
+        "best_examples": [
+          {
+            "target_index": 90680,
+            "history": "y to fly up into a tree\n\nby the time she had caught the flamingo",
+            "target": " ",
+            "nll8": 7.749598178005874,
+            "nll16": 3.453108430549734,
+            "delta": -4.29648974745614
+          },
+          {
+            "target_index": 105230,
+            "history": "\n\nthat generally takes some time interrupted the gryphon\n\nyou ad",
+            "target": "v",
+            "nll8": 7.789934672138448,
+            "nll16": 3.4394034471608803,
+            "delta": -4.350531224977567
+          },
+          {
+            "target_index": 94792,
+            "history": "the reason is that im doubtful about\nthe temper of your flamingo",
+            "target": " ",
+            "nll8": 7.749598178005874,
+            "nll16": 3.153179638081947,
+            "delta": -4.596418539923927
+          },
+          {
+            "target_index": 90511,
+            "history": "of them with the\nother the only difficulty was that her flamingo",
+            "target": " ",
+            "nll8": 7.749598178005874,
+            "nll16": 3.119885365621848,
+            "delta": -4.629712812384026
+          },
+          {
+            "target_index": 88117,
+            "history": "ute the whole head appeared and then alice put\ndown her flamingo",
+            "target": " ",
+            "nll8": 7.749598178005874,
+            "nll16": 3.0195870971334866,
+            "delta": -4.730011080872387
+          }
+        ]
+      },
+      "attention": {
+        "statistics": [
+          "mass_on_added_eight",
+          "entropy_nats"
+        ],
+        "protocol": "final-query attention averaged over every validation target; arrays [block][head][statistic]",
+        "means": {
+          "8_8": [
+            [
+              [
+                0.0,
+                1.4720912647587556
+              ],
+              [
+                0.0,
+                1.4626722341723248
+              ],
+              [
+                0.0,
+                0.5344262703248989
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.1398992828360437
+              ],
+              [
+                0.0,
+                1.1895263531152367
+              ],
+              [
+                0.0,
+                0.9986920233066946
+              ]
+            ]
+          ],
+          "16_8": [
+            [
+              [
+                0.10572739146791389,
+                1.7960444871454477
+              ],
+              [
+                0.11530348817622273,
+                1.7997891042141332
+              ],
+              [
+                0.03002694326117086,
+                0.6426364839432779
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.182408198654579
+              ],
+              [
+                0.0,
+                1.2365024043065336
+              ],
+              [
+                0.0,
+                1.0410577037699433
+              ]
+            ]
+          ],
+          "8_16": [
+            [
+              [
+                0.0,
+                1.4720912647587556
+              ],
+              [
+                0.0,
+                1.4626722341723248
+              ],
+              [
+                0.0,
+                0.5344262703248989
+              ]
+            ],
+            [
+              [
+                0.11974765996488138,
+                1.3959972303418509
+              ],
+              [
+                0.07603681750759285,
+                1.4046767780938636
+              ],
+              [
+                0.07990747137427091,
+                1.196819655186605
+              ]
+            ]
+          ],
+          "16_16": [
+            [
+              [
+                0.10572739146791389,
+                1.7960444871454477
+              ],
+              [
+                0.11530348817622273,
+                1.7997891042141332
+              ],
+              [
+                0.03002694326117086,
+                0.6426364839432779
+              ]
+            ],
+            [
+              [
+                0.13015199344787665,
+                1.445935104533524
+              ],
+              [
+                0.08127513671592392,
+                1.4567192135664613
+              ],
+              [
+                0.08764905214581227,
+                1.2453421963835496
+              ]
+            ]
+          ]
+        }
+      },
+      "reversal_control": {
+        "target_count": 2117,
+        "target_indices_sha256": "70f0e9ad295ac3405a757b787672152defc5e2a79787c55fe872fa1cd4317047",
+        "original_mean_nll": 1.9627052723280412,
+        "reversed_mean_nll": 1.9721594162933243,
+        "reversed_minus_original": 0.009454143965283096
+      }
+    },
+    {
+      "encoding": "sinusoidal",
+      "seed": 42,
+      "checkpoint": "runs/sinusoidal-context-10000/seed-42/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "c7106d9445194b7e16b099efa0adbbfc682f88c8cbba390846872ce41456af3b",
+      "metrics": {
+        "8_8": {
+          "mean_nll": 1.9324996718883385,
+          "perplexity": 6.906753298670731,
+          "accuracy": 0.4171278464013223,
+          "scored_tokens": 135522
+        },
+        "16_8": {
+          "mean_nll": 1.9329747863890205,
+          "perplexity": 6.91003557698283,
+          "accuracy": 0.41776980859196294,
+          "scored_tokens": 135522
+        },
+        "8_16": {
+          "mean_nll": 1.9304026035554673,
+          "perplexity": 6.89228454133398,
+          "accuracy": 0.41938578238219626,
+          "scored_tokens": 135522
+        },
+        "16_16": {
+          "mean_nll": 1.9302848515407927,
+          "perplexity": 6.891473008724265,
+          "accuracy": 0.4198654093062381,
+          "scored_tokens": 135522
+        }
+      },
+      "layer_decomposition": {
+        "block1_symmetrized_delta": 0.0001786812430036866,
+        "block2_symmetrized_delta": -0.0023935015905495183,
+        "interaction": -0.000592866515356727,
+        "total_delta": -0.0022148203475458317
+      },
+      "paired": {
+        "mean_delta": -0.002214820347545865,
+        "fraction_harmed": 0.5097401159959268,
+        "quantiles": {
+          "0.0": -2.03180127622516,
+          "0.01": -0.5104775939869147,
+          "0.1": -0.15695517674205273,
+          "0.5": 0.0014796271924110427,
+          "0.9": 0.14001826831406664,
+          "0.99": 0.4682982211750541,
+          "1.0": 4.418443666245589
+        },
+        "positive_contribution": 0.04884533964837349,
+        "negative_contribution": -0.051060159995919355,
+        "worst_one_percent_contribution": 0.007797553910906884,
+        "remaining_99_percent_mean": -0.010113568148815897,
+        "by_target_character": {
+          "\n": {
+            "count": 3292,
+            "mean_delta": -0.04548910270825024,
+            "contribution_to_overall_nll": -0.0011049875748259308
+          },
+          " ": {
+            "count": 24148,
+            "mean_delta": -0.008507187004829195,
+            "contribution_to_overall_nll": -0.001515853896729796
+          },
+          "a": {
+            "count": 8827,
+            "mean_delta": -0.010599754511463375,
+            "contribution_to_overall_nll": -0.0006903973751323564
+          },
+          "b": {
+            "count": 1483,
+            "mean_delta": 0.013944117563295945,
+            "contribution_to_overall_nll": 0.00015258870402125034
+          },
+          "c": {
+            "count": 2421,
+            "mean_delta": -0.04254254267918552,
+            "contribution_to_overall_nll": -0.0007599909669744259
+          },
+          "d": {
+            "count": 4940,
+            "mean_delta": 0.010076384801819804,
+            "contribution_to_overall_nll": 0.00036730081404487706
+          },
+          "e": {
+            "count": 13621,
+            "mean_delta": 0.007732478414043326,
+            "contribution_to_overall_nll": 0.000777173362831748
+          },
+          "f": {
+            "count": 2003,
+            "mean_delta": -0.014340656339402453,
+            "contribution_to_overall_nll": -0.00021195329649668034
+          },
+          "g": {
+            "count": 2534,
+            "mean_delta": -0.025367533737691676,
+            "contribution_to_overall_nll": -0.00047432395102869435
+          },
+          "h": {
+            "count": 7397,
+            "mean_delta": 0.010763335303509529,
+            "contribution_to_overall_nll": 0.0005874794589812723
+          },
+          "i": {
+            "count": 7544,
+            "mean_delta": 0.00020639677540511584,
+            "contribution_to_overall_nll": 1.1489332164934062e-05
+          },
+          "j": {
+            "count": 146,
+            "mean_delta": -0.019447433470561076,
+            "contribution_to_overall_nll": -2.0951028517155275e-05
+          },
+          "k": {
+            "count": 1159,
+            "mean_delta": 0.01996852142409139,
+            "contribution_to_overall_nll": 0.00017077313152493264
+          },
+          "l": {
+            "count": 4735,
+            "mean_delta": -0.0038390722361434882,
+            "contribution_to_overall_nll": -0.00013413325539867634
+          },
+          "m": {
+            "count": 2110,
+            "mean_delta": 0.017505298724607432,
+            "contribution_to_overall_nll": 0.00027254748534497487
+          },
+          "n": {
+            "count": 7029,
+            "mean_delta": 0.01892293066827359,
+            "contribution_to_overall_nll": 0.0009814589488591893
+          },
+          "o": {
+            "count": 8161,
+            "mean_delta": -0.014748781896169731,
+            "contribution_to_overall_nll": -0.0008881569712271156
+          },
+          "p": {
+            "count": 1543,
+            "mean_delta": -0.0048209035307027765,
+            "contribution_to_overall_nll": -5.488890473778711e-05
+          },
+          "q": {
+            "count": 212,
+            "mean_delta": 0.026278763438411346,
+            "contribution_to_overall_nll": 4.110843884345867e-05
+          },
+          "r": {
+            "count": 5469,
+            "mean_delta": -0.021556359341332394,
+            "contribution_to_overall_nll": -0.0008699084225273155
+          },
+          "s": {
+            "count": 6514,
+            "mean_delta": 0.005914848559800892,
+            "contribution_to_overall_nll": 0.0002843030911478801
+          },
+          "t": {
+            "count": 10730,
+            "mean_delta": 0.0141141315752464,
+            "contribution_to_overall_nll": 0.0011174911217543564
+          },
+          "u": {
+            "count": 3478,
+            "mean_delta": -0.022944059089310208,
+            "contribution_to_overall_nll": -0.0005888301346838218
+          },
+          "v": {
+            "count": 853,
+            "mean_delta": -0.025497850333269165,
+            "contribution_to_overall_nll": -0.00016048808558225675
+          },
+          "w": {
+            "count": 2678,
+            "mean_delta": -0.004881483825270947,
+            "contribution_to_overall_nll": -9.64611921612402e-05
+          },
+          "x": {
+            "count": 152,
+            "mean_delta": 0.01671959594755358,
+            "contribution_to_overall_nll": 1.875251681666552e-05
+          },
+          "y": {
+            "count": 2265,
+            "mean_delta": 0.031144408312533397,
+            "contribution_to_overall_nll": 0.000520521279407684
+          },
+          "z": {
+            "count": 78,
+            "mean_delta": 0.09298376865358123,
+            "contribution_to_overall_nll": 5.351702273416372e-05
+          }
+        },
+        "worst_examples": [
+          {
+            "target_index": 49985,
+            "history": "d it at last and managed to swallow a morsel of the\nlefthand bit",
+            "target": "\n",
+            "nll8": 2.340118382095061,
+            "nll16": 6.75856204834065,
+            "delta": 4.418443666245589
+          },
+          {
+            "target_index": 11341,
+            "history": " she set to work and very soon finished off the cake\n\nchapter ii",
+            "target": "\n",
+            "nll8": 4.894803461747169,
+            "nll16": 9.059502084105564,
+            "delta": 4.164698622358395
+          },
+          {
+            "target_index": 518,
+            "history": "er xi who stole the tarts\nchapter xii alices evidence\n\nchapter i",
+            "target": "\n",
+            "nll8": 1.7429260679068153,
+            "nll16": 5.708687912833222,
+            "delta": 3.9657618449264067
+          },
+          {
+            "target_index": 60661,
+            "history": "so she went on again twenty four hours i think or\nis it twelve i",
+            "target": "\n",
+            "nll8": 1.5140668795329488,
+            "nll16": 5.373931866972474,
+            "delta": 3.859864987439525
+          },
+          {
+            "target_index": 71098,
+            "history": " it muttered the hatter does your watch tell you what\nyear it is",
+            "target": "\n",
+            "nll8": 1.3030555871817293,
+            "nll16": 4.958878290836619,
+            "delta": 3.6558227036548896
+          }
+        ],
+        "best_examples": [
+          {
+            "target_index": 35891,
+            "history": " spread out her\nhand and made a snatch in the air she did not ge",
+            "target": "t",
+            "nll8": 4.963262749856184,
+            "nll16": 3.3024523087331126,
+            "delta": -1.660810441123071
+          },
+          {
+            "target_index": 34749,
+            "history": " i am\nnow thatll be a comfort one waynever to be an old womanbut",
+            "target": "\n",
+            "nll8": 3.021071630334288,
+            "nll16": 1.354019560150651,
+            "delta": -1.6670520701836369
+          },
+          {
+            "target_index": 14137,
+            "history": "is who\nin the world am i ah thats the great puzzle and she began",
+            "target": "\n",
+            "nll8": 3.5221466594919626,
+            "nll16": 1.8330392093619734,
+            "delta": -1.6891074501299892
+          },
+          {
+            "target_index": 22754,
+            "history": "t for she\nfelt sure she would catch a bad cold if she did not ge",
+            "target": "t",
+            "nll8": 4.963262749856184,
+            "nll16": 3.2478694856717047,
+            "delta": -1.715393264184479
+          },
+          {
+            "target_index": 61845,
+            "history": "thought alice the poor little thing was\nsnorting like a steam en",
+            "target": "g",
+            "nll8": 8.102062562385512,
+            "nll16": 6.070261286160353,
+            "delta": -2.03180127622516
+          }
+        ]
+      },
+      "attention": {
+        "statistics": [
+          "mass_on_added_eight",
+          "entropy_nats"
+        ],
+        "protocol": "final-query attention averaged over every validation target; arrays [block][head][statistic]",
+        "means": {
+          "8_8": [
+            [
+              [
+                0.0,
+                1.0781498017018727
+              ],
+              [
+                0.0,
+                1.1927049081138188
+              ],
+              [
+                0.0,
+                1.1844513492077051
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.3548095474717134
+              ],
+              [
+                0.0,
+                1.4209777781006248
+              ],
+              [
+                0.0,
+                1.056691001493938
+              ]
+            ]
+          ],
+          "16_8": [
+            [
+              [
+                0.0026766604126438483,
+                1.0970889943002315
+              ],
+              [
+                0.00654543482289609,
+                1.2302236349492097
+              ],
+              [
+                0.00926408380365463,
+                1.2402252981569282
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.3468939018997266
+              ],
+              [
+                0.0,
+                1.4341587455293483
+              ],
+              [
+                0.0,
+                1.0808886681595067
+              ]
+            ]
+          ],
+          "8_16": [
+            [
+              [
+                0.0,
+                1.0781498017018727
+              ],
+              [
+                0.0,
+                1.1927049081138188
+              ],
+              [
+                0.0,
+                1.1844513492077051
+              ]
+            ],
+            [
+              [
+                0.5161304917299901,
+                1.844135879711086
+              ],
+              [
+                0.444318278633325,
+                2.001759153057916
+              ],
+              [
+                0.41743706665959873,
+                1.6201146116475738
+              ]
+            ]
+          ],
+          "16_16": [
+            [
+              [
+                0.0026766604126438483,
+                1.0970889943002315
+              ],
+              [
+                0.00654543482289609,
+                1.2302236349492097
+              ],
+              [
+                0.00926408380365463,
+                1.2402252981569282
+              ]
+            ],
+            [
+              [
+                0.5058892561512027,
+                1.836675079096282
+              ],
+              [
+                0.43711647043117485,
+                2.0088993371755346
+              ],
+              [
+                0.3989894138017135,
+                1.632488725215737
+              ]
+            ]
+          ]
+        }
+      },
+      "reversal_control": {
+        "target_count": 2117,
+        "target_indices_sha256": "70f0e9ad295ac3405a757b787672152defc5e2a79787c55fe872fa1cd4317047",
+        "original_mean_nll": 1.9193097826595542,
+        "reversed_mean_nll": 1.9186558185735596,
+        "reversed_minus_original": -0.0006539640859944994
+      }
+    },
+    {
+      "encoding": "sinusoidal",
+      "seed": 7,
+      "checkpoint": "runs/sinusoidal-context-10000/seed-7/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "12defb603fe485c1e8f4f9dfb658a1bbb65a130057ea503731ae9f7bb3c0f063",
+      "metrics": {
+        "8_8": {
+          "mean_nll": 1.9384899925845396,
+          "perplexity": 6.948251134479573,
+          "accuracy": 0.4234441640471658,
+          "scored_tokens": 135522
+        },
+        "16_8": {
+          "mean_nll": 1.9461936522578425,
+          "perplexity": 7.001984803753521,
+          "accuracy": 0.4172016351588672,
+          "scored_tokens": 135522
+        },
+        "8_16": {
+          "mean_nll": 1.932681208459121,
+          "perplexity": 6.908007240794545,
+          "accuracy": 0.4233482386623574,
+          "scored_tokens": 135522
+        },
+        "16_16": {
+          "mean_nll": 1.9383012403239774,
+          "perplexity": 6.946939760137315,
+          "accuracy": 0.41917179498531604,
+          "scored_tokens": 135522
+        }
+      },
+      "layer_decomposition": {
+        "block1_symmetrized_delta": 0.006661845769079688,
+        "block2_symmetrized_delta": -0.00685059802964183,
+        "interaction": -0.0020836278084463977,
+        "total_delta": -0.00018875226056214167
+      },
+      "paired": {
+        "mean_delta": -0.00018875226056196446,
+        "fraction_harmed": 0.5109502516196632,
+        "quantiles": {
+          "0.0": -2.987661302933435,
+          "0.01": -0.6402586593807816,
+          "0.1": -0.19749014356032676,
+          "0.5": 0.0022956582949266724,
+          "0.9": 0.18617001552873585,
+          "0.99": 0.633887118690051,
+          "1.0": 4.363860083488392
+        },
+        "positive_contribution": 0.06414750635596306,
+        "negative_contribution": -0.064336258616525,
+        "worst_one_percent_contribution": 0.010118189367667622,
+        "remaining_99_percent_mean": -0.010411112676392895,
+        "by_target_character": {
+          "\n": {
+            "count": 3292,
+            "mean_delta": 0.034401637121219845,
+            "contribution_to_overall_nll": 0.0008356590767776136
+          },
+          " ": {
+            "count": 24148,
+            "mean_delta": 0.00830632979213358,
+            "contribution_to_overall_nll": 0.0014800641358631197
+          },
+          "a": {
+            "count": 8827,
+            "mean_delta": 0.004624465821570184,
+            "contribution_to_overall_nll": 0.00030120688749428145
+          },
+          "b": {
+            "count": 1483,
+            "mean_delta": -0.010015745975370591,
+            "contribution_to_overall_nll": -0.00010960103364379649
+          },
+          "c": {
+            "count": 2421,
+            "mean_delta": 0.02176290564936678,
+            "contribution_to_overall_nll": 0.0003887781657377915
+          },
+          "d": {
+            "count": 4940,
+            "mean_delta": -0.01922120499200158,
+            "contribution_to_overall_nll": -0.0007006445644285636
+          },
+          "e": {
+            "count": 13621,
+            "mean_delta": -0.03156961919026651,
+            "contribution_to_overall_nll": -0.003172988761903013
+          },
+          "f": {
+            "count": 2003,
+            "mean_delta": -0.06359390817620277,
+            "contribution_to_overall_nll": -0.0009399108489908217
+          },
+          "g": {
+            "count": 2534,
+            "mean_delta": -0.0100200776217126,
+            "contribution_to_overall_nll": -0.0001873561244183212
+          },
+          "h": {
+            "count": 7397,
+            "mean_delta": 0.009606348445513922,
+            "contribution_to_overall_nll": 0.0005243293299351138
+          },
+          "i": {
+            "count": 7544,
+            "mean_delta": 0.003114894696832019,
+            "contribution_to_overall_nll": 0.00017339447169390028
+          },
+          "j": {
+            "count": 146,
+            "mean_delta": 0.015194924633617282,
+            "contribution_to_overall_nll": 1.6369733301664107e-05
+          },
+          "k": {
+            "count": 1159,
+            "mean_delta": 0.06708524928909303,
+            "contribution_to_overall_nll": 0.0005737209008578593
+          },
+          "l": {
+            "count": 4735,
+            "mean_delta": 0.020403667083114887,
+            "contribution_to_overall_nll": 0.0007128832487607104
+          },
+          "m": {
+            "count": 2110,
+            "mean_delta": -0.004976429810292731,
+            "contribution_to_overall_nll": -7.748016484200102e-05
+          },
+          "n": {
+            "count": 7029,
+            "mean_delta": -0.0003946328841375502,
+            "contribution_to_overall_nll": -2.0468075608409265e-05
+          },
+          "o": {
+            "count": 8161,
+            "mean_delta": -0.004330182499124006,
+            "contribution_to_overall_nll": -0.0002607592817059298
+          },
+          "p": {
+            "count": 1543,
+            "mean_delta": 0.03468822264035056,
+            "contribution_to_overall_nll": 0.0003949464111661643
+          },
+          "q": {
+            "count": 212,
+            "mean_delta": 0.005911983575596822,
+            "contribution_to_overall_nll": 9.248243960585928e-06
+          },
+          "r": {
+            "count": 5469,
+            "mean_delta": -0.004661013496338923,
+            "contribution_to_overall_nll": -0.0001880955329133098
+          },
+          "s": {
+            "count": 6514,
+            "mean_delta": -0.0034968937158102475,
+            "contribution_to_overall_nll": -0.00016808168168111414
+          },
+          "t": {
+            "count": 10730,
+            "mean_delta": 0.009707642273482612,
+            "contribution_to_overall_nll": 0.000768605846980331
+          },
+          "u": {
+            "count": 3478,
+            "mean_delta": 0.006917967266386995,
+            "contribution_to_overall_nll": 0.00017754084320253515
+          },
+          "v": {
+            "count": 853,
+            "mean_delta": -0.02023720484222868,
+            "contribution_to_overall_nll": -0.0001273766305870712
+          },
+          "w": {
+            "count": 2678,
+            "mean_delta": -0.01833306454126816,
+            "contribution_to_overall_nll": -0.0003622728917925955
+          },
+          "x": {
+            "count": 152,
+            "mean_delta": -0.019292069852840356,
+            "contribution_to_overall_nll": -2.1637775546639912e-05
+          },
+          "y": {
+            "count": 2265,
+            "mean_delta": -0.016160757594138476,
+            "contribution_to_overall_nll": -0.00027009722370333706
+          },
+          "z": {
+            "count": 78,
+            "mean_delta": 0.1064560675530771,
+            "contribution_to_overall_nll": 6.12710354712889e-05
+          }
+        },
+        "worst_examples": [
+          {
+            "target_index": 79885,
+            "history": " say look out now five dont go splashing paint over me\nlike that",
+            "target": "\n",
+            "nll8": 0.6150876407245106,
+            "nll16": 4.978947724212903,
+            "delta": 4.363860083488392
+          },
+          {
+            "target_index": 65759,
+            "history": " you like said the cat do you play croquet with the\nqueen to day",
+            "target": "\n",
+            "nll8": 0.6957326193853183,
+            "nll16": 4.721948138093938,
+            "delta": 4.02621551870862
+          },
+          {
+            "target_index": 61355,
+            "history": "thoroughly enjoy\nthe pepper when he pleases\n\nchorus\n\nwow wow wow",
+            "target": "\n",
+            "nll8": 1.6770945193647036,
+            "nll16": 5.6596831229784765,
+            "delta": 3.982588603613773
+          },
+          {
+            "target_index": 23554,
+            "history": "he mouse replied rather crossly of course you know\nwhat it means",
+            "target": "\n",
+            "nll8": 1.17889482307271,
+            "nll16": 5.0654290968002185,
+            "delta": 3.8865342737275084
+          },
+          {
+            "target_index": 79005,
+            "history": "urious today i think i may as well go in at once and\nin she went",
+            "target": "\n",
+            "nll8": 2.139858070380251,
+            "nll16": 5.931842933344532,
+            "delta": 3.7919848629642807
+          }
+        ],
+        "best_examples": [
+          {
+            "target_index": 66699,
+            "history": "ked up and there was the cat\nagain sitting on a branch of a tree",
+            "target": "\n",
+            "nll8": 3.7355983155294634,
+            "nll16": 1.4079472507216142,
+            "delta": -2.3276510648078492
+          },
+          {
+            "target_index": 12504,
+            "history": "e took up the little golden\nkey and hurried off to the garden do",
+            "target": "o",
+            "nll8": 3.6866637109848766,
+            "nll16": 1.3221852790326727,
+            "delta": -2.364478431952204
+          },
+          {
+            "target_index": 70500,
+            "history": " he added looking angrily at the march hare\n\nit was the best but",
+            "target": "t",
+            "nll8": 7.054195465313041,
+            "nll16": 4.1557119173965145,
+            "delta": -2.898483547916527
+          },
+          {
+            "target_index": 70852,
+            "history": "\nnothing better to say than his first remark it was the best but",
+            "target": "t",
+            "nll8": 7.054195465313041,
+            "nll16": 4.1557119173965145,
+            "delta": -2.898483547916527
+          },
+          {
+            "target_index": 67350,
+            "history": "because the\nchimneys were shaped like ears and the roof was that",
+            "target": "c",
+            "nll8": 7.424854696099434,
+            "nll16": 4.437193393165999,
+            "delta": -2.987661302933435
+          }
+        ]
+      },
+      "attention": {
+        "statistics": [
+          "mass_on_added_eight",
+          "entropy_nats"
+        ],
+        "protocol": "final-query attention averaged over every validation target; arrays [block][head][statistic]",
+        "means": {
+          "8_8": [
+            [
+              [
+                0.0,
+                1.4268698226722338
+              ],
+              [
+                0.0,
+                0.8134046189993428
+              ],
+              [
+                0.0,
+                0.8280624340614038
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.0379930008491833
+              ],
+              [
+                0.0,
+                1.6087782554643404
+              ],
+              [
+                0.0,
+                1.3379738688839937
+              ]
+            ]
+          ],
+          "16_8": [
+            [
+              [
+                0.044642217565607566,
+                1.6085911349852582
+              ],
+              [
+                0.024412905038413407,
+                0.9231490119588005
+              ],
+              [
+                0.03601667802227871,
+                0.9724068031373831
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.0900306706128955
+              ],
+              [
+                0.0,
+                1.5890171822480263
+              ],
+              [
+                0.0,
+                1.3846163941229255
+              ]
+            ]
+          ],
+          "8_16": [
+            [
+              [
+                0.0,
+                1.4268698226722338
+              ],
+              [
+                0.0,
+                0.8134046189993428
+              ],
+              [
+                0.0,
+                0.8280624340614038
+              ]
+            ],
+            [
+              [
+                0.3475824736659603,
+                1.514779019003754
+              ],
+              [
+                0.46730116422512596,
+                2.1251430430815925
+              ],
+              [
+                0.3976429906611991,
+                1.912410295904824
+              ]
+            ]
+          ],
+          "16_16": [
+            [
+              [
+                0.044642217565607566,
+                1.6085911349852582
+              ],
+              [
+                0.024412905038413407,
+                0.9231490119588005
+              ],
+              [
+                0.03601667802227871,
+                0.9724068031373831
+              ]
+            ],
+            [
+              [
+                0.32804115195746314,
+                1.548890363751002
+              ],
+              [
+                0.45376891342367875,
+                2.110018914784733
+              ],
+              [
+                0.3771158033442597,
+                1.9411480855034395
+              ]
+            ]
+          ]
+        }
+      },
+      "reversal_control": {
+        "target_count": 2117,
+        "target_indices_sha256": "70f0e9ad295ac3405a757b787672152defc5e2a79787c55fe872fa1cd4317047",
+        "original_mean_nll": 1.9660511503895526,
+        "reversed_mean_nll": 1.9664291409484311,
+        "reversed_minus_original": 0.00037799055887841905
+      }
+    },
+    {
+      "encoding": "sinusoidal",
+      "seed": 123,
+      "checkpoint": "runs/sinusoidal-context-10000/seed-123/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "599b9da196f787ae5df8b15efe339a4eca6ba956dbd6ae74dbcc4123589a989a",
+      "metrics": {
+        "8_8": {
+          "mean_nll": 2.0138151844652943,
+          "perplexity": 7.491845665516483,
+          "accuracy": 0.3928144507902776,
+          "scored_tokens": 135522
+        },
+        "16_8": {
+          "mean_nll": 2.0395066892983262,
+          "perplexity": 7.686816274680768,
+          "accuracy": 0.38156904414043474,
+          "scored_tokens": 135522
+        },
+        "8_16": {
+          "mean_nll": 2.08825683681622,
+          "perplexity": 8.070834114196307,
+          "accuracy": 0.37052286713596316,
+          "scored_tokens": 135522
+        },
+        "16_16": {
+          "mean_nll": 2.0984238531615116,
+          "perplexity": 8.153308967708659,
+          "accuracy": 0.36861911719130475,
+          "scored_tokens": 135522
+        }
+      },
+      "layer_decomposition": {
+        "block1_symmetrized_delta": 0.017929260589161666,
+        "block2_symmetrized_delta": 0.06667940810705564,
+        "interaction": -0.015524488487740573,
+        "total_delta": 0.0846086686962173
+      },
+      "paired": {
+        "mean_delta": 0.0846086686962175,
+        "fraction_harmed": 0.579699237024247,
+        "quantiles": {
+          "0.0": -4.564403331462158,
+          "0.01": -1.1475743065704105,
+          "0.1": -0.30698206153164254,
+          "0.5": 0.032365699264047046,
+          "0.9": 0.5486288017814368,
+          "0.99": 1.7585864125930557,
+          "1.0": 6.330084129432055
+        },
+        "positive_contribution": 0.18416245795567684,
+        "negative_contribution": -0.09955378925945937,
+        "worst_one_percent_contribution": 0.023856896503178533,
+        "remaining_99_percent_mean": 0.06136578321739504,
+        "by_target_character": {
+          "\n": {
+            "count": 3292,
+            "mean_delta": 0.0884625235358893,
+            "contribution_to_overall_nll": 0.0021488660695691297
+          },
+          " ": {
+            "count": 24148,
+            "mean_delta": 0.13913095503392464,
+            "contribution_to_overall_nll": 0.024791061983731145
+          },
+          "a": {
+            "count": 8827,
+            "mean_delta": 0.029472599804340756,
+            "contribution_to_overall_nll": 0.0019196487542459222
+          },
+          "b": {
+            "count": 1483,
+            "mean_delta": -0.052618060421251875,
+            "contribution_to_overall_nll": -0.0005757927392210603
+          },
+          "c": {
+            "count": 2421,
+            "mean_delta": 0.2030214641387766,
+            "contribution_to_overall_nll": 0.003626827855846122
+          },
+          "d": {
+            "count": 4940,
+            "mean_delta": 0.24342215827400812,
+            "contribution_to_overall_nll": 0.008873138397260963
+          },
+          "e": {
+            "count": 13621,
+            "mean_delta": 0.01718835270750142,
+            "contribution_to_overall_nll": 0.0017275612242209886
+          },
+          "f": {
+            "count": 2003,
+            "mean_delta": 0.07964266276808978,
+            "contribution_to_overall_nll": 0.0011771096465849368
+          },
+          "g": {
+            "count": 2534,
+            "mean_delta": -0.047501759002340785,
+            "contribution_to_overall_nll": -0.0008881912701401363
+          },
+          "h": {
+            "count": 7397,
+            "mean_delta": -0.021561924427421237,
+            "contribution_to_overall_nll": -0.0011768831259104419
+          },
+          "i": {
+            "count": 7544,
+            "mean_delta": -0.018784552512284735,
+            "contribution_to_overall_nll": -0.0010456653838688628
+          },
+          "j": {
+            "count": 146,
+            "mean_delta": 0.008782844572332287,
+            "contribution_to_overall_nll": 9.461897755054632e-06
+          },
+          "k": {
+            "count": 1159,
+            "mean_delta": 0.6356617674069087,
+            "contribution_to_overall_nll": 0.005436253806943575
+          },
+          "l": {
+            "count": 4735,
+            "mean_delta": 0.13327698538959,
+            "contribution_to_overall_nll": 0.004656561486841315
+          },
+          "m": {
+            "count": 2110,
+            "mean_delta": 0.28254346257027313,
+            "contribution_to_overall_nll": 0.004399040052709349
+          },
+          "n": {
+            "count": 7029,
+            "mean_delta": -0.000528409204326985,
+            "contribution_to_overall_nll": -2.7406533973925838e-05
+          },
+          "o": {
+            "count": 8161,
+            "mean_delta": -0.009783386460568701,
+            "contribution_to_overall_nll": -0.0005891457985028348
+          },
+          "p": {
+            "count": 1543,
+            "mean_delta": 0.009320438145657459,
+            "contribution_to_overall_nll": 0.00010611882984865525
+          },
+          "q": {
+            "count": 212,
+            "mean_delta": 0.03058641580800644,
+            "contribution_to_overall_nll": 4.7846992748759354e-05
+          },
+          "r": {
+            "count": 5469,
+            "mean_delta": 0.20063369350845467,
+            "contribution_to_overall_nll": 0.008096587047104814
+          },
+          "s": {
+            "count": 6514,
+            "mean_delta": 0.0943534303984114,
+            "contribution_to_overall_nll": 0.00453519167083759
+          },
+          "t": {
+            "count": 10730,
+            "mean_delta": 0.15051584969781623,
+            "contribution_to_overall_nll": 0.01191714310043807
+          },
+          "u": {
+            "count": 3478,
+            "mean_delta": 0.08352261596317094,
+            "contribution_to_overall_nll": 0.00214350185445838
+          },
+          "v": {
+            "count": 853,
+            "mean_delta": 0.2743450762669829,
+            "contribution_to_overall_nll": 0.0017267775715805287
+          },
+          "w": {
+            "count": 2678,
+            "mean_delta": -0.04789903197655816,
+            "contribution_to_overall_nll": -0.0009465150133057567
+          },
+          "x": {
+            "count": 152,
+            "mean_delta": 0.32691967389397203,
+            "contribution_to_overall_nll": 0.0003666695476150274
+          },
+          "y": {
+            "count": 2265,
+            "mean_delta": 0.13275102235362582,
+            "contribution_to_overall_nll": 0.002218688225018539
+          },
+          "z": {
+            "count": 78,
+            "mean_delta": -0.11430317141768324,
+            "contribution_to_overall_nll": -6.578745421835047e-05
+          }
+        },
+        "worst_examples": [
+          {
+            "target_index": 20509,
+            "history": "gerly there is such a nice little dog near\nour house i should li",
+            "target": "k",
+            "nll8": 4.50003086841281,
+            "nll16": 10.830114997844865,
+            "delta": 6.330084129432055
+          },
+          {
+            "target_index": 34802,
+            "history": "ld womanbut\nthenalways to have lessons to learn oh i shouldnt li",
+            "target": "k",
+            "nll8": 3.9837093366540737,
+            "nll16": 9.938038425175707,
+            "delta": 5.954329088521633
+          },
+          {
+            "target_index": 83288,
+            "history": "urned crimson with fury and after glaring at her for a\nmoment li",
+            "target": "k",
+            "nll8": 3.942105080620432,
+            "nll16": 9.784846916169643,
+            "delta": 5.842741835549211
+          },
+          {
+            "target_index": 69071,
+            "history": " very wide on hearing this but all he said\nwas why is a raven li",
+            "target": "k",
+            "nll8": 4.222787843928581,
+            "nll16": 10.026543500776445,
+            "delta": 5.803755656847864
+          },
+          {
+            "target_index": 111011,
+            "history": "came different the mock turtle repeated thoughtfully i\nshould li",
+            "target": "k",
+            "nll8": 4.50003086841281,
+            "nll16": 10.109090601797389,
+            "delta": 5.609059733384579
+          }
+        ],
+        "best_examples": [
+          {
+            "target_index": 85181,
+            "history": "aised himself upon\ntiptoe put his mouth close to her ear and whi",
+            "target": "s",
+            "nll8": 4.516019416607132,
+            "nll16": 0.9471181308778818,
+            "delta": -3.5689012857292504
+          },
+          {
+            "target_index": 33121,
+            "history": "she found her head pressing against the ceiling\nand had to stoop",
+            "target": " ",
+            "nll8": 6.231385127043292,
+            "nll16": 2.5894079575549007,
+            "delta": -3.641977169488391
+          },
+          {
+            "target_index": 28262,
+            "history": "to make herself useful and looking\nanxiously about her oh do let",
+            "target": " ",
+            "nll8": 4.6378073796030925,
+            "nll16": 0.9587925997564124,
+            "delta": -3.67901477984668
+          },
+          {
+            "target_index": 20851,
+            "history": "ful its worth a hundred pounds he says\nit kills all the rats and",
+            "target": "o",
+            "nll8": 6.286393252137567,
+            "nll16": 2.4743041648267057,
+            "delta": -3.8120890873108615
+          },
+          {
+            "target_index": 26189,
+            "history": "ere was exactly\none a piece all round\n\nbut she must have a prize",
+            "target": " ",
+            "nll8": 5.825142733745914,
+            "nll16": 1.2607394022837564,
+            "delta": -4.564403331462158
+          }
+        ]
+      },
+      "attention": {
+        "statistics": [
+          "mass_on_added_eight",
+          "entropy_nats"
+        ],
+        "protocol": "final-query attention averaged over every validation target; arrays [block][head][statistic]",
+        "means": {
+          "8_8": [
+            [
+              [
+                0.0,
+                0.9335965173242646
+              ],
+              [
+                0.0,
+                1.312390382770389
+              ],
+              [
+                0.0,
+                2.007108458083491
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.3965256790765777
+              ],
+              [
+                0.0,
+                1.191606286059049
+              ],
+              [
+                0.0,
+                1.3243922508224792
+              ]
+            ]
+          ],
+          "16_8": [
+            [
+              [
+                0.04777593753381478,
+                1.123772918744791
+              ],
+              [
+                0.050754663091045336,
+                1.5007473940309546
+              ],
+              [
+                0.22375549814941034,
+                2.5220529804807863
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.5173750024672383
+              ],
+              [
+                0.0,
+                1.309922373409809
+              ],
+              [
+                0.0,
+                1.4286747478099633
+              ]
+            ]
+          ],
+          "8_16": [
+            [
+              [
+                0.0,
+                0.9335965173242646
+              ],
+              [
+                0.0,
+                1.312390382770389
+              ],
+              [
+                0.0,
+                2.007108458083491
+              ]
+            ],
+            [
+              [
+                0.7033572364084073,
+                2.014972547095196
+              ],
+              [
+                0.6678946722746181,
+                1.8433476591267346
+              ],
+              [
+                0.5795731349288388,
+                1.9735524913777178
+              ]
+            ]
+          ],
+          "16_16": [
+            [
+              [
+                0.04777593753381478,
+                1.123772918744791
+              ],
+              [
+                0.050754663091045336,
+                1.5007473940309546
+              ],
+              [
+                0.22375549814941034,
+                2.5220529804807863
+              ]
+            ],
+            [
+              [
+                0.6458268347743078,
+                2.097772314394379
+              ],
+              [
+                0.6188767935672309,
+                1.9186208248595973
+              ],
+              [
+                0.546981704688619,
+                2.0404538369625316
+              ]
+            ]
+          ]
+        }
+      },
+      "reversal_control": {
+        "target_count": 2117,
+        "target_indices_sha256": "70f0e9ad295ac3405a757b787672152defc5e2a79787c55fe872fa1cd4317047",
+        "original_mean_nll": 2.1025278964256247,
+        "reversed_mean_nll": 2.112132671471718,
+        "reversed_minus_original": 0.009604775046093606
+      }
+    },
+    {
+      "encoding": "sinusoidal",
+      "seed": 2026,
+      "checkpoint": "runs/sinusoidal-context-10000/seed-2026/context-64/primary/checkpoint.pt",
+      "checkpoint_sha256": "9e0910592e58dc0d5b08bb4e9973989edcf86ebb070f744a7d2e217caa5766cb",
+      "metrics": {
+        "8_8": {
+          "mean_nll": 1.9470087875143514,
+          "perplexity": 7.007694695283389,
+          "accuracy": 0.4152683697111908,
+          "scored_tokens": 135522
+        },
+        "16_8": {
+          "mean_nll": 1.953354065694214,
+          "perplexity": 7.052301840229888,
+          "accuracy": 0.41456737651451425,
+          "scored_tokens": 135522
+        },
+        "8_16": {
+          "mean_nll": 1.9429160193293602,
+          "perplexity": 6.979072437471162,
+          "accuracy": 0.4168400702468972,
+          "scored_tokens": 135522
+        },
+        "16_16": {
+          "mean_nll": 1.9483687644173227,
+          "perplexity": 7.017231481646753,
+          "accuracy": 0.41559304024438837,
+          "scored_tokens": 135522
+        }
+      },
+      "layer_decomposition": {
+        "block1_symmetrized_delta": 0.005899011633912599,
+        "block2_symmetrized_delta": -0.004539034730941305,
+        "interaction": -0.0008925330919002938,
+        "total_delta": 0.0013599769029712938
+      },
+      "paired": {
+        "mean_delta": 0.0013599769029712639,
+        "fraction_harmed": 0.49839140508552116,
+        "quantiles": {
+          "0.0": -2.404364568484781,
+          "0.01": -0.5588910243556477,
+          "0.1": -0.17199785390432157,
+          "0.5": -0.0002550460993057113,
+          "0.9": 0.17283966948420706,
+          "0.99": 0.5942379016598078,
+          "1.0": 3.514804747716303
+        },
+        "positive_contribution": 0.05764161134447366,
+        "negative_contribution": -0.056281634441502394,
+        "worst_one_percent_contribution": 0.008846901814111735,
+        "remaining_99_percent_mean": -0.007562594381643478,
+        "by_target_character": {
+          "\n": {
+            "count": 3292,
+            "mean_delta": 0.03399687319228069,
+            "contribution_to_overall_nll": 0.0008258268513524597
+          },
+          " ": {
+            "count": 24148,
+            "mean_delta": 0.012405719009922721,
+            "contribution_to_overall_nll": 0.002210514179628502
+          },
+          "a": {
+            "count": 8827,
+            "mean_delta": 0.00021904803870557114,
+            "contribution_to_overall_nll": 1.4267329567554173e-05
+          },
+          "b": {
+            "count": 1483,
+            "mean_delta": 0.020819019972807995,
+            "contribution_to_overall_nll": 0.00022781988621533225
+          },
+          "c": {
+            "count": 2421,
+            "mean_delta": -0.033559265471343795,
+            "contribution_to_overall_nll": -0.0005995113834368098
+          },
+          "d": {
+            "count": 4940,
+            "mean_delta": 0.021559156902496872,
+            "contribution_to_overall_nll": 0.0007858667603660996
+          },
+          "e": {
+            "count": 13621,
+            "mean_delta": 0.0024148323275715636,
+            "contribution_to_overall_nll": 0.00024270916259981604
+          },
+          "f": {
+            "count": 2003,
+            "mean_delta": -0.027616603372395302,
+            "contribution_to_overall_nll": -0.00040817030854700925
+          },
+          "g": {
+            "count": 2534,
+            "mean_delta": -0.04769611583149346,
+            "contribution_to_overall_nll": -0.0008918253679624299
+          },
+          "h": {
+            "count": 7397,
+            "mean_delta": -0.02883849330554334,
+            "contribution_to_overall_nll": -0.0015740494899802548
+          },
+          "i": {
+            "count": 7544,
+            "mean_delta": 0.015338359290774439,
+            "contribution_to_overall_nll": 0.0008538287694219563
+          },
+          "j": {
+            "count": 146,
+            "mean_delta": -0.02764065511009053,
+            "contribution_to_overall_nll": -2.9777716135189987e-05
+          },
+          "k": {
+            "count": 1159,
+            "mean_delta": 0.01752202076385339,
+            "contribution_to_overall_nll": 0.0001498503716393359
+          },
+          "l": {
+            "count": 4735,
+            "mean_delta": 0.014906415420576014,
+            "contribution_to_overall_nll": 0.0005208149010229146
+          },
+          "m": {
+            "count": 2110,
+            "mean_delta": 0.0029783264143062086,
+            "contribution_to_overall_nll": 4.6370838197385664e-05
+          },
+          "n": {
+            "count": 7029,
+            "mean_delta": -0.012671482539103407,
+            "contribution_to_overall_nll": -0.0006572206045317944
+          },
+          "o": {
+            "count": 8161,
+            "mean_delta": -0.006764096422330375,
+            "contribution_to_overall_nll": -0.00040732715649590616
+          },
+          "p": {
+            "count": 1543,
+            "mean_delta": -0.03158551565908655,
+            "contribution_to_overall_nll": -0.00035962021414951486
+          },
+          "q": {
+            "count": 212,
+            "mean_delta": -0.015245295546141065,
+            "contribution_to_overall_nll": -2.3848546035196543e-05
+          },
+          "r": {
+            "count": 5469,
+            "mean_delta": -0.03744780346184065,
+            "contribution_to_overall_nll": -0.001511208786269436
+          },
+          "s": {
+            "count": 6514,
+            "mean_delta": 0.00010492459917031723,
+            "contribution_to_overall_nll": 5.043305433770505e-06
+          },
+          "t": {
+            "count": 10730,
+            "mean_delta": 0.00810050606996889,
+            "contribution_to_overall_nll": 0.0006413602967102477
+          },
+          "u": {
+            "count": 3478,
+            "mean_delta": 0.018380245156057694,
+            "contribution_to_overall_nll": 0.0004717056467051007
+          },
+          "v": {
+            "count": 853,
+            "mean_delta": 0.010759975306255247,
+            "contribution_to_overall_nll": 6.772523233302139e-05
+          },
+          "w": {
+            "count": 2678,
+            "mean_delta": -0.021387589856065953,
+            "contribution_to_overall_nll": -0.0004226322341357464
+          },
+          "x": {
+            "count": 152,
+            "mean_delta": 0.0021017169508951686,
+            "contribution_to_overall_nll": 2.3572628542676882e-06
+          },
+          "y": {
+            "count": 2265,
+            "mean_delta": 0.07414848282146154,
+            "contribution_to_overall_nll": 0.001239254981409737
+          },
+          "z": {
+            "count": 78,
+            "mean_delta": -0.10450321175342832,
+            "contribution_to_overall_nll": -6.0147064806949485e-05
+          }
+        },
+        "worst_examples": [
+          {
+            "target_index": 75649,
+            "history": "othing yet alice replied in an offended tone so i cant\ntake more",
+            "target": "\n",
+            "nll8": 1.7897346985758835,
+            "nll16": 5.304539446292186,
+            "delta": 3.514804747716303
+          },
+          {
+            "target_index": 12290,
+            "history": "alices right foot esq hearthrug near the fender with\nalices love",
+            "target": "\n",
+            "nll8": 2.5776538892131464,
+            "nll16": 5.719015218514306,
+            "delta": 3.1413613293011595
+          },
+          {
+            "target_index": 28469,
+            "history": "mean it pleaded poor alice but youre so easily offended\nyou know",
+            "target": "\n",
+            "nll8": 3.107452019704292,
+            "nll16": 6.086028519476766,
+            "delta": 2.9785764997724744
+          },
+          {
+            "target_index": 61355,
+            "history": "thoroughly enjoy\nthe pepper when he pleases\n\nchorus\n\nwow wow wow",
+            "target": "\n",
+            "nll8": 3.941539773034034,
+            "nll16": 6.626607388185241,
+            "delta": 2.6850676151512074
+          },
+          {
+            "target_index": 126624,
+            "history": "respectful tone but frowning and making faces at him as\nhe spoke",
+            "target": "\n",
+            "nll8": 2.89307718332452,
+            "nll16": 5.522908812245898,
+            "delta": 2.6298316289213783
+          }
+        ],
+        "best_examples": [
+          {
+            "target_index": 102815,
+            "history": "on\n\nalice did not feel encouraged to ask any more questions abou",
+            "target": "t",
+            "nll8": 2.2452305590456882,
+            "nll16": 0.4921590418501675,
+            "delta": -1.7530715171955207
+          },
+          {
+            "target_index": 22802,
+            "history": "f she did not get dry very soon\n\nahem said the mouse with an imp",
+            "target": "o",
+            "nll8": 3.8532805023460677,
+            "nll16": 2.083357631698111,
+            "delta": -1.7699228706479566
+          },
+          {
+            "target_index": 119913,
+            "history": "cond thoughts she decided to remain where she was\nas long as the",
+            "target": "r",
+            "nll8": 4.354057610863947,
+            "nll16": 2.2824608031975107,
+            "delta": -2.0715968076664364
+          },
+          {
+            "target_index": 74720,
+            "history": " a\nhoarse feeble voice i heard every word you fellows were sayin",
+            "target": "g",
+            "nll8": 3.0904665490712753,
+            "nll16": 0.8430549202534783,
+            "delta": -2.247411628817797
+          },
+          {
+            "target_index": 18394,
+            "history": "here that i should think very\nlikely it can talk at any rate the",
+            "target": "r",
+            "nll8": 4.566665691966151,
+            "nll16": 2.1623011234813694,
+            "delta": -2.404364568484781
+          }
+        ]
+      },
+      "attention": {
+        "statistics": [
+          "mass_on_added_eight",
+          "entropy_nats"
+        ],
+        "protocol": "final-query attention averaged over every validation target; arrays [block][head][statistic]",
+        "means": {
+          "8_8": [
+            [
+              [
+                0.0,
+                1.0669804227803217
+              ],
+              [
+                0.0,
+                1.1957834144541755
+              ],
+              [
+                0.0,
+                1.0515007186485918
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.6870980236687054
+              ],
+              [
+                0.0,
+                1.5270359425404687
+              ],
+              [
+                0.0,
+                1.4759412091733786
+              ]
+            ]
+          ],
+          "16_8": [
+            [
+              [
+                0.054412627744234415,
+                1.2785554384447584
+              ],
+              [
+                0.04704688033045782,
+                1.386252391343912
+              ],
+              [
+                0.03678529686126791,
+                1.188963485750374
+              ]
+            ],
+            [
+              [
+                0.0,
+                1.6685070039205812
+              ],
+              [
+                0.0,
+                1.529785839487502
+              ],
+              [
+                0.0,
+                1.471414692280188
+              ]
+            ]
+          ],
+          "8_16": [
+            [
+              [
+                0.0,
+                1.0669804227803217
+              ],
+              [
+                0.0,
+                1.1957834144541755
+              ],
+              [
+                0.0,
+                1.0515007186485918
+              ]
+            ],
+            [
+              [
+                0.47132419283589455,
+                2.2641145578647195
+              ],
+              [
+                0.44381263949630273,
+                2.105908869609358
+              ],
+              [
+                0.4245879567596658,
+                2.0867399541105245
+              ]
+            ]
+          ],
+          "16_16": [
+            [
+              [
+                0.054412627744234415,
+                1.2785554384447584
+              ],
+              [
+                0.04704688033045782,
+                1.386252391343912
+              ],
+              [
+                0.03678529686126791,
+                1.188963485750374
+              ]
+            ],
+            [
+              [
+                0.4611386795091734,
+                2.2498567392349913
+              ],
+              [
+                0.44535651183219194,
+                2.105540849457557
+              ],
+              [
+                0.4213893096209516,
+                2.0844642440110652
+              ]
+            ]
+          ]
+        }
+      },
+      "reversal_control": {
+        "target_count": 2117,
+        "target_indices_sha256": "70f0e9ad295ac3405a757b787672152defc5e2a79787c55fe872fa1cd4317047",
+        "original_mean_nll": 1.957624263477728,
+        "reversed_mean_nll": 1.9578732311280493,
+        "reversed_minus_original": 0.0002489676503213573
+      }
+    }
+  ]
+}

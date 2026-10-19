@@ -1,6 +1,6 @@
 # How much history helps with fixed position IDs?
 
-[Documentation index](README.md) · [Previous](25-fixed-position-history-ablation.md)
+[Documentation index](README.md) · [Previous](25-fixed-position-history-ablation.md) · [Next](27-nonmonotonic-history-diagnostics.md)
 
 Reproduction driver: [`scripts/analyze_history_curve.py`](../scripts/analyze_history_curve.py). Evaluator: [`src/history_ablation.py`](../src/history_ablation.py). [Full results and provenance](results/history-length-curve.json).
 

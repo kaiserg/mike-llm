@@ -241,3 +241,11 @@ python scripts/analyze_history_curve.py
 ```
 
 Keeping 8, 16, 32, 48, or all 64 characters with unchanged position IDs reveals non-monotonic curves. Both 16→32 and 32→48 improve validation NLL in all four seeds for both encodings; 48→64 improves 3/4 learned and 2/4 sinusoidal seeds. See [chapter 26](docs/26-fixed-position-history-curve.md) for per-seed curves, marginal gains, provenance, and limitations.
+
+## Diagnose non-monotonic history curves
+
+```bash
+python scripts/analyze_nonmonotonic_history.py
+```
+
+The large 8→16 penalties in learned seed 7 and sinusoidal seed 123 affect more than half of validation targets and persist after excluding the worst 1%. Layer-specific interventions locate different dominant effects: block 1 in the learned outlier and block 2 in the sinusoidal outlier. The small sinusoidal seed-2026 reversal is tail-sensitive. See [chapter 27](docs/27-nonmonotonic-history-diagnostics.md) for the factorial mask experiment, attention observations, added-content order control, and causal limitations.

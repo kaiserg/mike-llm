@@ -33,6 +33,8 @@ These chapters follow the existing educational code from characters to a complet
 
 26. [History-length curve with fixed position IDs](26-fixed-position-history-curve.md) — [`scripts/analyze_history_curve.py`](../scripts/analyze_history_curve.py)
 
+27. [Diagnosing non-monotonic history curves](27-nonmonotonic-history-diagnostics.md) — [`scripts/analyze_nonmonotonic_history.py`](../scripts/analyze_nonmonotonic_history.py)
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:
