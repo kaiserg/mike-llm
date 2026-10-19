@@ -21,6 +21,21 @@ class TrainingTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             prepare_data("abc", "abcabc", 3)
 
+    def test_step_observer_preserves_training_trajectory(self):
+        observed = []
+        def observer(step, model):
+            observed.append((step, model.token_embedding.weight.detach().clone()))
+        with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
+            first, history = run_training(DEMO_TRAIN, DEMO_VALIDATION, steps=4,
+                output_dir=Path(directory) / 'observed', on_step=observer)
+            second, repeated = run_training(DEMO_TRAIN, DEMO_VALIDATION, steps=4,
+                output_dir=Path(directory) / 'plain')
+        self.assertEqual([step for step, _ in observed], [1, 2, 3, 4])
+        self.assertFalse(torch.equal(observed[0][1], observed[-1][1]))
+        self.assertEqual(history, repeated)
+        for key, value in first.state_dict().items():
+            self.assertTrue(torch.equal(value, second.state_dict()[key]))
+
     def test_repeatability_learning_and_checkpoint(self):
         with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
             first, history = run_training(DEMO_TRAIN, DEMO_VALIDATION, steps=100,

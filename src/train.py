@@ -61,7 +61,8 @@ def evaluate(model, batches):
 
 def run_training(train_text, validation_text, *, steps=100, seed=42,
                  batch_size=8, context_length=16, learning_rate=0.003,
-                 eval_interval=25, eval_batches=8, output_dir=Path("runs/first-training")):
+                 eval_interval=25, eval_batches=8, output_dir=Path("runs/first-training"),
+                 on_step=None):
     for name, value in dict(steps=steps, batch_size=batch_size, context_length=context_length,
                             eval_interval=eval_interval, eval_batches=eval_batches).items():
         if type(value) is not int or value <= 0:
@@ -105,6 +106,8 @@ def run_training(train_text, validation_text, *, steps=100, seed=42,
         optimizer.step()
         if step % eval_interval == 0 or step == steps:
             record(step)
+        if on_step is not None:
+            on_step(step, model)
 
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)

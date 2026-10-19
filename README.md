@@ -79,6 +79,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 15. [First training experiment on real books](docs/15-real-books-training.md)
 16. [Real-book generation and temperature comparison](docs/16-real-books-generation.md)
 17. [Context-length experiment: 16 versus 64](docs/17-context-length-experiment.md)
+18. [Longer training for context 64](docs/18-longer-context-training.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -161,3 +162,11 @@ python scripts/run_context_experiment.py
 ```
 
 Context 64 was trained twice at the same 256000-target budget as context 16. Validation perplexity was worse (11.10 versus 8.06), with no clear coherence gain in generated samples. See [chapter 17](docs/17-context-length-experiment.md) for common-context evaluation, full results, and limitations.
+
+## Longer context-64 training
+
+```bash
+python scripts/run_long_context_experiment.py
+```
+
+Extends the verified context-64 trajectory to 10000 updates, twice. Full-validation perplexity improved from 11.10 to 6.95, while generated text still contains malformed words and loops. See [chapter 18](docs/18-longer-context-training.md) for all results and the unequal-budget comparison with context 16. A fresh output directory is required.

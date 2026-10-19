@@ -1,6 +1,6 @@
 # Context-length experiment: 16 versus 64 characters
 
-[Documentation index](README.md) · [Previous](16-real-books-generation.md)
+[Documentation index](README.md) · [Previous](16-real-books-generation.md) · [Next](18-longer-context-training.md)
 
 Driver: [`scripts/run_context_experiment.py`](../scripts/run_context_experiment.py). Full [training/evaluation report](results/context-64-experiment.json), [new generation grid](results/context-64-temperature-comparison.json), and [previous generation grid](results/real-books-temperature-comparison.json).
 
@@ -180,3 +180,5 @@ Keep context 16 as the better-performing baseline from this comparison. Freeze t
 ## Checks
 
 The 20-test suite passes, including a new test that compares capped-context evaluation with a manual short-window reference and rejects invalid caps. Original trainer defaults remain covered by the repeated synthetic training test. Documentation links, complete generation grids, checkpoint hashes, source hashes, and archived metric consistency were also checked.
+
+A subsequent longer-training experiment is documented in [chapter 18](18-longer-context-training.md); it does not alter the fixed-budget result reported here.
