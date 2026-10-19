@@ -82,6 +82,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 18. [Longer training for context 64](docs/18-longer-context-training.md)
 19. [Matched-budget context comparison](docs/19-matched-budget-contexts.md)
 20. [Context comparison across training seeds](docs/20-multiseed-contexts.md)
+21. [Loss by position and available context](docs/21-position-loss-diagnostics.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 
@@ -188,3 +189,12 @@ python scripts/run_multiseed_experiment.py
 ```
 
 Context 16 has lower validation loss in all four training seeds tested at the matched 1280000-target budget. Mean perplexity is 6.63 ± 0.06 versus 7.12 ± 0.17 (sample SD across seeds). See [chapter 20](docs/20-multiseed-contexts.md) for paired results, 160 complete generated samples, and limitations. The test remains reserved.
+
+## Diagnose loss by position
+
+```bash
+python scripts/analyze_positions.py
+python scripts/analyze_window_positions.py
+```
+
+Across all four seed pairs, context 64 already has higher loss on short identical histories; late windows do not show a simple loss collapse. See [chapter 21](docs/21-position-loss-diagnostics.md) for matched-target curves, controlled position-ID shifts, all-position window losses, and causal limitations.

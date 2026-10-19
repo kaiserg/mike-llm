@@ -1,6 +1,6 @@
 # Context-length comparison across training seeds
 
-[Documentation index](README.md) · [Previous](19-matched-budget-contexts.md)
+[Documentation index](README.md) · [Previous](19-matched-budget-contexts.md) · [Next](21-position-loss-diagnostics.md)
 
 Driver: [`scripts/run_multiseed_experiment.py`](../scripts/run_multiseed_experiment.py). Complete [results, histories, and all 160 generated samples](results/multiseed-context-experiment.json).
 
@@ -201,3 +201,5 @@ The 21-test suite passes. The completed experiment additionally verified primary
 The small context-16 advantage from chapter 19 was not reversed by the three additional seeds tested here. It persists in validation across all four pairs under this corpus, model family, optimizer, and fixed target budget. Context 16 remains the preferred validation-loss baseline for the next development experiment.
 
 This study does not establish that short context is generally better, that either model understands the books, or that the observed effect transfers to larger models and datasets. It also does not isolate context capacity from parameter count, initialization differences, or training-window structure. A useful next investigation is position-wise validation behavior or a broader training corpus, keeping frozen splits and the complete generation grid. Reserve final test scoring until model-development choices are settled.
+
+The subsequent position/history investigation is documented in [chapter 21](21-position-loss-diagnostics.md).

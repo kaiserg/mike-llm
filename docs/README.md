@@ -24,6 +24,7 @@ These chapters follow the existing educational code from characters to a complet
 18. [Longer training for context 64](18-longer-context-training.md) — [`scripts/run_long_context_experiment.py`](../scripts/run_long_context_experiment.py)
 19. [Matched-budget context comparison](19-matched-budget-contexts.md) — [`scripts/run_matched_budget_experiment.py`](../scripts/run_matched_budget_experiment.py)
 20. [Context comparison across training seeds](20-multiseed-contexts.md) — [`scripts/run_multiseed_experiment.py`](../scripts/run_multiseed_experiment.py)
+21. [Loss by position and available context](21-position-loss-diagnostics.md) — [`scripts/analyze_positions.py`](../scripts/analyze_positions.py)
 
 ## Running the examples
 
