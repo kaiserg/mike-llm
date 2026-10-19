@@ -32,10 +32,20 @@ class GenerationTests(unittest.TestCase):
         self.assertTrue(torch.equal(actual, expected))
         self.assertFalse(self.model.training)
 
+    def test_explicit_inference_context_matches_manual_short_window(self):
+        expected = self.ids.clone()
+        with torch.no_grad():
+            for _ in range(6):
+                token = self.model(expected[:, -2:])[:, -1].argmax(-1, keepdim=True)
+                expected = torch.cat((expected, token), dim=1)
+        actual = generate(self.model, self.ids, 6, 0, context_length=2)
+        self.assertTrue(torch.equal(actual, expected))
+
     def test_zero_tokens_and_invalid_arguments(self):
         self.assertTrue(torch.equal(generate(self.model, self.ids, 0), self.ids))
         for settings in ({'temperature': -1}, {'temperature': float('nan')},
-                         {'temperature': float('inf')}, {'max_new_tokens': -1}):
+                         {'temperature': float('inf')}, {'max_new_tokens': -1},
+                         {'context_length': 0}, {'context_length': 4}, {'context_length': 1.5}):
             with self.subTest(settings=settings), self.assertRaises(ValueError):
                 generate(self.model, self.ids, **settings)
         for invalid in (self.ids[:, :0], self.ids.float(), self.ids[0], self.ids + 4):

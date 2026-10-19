@@ -79,6 +79,20 @@ python src/generate.py --prompt "a model" --max-new-tokens 80 --temperature 0
 
 The default checkpoint is `runs/first-training/checkpoint.pt`. Use `--checkpoint path/to/checkpoint.pt` for another training run. The command prints the prompt and continuation to standard output and does not overwrite checkpoints.
 
+Use `--context-length N` to cap the active inference window below the checkpoint's capacity. The finalized small-corpus model has capacity 64 but was selected with a 16-character window, so its matching command includes `--context-length 16`:
+
+```bash
+python src/generate.py \
+  --checkpoint runs/position-exposure-40000/seed-42/primary/checkpoint.pt \
+  --context-length 16 \
+  --prompt "the creature " \
+  --max-new-tokens 200 \
+  --temperature 0.7 \
+  --seed 42
+```
+
+The cap must be between 1 and the model capacity. Generation resets position IDs within each cropped window, matching the selected evaluation policy.
+
 Actual output from the 100-step demonstration checkpoint, temperature 0.8 and seed 42:
 
 ```text

@@ -1,6 +1,6 @@
 # Modern practical long-form prose: wave 5
 
-[Documentation index](README.md) · [Previous](39-cross-wave-corpus-audit.md)
+[Documentation index](README.md) · [Previous](39-cross-wave-corpus-audit.md) · [Next](41-trying-the-final-model.md)
 
 The cross-wave audit showed that document counts hid a large volume imbalance: twelve historical books supplied 82.68% of all characters. This fifth wave begins correcting that imbalance with ten modern long-form collections from six independently governed repositories. The texts cover research ethics, open culture, public communication, open-source governance, accessibility, project strategy and community events.
 
@@ -82,4 +82,4 @@ PYTHONPATH=src python -m unittest discover -s tests -q
 
 The ingestion command downloads only when the ignored snapshot is absent. Once present, it verifies and reuses the snapshot offline. The audit is offline and does not create or inspect a test split.
 
-[Documentation index](README.md) · [Previous](39-cross-wave-corpus-audit.md)
+[Documentation index](README.md) · [Previous](39-cross-wave-corpus-audit.md) · [Next](41-trying-the-final-model.md)

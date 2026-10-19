@@ -63,6 +63,8 @@ The small-corpus experimental stage is closed. See [chapter 31](31-stage-closure
 
 40. [Modern practical long-form prose: wave 5](40-modern-longform-expansion-wave5.md) — [`scripts/ingest_corpus_longform.py`](../scripts/ingest_corpus_longform.py), [`scripts/audit_corpus_v2_wave5.py`](../scripts/audit_corpus_v2_wave5.py)
 
+41. [Trying the finalized small model](41-trying-the-final-model.md) — [`scripts/try_final_model.py`](../scripts/try_final_model.py), [`src/generate.py`](../src/generate.py)
+
 ## Running the examples
 
 Run commands from the repository root with the project environment activated:

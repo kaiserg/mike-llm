@@ -16,6 +16,25 @@ The test has now been used for this final selection and is no longer untouched f
 
 The local checkpoint is `runs/position-exposure-40000/seed-42/primary/checkpoint.pt`. It retains capacity 64; explicitly use inference context 16 to match the selected policy. Checkpoint and corpus files remain local ignored artifacts. The final manifest does not automatically change the existing generation CLI's default window.
 
+Try the finalized checkpoint from the repository root with the convenience command, which verifies its hash and applies the selected 16-character context automatically:
+
+```bash
+source .venv/bin/activate
+python scripts/try_final_model.py
+```
+
+Customize the prompt and sampling:
+
+```bash
+python scripts/try_final_model.py \
+  --prompt "i felt " \
+  --max-new-tokens 200 \
+  --temperature 0.7 \
+  --seed 123
+```
+
+The prompt must use the checkpoint vocabulary: lowercase English letters, spaces and newlines. Temperature `0` is deterministic and often repetitive; values around `0.5` to `0.8` usually give a more varied demonstration. This model continues text one character at a time. It is not trained to follow instructions or answer questions reliably. See the [hands-on guide](docs/41-trying-the-final-model.md) for examples and the lower-level command.
+
 
 ## Next-stage plan
 
@@ -185,6 +204,7 @@ Start with the [English learning guide and notation](docs/README.md). Each chapt
 38. [Independent hosts and mixed practical prose: wave 4](docs/38-independent-publisher-expansion-wave4.md)
 39. [Cross-wave identity, balance, and overlap audit](docs/39-cross-wave-corpus-audit.md)
 40. [Modern practical long-form prose: wave 5](docs/40-modern-longform-expansion-wave5.md)
+41. [Trying the finalized small model](docs/41-trying-the-final-model.md)
 
 ![Multi-head attention: three causal heads, concatenation, and output projection](docs/images/multi-head-attention.svg)
 

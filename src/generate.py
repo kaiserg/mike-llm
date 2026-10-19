@@ -29,12 +29,16 @@ def load_checkpoint(path):
 
 
 @torch.no_grad()
-def generate(model, token_ids, max_new_tokens=100, temperature=1.0, generator=None):
+def generate(model, token_ids, max_new_tokens=100, temperature=1.0, generator=None, context_length=None):
     """Return the full prompt plus continuation; temperature zero uses argmax."""
     if type(max_new_tokens) is not int or max_new_tokens < 0:
         raise ValueError("max_new_tokens must be a nonnegative integer")
     if not math.isfinite(temperature) or temperature < 0:
         raise ValueError("temperature must be finite and nonnegative")
+    if context_length is None:
+        context_length = model.context_length
+    if type(context_length) is not int or not 1 <= context_length <= model.context_length:
+        raise ValueError("context_length must be an integer from 1 through the model capacity")
     if (token_ids.ndim != 2 or token_ids.dtype != torch.long
             or token_ids.shape[0] == 0 or token_ids.shape[1] == 0):
         raise ValueError("token_ids must be a nonempty [batch, sequence] torch.long tensor")
@@ -46,7 +50,7 @@ def generate(model, token_ids, max_new_tokens=100, temperature=1.0, generator=No
     try:
         result = token_ids.clone()
         for _ in range(max_new_tokens):
-            context = result[:, -model.context_length:]
+            context = result[:, -context_length:]
             logits = model(context)[:, -1, :]
             if not torch.isfinite(logits).all():
                 raise RuntimeError("model produced nonfinite logits")
@@ -70,6 +74,7 @@ def main():
     parser.add_argument('--max-new-tokens', type=int, default=100)
     parser.add_argument('--temperature', type=float, default=1.0)
     parser.add_argument('--seed', type=int, default=42)
+    parser.add_argument('--context-length', type=int, help='inference window; defaults to checkpoint capacity')
     args = parser.parse_args()
     torch.set_num_threads(1)
     torch.use_deterministic_algorithms(True)
@@ -81,9 +86,11 @@ def main():
         parser.error(f'prompt contains characters absent from checkpoint vocabulary: {unknown!r}')
     if args.max_new_tokens < 0 or not math.isfinite(args.temperature) or args.temperature < 0:
         parser.error('max-new-tokens must be nonnegative and temperature finite and nonnegative')
+    if args.context_length is not None and not 1 <= args.context_length <= model.context_length:
+        parser.error(f'context-length must be from 1 through checkpoint capacity {model.context_length}')
     ids = torch.tensor([tokenizer.encode(args.prompt)], dtype=torch.long)
     rng = torch.Generator().manual_seed(args.seed)
-    output = generate(model, ids, args.max_new_tokens, args.temperature, rng)
+    output = generate(model, ids, args.max_new_tokens, args.temperature, rng, args.context_length)
     print(tokenizer.decode(output[0].tolist()))
 
 
